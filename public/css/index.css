@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'KOFTH2';
+  src: url('../fonts/KingOfTheHill2.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/KingOfTheHill2.eot?#iefix') format('embedded-opentype'), 
+       url('../fonts/KingOfTheHill2.woff2') format('woff2'), 
+       url('../fonts/KingOfTheHill2.woff') format('woff'),
+       url('../fonts/KingOfTheHill2.ttf')  format('truetype'),
+       url('../fonts/KingOfTheHill2.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+video#bgvid {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	background: url(Cloudytime.png) no-repeat;
+	background-size: cover;
+}
+
+.mask {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	background-size: cover;
+
+	/*background: -webkit-linear-gradient(135deg, rgba(255, 0, 229, 0.1) 0%, rgba(174, 35, 35, 0.1) 37%, rgba(116, 35, 99, 0.1) 47%, rgba(48, 35, 174, 0.1) 57%, rgba(83, 160, 253, 0.1) 78%, rgba(180, 236, 81, 0.1) 100%);
+		background: linear-gradient(-45deg, rgba(255, 0, 229, 0.1) 0%, rgba(174, 35, 35, 0.1) 37%, rgba(116, 35, 99, 0.1) 47%, rgba(48, 35, 174, 0.1) 57%, rgba(83, 160, 253, 0.1) 78%, rgba(180, 236, 81, 0.1) 100%);
+		*/
+		opacity: 0.5;
+		z-index: 10;
+		background: #28e8ec;
+}
+
+#title {
+	font-family: 'KOFTH2';
+	font-size: 150px;
+	padding-top: 20%;
+	text-align: center;
+	color:white;
+	opacity: 0.8;
+	position: fixed;
+	top: 20%;
+	left: 50%;
+	width: auto;
+	height: auto;
+	z-index: 100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
