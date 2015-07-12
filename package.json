@@ -1,7 +1,29 @@
 {
   "name": "dialupsite",
   "version": "1.0.0",
-  "description": "",
+  "dependencies": {
+    "bespoke": "latest",
+    "bespoke-backdrop": "latest",
+    "bespoke-hash": "latest",
+    "bespoke-keys": "latest",
+    "bespoke-progress": "latest",
+    "bespoke-scale": "latest",
+    "bespoke-theme-voltaire": "latest",
+    "bespoke-touch": "latest",
+    "consolidate": "latest",
+    "debowerify": "latest",
+    "del": "latest",
+    "express": "latest",
+    "gulp": "latest",
+    "gulp-browserify": "latest",
+    "gulp-connect": "latest",
+    "gulp-plumber": "latest",
+    "gulp-rename": "latest",
+    "mustache": "latest",
+    "path": "latest",
+    "through": "latest"
+  },
+  "description": "Dial Up Wesbite",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
