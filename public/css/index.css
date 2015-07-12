@@ -46,12 +46,13 @@ video#bgvid {
 #title {
 	font-family: 'KOFTH2';
 	font-size: 150px;
-	padding-top: 20%;
+	/*padding-top: 20%;*/
 	text-align: center;
+	margin: 0;
 	color:white;
-	opacity: 0.8;
+	opacity: 1.0;
 	position: fixed;
-	top: 20%;
+	top: 50%;
 	left: 50%;
 	width: auto;
 	height: auto;
