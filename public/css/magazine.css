@@ -1,11 +1,15 @@
-img {
+section img {
 	width: 50%;
 	height: 90%;
 }
 
+
+
 @media screen and (max-width: 760px) {
+	html {
+		background-color: black;
+	}
 	img {
-		width: 50%;
-		height: 90%;
+		width: 100%;
 	}
 }

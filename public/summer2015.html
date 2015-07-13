@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/magazine.css">
   </head>
-  <body>
+  <body class="browserBody">
     <article>
       <section>
         <img src="img/p1.jpg">
@@ -25,4 +25,41 @@
     <script src="js/bespoke.min.js"></script>
     <script src="js/build.js"></script>
   </body>
+
+  <script type="text/javascript">
+
+    $( document ).ready(function() {      
+      var mobileBody = '<div><img src="img/p1.jpg"></div><div><img src="img/p2.jpg"></div><div><img src="img/p3.jpg"></div><div><img src="img/p4.jpg"></div>';
+      var mainBody = '<article><section><img src="img/p1.jpg"></section><section data-bespoke-backdrop="paper"><img src="img/p2.jpg"></section><section data-bespoke-backdrop="bubble"><img src="img/p3.jpg"></section><section data-bespoke-backdrop="yellow"><img src="img/p4.jpg"></section></article><script src="js/bespoke.min.js"></scr'+'ipt><script src="js/build.js"></scr'+'ipt>';
+
+      if ($(window).width() <= 760){
+        console.log('It is a phone'); 
+        $('.browserBody').empty();
+        $('.browserBody').addClass('mobileBody');
+        $('.mobileBody').removeClass('browserBody');
+        $('.mobileBody').append(mobileBody);
+      }
+
+      $( window ).resize(function() {
+        if($(window).width() <= 760){
+          if( $('body').hasClass('browserBody') ) {
+            console.log('Shrunk to mobile size'); 
+            $('.browserBody').empty();
+            $('.browserBody').addClass('mobileBody');
+            $('.mobileBody').removeClass('browserBody');
+            $('.mobileBody').append(mobileBody);
+          }
+        }
+        else {
+          if( $('body').hasClass('mobileBody') ) {
+            $('.mobileBody').empty();
+            $('.mobileBody').addClass('browserBody');
+            $('.browserBody').removeClass('mobileBody');
+            $('.browserBody').append(mainBody);
+          }
+        }
+      });
+    });
+  </script>
+
 </html>
