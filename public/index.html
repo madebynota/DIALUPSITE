@@ -2,12 +2,76 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 	</head>
-	<body>		
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script>
+	$(document).ready(function(){
+    animateDiv();
+
+			});
+
+	function makeNewPosition(){
+
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() + 50;
+    var w = $(window).width() - 10;
+
+    var nh = Math.floor((Math.random() * h) * 0.1);
+    var nw = Math.floor((Math.random() * w) * 0.1);
+
+    return [nh,nw];
+		console.log(nh);
+		console.log(nw);
+
+	}
+
+	function animateDiv(){
+    var newq = makeNewPosition();
+    var oldq = $('.a').offset();
+    var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+    $('.a').animate({ top: newq[0], left: newq[1] }, speed, function(){
+      animateDiv();
+    });
+
+	};
+
+	function calcSpeed(prev, next) {
+
+    var x = Math.abs(prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+
+    var greatest = x > y ? x : y;
+
+    var speedModifier = 0.01;
+
+    var speed = Math.ceil(greatest/speedModifier);
+
+    return speed;
+
+	}
+	</script>
+	<body>
 			<video autoplay loop poster="img/Cloudytime.png" id="bgvid">
 				<source src="img/CloudytimeS.webm" type="video/webm">
 				<!--source src="img/Cloudytime.mp4" type="video/mp4"-->
 			</video>
 			<div class="mask"></div>
 			<p id='title'>DIAL UP</p>
+			<!-- <div class="a"> <p>Hello World!</p></div> -->
+				<div style="top:500;">
+					<div class="a">
+						<img src="img/stuffbutton.png"></img>
+					</div>
+				</div>
+			<!-- <div class="navbar">
+				<ul>
+	 				<li><a href="default.asp">Music</a></li>
+	 				<li><a href="news.asp">Radio</a></li>
+	 				<li><a href="contact.asp">Stuff</a></li>
+	 				<li><a href="about.asp">Magazine</a></li>
+					<li><a href="about.asp">Podcast</a></li>
+					<li><a href="about.asp">Blog</a></li>
+				</ul>
+			</div> -->
 	</body>
 </html

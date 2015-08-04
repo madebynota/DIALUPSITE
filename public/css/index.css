@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'KOFTH2';
   src: url('../fonts/KingOfTheHill2.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/KingOfTheHill2.eot?#iefix') format('embedded-opentype'), 
-       url('../fonts/KingOfTheHill2.woff2') format('woff2'), 
+  src: url('../fonts/KingOfTheHill2.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/KingOfTheHill2.woff2') format('woff2'),
        url('../fonts/KingOfTheHill2.woff') format('woff'),
        url('../fonts/KingOfTheHill2.ttf')  format('truetype'),
        url('../fonts/KingOfTheHill2.svg#svgFontName') format('svg'); /* Legacy iOS */
@@ -59,4 +59,51 @@ video#bgvid {
 	z-index: 100;
 	-webkit-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'KOFTH2';
+}
+
+li {
+  display: inline;
+  padding: 25px;
+}
+
+a {
+  color: white;
+  text-decoration: none !important;
+}
+
+.navbar {
+  margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+div.a {
+  /*border-radius: 50%;
+  	width: 200px;
+  	height: 200px;*/
+ /*background-color:pink;*/
+ /*background:linear-gradient(30deg, pink, #ccc);*/
+position:fixed;
+z-index: 998;
+}
+
+div.a p{
+  position: relative;
+  top:50;
+  left: 125;
+font-family: 'KOFTH2';
+color: yellow;
+
+}
+
+div.a img{
+
+  z-index: 998;
 }
