@@ -36,7 +36,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6 col-md-offset-6">
-					<p id="subtext">IF YOU GOT A CODE ENTER IT</p>
+					<a id="submit" href="#"><p id="subtext">IF YOU GOT A CODE ENTER IT</p></a>
 				</div>
 			</div>
 		</div>
@@ -52,6 +52,20 @@
 				    	$('.backgroundBox').hide();
 				    	$('#bg').show();
 				    }
+			    });
+			    $('#subtext').click(function() {
+			    	var entry = { "textEntry" : $('#holderText').text() };
+			    	var url = "/entry";
+			    	$.ajax({
+					  type: "POST",
+					  url: url,
+					  data: entry,
+					  dataType: "json"
+					}).done(function( data ) {
+					    if ( console && console.log ) {
+					      console.log( data );
+					    }
+					  });
 			    });
 			    /*
 			    $('#text').click(function() {

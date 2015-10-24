@@ -98,7 +98,6 @@ hr {
 #subtext {
     font-family: 'KOFTH2';
     font-size: 35px;
-    color: white;
     opacity: 1.0;
     z-index: 1000;
     padding-top: 1%;
@@ -106,4 +105,13 @@ hr {
 
 #bg {
     display: none;
+}
+
+#submit {
+    text-decoration: underline;
+    color: white;
+}
+
+#submit:hover {
+    color: #fed2fe;
 }

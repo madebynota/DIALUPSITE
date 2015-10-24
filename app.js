@@ -16,6 +16,12 @@ app.get('/', function(req, res) {res.render('index.html')});
 app.get('/portal', function(req, res) {res.render('portal.html')});
 app.get('/magazine', function(req, res) {res.render('magazine.html')});
 app.get('/summer2015', function(req, res) {res.render('summer2015.html')});
+app.post('/entry', function(req, res) {
+	console.log(req);
+	res.send("HELLO");
+})
+
+var passwords = {"test":"https://www.youtube.com/"}
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
