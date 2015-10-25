@@ -37,7 +37,7 @@
 			<div class="row">
 				<div class="col-md-6 col-md-offset-6">
 					<a id="submit" href="#"><p id="subtext">IF YOU GOT A CODE ENTER IT</p></a>
-					<a id="outLink"><p id="correct"></p></a>
+					<a id="outLink" target="_blank"><p id="correct"></p></a>
 				</div>
 			</div>
 		</div>
@@ -50,6 +50,7 @@
 				    	$('#bg').hide();
 				    }
 				    else {
+				    	console.log("Change it back");
 				    	$('.backgroundBox').hide();
 				    	$('#bg').show();
 				    }
@@ -73,9 +74,15 @@
 					    	console.log(messageText);
 					    	$('#correct').text("You found it");
 					    	$('#outLink').attr("href", link);
+					    	//OpenInNewTab(link);
 					    }
 					});
 			    });
+
+			 //    function OpenInNewTab(url) {
+				//   var win = window.open(url, '_blank');
+				//   win.focus();
+				// }
 			    /*
 			    $('#text').click(function() {
 			    	console.log("text");

@@ -116,6 +116,10 @@ hr {
     color: #fed2fe;
 }
 
-#correct {
-    margin: 0, auto;
+#outLink {
+    color: white;
+    font-size: 30px;
+    opacity: 1.0;
+    font-family: 'KOFTH2';
+    z-index: 1000;
 }
