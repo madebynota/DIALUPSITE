@@ -115,3 +115,7 @@ hr {
 #submit:hover {
     color: #fed2fe;
 }
+
+#correct {
+    margin: 0, auto;
+}

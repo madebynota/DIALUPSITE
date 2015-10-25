@@ -37,6 +37,7 @@
 			<div class="row">
 				<div class="col-md-6 col-md-offset-6">
 					<a id="submit" href="#"><p id="subtext">IF YOU GOT A CODE ENTER IT</p></a>
+					<a id="outLink"><p id="correct"></p></a>
 				</div>
 			</div>
 		</div>
@@ -56,16 +57,24 @@
 			    $('#subtext').click(function() {
 			    	var entry = { "textEntry" : $('#holderText').text() };
 			    	var url = "/entry";
+			    	var link = "";
+			    	var messageText = "";
 			    	$.ajax({
 					  type: "POST",
 					  url: url,
 					  data: entry,
 					  dataType: "json"
-					}).done(function( data ) {
-					    if ( console && console.log ) {
-					      console.log( data );
+					}).done(function(data) {
+						console.log(data);
+					    if(data["correct"] == "YES") {
+					    	console.log("Entered");
+					    	link = data["link"];
+					    	messageText = data["message"];
+					    	console.log(messageText);
+					    	$('#correct').text("You found it");
+					    	$('#outLink').attr("href", link);
 					    }
-					  });
+					});
 			    });
 			    /*
 			    $('#text').click(function() {

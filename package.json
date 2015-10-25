@@ -21,7 +21,8 @@
     "gulp-rename": "latest",
     "mustache": "latest",
     "path": "latest",
-    "through": "latest"
+    "through": "latest",
+    "bbody-parser": "latest"
   },
   "description": "Dial Up Wesbite",
   "main": "app.js",
