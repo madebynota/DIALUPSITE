@@ -1,22 +1,97 @@
 <html>
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		<script src="js/pixastic.custom.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src='js/glitch.js'></script>
+		<link rel="stylesheet" type="text/css" href="css/stuff.css">
 		<link rel="stylesheet" type="text/css" href="css/portal.css">
 	</head>
 	<body>
+		<div class="backgroundBox">
+			<video autoplay loop poster="img/Cloudytime.png" id="bgvid">
+				<source src="img/CloudytimeS.webm" type="video/webm">
+				<!--source src="img/Cloudytime.mp4" type="video/mp4"-->
+			</video>
+			<div class="mask"></div>
+		</div>
 		<img id="bg" src="" width="100%" height="100%">
-		<h1 id="header">Dial Up Portal</h1>
-	    <div id="text" class="wrap" contenteditable="true">
-	        
-	        <p>
-	            <!-- You can find me on -->
-	            <p>
-	                ENTER THE CODE HERE
-	            </p>
-	            
-	        </p>
-    </div>
+		<div class="container-fluid">
+			<img id="vaultImage" src="img/stuffvault.png">
+			<div class="row">
+				<div class="col-md-7 col-md-offset-5">
+					<p id="pageHeader">PORTAL</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-7 col-md-offset-5">
+					<div id="text" contenteditable="true">
+				        <p>
+				            <p id="holderText">ENTER THE CODE HERE</p>		            
+				        </p>
+			    	</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-6">
+					<a id="submit" href="#"><p id="subtext">IF YOU GOT A CODE ENTER IT</p></a>
+					<a id="outLink" target="_blank"><p id="correct"></p></a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				$('#text').bind('input', function(){
+					console.log('change');
+				    if ($('#holderText').text() == "ENTER THE CODE HERE" || $('#holderText').text() == "") {
+				    	$('.backgroundBox').show();
+				    	$('#bg').hide();
+				    }
+				    else {
+				    	console.log("Change it back");
+				    	$('.backgroundBox').hide();
+				    	$('#bg').show();
+				    }
+			    });
+			    $('#subtext').click(function() {
+			    	var entry = { "textEntry" : $('#holderText').text() };
+			    	var url = "/entry";
+			    	var link = "";
+			    	var messageText = "";
+			    	$.ajax({
+					  type: "POST",
+					  url: url,
+					  data: entry,
+					  dataType: "json"
+					}).done(function(data) {
+						console.log(data);
+					    if(data["correct"] == "YES") {
+					    	console.log("Entered");
+					    	link = data["link"];
+					    	messageText = data["message"];
+					    	console.log(messageText);
+					    	$('#correct').text("You found it");
+					    	$('#outLink').attr("href", link);
+					    	//OpenInNewTab(link);
+					    }
+					});
+			    });
+
+			 //    function OpenInNewTab(url) {
+				//   var win = window.open(url, '_blank');
+				//   win.focus();
+				// }
+			    /*
+			    $('#text').click(function() {
+			    	console.log("text");
+			    	if($('#holderText').text() == "ENTER THE CODE HERE" || $('#holderText').text() == "") {
+			    		$('#holderText').text("");
+			    	}
+			    });	*/
+			});
+
+		</script>
 	</body>
 </html
