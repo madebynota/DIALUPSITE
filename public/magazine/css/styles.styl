@@ -1,0 +1,939 @@
+@import 'nib'
+
+ajam_blue = #2677B9
+max_width = 1024px
+transition_opts = 400ms linear
+gutter_width = 2px
+header_height = 46px
+header_item_height = 28px
+header_padding = 7px
+header_margin = 0px
+	
+drawer_width = 66%
+drawer_transition_opts = 500ms cubic-bezier(0,0,.2,1)
+bg_layout_color = #fff
+
+arrow_color = #ccc
+arrow_hover_color = #000
+the_beige = #f3f0df
+bg_gray = #34393A
+
+header_item_color = #000
+header_item_hover_color = ajam_blue
+header_item_bg_hover_color = #000
+
+twitter_color = #00ACED
+facebook_color = #3C599F
+reddit_color = #336699
+gplus_color = #DD4B39
+
+mobile_query_width = 775px
+
+mobile_query = "(max-width: " + mobile_query_width + ")"
+
+/* G L O B A L S */
+*
+	box-sizing border-box
+html, body
+	width 100%
+	height 100%
+html
+	font-size 16px
+body
+	font 62.5% Helvetica, sans-serif
+	margin 0
+	background-color bg_layout_color
+a
+	color ajam_blue
+	text-decoration none
+a:hover
+	text-decoration underline
+html:-ms-fullscreen
+	width 100% /* needed to center contents in IE */
+
+#main-content-wrapper
+	width 100%
+	height 100%
+	background-color #fff
+	transition transform drawer_transition_opts
+	position absolute
+	transform translateX(0px)
+	overflow-x hidden
+	overflow-y hidden
+#main-content-wrapper,#pages-wrapper,#pages,.page-container,.page,.hotspot
+	backface-visibility hidden 
+	// transform-style preserve-3d
+/* end globals */
+
+/* H E A D E R */
+body[data-state="hotspot"]
+	#header
+		opacity 0
+	#footer
+		display none
+#header
+	width 100%
+	background-color bg_layout_color
+	padding header_padding 5px header_padding 5px
+	margin-bottom header_margin
+	margin-left auto
+	margin-right auto
+	opacity 1
+	transition opacity 100ms linear
+	height header_height - header_padding
+	// max-width max_width*2 + gutter_width
+html:-moz-full-screen
+	#header
+		display none
+	#desktop-drawer-container,#footer
+		display none!important
+	#pages-wrapper
+		top 5px
+		height calc(100% - 10px)
+html:-webkit-full-screen
+	#header
+		display none
+	#desktop-drawer-container,#footer
+		display none!important
+	#pages-wrapper
+		top 5px
+		height calc(100% - 10px)
+html:-fullscreen
+	#header
+		display none
+	#desktop-drawer-container,#footer
+		display none!important
+	#pages-wrapper
+		top 5px
+		height calc(100% - 10px)
+html:-ms-fullscreen
+	width 100%
+	#header
+		display none
+	#desktop-drawer-container,#footer
+		display none!important
+	#pages-wrapper
+		top 5px
+		height calc(100% - 10px)
+
+.header-item-container
+	display inline-block
+	height 100%
+	position relative
+.header-item-container:hover,.header-item-container.active
+	cursor pointer
+	.header-btn
+		color header_item_hover_color
+		border-color #848484
+		// background-color header_item_bg_hover_color
+	.header-text
+		cursor default
+.header-item-container:active
+	.header-btn
+		color darken(header_item_hover_color, 30%)
+		border-color #4f4f4f
+
+.header-item-container.active:hover
+	.header-btn
+		color darken(header_item_hover_color, 10%)
+
+
+.header-item
+	height 100%
+	color header_item_color
+	display inline-table
+	vertical-align top
+.header-btn
+	min-width (header_height - header_padding*2)
+	border-radius 2px
+	text-align center
+	// border 1px solid #646464
+.header-item-container[data-btn="export"] .header-btn
+	padding 0 6px
+	.label
+		position relative
+		font-size 13px
+		top 6px
+.header-text,.header-btn-icon
+	display table-cell
+	vertical-align middle
+	user-select none
+	position relative
+.header-btn-icon
+	font-size 2.2em
+a .header-btn-icon
+	color #000
+a .header-btn-icon:hover
+	color ajam_blue
+
+
+.header-group
+	float right
+	height header_item_height
+	// background-color #0cf
+.header-group
+	.header-item-container
+		padding 0 8px
+		text-align center
+.header-item .header-text
+	font-size 1.3em
+	font-weight 200
+.header-item[data-which="page-number"] .header-text
+	input
+		width 22px
+		text-align right
+
+.internal-link
+	color ajam_blue
+.internal-link:hover
+	text-decoration underline
+	cursor pointer
+
+// Disable spinners on number input
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+	appearance none
+	margin 0
+
+input[type="number"]
+	-moz-appearance textfield
+
+.header-group.mobile
+	display none
+
+.btn-dropdown
+	display none
+	position absolute
+	right 50%
+	transform translate(50%,5px)
+	z-index 10000000
+	background-color #000
+	color #fff
+	padding 5px 0
+	text-align left
+	border-radius 2px
+	top 100%
+	li
+		padding 8px
+		font-size 1.2em
+		user-select none
+	a
+		color #fff
+		text-decoration none
+	li:hover
+		cursor pointer
+		background-color ajam_blue
+
+.drawer-section-container[data-section="downloads"]
+	line-height 1.7em
+
+.dropdowned[data-btn="export"] .btn-dropdown,
+.dropdowned[data-btn="export"]:hover:after
+	width 200% !important
+
+.dropdowned[data-btn="share"]
+	li
+		font-size 1.8em
+		text-align center
+
+.dropdowned:hover
+	.btn-dropdown
+		display inline-block
+
+// An element to catch the mouse as it moves onto the dropdown
+.dropdowned:hover:after
+	right 50%
+	transform translate(50%,5px)
+	border 0
+	width 100%
+	height 10px
+	margin-right 0
+
+.dropdowned:hover:before,
+.dropdowned:hover:after,
+.tooltipped:hover:before,
+.tooltipped:hover:after
+	display inline-block
+
+
+// `.tooltipped-i` elements are parents of input elements
+// Input elements can't have pseudo elements so on focus of the input (through js), apply a data attribute on this parent, which will get the tootlip
+.tooltipped-i[data-focus="true"]:before,
+.tooltipped-i[data-focus="true"]:after
+	display inline-block
+	animation decay 700ms linear forwards
+	animation-delay 3.5s
+
+
+@keyframes decay {
+	from{
+		opacity 1
+	}
+	to{
+		opacity 0
+	}
+	
+}
+
+
+.dropdowned:before,
+.dropdowned:after,
+.tooltipped-i:before,
+.tooltipped-i:after,
+.tooltipped:before,
+.tooltipped:after
+	position absolute
+	display none
+	right 50%
+
+// .tooltipped-i:before,
+// .tooltipped-i:after,
+.tooltipped:before,
+.tooltipped:after
+	pointer-events none
+
+
+.dropdowned:before,
+.dropdowned:after,
+.tooltipped-i:before,
+.tooltipped:before
+	z-index 9998
+	width 0
+	height 0
+	color rgba(0,0,0,0.8)
+	content ""
+	border 5px solid transparent
+	top auto
+	bottom -5px
+	margin-right -5px
+	border-bottom-color rgba(0,0,0,0.8)
+
+.tooltipped-i:after,
+.tooltipped:after
+	z-index 9997
+	transform translateX(50%)
+	margin-top 5px
+	top 100%
+	padding 5px 8px
+	font-size 1.2em
+	line-height 1.5
+	color #fff
+	text-align center
+	text-decoration none
+	word-wrap break-word
+	white-space pre
+	content attr(aria-label)
+	background rgba(0,0,0,0.8)
+	border-radius 3px
+	-webkit-font-smoothing subpixel-antialiased
+
+
+
+.header-item-container:hover .header-btn
+	border-bottom-left-radius 0
+	border-bottom-right-radius 0
+
+/* end header */
+
+/* P R O G R E S S */
+// #progress
+// 	width 100%
+// 	background-color #474545
+// 	height progress_bar_height
+// 	margin-bottom progress_bar_margin
+/* end progress */
+
+/* N A V  B U T T O N S */
+button_offset = 35%
+#btns
+	position absolute
+	top (header_height + header_margin)
+	right 0
+	left 0
+	z-index 9999
+.main-nav-btn-container
+	display inline-block
+	user-select none
+	display none
+	height 99%
+	width 50%
+.main-nav-btn-container.full
+	width 100%
+.main-nav-btn-container[data-dir="prev"]
+	text-align left
+	.btn-text
+		transform translateX(-1*button_offset)
+.main-nav-btn-container[data-dir="next"]
+	text-align right
+	.btn-text
+		transform translateX(button_offset)
+.main-nav-btn-container:hover
+	cursor pointer
+.main-nav-btn
+	display inline-block
+	position relative
+	color arrow_color
+	height 100%
+.main-nav-btn
+	transition color 250ms ease-out;
+.main-nav-btn-container:hover .main-nav-btn
+	color arrow_hover_color
+.btn-text
+	position relative
+	top 45%
+	font-size 6em
+
+nav_helper_right = 80px
+.nav-helpers
+	position absolute
+	top 43.5%
+	right nav_helper_right
+	width 90%
+	text-align center
+	font-size 1.4em
+	font-weight 200
+	font-family Helvetica, sans-serif
+	line-height 15px
+	color #969696
+	animation bounce-left-right 2.75s infinite
+	opacity .75
+.nav-helper-arrows
+	font-size 1.4em
+	white-space nowrap
+	margin 9px 0 10px 0
+	font-family Helvetica
+	color #000
+	span
+		padding 1px 4px
+		border 1px solid #ccc
+		background linear-gradient(180deg, #FFF 0%, #E3E3E3 100%) repeat scroll 0% 0% #FFF
+	span:first-child
+		margin-right 2px
+@keyframes bounce-left-right {
+	0%{
+		right nav_helper_right
+	}
+	50%{
+		right nav_helper_right - (nav_helper_right/5)
+	}
+	100%{
+		right nav_helper_right
+	}
+}
+
+/* end nav buttons */
+
+body.mobile
+	.mobile-hide
+		display none
+
+/* S N A P P E R  D R A W E R  */
+body[data-format="mobile"]
+	background-color #5B5B5B
+	.header-item-container.active
+		.header-btn
+			color header_item_color
+#side-drawer-container
+	position absolute
+	height 100%
+	right 0
+	top 0
+	color #fff
+	background-color bg_gray
+	width drawer_width
+	padding 15px
+	overflow auto
+	-webkit-overflow-scrolling touch
+	box-shadow 10px 0px 12px -5px #000 inset
+	a
+		color #71BFFF
+	.section-title
+		margin-top 5px
+	.section-subtitle
+		letter-spacing 1px
+		font-size 1.2em
+		color #fff
+	.section-subtitle span
+		color #aaa
+		text-transform none
+#easter-egg-img
+	position absolute
+	top 9%
+	right drawer_width - 1.5 // The image has some padding
+	z-index -1
+	width 20%
+	display none
+.drawer-section-container
+	margin-bottom 20px
+	li
+		font-size 1.3em
+		margin-bottom 3px
+		font-weight 200
+	li.endnote
+		font-size 1.1em
+		margin-bottom 8px
+		line-height 1.2em
+	.endnote-number
+		color #969696
+.drawer-section-container[data-which="share"]
+	li
+		display inline-block
+		width 24.5%
+		font-size 2em
+		text-align center
+		padding 10px 0
+	li:hover 
+		cursor pointer
+	li[data-which="twitter"]
+		background-color twitter_color
+	li[data-which="facebook"]
+		background-color facebook_color
+	li[data-which="reddit"]
+		background-color reddit_color
+	li[data-which="gplus"]
+		background-color gplus_color
+	li[data-which="twitter"]:hover
+		background-color lighten(twitter_color, 15%)
+	li[data-which="facebook"]:hover
+		background-color lighten(facebook_color, 15%)
+	li[data-which="reddit"]:hover
+		background-color lighten(reddit_color, 15%)
+	li[data-which="gplus"]:hover
+		background-color lighten(gplus_color, 15%)
+		
+
+#side-drawer-handle
+	position absolute
+	right 0
+	top header_height
+	bottom 0
+	left 0
+	// background-color #f0a
+	display none
+	z-index 999
+
+/* Common styles between desktop and mobile on drawer open */
+body[data-side-drawer-open="true"]
+	#pages-wrapper,#btns
+		pointer-events none
+// Open as soon as you click and only disappears after its stable false
+body[data-side-drawer-open="false"][data-side-drawer-state="changing"],
+body[data-side-drawer-open="true"]
+	#side-drawer-handle
+		display block
+
+/* Mobile */
+body[data-side-drawer-open="false"][data-side-drawer-state="stable"]
+	#side-drawer-container//,#desktop-drawer-container
+		display none
+body[data-format="mobile"][data-side-drawer-open="true"]
+	#main-content-wrapper
+		transform translateX(drawer_width*-1)
+/* end mobile */
+
+/* Desktop */
+body[data-format="single"][data-side-drawer-open="true"],
+body[data-format="double"][data-side-drawer-open="true"]
+	#desktop-drawer-container
+		transform translateX(0%)
+		right 0px
+/* end desktop */
+
+/* end snapper drawer */
+
+/* M O D A L */
+buffer_for_tooltip = 11px
+.endnote-number
+	vertical-align super
+	font-size smaller
+	padding-right 5px
+#desktop-drawer-container
+	position absolute
+	width 33%
+	right -15px
+	transform translateX(100%)
+	bottom 0px
+	padding-left 15px
+	padding-right 15px
+	padding-bottom 5px
+	padding-top buffer_for_tooltip + 5px
+	top header_height - buffer_for_tooltip
+	background-color #fff
+	z-index 9999
+	transition transform 500ms cubic-bezier(0,0,.2,1),right 100ms cubic-bezier(0,0,.2,1)
+	box-shadow -3px 15px 19px -7px #000
+	.section-title
+		margin-bottom 8px
+		span
+			font-weight normal
+			font-size 12px
+		.section-title-close
+			float right
+			color #999
+		.section-title-close:hover
+			cursor pointer
+			color #666
+	.endnote
+		font-size 1.2em
+		margin-bottom 8px
+		line-height 1.3em
+.section-title
+	font-size 1.4em
+	font-weight bold
+	border-bottom 1px solid #646464
+	margin-bottom 5px
+	padding-bottom 3px
+/* end modal */
+
+/* P A G E S */
+#pages-wrapper,#pages
+	position relative
+	max-width max_width
+	margin 0 auto
+	width 100%
+	text-align center
+#pages-wrapper
+	height "calc(100% - %s)" % (header_height)
+#pages
+	height 100%
+body[data-state="page-change"]
+	#pages-wrapper
+		overflow hidden
+.page-container
+	left 0
+	visibility hidden
+.page-container, .page, .page-mask
+	position absolute
+	height 100%
+	width 100%
+	transform translate3d(0,0,0)
+.page-mask
+	overflow hidden
+.page
+	position relative
+
+.page-container.viewing
+	visibility visible
+	z-index 99
+.page img
+	max-width 100%
+	max-height 100%
+	user-select none
+.paragraph-text
+	position absolute
+	text-align left
+	font-size 1.5em
+	z-index 9999
+	padding 20px
+	line-height 1.5em
+	p
+		margin-bottom 10px
+/* end pages */
+
+/*  P A G E  F O R M A T T I N G  */
+body[data-format="double"][data-bookend="false"] #pages//, #pages[data-format="bookend"]
+	max-width max_width*2
+	position relative
+	left -(gutter_width/2)
+
+body[data-format="double"][data-bookend="false"] .page-container.viewing//, #pages[data-format="bookend"] .page-container.viewing
+	width 50%
+body[data-format="double"][data-bookend="false"] .page-container.viewing.right-page
+	left 50%
+	padding-left gutter_width
+body[data-format="double"][data-bookend="false"] .page-container.viewing.right-page:after
+	content ""
+	opacity 0.2
+	top 0
+	left 0
+	bottom 3px
+	right 0
+	position absolute
+	z-index -1
+	background url('../imgs/assets/border.png') repeat-y (gutter_width/2) top #fff
+
+body[data-format="mobile"]//[data-bookend="false"]
+	#btns
+		visibility hidden
+
+/* MOZ Specific hacks */
+@-moz-document url-prefix()
+	body[data-format="double"][data-bookend="false"] .page-container.viewing.right-page
+		left calc(50% - 1px)
+/* end page formatting */
+
+/* T R A N S I T I O N S */
+// body[data-format="double"]
+// 	.exit-to-left,.exit-to-right
+// 		z-index -1
+/* Single */
+// body[data-format="double"]
+// 	.exit-to-left,.exit-to-right
+// 		z-index -1
+.page-container.exit-to-left
+	animation exit-to-left transition_opts
+.page-container.enter-from-left
+	animation enter-from-left transition_opts
+
+.page-container.exit-to-right
+	animation exit-to-right transition_opts
+.page-container.enter-from-right
+	animation enter-from-right transition_opts
+/* end single */
+
+/* Double left  */
+body[data-format="double"][data-bookend="false"] .page-container.exit-to-left
+	animation double-left-exit-to-left transition_opts
+body[data-format="double"][data-bookend="false"] .page-container.enter-from-left
+	animation double-left-enter-from-left transition_opts
+
+body[data-format="double"][data-bookend="false"] .page-container.exit-to-right
+	animation double-left-exit-to-right transition_opts
+body[data-format="double"][data-bookend="false"] .page-container.enter-from-right
+	animation double-left-enter-from-right transition_opts
+	width 50%
+
+/* D O U B L E  R I G H T  */
+body[data-format="double"][data-bookend="false"] .page-container.right-page.exit-to-left
+	animation double-right-exit-to-left transition_opts
+body[data-format="double"][data-bookend="false"] .page-container.right-page.enter-from-left
+	animation double-right-enter-from-left transition_opts
+
+body[data-format="double"][data-bookend="false"] .page-container.right-page.exit-to-right
+	animation double-right-exit-to-right transition_opts
+body[data-format="double"][data-bookend="false"] .page-container.right-page.enter-from-right
+	animation double-right-enter-from-right transition_opts
+/* end double left */
+
+/* Double center  */
+body[data-format="double"][data-bookend="false"] .page-container.center-page.exit-to-left
+	animation double-center-exit-to-left transition_opts
+body[data-format="double"][data-bookend="true"] .page-container.enter-from-left
+	animation double-center-enter-from-left transition_opts
+body[data-format="double"][data-bookend="true"] .page-container.exit-to-right
+	animation double-left-exit-to-right transition_opts
+	width 50%
+body[data-format="double"][data-bookend="true"] .page-container.exit-to-right.right-page
+	animation double-right-exit-to-right transition_opts
+	padding-left 40px
+/* end double center */
+
+// Drawer transitions
+@keyframes wrapper-slide-to-left {
+	from{
+		left 0
+	}
+	to{
+		left drawer_width*-1
+	}
+}
+
+// Left page 'single' page
+@keyframes exit-to-left {
+	from{
+		left 0
+	}
+	to{
+		left -100%
+	}
+}
+
+@keyframes exit-to-right {
+	from{
+		left 0
+	}
+	to{
+		left 100%
+	}
+}
+
+@keyframes enter-from-left {
+	from{
+		left -100%
+	}
+	to{
+		left 0
+	}
+}
+
+@keyframes enter-from-right {
+	from{
+		left 100%
+	}
+	to{
+		left 0
+	}
+}
+
+// Left page double
+@keyframes double-left-exit-to-left {
+	from{
+		left 0
+	}
+	to{
+		left 'calc(-100% - %s)' % gutter_width
+	}
+}
+
+@keyframes double-left-exit-to-right {
+	from{
+		left 0
+	}
+	to{
+		left 'calc(100% + %s)' % gutter_width
+	}
+}
+
+@keyframes double-left-enter-from-left {
+	from{
+		left -100%
+	}
+	to{
+		left 0
+	}
+}
+
+@keyframes double-left-enter-from-right {
+	from{
+		left 'calc(100% + %s)' % gutter_width
+	}
+	to{
+		left 0
+	}
+}
+
+// Right page
+@keyframes double-right-exit-to-left {
+	from{
+		left 50%
+	}
+	to{
+		left 'calc(-50% - %s)' % gutter_width
+	}
+}
+
+@keyframes double-right-exit-to-right {
+	from{
+		left 50%
+	}
+	to{
+		left 'calc(150% + %s)' % gutter_width
+	}
+}
+
+@keyframes double-right-enter-from-left {
+	from{
+		left 'calc(-50% - %s)' % gutter_width
+	}
+	to{
+		left 50%
+	}
+}
+
+@keyframes double-right-enter-from-right {
+	from{
+		left 150%
+	}
+	to{
+		left 50%
+	}
+}
+
+// Bookends
+@keyframes double-center-exit-to-left {
+	from{
+		left 25%
+	}
+	to{
+		left -50%
+	}
+}
+@keyframes double-center-enter-from-left {
+	from{
+		left -75%
+	}
+	to{
+		left 0%
+	}
+}
+/* end transitions */
+
+/* H O T S P O T S */
+.hotspot
+	position absolute
+	// background-color rgba(0, 255, 204, .5)
+/* end hotspots */
+
+/* M A S K S */
+.mask
+	position absolute
+	background-color bg_layout_color
+	z-index 9999
+	opacity 0
+.mask[data-orientation="horizontal"]
+	height 0
+	left 0
+	right 0
+.mask[data-orientation="vertical"]
+	width 0
+	top 0
+	bottom 0
+#top-mask
+	top 0
+#bottom-mask
+	transform rotateX(180deg) translate3d(0,0,1);
+	bottom -1px /* To cover up some small clipping that occurs */
+#left-mask
+	left 0
+#right-mask
+	right 0
+	transform rotateX(180deg) translate3d(0,0,1);
+/* end masks */
+
+/* M E D I A  Q U E R I E S */
+@media (max-width: 1024px)
+	#pages-wrapper
+		height "calc(100% - %s)" % (header_height + header_padding*2)
+
+mobile_header_height = header_height*2/3
+
+
+body[data-format="mobile"]
+	#easter-egg-img
+		display block
+	.header-group.desktop
+		display none
+	.header-group.mobile
+		display block
+		.header-btn
+			border none
+	#side-drawer-handle,#desktop-drawer-container
+		top mobile_header_height
+	#header
+		padding 3px
+		margin-bottom 8px
+		height mobile_header_height
+	#btns
+		top auto
+	#pages-wrapper
+		height 100%
+	#pages
+		width 100%
+	.header-group .header-item-container
+		padding 0 4px 0 0 
+	.tooltipped-i[data-focus="true"]:before,
+	.tooltipped-i[data-focus="true"]:after
+		display none
+	.header-item .header-text
+		position relative
+		top 3px
+	.header-item[data-which="pub-date"] .header-text
+		transform translateX(-10px)
+	.header-item[data-which="page-number"] .header-text
+		input
+			width 25px
+	.nav-helpers
+		display none
+
+
+/* end media queries */
