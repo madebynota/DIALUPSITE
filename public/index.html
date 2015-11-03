@@ -5,51 +5,108 @@
 	</head>
 	
 	<script>
-	$(document).ready(function(){
-    animateDiv();
+	// $(document).ready(function(){
+  //   animateDiv();
+	//
+	// 		});
+	//
+	// function makeNewPosition(){
+	//
+	// 	var min = 2500;
+	// 	var max = 50;
+  //   // Get viewport dimensions (remove the dimension of the div)
+  //   // var h = $(window).height() + 50;
+  //   // var w = $(window).width() - 10;
+	// 	var h = ($(window).height() - min + 1) + min;
+  //   var w = ($(window).width() - min + 1) + min;
+	// 	// var $span = $("#random");
+	// 	// var h = $(window).height() + $span.height();
+	// 	// var w = $(window).width() - $span.width();
+	// 	// var h = $('.a').position.top + $span.height();
+	// 	// var w = $('.a').position.left - $span.width();
+	// 	// var h = $(window).height() * (max - min + 1)) + min);
+	// 	// var w = $(window).width() * (max - min + 1)) + min);
+	//
+  //   var nh = Math.floor((Math.random() * h) * 0.1);
+  //   var nw = Math.floor((Math.random() * w) * 0.1);
+	// 	// var nh = Math.floor((Math.random() * (max - min + 1)) + min) * 0.1);
+	// 	// var nw = Math.floor((Math.random() * (max - min + 1)) + min) * 0.1);
+	//
+  //   return [nh,nw];
+	// 	console.log(nh);
+	// 	console.log(nw);
+	//
+	// }
+	//
+	// function animateDiv(){
+  //   var newq = makeNewPosition();
+  //   var oldq = $('.a').offset();
+  //   var speed = calcSpeed([oldq.top, oldq.left], newq);
+	//
+  //   $('.a').animate({ top: newq[0], left: newq[1] }, speed, function(){
+  //     animateDiv();
+  //   });
+	//
+	// };
+	//
+	// function calcSpeed(prev, next) {
+	//
+  //   var x = Math.abs(prev[1] - next[1]);
+  //   var y = Math.abs(prev[0] - next[0]);
+	//
+  //   var greatest = x > y ? x : y;
+	//
+  //   var speedModifier = 0.01;
+	//
+  //   var speed = Math.ceil(greatest/speedModifier);
+	//
+  //   return speed;
+	//
+	// }
+	dirR = "+=2";
+dirL = "+=2";
 
-			});
+function moveDir() {
+if (Math.random() > 0.95) {
+  swapDirL();
+}
+if (Math.random() < 0.05) {
+  swapDirR();
+}
+}
 
-	function makeNewPosition(){
+function swapDirL() {
+    if(dirL == "+=2") {
+        dirL = "-=2";
+    }
+    else {
+      dirL = "+=2";
+    }
+}
 
-    // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height() + 50;
-    var w = $(window).width() - 10;
+function swapDirR() {
+    dirR == "+=2" ? dirR = "-=2" : dirR = "+=2";
+}
 
-    var nh = Math.floor((Math.random() * h) * 0.1);
-    var nw = Math.floor((Math.random() * w) * 0.1);
 
-    return [nh,nw];
-		console.log(nh);
-		console.log(nw);
+setInterval (function() { $("#d").css("left", dirL); $("#d").css("top", dirR); moveDir(); } , 50)
 
-	}
+// function moveDiv() {
+//     var $span = $("#random");
+//
+//     $span.fadeOut(1000, function() {
+//         var maxLeft = $(window).width() - $span.width();
+//         var maxTop = $(window).height() - $span.height();
+//         var leftPos = Math.floor(Math.random() * (maxLeft + 1))
+//         var topPos = Math.floor(Math.random() * (maxTop + 1))
+//
+//         $span.css({ left: leftPos, top: topPos }).fadeIn(1000);
+//     });
+// };
 
-	function animateDiv(){
-    var newq = makeNewPosition();
-    var oldq = $('.a').offset();
-    var speed = calcSpeed([oldq.top, oldq.left], newq);
+moveDiv();
+setInterval(moveDiv, 5000);
 
-    $('.a').animate({ top: newq[0], left: newq[1] }, speed, function(){
-      animateDiv();
-    });
-
-	};
-
-	function calcSpeed(prev, next) {
-
-    var x = Math.abs(prev[1] - next[1]);
-    var y = Math.abs(prev[0] - next[0]);
-
-    var greatest = x > y ? x : y;
-
-    var speedModifier = 0.01;
-
-    var speed = Math.ceil(greatest/speedModifier);
-
-    return speed;
-
-	}
 	</script>
 	<body>
 			<video autoplay loop poster="img/Cloudytime.png" id="bgvid">
@@ -59,9 +116,24 @@
 			<div class="mask"></div>
 			<p id='title'>DIAL UP</p>
 			<!-- <div class="a"> <p>Hello World!</p></div> -->
-				<div style="top:500;">
-					<div class="a">
+				<div>
+					<!-- <div class="a" style="right:900">
+						<img src="img/radiobutton.png"></img>
+					</div>
+					<div class="a" style="right:950;bottom:50">
 						<img src="img/stuffbutton.png"></img>
+					</div>
+					<div class="a" style="right:900;bottom:25">
+						<img src="img/magazinebutton.png"></img>
+					</div>
+					<div class="a" style="right:300;">
+						<img src="img/musicbutton.png"></img>
+					</div>
+					<div class="a" style="right:250px;bottom:50px">
+						<img src="img/blogbutton.png"></img>
+					</div> -->
+					<div id="d" style="right:300;bottom:25px">
+						<img src="img/podcastbutton.png"></img>
 					</div>
 				</div>
 			<!-- <div class="navbar">

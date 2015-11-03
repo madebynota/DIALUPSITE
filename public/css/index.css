@@ -90,6 +90,7 @@ div.a {
   	height: 200px;*/
  /*background-color:pink;*/
  /*background:linear-gradient(30deg, pink, #ccc);*/
+ /*radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);*/
 position:fixed;
 z-index: 998;
 }
@@ -106,4 +107,12 @@ color: yellow;
 div.a img{
 
   z-index: 998;
+}
+
+#d { position: absolute;
+     /*left: 100px;
+     top: 100px;
+     width: 100px;
+     height: 100px;
+     background-color: #fce;   */
 }
