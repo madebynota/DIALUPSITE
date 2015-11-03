@@ -24,6 +24,9 @@ app.get('/', function(req, res) {res.render('index.html')});
 app.get('/portal', function(req, res) {res.render('portal.html')});
 app.get('/magazine', function(req, res) {res.render('magazine.html')});
 app.get('/summer2015', function(req, res) {res.render('summer2015.html')});
+
+//Routes for Magazines
+app.get('/magazine/summer2015', function(req, res) {res.render('magazine/index.html')});
 app.get('/magazine/fall2015', function(req, res) {res.render('magazine/index.html')});
 
 app.post('/entry', function(req, res) {

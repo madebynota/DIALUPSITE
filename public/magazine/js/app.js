@@ -4,10 +4,8 @@
 	// This could be used to fire page events that can then be picked up at various other parts of the code
 	// Useful for analytics
 	// window.pulpPageEvents = _.extend({}, Backbone.Events);
-	console.log('RUNNING');
 	var pageURL = window.location.pathname;
 	pageURL = pageURL.replace("/magazine/", "");
-	console.log(pageURL);
 
 	var State = Backbone.Model.extend({
 		initialize: function(){
@@ -47,14 +45,26 @@
 		determineBookend: function(page){
 			var this_page = page || states.currentPage,
 					bookend;
-			if (this_page == 1) {
+					console.log("bookend Check");
+					console.log(states.endPage)
+
+			//The modulus check is a safe case for odd pages magazines where the last page isn't centered
+			if (this_page == 1 ) {
 				bookend = 'true';
-			} else {
+
+			} 
+			else if (this_page == states.endPage && states.endPage%2 != 1){
+				console.log('entered');
+				console.log(states.endPage);
+				bookend = 'true';
+			}
+			else {
 				bookend = 'false'
 			}
 			return bookend;
 		}
 	});
+	
 
 	var state = new State;
 
@@ -62,11 +72,24 @@
 		currentPage: '1',
 		currentHotspot: '',
 		lastPage: '',
+		endPage: '',
 		lastHotspot: '',
 		scaleMultiplier: 1,
 		firstRun: true,
 		showNavHelpers: true
 	}
+
+	$.getJSON('data/'+pageURL+'.json')
+	.done(function(data){
+		var pages = data.pages;
+		states.endPage = ''+(pages.length);
+		console.log(states.endPage);
+
+	})
+	.error(function(error){
+		alert('Error loading data. Data file is either missing or the JSON is malformed. Try running it through jsonlint.com');
+	});
+	
 
 	var helpers = {
 		setTransitionCss: function(property, value, transitionDuration){
@@ -147,6 +170,7 @@
 			return a.number - b.number;
 		}
 	}
+
 
 	var templates = {
 		pageFactory: _.template( $('#page-template').html() ),
@@ -284,6 +308,7 @@
 				if (states.currentPage == '2') { 
 					$('#page-container-3').addClass('exit-to-right').addClass('right-page');
 				} else if (states.currentPage != '1') {
+
 					$('#page-container-'+ (states.currentPage + 1)).addClass('exit-to-right')//.addClass('right-page');
 				}
 			},
@@ -876,6 +901,7 @@
 			// So it has a fall back to `true` in that scenario
 			triggerLazyLoad = triggerLazyLoad || states.firstRun;
 			if (states.firstRun) { 
+
 				var show_nav_helpers = false;
 				// If starting on the first page
 				if (PULP_SETTINGS.startOnFirstPage || page == '1') {
@@ -893,6 +919,7 @@
 			} else {
 				layout.toggleNavHelpers(false);
 			}
+
 			// Load the image for the next n pages if they still have placeholder images
 			if (triggerLazyLoad) { this.lazyLoadImages(page); }
 			layout.displayPageNumber(page);
@@ -915,11 +942,10 @@
 
 			for (var i = 0; i < range.length; i++){
 				page_number = range[i];
-				console.log(page_number);
+
 				$img = $('#page-container-'+page_number).find('img');
 				src = $img.attr('src');
 				if (src.indexOf('data:image\/gif') > -2) {
-					console.log('imgs/'+pageURL+'/page-'+page_number+'.'+PULP_SETTINGS.imgFormat);
 					$img.attr('src', 'imgs/'+pageURL+'/page-'+page_number+'.'+PULP_SETTINGS.imgFormat );
 				}
 			}
@@ -1029,6 +1055,7 @@
 					// states.previousPage = helpers.hashToPageHotspotDict( window.location.hash ).page;
 					// Go to there
 					routing.router.navigate(newhash, {trigger: true});
+
 				}
 			},
 			prune: function(){
@@ -1341,13 +1368,14 @@
 			this.browserHacks();
 		},
 		loadPages: function(){
-			$.getJSON('data/pages.json')
+			$.getJSON('data/'+pageURL+'.json')
 				.done(function(data){
 					var pages = data.pages,
 							endnotes = data.endnotes;
 					states.totalPages = pages.length;
 					layout.bakePages(pages);
 					layout.bakeEndnotes(endnotes);
+					states.lastPage = pages.length;
 				})
 				.error(function(error){
 					alert('Error loading data. Data file is either missing or the JSON is malformed. Try running it through jsonlint.com');
