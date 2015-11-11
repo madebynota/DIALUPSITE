@@ -4,6 +4,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 html,
 body {
   width: 100%;
@@ -25,7 +26,7 @@ a:hover {
   text-decoration: underline;
 }
 html:-ms-fullscreen {
-  width: 100%;
+  width: 100% /* needed to center contents in IE */;
 }
 #main-content-wrapper {
   width: 100%;
@@ -930,7 +931,7 @@ body[data-format="double"][data-bookend="true"] .page-container.exit-to-right.ri
   -o-transform: rotateX(180deg) translate3d(0, 0, 1);
   -ms-transform: rotateX(180deg) translate3d(0, 0, 1);
   transform: rotateX(180deg) translate3d(0, 0, 1);
-  bottom: -1px;
+  bottom: -1px /* To cover up some small clipping that occurs */;
 }
 #left-mask {
   left: 0;

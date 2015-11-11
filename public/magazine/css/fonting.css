@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'KOFTH2';
+  src: url('fonts/KingOfTheHill2.eot'); /* IE9 Compat Modes */
+  src: url('fonts/KingOfTheHill2.eot?#iefix') format('embedded-opentype'),
+       url('fonts/KingOfTheHill2.woff2') format('woff2'),
+       url('fonts/KingOfTheHill2.woff') format('woff'),
+       url('fonts/KingOfTheHill2.ttf')  format('truetype'),
+       url('fonts/KingOfTheHill2.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+#header {
+	font-family: 'KOFTH2';
+}
