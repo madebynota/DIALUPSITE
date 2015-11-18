@@ -4,7 +4,6 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 html,
 body {
   width: 100%;
@@ -16,7 +15,7 @@ html {
 body {
   font: 62.5% Helvetica, sans-serif;
   margin: 0;
-  background-color: #fff;
+  background-color: #000;
 }
 a {
   color: #2677b9;
@@ -31,7 +30,7 @@ html:-ms-fullscreen {
 #main-content-wrapper {
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: #000;
   -webkit-transition: -webkit-transform 500ms cubic-bezier(0, 0, 0.2, 1);
   -moz-transition: -moz-transform 500ms cubic-bezier(0, 0, 0.2, 1);
   -o-transition: -o-transform 500ms cubic-bezier(0, 0, 0.2, 1);
@@ -69,7 +68,7 @@ body[data-state="hotspot"] #footer {
 }
 #header {
   width: 100%;
-  background-color: #fff;
+  background-color: #000;
   padding: 7px 5px 7px 5px;
   margin-bottom: 0px;
   margin-left: auto;
@@ -158,7 +157,7 @@ html:-ms-fullscreen #pages-wrapper {
 }
 .header-item {
   height: 100%;
-  color: #000;
+  color: #fff;
   display: inline-table;
   vertical-align: top;
 }
@@ -190,7 +189,7 @@ html:-ms-fullscreen #pages-wrapper {
   font-size: 2.2em;
 }
 a .header-btn-icon {
-  color: #000;
+  color: #fff;
 }
 a .header-btn-icon:hover {
   color: #2677b9;
@@ -418,7 +417,7 @@ input[type="number"] {
 .main-nav-btn {
   display: inline-block;
   position: relative;
-  color: #ccc;
+  color: #fff;
   height: 100%;
 }
 .main-nav-btn {
@@ -429,7 +428,7 @@ input[type="number"] {
   transition: color 250ms ease-out;
 }
 .main-nav-btn-container:hover .main-nav-btn {
-  color: #000;
+  color: #fff;
 }
 .btn-text {
   position: relative;
@@ -446,7 +445,7 @@ input[type="number"] {
   font-weight: 200;
   font-family: Helvetica, sans-serif;
   line-height: 15px;
-  color: #969696;
+  color: #fff;
   -webkit-animation: bounce-left-right 2.75s infinite;
   -moz-animation: bounce-left-right 2.75s infinite;
   -o-animation: bounce-left-right 2.75s infinite;
@@ -484,7 +483,7 @@ body[data-format="mobile"] {
   background-color: #5b5b5b;
 }
 body[data-format="mobile"] .header-item-container.active .header-btn {
-  color: #000;
+  color: #fff;
 }
 #side-drawer-container {
   position: absolute;
@@ -906,7 +905,7 @@ body[data-format="double"][data-bookend="true"] .page-container.exit-to-right.ri
 /* M A S K S */
 .mask {
   position: absolute;
-  background-color: #fff;
+  background-color: #000;
   z-index: 9999;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
