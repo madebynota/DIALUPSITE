@@ -45,8 +45,8 @@
 		determineBookend: function(page){
 			var this_page = page || states.currentPage,
 					bookend;
-					console.log("bookend Check");
-					console.log(states.endPage)
+					// console.log("bookend Check");
+					// console.log(states.endPage)
 
 			//The modulus check is a safe case for odd pages magazines where the last page isn't centered
 			if (this_page == 1 ) {
@@ -1054,7 +1054,29 @@
 					// // Store the previous hash
 					// states.previousPage = helpers.hashToPageHotspotDict( window.location.hash ).page;
 					// Go to there
-					routing.router.navigate(newhash, {trigger: true});
+					//console.log("Current Page: " + states.currentPage + " and End Page: " + states.endPage);					
+					if (format == 'mobile') {
+						routing.router.navigate(newhash, {trigger: true});
+					}
+					else {
+						if((states.currentPage != states.endPage) && (states.currentPage != 1)) {
+							$('#pages-wrapper').fadeOut(400, function() {
+					        	routing.router.navigate(newhash, {trigger: true});
+					            $('#pages-wrapper').fadeIn(500);
+					        });
+						}
+						else {				
+							if(((states.currentPage == 1) && direction == "next") || ((states.currentPage == states.endPage) && direction == "prev")) {
+								$('#pages-wrapper').fadeOut(400, function() {
+						        	routing.router.navigate(newhash, {trigger: true});
+						            $('#pages-wrapper').fadeIn(500);
+						        });
+							}
+							else {
+								routing.router.navigate(newhash, {trigger: true});
+							}
+						}
+					}
 
 				}
 			},
