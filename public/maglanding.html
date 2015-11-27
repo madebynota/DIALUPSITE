@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+		<title>Magazines</title>
+
+		<!--Favicon-->
+		<link href="data:image/vnd.microsoft.icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAClvP//v7X7/1hkjP9PXoX/u7f//7i2//+vre//TWad/2N4tf+7tv3/tLL+/7i1//+1s/v/Ynq//6Ch5/+tvv//wb7//2ZUhf8MJUf/Ijxl/5J6tv/du///TFee/wQvbf8CLHD/hn/E/9e2///Nrv//UF6n/xA4af9JVp3/wbf//5qn7f8hVaz/JWO+/xlWqf99h9j/1LP4/xg6ff8DN4L/BDaA/x0xaP/Dpe7/lZDf/wApbP8VOWz/ETV7/5Gc5v90fav/FDZv/yhr0P8VVrD/hobR/2ZUeP8AFDf/DjZ6/wUuc/8bMU//spjX/25pp/8AI1r/CDV//wclW/9+icn/Zm+U/wcdQf8jXLX/Bz+I/3Rro/9vXYT/CRcn/xlBf/8lSHr/iYSn/9u+//9NQ2T/ABhO/wI4if8LGT//nZrT/5qi4f8eFiL/AAAA/w8ID/+jldP/2b///7im7/+Liqn/k4+j/6yh2//XuP//lYnD/wYJD/8AAAD/RDpV/7m5///Cuf//wpvo/4lrpP+jdp//04W9/7x+qv/Hfa7/vn+p/7GHrP/Sk9X/so69/9N6qv+4hsb/lX++/9Kj8v/Es///HfD8/xb+//930er/aqav/zu3r/9SrKj/Or+5/zm8tP+Di5f/sXaT/zy3rv88uK7/tIWq/3Pb/v8d9P7/J+7+/z3n/v8y6f//eLzn/4GVpP9Mt7b/g31+/2mWl/93ko//tYmq/62Gqf+PaGL/OMTE/2+Zm/+At9f/KfL//zTp/v+4qvP/4qv8/9uw//+sea//u3iy/9aT2f/ak9b/iFSL/5V5u//XqPL/y47T/9eMzP+xitP/mJv6/9ml/f/Dr///bHmk/3Vqov9AXqn/IDNf/56Qyf/Ww///ZGyt/yhHZf8XNFv/hoLG/9a+//+vq/3/X5z1/1yd6P+anvX/vbf//4CGtP8GG0r/CDh//wAsbf+Xjtr/xqv5/xAmVv8PJ1H/Ax9K/zZAd/+/qvv/YJP1/1eV8f9gnO//bJj3/7i0/f+doNv/Eydk/w41hP8AIm7/aG64/5uJy/8BGT3/BSNT/wciTP8JIVH/hYzS/0B+v/9Qdbv/RXbD/2J/0P+or/v/tbL//zBWQP8ATif/AEI4/zt7XP+PerT/AA4v/wYrZf8AIlT/HBs9/4qo5P8esOr/UIrm/0uH3P9BmNP/rbT7/8S3//9XkmL/AHMI/wVpKv80iz7/x6P5/x8cLv8AABD/AAAE/19Kb//Btf//Ibvs/xiu6/8StvT/JsDz/7Kv+P+mvv//n6ve/0GVc/9Ak3P/iKfJ/7+9//+Zn9f/RFJr/11pjP+xtvj/urb//6Wz+P9Xve7/NMHq/5Wz9f+puv//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==" rel="icon" type="image/x-icon" />
+
+	 	
+		<link rel="stylesheet" type="text/css" href="css/magazinepage.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.js"></script>
+
+		<!-- Optional: Reflection -->
+		<script type="text/javascript" src="js/reflection.js"></script>
+
+		<!-- interpolate, depends on jQ 1.8.0+ -->
+		<script src="js/jquery.interpolate.js"></script>
+
+		<!-- Coverflow -->
+		<script src="js/jquery.coverflow.js"></script>
+
+	 	<!-- DON'T FORGET TO FILL OUT OpenGraph FIELDS -->
+		<meta property="og:title" content="Dial Up Magazines!">
+		<meta property="og:type" content="website">
+		<meta property="og:image" content="../img/emdedImg.png">
+
+		<meta property="article:author" content="h" />
+		<meta property="article:publisher" content="" />
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="DIAL UP">
+		<meta name="twitter:title" content="Dial Up Magazines!">
+
+		<meta name="twitter:image:src" content=" ../img/emdedImg.png"> <!-- at least 280px x 150px for Twitter (image must be < 1MB) -->
+		<meta name="twitter:domain" content="">
+
+	</head>
+	<body>
+		
+		<video autoplay loop id="bgvid">
+			<source src="img/CloudytimeS.webm" type="video/webm">
+		</video>
+		<div class="mask"></div>
+		<p id="title">MAGAZINES</p>
+
+		<div id="preview-coverflow">
+			<a href="http://sccs.meteor.com/" target="mag"><img class="cover" src="img/blogbutton.png"/></a>
+			<a href="http://schoolofdata.org/" target="mag"><img class="cover" src="img/radiobutton.png"/></a>
+		</div>
+		<script>
+			$(function() {
+				if ($.fn.reflect) {
+					$('#preview-coverflow .cover').reflect();	// only possible in very specific situations
+				}
+
+				$('#preview-coverflow').coverflow({
+					index:			0,
+					density:		2,
+					innerOffset:	70,
+					innerAngle: 	-40,
+					innerScale:		.7,
+					animateStep:	function(event, cover, offset, isVisible, isMiddle, sin, cos) {
+						if (isVisible) {
+							if (isMiddle) {
+								$(cover).css({
+									'filter':			'none',
+									'-webkit-filter':	'none'
+								});
+							} else {
+								var brightness	= 1 + Math.abs(sin),
+									contrast	= 1 - Math.abs(sin),
+									filter		= 'contrast('+contrast+') brightness('+brightness+')';
+								$(cover).css({
+									'filter':			filter,
+									'-webkit-filter':	filter
+								});
+							}
+						}
+					},
+					select: function(event, cover, offset, isVisible, isMiddle, sin, cos) {
+						console.log(cover)
+					}
+				});
+			});
+		</script>
+		
+ 	</body>
+ </html>
