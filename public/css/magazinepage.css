@@ -71,5 +71,11 @@ video#bgvid {
 }
 
 #preview-coverflow {
-	padding-top: 20%;
+	padding-top: 15%;
+}
+
+#preview-coverflow .cover {
+	cursor:		pointer;
+	box-shadow:	0 0 6em 0em white;
+	margin: 0;
 }

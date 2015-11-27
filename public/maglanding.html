@@ -49,14 +49,14 @@
 		<p id="title">MAGAZINES</p>
 
 		<div id="preview-coverflow">
-			<a href="http://sccs.meteor.com/" target="mag"><img class="cover" src="img/blogbutton.png"/></a>
-			<a href="http://schoolofdata.org/" target="mag"><img class="cover" src="img/radiobutton.png"/></a>
+			<a href="http://sccs.meteor.com/" class="cover" target="mag"><img style="width:400px" src="magazineStuff/imgs/fall2015/page-1.jpg"/></a>
+			<a href="http://schoolofdata.org/" class="cover" target="mag"><img style="width:400px;" src="magazineStuff/imgs/summer2015/page-1.jpg"/></a>
 		</div>
 		<script>
 			$(function() {
-				if ($.fn.reflect) {
-					$('#preview-coverflow .cover').reflect();	// only possible in very specific situations
-				}
+				// if ($.fn.reflect) {
+				// 	$('#preview-coverflow .cover').reflect();	// only possible in very specific situations
+				// }
 
 				$('#preview-coverflow').coverflow({
 					index:			0,
