@@ -6,13 +6,30 @@
 	// window.pulpPageEvents = _.extend({}, Backbone.Events);
 	var pageURL = window.location.pathname;
 	pageURL = pageURL.replace("/magazines/", "");
-	console.log(pageURL);
 
 	var State = Backbone.Model.extend({
 		initialize: function(){
 			this.set('single-page-width', parseInt( $('#pages').css('max-width') ));
 			this.set('format', {});
 			this.set('zoom', null);
+
+			//For loading a set of background colors to have as the reader progresses.
+			$.getJSON('../colors/'+pageURL+'-colors.json')
+			.done(function(data){
+				var colorDict = data.colorChoices;
+				var pageNum = window.location.hash;
+				pageNum = pageNum.replace("#", "");
+				var pageColors = colorDict[pageNum];
+				console.log(colorDict[pageNum])
+
+				var c1 = pageColors["firstColor"];
+				var c2 = pageColors["secondColor"];
+				$("#main-content-wrapper").css({"background": "-webkit-linear-gradient(left, " + c1 + " , " + c2 + ")", "background": "-o-linear-gradient(right, " + c1 + " , " + c2 + ")", "background": "-moz-linear-gradient(right, " + c1 + " , " + c2 + ")", "background": "linear-gradient(to right, " + c1 + " , " + c2 + ")" })
+
+			})
+			.error(function(error){
+				alert('Error loading colors data. Data file is either missing or the JSON is malformed. Try running it through jsonlint.com');
+			});
 		},
 		setPageFormat: function(page){
 			this.set('format', this.determineLayoutInformation( page ) );
@@ -55,8 +72,6 @@
 
 			} 
 			else if (this_page == states.endPage && states.endPage%2 != 1){
-				console.log('entered');
-				console.log(states.endPage);
 				bookend = 'true';
 			}
 			else {
@@ -73,23 +88,47 @@
 		currentPage: '1',
 		currentHotspot: '',
 		lastPage: '',
-		endPage: '',
+		endPage: getEndPage(),
 		lastHotspot: '',
+		colors: getColors(),
 		scaleMultiplier: 1,
 		firstRun: true,
 		showNavHelpers: true
+	}	
+
+	function getEndPage() {
+		$.getJSON('../data/'+pageURL+'.json')
+		.done(function(data){
+			var pages = data.pages;
+			return(''+(pages.length));
+			//console.log(states.endPage);
+		})
+		.error(function(error){
+			alert('Error loading data. Data file is either missing or the JSON is malformed. Try running it through jsonlint.com');
+		});
 	}
 
-	$.getJSON('../data/'+pageURL+'.json')
-	.done(function(data){
-		var pages = data.pages;
-		states.endPage = ''+(pages.length);
-		console.log(states.endPage);
+	function getColors() {
+		//For loading a set of background colors to have as the reader progresses.
+		$.getJSON('../colors/'+pageURL+'-colors.json')
+		.done(function(data){
+			var colorChoices = data.colorChoices;
+			states.colors = colorChoices;
+		})
+		.error(function(error){
+			alert('Error loading colors data. Data file is either missing or the JSON is malformed. Try running it through jsonlint.com');
+		});
+	}
+	
 
-	})
-	.error(function(error){
-		alert('Error loading data. Data file is either missing or the JSON is malformed. Try running it through jsonlint.com');
-	});
+	function checkFirstVisit() {
+	  if(document.cookie.indexOf('colorCookie')==-1) {
+	    // cookie doesn't exist, create it now
+	    document.cookie = 'colorCookie=1';
+	    //For loading a set of background colors to have as the reader progresses.
+		states.colors = getColors()
+	  }
+	}
 	
 
 	var helpers = {
@@ -1020,6 +1059,22 @@
 					routing.router.navigate(hash, {trigger: true});
 				}
 			},
+			colorSwitch: function(pageNum){
+				var colorDict = states.colors;
+				var pageColors = colorDict[pageNum];
+				console.log(colorDict[pageNum])
+				// #grad {
+				//   background: -webkit-linear-gradient(left, red , blue); /* For Safari 5.1 to 6.0 */
+				//   background: -o-linear-gradient(right, red, blue);  For Opera 11.1 to 12.0 
+				//   background: -moz-linear-gradient(right, red, blue); /* For Firefox 3.6 to 15 */
+				//   background: linear-gradient(to right, red , blue); /* Standard syntax */
+				// }
+
+				var c1 = pageColors["firstColor"];
+				var c2 = pageColors["secondColor"];
+
+				$("#main-content-wrapper").css({"background": "-webkit-linear-gradient(left, " + c1 + " , " + c2 + ")", "background": "-o-linear-gradient(right, " + c1 + " , " + c2 + ")", "background": "-moz-linear-gradient(right, " + c1 + " , " + c2 + ")", "background": "linear-gradient(to right, " + c1 + " , " + c2 + ")" })
+			},
 			fromKeyboardOrGesture: function(direction){
 				// direction can be: next, prev, pageView or false if it wasn't a key code we captured
 				// If the body is changing then don't do anything
@@ -1062,6 +1117,8 @@
 					else {
 						if((states.currentPage != states.endPage) && (states.currentPage != 1)) {
 							$('#pages-wrapper').fadeOut(400, function() {
+								//SWITCH COLOR
+								routing.set.colorSwitch(states.currentPage);
 					        	routing.router.navigate(newhash, {trigger: true});
 					            $('#pages-wrapper').fadeIn(500);
 					        });

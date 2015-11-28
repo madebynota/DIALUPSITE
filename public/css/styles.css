@@ -68,7 +68,6 @@ body[data-state="hotspot"] #footer {
 }
 #header {
   width: 100%;
-  background-color: #000;
   padding: 7px 5px 7px 5px;
   margin-bottom: 0px;
   margin-left: auto;
@@ -761,7 +760,7 @@ body[data-format="double"][data-bookend="false"] .page-container.viewing.right-p
   right: 0;
   position: absolute;
   z-index: -1;
-  background: url("../imgs/assets/border.png") repeat-y 1px top #fff;
+  background: url("../magazineAssets/assets/border.png") repeat-y 1px top #fff;
 }
 body[data-format="mobile"] #btns {
   visibility: hidden;
