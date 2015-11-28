@@ -5,7 +5,8 @@
 	// Useful for analytics
 	// window.pulpPageEvents = _.extend({}, Backbone.Events);
 	var pageURL = window.location.pathname;
-	pageURL = pageURL.replace("/magazine/", "");
+	pageURL = pageURL.replace("/magazines/", "");
+	console.log(pageURL);
 
 	var State = Backbone.Model.extend({
 		initialize: function(){
@@ -79,7 +80,7 @@
 		showNavHelpers: true
 	}
 
-	$.getJSON('data/'+pageURL+'.json')
+	$.getJSON('../data/'+pageURL+'.json')
 	.done(function(data){
 		var pages = data.pages;
 		states.endPage = ''+(pages.length);
@@ -946,7 +947,7 @@
 				$img = $('#page-container-'+page_number).find('img');
 				src = $img.attr('src');
 				if (src.indexOf('data:image\/gif') > -2) {
-					$img.attr('src', 'imgs/'+pageURL+'/page-'+page_number+'.'+PULP_SETTINGS.imgFormat );
+					$img.attr('src', '../magazineAssets/'+pageURL+'/page-'+page_number+'.'+PULP_SETTINGS.imgFormat );
 				}
 			}
 
@@ -1390,7 +1391,7 @@
 			this.browserHacks();
 		},
 		loadPages: function(){
-			$.getJSON('data/'+pageURL+'.json')
+			$.getJSON('../data/'+pageURL+'.json')
 				.done(function(data){
 					var pages = data.pages,
 							endnotes = data.endnotes;

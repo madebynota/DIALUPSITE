@@ -20,14 +20,14 @@ app.use(bodyParser.urlencoded({
 var passwords = {"test":"https://www.youtube.com/"}
 
 
-app.get('/', function(req, res) {res.render('index.html')});
+app.get('/', function(req, res) {res.render('home.html')});
 app.get('/portal', function(req, res) {res.render('portal.html')});
 app.get('/magazines', function(req, res) {res.render('maglanding.html')});
 // app.get('/summer2015', function(req, res) {res.render('summer2015.html')});
 
 //Routes for Magazines
-app.get('/magazines/summer2015', function(req, res) {res.render('magazineStuff/index.html')});
-app.get('/magazines/fall2015', function(req, res) {res.render('magazineStuff/index.html')});
+app.get('/magazines/summer2015', function(req, res) {res.render('reader.html')});
+app.get('/magazines/fall2015', function(req, res) {res.render('reader.html')});
 
 app.post('/entry', function(req, res) {
 	var entry = req.body.textEntry;
