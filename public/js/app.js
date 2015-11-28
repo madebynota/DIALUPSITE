@@ -100,8 +100,7 @@
 		$.getJSON('../data/'+pageURL+'.json')
 		.done(function(data){
 			var pages = data.pages;
-			return(''+(pages.length));
-			//console.log(states.endPage);
+			states.endPage = ''+(pages.length);
 		})
 		.error(function(error){
 			alert('Error loading data. Data file is either missing or the JSON is malformed. Try running it through jsonlint.com');
@@ -1063,6 +1062,7 @@
 				var colorDict = states.colors;
 				var pageColors = colorDict[pageNum];
 				console.log(colorDict[pageNum])
+
 				// #grad {
 				//   background: -webkit-linear-gradient(left, red , blue); /* For Safari 5.1 to 6.0 */
 				//   background: -o-linear-gradient(right, red, blue);  For Opera 11.1 to 12.0 
@@ -1115,9 +1115,9 @@
 						routing.router.navigate(newhash, {trigger: true});
 					}
 					else {
+						console.log(states.endPage);
 						if((states.currentPage != states.endPage) && (states.currentPage != 1)) {
 							$('#pages-wrapper').fadeOut(400, function() {
-								//SWITCH COLOR
 								routing.set.colorSwitch(states.currentPage);
 					        	routing.router.navigate(newhash, {trigger: true});
 					            $('#pages-wrapper').fadeIn(500);
@@ -1126,6 +1126,7 @@
 						else {				
 							if(((states.currentPage == 1) && direction == "next") || ((states.currentPage == states.endPage) && direction == "prev")) {
 								$('#pages-wrapper').fadeOut(400, function() {
+									routing.set.colorSwitch(states.currentPage);
 						        	routing.router.navigate(newhash, {trigger: true});
 						            $('#pages-wrapper').fadeIn(500);
 						        });
