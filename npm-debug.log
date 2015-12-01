@@ -1,0 +1,1021 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@2.7.5
+3 info using node@v0.12.0
+4 warn package.json dialupsite@1.0.0 No repository field.
+5 verbose install where, deps [ '/Users/michaelmartinez/Desktop/code/dialup/DialUpSite',
+5 verbose install   [ 'bespoke',
+5 verbose install     'bespoke-backdrop',
+5 verbose install     'bespoke-hash',
+5 verbose install     'bespoke-keys',
+5 verbose install     'bespoke-progress',
+5 verbose install     'bespoke-scale',
+5 verbose install     'bespoke-theme-voltaire',
+5 verbose install     'bespoke-touch',
+5 verbose install     'consolidate',
+5 verbose install     'debowerify',
+5 verbose install     'del',
+5 verbose install     'express',
+5 verbose install     'gulp',
+5 verbose install     'gulp-browserify',
+5 verbose install     'gulp-connect',
+5 verbose install     'gulp-plumber',
+5 verbose install     'gulp-rename',
+5 verbose install     'mustache',
+5 verbose install     'path',
+5 verbose install     'through',
+5 verbose install     'bbody-parser' ] ]
+6 verbose install where, peers [ '/Users/michaelmartinez/Desktop/code/dialup/DialUpSite', [] ]
+7 info preinstall dialupsite@1.0.0
+8 warn package.json path@0.11.14 path is also the name of a node core module.
+9 silly cache add args [ 'bespoke-hash@latest', null ]
+10 verbose cache add spec bespoke-hash@latest
+11 silly cache add args [ 'bespoke-keys@latest', null ]
+12 verbose cache add spec bespoke-keys@latest
+13 silly cache add args [ 'bespoke-progress@latest', null ]
+14 verbose cache add spec bespoke-progress@latest
+15 silly cache add args [ 'bespoke-scale@latest', null ]
+16 verbose cache add spec bespoke-scale@latest
+17 silly cache add parsed spec { raw: 'bespoke-hash@latest',
+17 silly cache add   scope: null,
+17 silly cache add   name: 'bespoke-hash',
+17 silly cache add   rawSpec: 'latest',
+17 silly cache add   spec: 'latest',
+17 silly cache add   type: 'tag' }
+18 verbose addNamed bespoke-hash@latest
+19 silly addNamed semver.valid null
+20 silly addNamed semver.validRange null
+21 info addNameTag [ 'bespoke-hash', 'latest' ]
+22 silly mapToRegistry name bespoke-hash
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry uri https://registry.npmjs.org/bespoke-hash
+26 verbose addNameTag registry:https://registry.npmjs.org/bespoke-hash not in flight; fetching
+27 silly cache add parsed spec { raw: 'bespoke-keys@latest',
+27 silly cache add   scope: null,
+27 silly cache add   name: 'bespoke-keys',
+27 silly cache add   rawSpec: 'latest',
+27 silly cache add   spec: 'latest',
+27 silly cache add   type: 'tag' }
+28 verbose addNamed bespoke-keys@latest
+29 silly addNamed semver.valid null
+30 silly addNamed semver.validRange null
+31 info addNameTag [ 'bespoke-keys', 'latest' ]
+32 silly mapToRegistry name bespoke-keys
+33 silly mapToRegistry using default registry
+34 silly mapToRegistry registry https://registry.npmjs.org/
+35 silly mapToRegistry uri https://registry.npmjs.org/bespoke-keys
+36 verbose addNameTag registry:https://registry.npmjs.org/bespoke-keys not in flight; fetching
+37 silly cache add parsed spec { raw: 'bespoke-progress@latest',
+37 silly cache add   scope: null,
+37 silly cache add   name: 'bespoke-progress',
+37 silly cache add   rawSpec: 'latest',
+37 silly cache add   spec: 'latest',
+37 silly cache add   type: 'tag' }
+38 verbose addNamed bespoke-progress@latest
+39 silly addNamed semver.valid null
+40 silly addNamed semver.validRange null
+41 info addNameTag [ 'bespoke-progress', 'latest' ]
+42 silly mapToRegistry name bespoke-progress
+43 silly mapToRegistry using default registry
+44 silly mapToRegistry registry https://registry.npmjs.org/
+45 silly mapToRegistry uri https://registry.npmjs.org/bespoke-progress
+46 verbose addNameTag registry:https://registry.npmjs.org/bespoke-progress not in flight; fetching
+47 silly cache add parsed spec { raw: 'bespoke-scale@latest',
+47 silly cache add   scope: null,
+47 silly cache add   name: 'bespoke-scale',
+47 silly cache add   rawSpec: 'latest',
+47 silly cache add   spec: 'latest',
+47 silly cache add   type: 'tag' }
+48 verbose addNamed bespoke-scale@latest
+49 silly addNamed semver.valid null
+50 silly addNamed semver.validRange null
+51 info addNameTag [ 'bespoke-scale', 'latest' ]
+52 silly mapToRegistry name bespoke-scale
+53 silly mapToRegistry using default registry
+54 silly mapToRegistry registry https://registry.npmjs.org/
+55 silly mapToRegistry uri https://registry.npmjs.org/bespoke-scale
+56 verbose addNameTag registry:https://registry.npmjs.org/bespoke-scale not in flight; fetching
+57 silly cache add args [ 'bespoke-theme-voltaire@latest', null ]
+58 verbose cache add spec bespoke-theme-voltaire@latest
+59 silly cache add args [ 'bespoke-touch@latest', null ]
+60 verbose cache add spec bespoke-touch@latest
+61 silly cache add args [ 'consolidate@latest', null ]
+62 verbose cache add spec consolidate@latest
+63 silly cache add args [ 'debowerify@latest', null ]
+64 verbose cache add spec debowerify@latest
+65 silly cache add args [ 'del@latest', null ]
+66 verbose cache add spec del@latest
+67 silly cache add args [ 'express@latest', null ]
+68 verbose cache add spec express@latest
+69 silly cache add args [ 'gulp@latest', null ]
+70 verbose cache add spec gulp@latest
+71 silly cache add args [ 'gulp-browserify@latest', null ]
+72 verbose cache add spec gulp-browserify@latest
+73 silly cache add args [ 'gulp-connect@latest', null ]
+74 verbose cache add spec gulp-connect@latest
+75 silly cache add args [ 'gulp-plumber@latest', null ]
+76 verbose cache add spec gulp-plumber@latest
+77 silly cache add args [ 'gulp-rename@latest', null ]
+78 verbose cache add spec gulp-rename@latest
+79 silly cache add args [ 'mustache@latest', null ]
+80 verbose cache add spec mustache@latest
+81 silly cache add args [ 'path@latest', null ]
+82 verbose cache add spec path@latest
+83 silly cache add args [ 'through@latest', null ]
+84 verbose cache add spec through@latest
+85 silly cache add parsed spec { raw: 'bespoke-theme-voltaire@latest',
+85 silly cache add   scope: null,
+85 silly cache add   name: 'bespoke-theme-voltaire',
+85 silly cache add   rawSpec: 'latest',
+85 silly cache add   spec: 'latest',
+85 silly cache add   type: 'tag' }
+86 verbose addNamed bespoke-theme-voltaire@latest
+87 silly addNamed semver.valid null
+88 silly addNamed semver.validRange null
+89 info addNameTag [ 'bespoke-theme-voltaire', 'latest' ]
+90 silly mapToRegistry name bespoke-theme-voltaire
+91 silly mapToRegistry using default registry
+92 silly mapToRegistry registry https://registry.npmjs.org/
+93 silly mapToRegistry uri https://registry.npmjs.org/bespoke-theme-voltaire
+94 verbose addNameTag registry:https://registry.npmjs.org/bespoke-theme-voltaire not in flight; fetching
+95 silly cache add parsed spec { raw: 'bespoke-touch@latest',
+95 silly cache add   scope: null,
+95 silly cache add   name: 'bespoke-touch',
+95 silly cache add   rawSpec: 'latest',
+95 silly cache add   spec: 'latest',
+95 silly cache add   type: 'tag' }
+96 verbose addNamed bespoke-touch@latest
+97 silly addNamed semver.valid null
+98 silly addNamed semver.validRange null
+99 info addNameTag [ 'bespoke-touch', 'latest' ]
+100 silly mapToRegistry name bespoke-touch
+101 silly mapToRegistry using default registry
+102 silly mapToRegistry registry https://registry.npmjs.org/
+103 silly mapToRegistry uri https://registry.npmjs.org/bespoke-touch
+104 verbose addNameTag registry:https://registry.npmjs.org/bespoke-touch not in flight; fetching
+105 silly cache add parsed spec { raw: 'consolidate@latest',
+105 silly cache add   scope: null,
+105 silly cache add   name: 'consolidate',
+105 silly cache add   rawSpec: 'latest',
+105 silly cache add   spec: 'latest',
+105 silly cache add   type: 'tag' }
+106 verbose addNamed consolidate@latest
+107 silly addNamed semver.valid null
+108 silly addNamed semver.validRange null
+109 info addNameTag [ 'consolidate', 'latest' ]
+110 silly mapToRegistry name consolidate
+111 silly mapToRegistry using default registry
+112 silly mapToRegistry registry https://registry.npmjs.org/
+113 silly mapToRegistry uri https://registry.npmjs.org/consolidate
+114 verbose addNameTag registry:https://registry.npmjs.org/consolidate not in flight; fetching
+115 silly cache add parsed spec { raw: 'debowerify@latest',
+115 silly cache add   scope: null,
+115 silly cache add   name: 'debowerify',
+115 silly cache add   rawSpec: 'latest',
+115 silly cache add   spec: 'latest',
+115 silly cache add   type: 'tag' }
+116 verbose addNamed debowerify@latest
+117 silly addNamed semver.valid null
+118 silly addNamed semver.validRange null
+119 info addNameTag [ 'debowerify', 'latest' ]
+120 silly mapToRegistry name debowerify
+121 silly mapToRegistry using default registry
+122 silly mapToRegistry registry https://registry.npmjs.org/
+123 silly mapToRegistry uri https://registry.npmjs.org/debowerify
+124 verbose addNameTag registry:https://registry.npmjs.org/debowerify not in flight; fetching
+125 silly cache add parsed spec { raw: 'del@latest',
+125 silly cache add   scope: null,
+125 silly cache add   name: 'del',
+125 silly cache add   rawSpec: 'latest',
+125 silly cache add   spec: 'latest',
+125 silly cache add   type: 'tag' }
+126 verbose addNamed del@latest
+127 silly addNamed semver.valid null
+128 silly addNamed semver.validRange null
+129 info addNameTag [ 'del', 'latest' ]
+130 silly mapToRegistry name del
+131 silly mapToRegistry using default registry
+132 silly mapToRegistry registry https://registry.npmjs.org/
+133 silly mapToRegistry uri https://registry.npmjs.org/del
+134 verbose addNameTag registry:https://registry.npmjs.org/del not in flight; fetching
+135 silly cache add parsed spec { raw: 'gulp@latest',
+135 silly cache add   scope: null,
+135 silly cache add   name: 'gulp',
+135 silly cache add   rawSpec: 'latest',
+135 silly cache add   spec: 'latest',
+135 silly cache add   type: 'tag' }
+136 verbose addNamed gulp@latest
+137 silly addNamed semver.valid null
+138 silly addNamed semver.validRange null
+139 info addNameTag [ 'gulp', 'latest' ]
+140 silly mapToRegistry name gulp
+141 silly mapToRegistry using default registry
+142 silly mapToRegistry registry https://registry.npmjs.org/
+143 silly mapToRegistry uri https://registry.npmjs.org/gulp
+144 verbose addNameTag registry:https://registry.npmjs.org/gulp not in flight; fetching
+145 silly cache add parsed spec { raw: 'gulp-browserify@latest',
+145 silly cache add   scope: null,
+145 silly cache add   name: 'gulp-browserify',
+145 silly cache add   rawSpec: 'latest',
+145 silly cache add   spec: 'latest',
+145 silly cache add   type: 'tag' }
+146 verbose addNamed gulp-browserify@latest
+147 silly addNamed semver.valid null
+148 silly addNamed semver.validRange null
+149 info addNameTag [ 'gulp-browserify', 'latest' ]
+150 silly mapToRegistry name gulp-browserify
+151 silly mapToRegistry using default registry
+152 silly mapToRegistry registry https://registry.npmjs.org/
+153 silly mapToRegistry uri https://registry.npmjs.org/gulp-browserify
+154 verbose addNameTag registry:https://registry.npmjs.org/gulp-browserify not in flight; fetching
+155 silly cache add parsed spec { raw: 'gulp-connect@latest',
+155 silly cache add   scope: null,
+155 silly cache add   name: 'gulp-connect',
+155 silly cache add   rawSpec: 'latest',
+155 silly cache add   spec: 'latest',
+155 silly cache add   type: 'tag' }
+156 verbose addNamed gulp-connect@latest
+157 silly addNamed semver.valid null
+158 silly addNamed semver.validRange null
+159 info addNameTag [ 'gulp-connect', 'latest' ]
+160 silly mapToRegistry name gulp-connect
+161 silly mapToRegistry using default registry
+162 silly mapToRegistry registry https://registry.npmjs.org/
+163 silly mapToRegistry uri https://registry.npmjs.org/gulp-connect
+164 verbose addNameTag registry:https://registry.npmjs.org/gulp-connect not in flight; fetching
+165 silly cache add parsed spec { raw: 'gulp-plumber@latest',
+165 silly cache add   scope: null,
+165 silly cache add   name: 'gulp-plumber',
+165 silly cache add   rawSpec: 'latest',
+165 silly cache add   spec: 'latest',
+165 silly cache add   type: 'tag' }
+166 verbose addNamed gulp-plumber@latest
+167 silly addNamed semver.valid null
+168 silly addNamed semver.validRange null
+169 info addNameTag [ 'gulp-plumber', 'latest' ]
+170 silly mapToRegistry name gulp-plumber
+171 silly mapToRegistry using default registry
+172 silly mapToRegistry registry https://registry.npmjs.org/
+173 silly mapToRegistry uri https://registry.npmjs.org/gulp-plumber
+174 verbose addNameTag registry:https://registry.npmjs.org/gulp-plumber not in flight; fetching
+175 silly cache add parsed spec { raw: 'express@latest',
+175 silly cache add   scope: null,
+175 silly cache add   name: 'express',
+175 silly cache add   rawSpec: 'latest',
+175 silly cache add   spec: 'latest',
+175 silly cache add   type: 'tag' }
+176 verbose addNamed express@latest
+177 silly addNamed semver.valid null
+178 silly addNamed semver.validRange null
+179 info addNameTag [ 'express', 'latest' ]
+180 silly mapToRegistry name express
+181 silly mapToRegistry using default registry
+182 silly mapToRegistry registry https://registry.npmjs.org/
+183 silly mapToRegistry uri https://registry.npmjs.org/express
+184 verbose addNameTag registry:https://registry.npmjs.org/express not in flight; fetching
+185 silly cache add parsed spec { raw: 'gulp-rename@latest',
+185 silly cache add   scope: null,
+185 silly cache add   name: 'gulp-rename',
+185 silly cache add   rawSpec: 'latest',
+185 silly cache add   spec: 'latest',
+185 silly cache add   type: 'tag' }
+186 verbose addNamed gulp-rename@latest
+187 silly addNamed semver.valid null
+188 silly addNamed semver.validRange null
+189 info addNameTag [ 'gulp-rename', 'latest' ]
+190 silly mapToRegistry name gulp-rename
+191 silly mapToRegistry using default registry
+192 silly mapToRegistry registry https://registry.npmjs.org/
+193 silly mapToRegistry uri https://registry.npmjs.org/gulp-rename
+194 verbose addNameTag registry:https://registry.npmjs.org/gulp-rename not in flight; fetching
+195 silly cache add parsed spec { raw: 'mustache@latest',
+195 silly cache add   scope: null,
+195 silly cache add   name: 'mustache',
+195 silly cache add   rawSpec: 'latest',
+195 silly cache add   spec: 'latest',
+195 silly cache add   type: 'tag' }
+196 verbose addNamed mustache@latest
+197 silly addNamed semver.valid null
+198 silly addNamed semver.validRange null
+199 info addNameTag [ 'mustache', 'latest' ]
+200 silly mapToRegistry name mustache
+201 silly mapToRegistry using default registry
+202 silly mapToRegistry registry https://registry.npmjs.org/
+203 silly mapToRegistry uri https://registry.npmjs.org/mustache
+204 verbose addNameTag registry:https://registry.npmjs.org/mustache not in flight; fetching
+205 silly cache add parsed spec { raw: 'path@latest',
+205 silly cache add   scope: null,
+205 silly cache add   name: 'path',
+205 silly cache add   rawSpec: 'latest',
+205 silly cache add   spec: 'latest',
+205 silly cache add   type: 'tag' }
+206 verbose addNamed path@latest
+207 silly addNamed semver.valid null
+208 silly addNamed semver.validRange null
+209 info addNameTag [ 'path', 'latest' ]
+210 silly mapToRegistry name path
+211 silly mapToRegistry using default registry
+212 silly mapToRegistry registry https://registry.npmjs.org/
+213 silly mapToRegistry uri https://registry.npmjs.org/path
+214 verbose addNameTag registry:https://registry.npmjs.org/path not in flight; fetching
+215 silly cache add args [ 'bbody-parser@latest', null ]
+216 verbose cache add spec bbody-parser@latest
+217 silly cache add args [ 'bespoke@latest', null ]
+218 verbose cache add spec bespoke@latest
+219 silly cache add args [ 'bespoke-backdrop@latest', null ]
+220 verbose cache add spec bespoke-backdrop@latest
+221 silly cache add parsed spec { raw: 'through@latest',
+221 silly cache add   scope: null,
+221 silly cache add   name: 'through',
+221 silly cache add   rawSpec: 'latest',
+221 silly cache add   spec: 'latest',
+221 silly cache add   type: 'tag' }
+222 verbose addNamed through@latest
+223 silly addNamed semver.valid null
+224 silly addNamed semver.validRange null
+225 info addNameTag [ 'through', 'latest' ]
+226 silly mapToRegistry name through
+227 silly mapToRegistry using default registry
+228 silly mapToRegistry registry https://registry.npmjs.org/
+229 silly mapToRegistry uri https://registry.npmjs.org/through
+230 verbose addNameTag registry:https://registry.npmjs.org/through not in flight; fetching
+231 silly cache add parsed spec { raw: 'bbody-parser@latest',
+231 silly cache add   scope: null,
+231 silly cache add   name: 'bbody-parser',
+231 silly cache add   rawSpec: 'latest',
+231 silly cache add   spec: 'latest',
+231 silly cache add   type: 'tag' }
+232 verbose addNamed bbody-parser@latest
+233 silly addNamed semver.valid null
+234 silly addNamed semver.validRange null
+235 info addNameTag [ 'bbody-parser', 'latest' ]
+236 silly mapToRegistry name bbody-parser
+237 silly mapToRegistry using default registry
+238 silly mapToRegistry registry https://registry.npmjs.org/
+239 silly mapToRegistry uri https://registry.npmjs.org/bbody-parser
+240 verbose addNameTag registry:https://registry.npmjs.org/bbody-parser not in flight; fetching
+241 silly cache add parsed spec { raw: 'bespoke@latest',
+241 silly cache add   scope: null,
+241 silly cache add   name: 'bespoke',
+241 silly cache add   rawSpec: 'latest',
+241 silly cache add   spec: 'latest',
+241 silly cache add   type: 'tag' }
+242 verbose addNamed bespoke@latest
+243 silly addNamed semver.valid null
+244 silly addNamed semver.validRange null
+245 info addNameTag [ 'bespoke', 'latest' ]
+246 silly mapToRegistry name bespoke
+247 silly mapToRegistry using default registry
+248 silly mapToRegistry registry https://registry.npmjs.org/
+249 silly mapToRegistry uri https://registry.npmjs.org/bespoke
+250 verbose addNameTag registry:https://registry.npmjs.org/bespoke not in flight; fetching
+251 silly cache add parsed spec { raw: 'bespoke-backdrop@latest',
+251 silly cache add   scope: null,
+251 silly cache add   name: 'bespoke-backdrop',
+251 silly cache add   rawSpec: 'latest',
+251 silly cache add   spec: 'latest',
+251 silly cache add   type: 'tag' }
+252 verbose addNamed bespoke-backdrop@latest
+253 silly addNamed semver.valid null
+254 silly addNamed semver.validRange null
+255 info addNameTag [ 'bespoke-backdrop', 'latest' ]
+256 silly mapToRegistry name bespoke-backdrop
+257 silly mapToRegistry using default registry
+258 silly mapToRegistry registry https://registry.npmjs.org/
+259 silly mapToRegistry uri https://registry.npmjs.org/bespoke-backdrop
+260 verbose addNameTag registry:https://registry.npmjs.org/bespoke-backdrop not in flight; fetching
+261 verbose request uri https://registry.npmjs.org/bbody-parser
+262 verbose request no auth needed
+263 info attempt registry request try #1 at 9:57:48 PM
+264 verbose request id c940ded3fa4644c3
+265 http request GET https://registry.npmjs.org/bbody-parser
+266 verbose request uri https://registry.npmjs.org/bespoke-hash
+267 verbose request no auth needed
+268 info attempt registry request try #1 at 9:57:48 PM
+269 verbose etag "DASXKH7RSQ3YPBH687P7PPXOF"
+270 http request GET https://registry.npmjs.org/bespoke-hash
+271 verbose request uri https://registry.npmjs.org/bespoke-scale
+272 verbose request no auth needed
+273 info attempt registry request try #1 at 9:57:48 PM
+274 verbose etag "AJN42Q7OBGREDIQ7QVILH2YGZ"
+275 http request GET https://registry.npmjs.org/bespoke-scale
+276 verbose request uri https://registry.npmjs.org/bespoke-touch
+277 verbose request no auth needed
+278 info attempt registry request try #1 at 9:57:48 PM
+279 verbose etag "6RU66U4P0R2Z8KC5T4K4DNTLJ"
+280 http request GET https://registry.npmjs.org/bespoke-touch
+281 verbose request uri https://registry.npmjs.org/bespoke-keys
+282 verbose request no auth needed
+283 info attempt registry request try #1 at 9:57:48 PM
+284 verbose etag "7QA09UEVEK5D14FZMEA7547CT"
+285 http request GET https://registry.npmjs.org/bespoke-keys
+286 verbose request uri https://registry.npmjs.org/bespoke-progress
+287 verbose request no auth needed
+288 info attempt registry request try #1 at 9:57:48 PM
+289 verbose etag "F1EHHZCME635UFEZZ2AO2RGC8"
+290 http request GET https://registry.npmjs.org/bespoke-progress
+291 verbose request uri https://registry.npmjs.org/consolidate
+292 verbose request no auth needed
+293 info attempt registry request try #1 at 9:57:48 PM
+294 verbose etag "8QW1ER7OFXCPN6QU886VY1CA"
+295 http request GET https://registry.npmjs.org/consolidate
+296 verbose request uri https://registry.npmjs.org/bespoke-theme-voltaire
+297 verbose request no auth needed
+298 info attempt registry request try #1 at 9:57:48 PM
+299 verbose etag "7I5I7SV92A2KH31SU1AP1FY1P"
+300 http request GET https://registry.npmjs.org/bespoke-theme-voltaire
+301 verbose request uri https://registry.npmjs.org/debowerify
+302 verbose request no auth needed
+303 info attempt registry request try #1 at 9:57:48 PM
+304 verbose etag "BEQ1U034WSKV6DU879G9IJSXG"
+305 http request GET https://registry.npmjs.org/debowerify
+306 verbose request uri https://registry.npmjs.org/del
+307 verbose request no auth needed
+308 info attempt registry request try #1 at 9:57:48 PM
+309 verbose etag "80DGSFSPLNPCXB5MD2KV9OWI5"
+310 http request GET https://registry.npmjs.org/del
+311 verbose request uri https://registry.npmjs.org/gulp-browserify
+312 verbose request no auth needed
+313 info attempt registry request try #1 at 9:57:48 PM
+314 verbose etag "CVT42I1S4AGNUUONGKCVLPIBV"
+315 http request GET https://registry.npmjs.org/gulp-browserify
+316 verbose request uri https://registry.npmjs.org/gulp-connect
+317 verbose request no auth needed
+318 info attempt registry request try #1 at 9:57:48 PM
+319 verbose etag "4ZTG69PO8WXWORJ5LOEEYNXRG"
+320 http request GET https://registry.npmjs.org/gulp-connect
+321 verbose request uri https://registry.npmjs.org/gulp-plumber
+322 verbose request no auth needed
+323 info attempt registry request try #1 at 9:57:48 PM
+324 verbose etag "GU3MB969HAVTBMJMQH4850T6"
+325 http request GET https://registry.npmjs.org/gulp-plumber
+326 verbose request uri https://registry.npmjs.org/mustache
+327 verbose request no auth needed
+328 info attempt registry request try #1 at 9:57:48 PM
+329 verbose etag "ABOIODGY488G83DSWO5G3HH1W"
+330 http request GET https://registry.npmjs.org/mustache
+331 verbose request uri https://registry.npmjs.org/gulp-rename
+332 verbose request no auth needed
+333 info attempt registry request try #1 at 9:57:48 PM
+334 verbose etag "9WQ5G50T00STOIPX50TD7SIEL"
+335 http request GET https://registry.npmjs.org/gulp-rename
+336 verbose request uri https://registry.npmjs.org/path
+337 verbose request no auth needed
+338 info attempt registry request try #1 at 9:57:48 PM
+339 verbose etag "127LYN0XHAT3O1V1TMAI9FWV9"
+340 http request GET https://registry.npmjs.org/path
+341 verbose request uri https://registry.npmjs.org/gulp
+342 verbose request no auth needed
+343 info attempt registry request try #1 at 9:57:48 PM
+344 verbose etag "7OZ0XRXF19F3443P4N065XM5D"
+345 http request GET https://registry.npmjs.org/gulp
+346 verbose request uri https://registry.npmjs.org/bespoke-backdrop
+347 verbose request no auth needed
+348 info attempt registry request try #1 at 9:57:48 PM
+349 verbose etag "2OLG8UIE0RH4ITHT2FDRB1UWO"
+350 http request GET https://registry.npmjs.org/bespoke-backdrop
+351 verbose request uri https://registry.npmjs.org/bespoke
+352 verbose request no auth needed
+353 info attempt registry request try #1 at 9:57:48 PM
+354 verbose etag "1EBOV0BQEFJ50RC7KRDV9AXV2"
+355 http request GET https://registry.npmjs.org/bespoke
+356 verbose request uri https://registry.npmjs.org/through
+357 verbose request no auth needed
+358 info attempt registry request try #1 at 9:57:48 PM
+359 verbose etag "ALKA9TY1ND2F8NT0KSRGSR4NR"
+360 http request GET https://registry.npmjs.org/through
+361 verbose request uri https://registry.npmjs.org/express
+362 verbose request no auth needed
+363 info attempt registry request try #1 at 9:57:48 PM
+364 verbose etag "4RHIGFHT9UT7C92YB6AS3R3BR"
+365 http request GET https://registry.npmjs.org/express
+366 http 304 https://registry.npmjs.org/path
+367 silly get cb [ 304,
+367 silly get   { date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+367 silly get     via: '1.1 varnish',
+367 silly get     'cache-control': 'max-age=60',
+367 silly get     etag: '"127LYN0XHAT3O1V1TMAI9FWV9"',
+367 silly get     age: '53',
+367 silly get     connection: 'keep-alive',
+367 silly get     'x-served-by': 'cache-dfw1835-DFW',
+367 silly get     'x-cache': 'HIT',
+367 silly get     'x-cache-hits': '2',
+367 silly get     'x-timer': 'S1448769467.124488,VS0,VE0',
+367 silly get     vary: 'Accept' } ]
+368 verbose etag https://registry.npmjs.org/path from cache
+369 verbose get saving path to /Users/michaelmartinez/.npm/registry.npmjs.org/path/.cache.json
+370 http 304 https://registry.npmjs.org/through
+371 silly get cb [ 304,
+371 silly get   { date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+371 silly get     via: '1.1 varnish',
+371 silly get     'cache-control': 'max-age=60',
+371 silly get     etag: '"ALKA9TY1ND2F8NT0KSRGSR4NR"',
+371 silly get     age: '21',
+371 silly get     connection: 'keep-alive',
+371 silly get     'x-served-by': 'cache-dfw1824-DFW',
+371 silly get     'x-cache': 'HIT',
+371 silly get     'x-cache-hits': '1',
+371 silly get     'x-timer': 'S1448769467.142571,VS0,VE0',
+371 silly get     vary: 'Accept' } ]
+372 verbose etag https://registry.npmjs.org/through from cache
+373 verbose get saving through to /Users/michaelmartinez/.npm/registry.npmjs.org/through/.cache.json
+374 http 200 https://registry.npmjs.org/gulp-rename
+375 silly get cb [ 200,
+375 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+375 silly get     etag: '"CAETP8CBJRPUJUE10J41KL8IQ"',
+375 silly get     'content-type': 'application/json',
+375 silly get     'cache-control': 'max-age=60',
+375 silly get     'content-length': '13323',
+375 silly get     'accept-ranges': 'bytes',
+375 silly get     date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+375 silly get     via: '1.1 varnish',
+375 silly get     age: '0',
+375 silly get     connection: 'keep-alive',
+375 silly get     'x-served-by': 'cache-dfw1832-DFW',
+375 silly get     'x-cache': 'HIT',
+375 silly get     'x-cache-hits': '1',
+375 silly get     'x-timer': 'S1448769467.107007,VS0,VE48',
+375 silly get     vary: 'Accept' } ]
+376 verbose get saving gulp-rename to /Users/michaelmartinez/.npm/registry.npmjs.org/gulp-rename/.cache.json
+377 http 404 https://registry.npmjs.org/bbody-parser
+378 verbose headers { 'content-type': 'application/json',
+378 verbose headers   'cache-control': 'max-age=0',
+378 verbose headers   'content-length': '2',
+378 verbose headers   'accept-ranges': 'bytes',
+378 verbose headers   date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+378 verbose headers   via: '1.1 varnish',
+378 verbose headers   age: '0',
+378 verbose headers   connection: 'keep-alive',
+378 verbose headers   'x-served-by': 'cache-dfw1830-DFW',
+378 verbose headers   'x-cache': 'MISS',
+378 verbose headers   'x-cache-hits': '0',
+378 verbose headers   'x-timer': 'S1448769467.106557,VS0,VE57' }
+379 silly get cb [ 404,
+379 silly get   { 'content-type': 'application/json',
+379 silly get     'cache-control': 'max-age=0',
+379 silly get     'content-length': '2',
+379 silly get     'accept-ranges': 'bytes',
+379 silly get     date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+379 silly get     via: '1.1 varnish',
+379 silly get     age: '0',
+379 silly get     connection: 'keep-alive',
+379 silly get     'x-served-by': 'cache-dfw1830-DFW',
+379 silly get     'x-cache': 'MISS',
+379 silly get     'x-cache-hits': '0',
+379 silly get     'x-timer': 'S1448769467.106557,VS0,VE57' } ]
+380 http 304 https://registry.npmjs.org/bespoke-hash
+381 silly get cb [ 304,
+381 silly get   { date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+381 silly get     via: '1.1 varnish',
+381 silly get     'cache-control': 'max-age=60',
+381 silly get     etag: '"DASXKH7RSQ3YPBH687P7PPXOF"',
+381 silly get     age: '0',
+381 silly get     connection: 'keep-alive',
+381 silly get     'x-served-by': 'cache-dfw1820-DFW',
+381 silly get     'x-cache': 'MISS',
+381 silly get     'x-cache-hits': '0',
+381 silly get     'x-timer': 'S1448769467.106650,VS0,VE57',
+381 silly get     vary: 'Accept' } ]
+382 verbose etag https://registry.npmjs.org/bespoke-hash from cache
+383 verbose get saving bespoke-hash to /Users/michaelmartinez/.npm/registry.npmjs.org/bespoke-hash/.cache.json
+384 http 304 https://registry.npmjs.org/bespoke-backdrop
+385 silly get cb [ 304,
+385 silly get   { date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+385 silly get     via: '1.1 varnish',
+385 silly get     'cache-control': 'max-age=60',
+385 silly get     etag: '"2OLG8UIE0RH4ITHT2FDRB1UWO"',
+385 silly get     age: '0',
+385 silly get     connection: 'keep-alive',
+385 silly get     'x-served-by': 'cache-dfw1824-DFW',
+385 silly get     'x-cache': 'MISS',
+385 silly get     'x-cache-hits': '0',
+385 silly get     'x-timer': 'S1448769467.117520,VS0,VE53',
+385 silly get     vary: 'Accept' } ]
+386 verbose etag https://registry.npmjs.org/bespoke-backdrop from cache
+387 verbose get saving bespoke-backdrop to /Users/michaelmartinez/.npm/registry.npmjs.org/bespoke-backdrop/.cache.json
+388 http 304 https://registry.npmjs.org/mustache
+389 silly get cb [ 304,
+389 silly get   { date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+389 silly get     via: '1.1 varnish',
+389 silly get     'cache-control': 'max-age=60',
+389 silly get     etag: '"ABOIODGY488G83DSWO5G3HH1W"',
+389 silly get     age: '0',
+389 silly get     connection: 'keep-alive',
+389 silly get     'x-served-by': 'cache-dfw1833-DFW',
+389 silly get     'x-cache': 'HIT',
+389 silly get     'x-cache-hits': '1',
+389 silly get     'x-timer': 'S1448769467.106655,VS0,VE67',
+389 silly get     vary: 'Accept' } ]
+390 verbose etag https://registry.npmjs.org/mustache from cache
+391 verbose get saving mustache to /Users/michaelmartinez/.npm/registry.npmjs.org/mustache/.cache.json
+392 silly addNameTag next cb for path with tag latest
+393 verbose addNamed path@0.12.7
+394 silly addNamed semver.valid 0.12.7
+395 silly addNamed semver.validRange 0.12.7
+396 silly addNameTag next cb for gulp-rename with tag latest
+397 verbose addNamed gulp-rename@1.2.2
+398 silly addNamed semver.valid 1.2.2
+399 silly addNamed semver.validRange 1.2.2
+400 http 200 https://registry.npmjs.org/gulp-browserify
+401 silly get cb [ 200,
+401 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+401 silly get     etag: '"9YF3VEY731DGM8CR9TKOB0PYP"',
+401 silly get     'content-type': 'application/json',
+401 silly get     'cache-control': 'max-age=60',
+401 silly get     'content-length': '37691',
+401 silly get     'accept-ranges': 'bytes',
+401 silly get     date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+401 silly get     via: '1.1 varnish',
+401 silly get     age: '0',
+401 silly get     connection: 'keep-alive',
+401 silly get     'x-served-by': 'cache-dfw1835-DFW',
+401 silly get     'x-cache': 'MISS',
+401 silly get     'x-cache-hits': '0',
+401 silly get     'x-timer': 'S1448769467.111266,VS0,VE94',
+401 silly get     vary: 'Accept' } ]
+402 verbose get saving gulp-browserify to /Users/michaelmartinez/.npm/registry.npmjs.org/gulp-browserify/.cache.json
+403 http 200 https://registry.npmjs.org/gulp-plumber
+404 silly get cb [ 200,
+404 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+404 silly get     etag: '"6W1UECJWTDZGLWCVUBYJGDDGJ"',
+404 silly get     'content-type': 'application/json',
+404 silly get     'cache-control': 'max-age=60',
+404 silly get     'content-length': '40392',
+404 silly get     'accept-ranges': 'bytes',
+404 silly get     date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+404 silly get     via: '1.1 varnish',
+404 silly get     age: '0',
+404 silly get     connection: 'keep-alive',
+404 silly get     'x-served-by': 'cache-dfw1824-DFW',
+404 silly get     'x-cache': 'HIT',
+404 silly get     'x-cache-hits': '1',
+404 silly get     'x-timer': 'S1448769467.111690,VS0,VE49',
+404 silly get     vary: 'Accept' } ]
+405 verbose get saving gulp-plumber to /Users/michaelmartinez/.npm/registry.npmjs.org/gulp-plumber/.cache.json
+406 http 304 https://registry.npmjs.org/bespoke-progress
+407 silly get cb [ 304,
+407 silly get   { date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+407 silly get     via: '1.1 varnish',
+407 silly get     'cache-control': 'max-age=60',
+407 silly get     etag: '"F1EHHZCME635UFEZZ2AO2RGC8"',
+407 silly get     age: '0',
+407 silly get     connection: 'keep-alive',
+407 silly get     'x-served-by': 'cache-dfw1828-DFW',
+407 silly get     'x-cache': 'MISS',
+407 silly get     'x-cache-hits': '0',
+407 silly get     'x-timer': 'S1448769467.097106,VS0,VE194',
+407 silly get     vary: 'Accept' } ]
+408 verbose etag https://registry.npmjs.org/bespoke-progress from cache
+409 verbose get saving bespoke-progress to /Users/michaelmartinez/.npm/registry.npmjs.org/bespoke-progress/.cache.json
+410 http 304 https://registry.npmjs.org/bespoke-scale
+411 silly get cb [ 304,
+411 silly get   { date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+411 silly get     via: '1.1 varnish',
+411 silly get     'cache-control': 'max-age=60',
+411 silly get     etag: '"AJN42Q7OBGREDIQ7QVILH2YGZ"',
+411 silly get     age: '0',
+411 silly get     connection: 'keep-alive',
+411 silly get     'x-served-by': 'cache-dfw1824-DFW',
+411 silly get     'x-cache': 'MISS',
+411 silly get     'x-cache-hits': '0',
+411 silly get     'x-timer': 'S1448769467.099535,VS0,VE194',
+411 silly get     vary: 'Accept' } ]
+412 verbose etag https://registry.npmjs.org/bespoke-scale from cache
+413 verbose get saving bespoke-scale to /Users/michaelmartinez/.npm/registry.npmjs.org/bespoke-scale/.cache.json
+414 silly addNameTag next cb for through with tag latest
+415 verbose addNamed through@2.3.8
+416 silly addNamed semver.valid 2.3.8
+417 silly addNamed semver.validRange 2.3.8
+418 silly addNameTag next cb for bespoke-hash with tag latest
+419 verbose addNamed bespoke-hash@1.0.2
+420 silly addNamed semver.valid 1.0.2
+421 silly addNamed semver.validRange 1.0.2
+422 silly addNameTag next cb for bespoke-backdrop with tag latest
+423 verbose addNamed bespoke-backdrop@1.0.0
+424 silly addNamed semver.valid 1.0.0
+425 silly addNamed semver.validRange 1.0.0
+426 http 200 https://registry.npmjs.org/gulp
+427 silly get cb [ 200,
+427 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+427 silly get     etag: '"45T1GSVLG0M9CD0ECXIJSP4ER"',
+427 silly get     'content-type': 'application/json',
+427 silly get     'cache-control': 'max-age=60',
+427 silly get     'content-length': '108161',
+427 silly get     'accept-ranges': 'bytes',
+427 silly get     date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+427 silly get     via: '1.1 varnish',
+427 silly get     age: '2',
+427 silly get     connection: 'keep-alive',
+427 silly get     'x-served-by': 'cache-dfw1835-DFW',
+427 silly get     'x-cache': 'HIT',
+427 silly get     'x-cache-hits': '46',
+427 silly get     'x-timer': 'S1448769467.118944,VS0,VE0',
+427 silly get     vary: 'Accept' } ]
+428 verbose get saving gulp to /Users/michaelmartinez/.npm/registry.npmjs.org/gulp/.cache.json
+429 http 304 https://registry.npmjs.org/bespoke-touch
+430 silly get cb [ 304,
+430 silly get   { date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+430 silly get     via: '1.1 varnish',
+430 silly get     'cache-control': 'max-age=60',
+430 silly get     etag: '"6RU66U4P0R2Z8KC5T4K4DNTLJ"',
+430 silly get     age: '0',
+430 silly get     connection: 'keep-alive',
+430 silly get     'x-served-by': 'cache-dfw1822-DFW',
+430 silly get     'x-cache': 'MISS',
+430 silly get     'x-cache-hits': '0',
+430 silly get     'x-timer': 'S1448769467.098461,VS0,VE193',
+430 silly get     vary: 'Accept' } ]
+431 verbose etag https://registry.npmjs.org/bespoke-touch from cache
+432 verbose get saving bespoke-touch to /Users/michaelmartinez/.npm/registry.npmjs.org/bespoke-touch/.cache.json
+433 silly cache afterAdd path@0.12.7
+434 verbose afterAdd /Users/michaelmartinez/.npm/path/0.12.7/package/package.json not in flight; writing
+435 http 304 https://registry.npmjs.org/bespoke-theme-voltaire
+436 silly get cb [ 304,
+436 silly get   { date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+436 silly get     via: '1.1 varnish',
+436 silly get     'cache-control': 'max-age=60',
+436 silly get     etag: '"7I5I7SV92A2KH31SU1AP1FY1P"',
+436 silly get     age: '0',
+436 silly get     connection: 'keep-alive',
+436 silly get     'x-served-by': 'cache-dfw1827-DFW',
+436 silly get     'x-cache': 'MISS',
+436 silly get     'x-cache-hits': '0',
+436 silly get     'x-timer': 'S1448769467.097921,VS0,VE274',
+436 silly get     vary: 'Accept' } ]
+437 verbose etag https://registry.npmjs.org/bespoke-theme-voltaire from cache
+438 verbose get saving bespoke-theme-voltaire to /Users/michaelmartinez/.npm/registry.npmjs.org/bespoke-theme-voltaire/.cache.json
+439 http 304 https://registry.npmjs.org/consolidate
+440 silly get cb [ 304,
+440 silly get   { date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+440 silly get     via: '1.1 varnish',
+440 silly get     'cache-control': 'max-age=60',
+440 silly get     etag: '"8QW1ER7OFXCPN6QU886VY1CA"',
+440 silly get     age: '0',
+440 silly get     connection: 'keep-alive',
+440 silly get     'x-served-by': 'cache-dfw1822-DFW',
+440 silly get     'x-cache': 'HIT',
+440 silly get     'x-cache-hits': '1',
+440 silly get     'x-timer': 'S1448769467.108269,VS0,VE272',
+440 silly get     vary: 'Accept' } ]
+441 verbose etag https://registry.npmjs.org/consolidate from cache
+442 verbose get saving consolidate to /Users/michaelmartinez/.npm/registry.npmjs.org/consolidate/.cache.json
+443 silly addNameTag next cb for mustache with tag latest
+444 verbose addNamed mustache@2.2.0
+445 silly addNamed semver.valid 2.2.0
+446 silly addNamed semver.validRange 2.2.0
+447 http 304 https://registry.npmjs.org/bespoke
+448 silly get cb [ 304,
+448 silly get   { date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+448 silly get     via: '1.1 varnish',
+448 silly get     'cache-control': 'max-age=60',
+448 silly get     etag: '"1EBOV0BQEFJ50RC7KRDV9AXV2"',
+448 silly get     age: '0',
+448 silly get     connection: 'keep-alive',
+448 silly get     'x-served-by': 'cache-dfw1832-DFW',
+448 silly get     'x-cache': 'MISS',
+448 silly get     'x-cache-hits': '0',
+448 silly get     'x-timer': 'S1448769467.136657,VS0,VE242',
+448 silly get     vary: 'Accept' } ]
+449 verbose etag https://registry.npmjs.org/bespoke from cache
+450 verbose get saving bespoke to /Users/michaelmartinez/.npm/registry.npmjs.org/bespoke/.cache.json
+451 http 304 https://registry.npmjs.org/bespoke-keys
+452 silly get cb [ 304,
+452 silly get   { date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+452 silly get     via: '1.1 varnish',
+452 silly get     'cache-control': 'max-age=60',
+452 silly get     etag: '"7QA09UEVEK5D14FZMEA7547CT"',
+452 silly get     age: '0',
+452 silly get     connection: 'keep-alive',
+452 silly get     'x-served-by': 'cache-dfw1825-DFW',
+452 silly get     'x-cache': 'MISS',
+452 silly get     'x-cache-hits': '0',
+452 silly get     'x-timer': 'S1448769467.106825,VS0,VE280',
+452 silly get     vary: 'Accept' } ]
+453 verbose etag https://registry.npmjs.org/bespoke-keys from cache
+454 verbose get saving bespoke-keys to /Users/michaelmartinez/.npm/registry.npmjs.org/bespoke-keys/.cache.json
+455 http 304 https://registry.npmjs.org/debowerify
+456 silly get cb [ 304,
+456 silly get   { date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+456 silly get     via: '1.1 varnish',
+456 silly get     'cache-control': 'max-age=60',
+456 silly get     etag: '"BEQ1U034WSKV6DU879G9IJSXG"',
+456 silly get     age: '0',
+456 silly get     connection: 'keep-alive',
+456 silly get     'x-served-by': 'cache-dfw1825-DFW',
+456 silly get     'x-cache': 'MISS',
+456 silly get     'x-cache-hits': '0',
+456 silly get     'x-timer': 'S1448769467.111000,VS0,VE281',
+456 silly get     vary: 'Accept' } ]
+457 verbose etag https://registry.npmjs.org/debowerify from cache
+458 verbose get saving debowerify to /Users/michaelmartinez/.npm/registry.npmjs.org/debowerify/.cache.json
+459 silly cache afterAdd gulp-rename@1.2.2
+460 verbose afterAdd /Users/michaelmartinez/.npm/gulp-rename/1.2.2/package/package.json not in flight; writing
+461 silly cache afterAdd bespoke-hash@1.0.2
+462 verbose afterAdd /Users/michaelmartinez/.npm/bespoke-hash/1.0.2/package/package.json not in flight; writing
+463 silly cache afterAdd bespoke-backdrop@1.0.0
+464 verbose afterAdd /Users/michaelmartinez/.npm/bespoke-backdrop/1.0.0/package/package.json not in flight; writing
+465 silly cache afterAdd through@2.3.8
+466 verbose afterAdd /Users/michaelmartinez/.npm/through/2.3.8/package/package.json not in flight; writing
+467 silly addNameTag next cb for gulp-browserify with tag latest
+468 verbose addNamed gulp-browserify@0.5.1
+469 silly addNamed semver.valid 0.5.1
+470 silly addNamed semver.validRange 0.5.1
+471 verbose afterAdd /Users/michaelmartinez/.npm/path/0.12.7/package/package.json written
+472 http 200 https://registry.npmjs.org/del
+473 silly get cb [ 200,
+473 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+473 silly get     etag: '"AI36JUW2I1OCVQYVG6U1YYXZO"',
+473 silly get     'content-type': 'application/json',
+473 silly get     'cache-control': 'max-age=60',
+473 silly get     'content-length': '22367',
+473 silly get     'accept-ranges': 'bytes',
+473 silly get     date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+473 silly get     via: '1.1 varnish',
+473 silly get     age: '0',
+473 silly get     connection: 'keep-alive',
+473 silly get     'x-served-by': 'cache-dfw1825-DFW',
+473 silly get     'x-cache': 'HIT',
+473 silly get     'x-cache-hits': '1',
+473 silly get     'x-timer': 'S1448769467.106790,VS0,VE277',
+473 silly get     vary: 'Accept' } ]
+474 verbose get saving del to /Users/michaelmartinez/.npm/registry.npmjs.org/del/.cache.json
+475 silly addNameTag next cb for gulp-plumber with tag latest
+476 verbose addNamed gulp-plumber@1.0.1
+477 silly addNamed semver.valid 1.0.1
+478 silly addNamed semver.validRange 1.0.1
+479 silly addNameTag next cb for bespoke-scale with tag latest
+480 verbose addNamed bespoke-scale@1.0.1
+481 silly addNamed semver.valid 1.0.1
+482 silly addNamed semver.validRange 1.0.1
+483 silly addNameTag next cb for bespoke-progress with tag latest
+484 verbose addNamed bespoke-progress@1.0.0
+485 silly addNamed semver.valid 1.0.0
+486 silly addNamed semver.validRange 1.0.0
+487 silly addNameTag next cb for bespoke-touch with tag latest
+488 verbose addNamed bespoke-touch@1.0.0
+489 silly addNamed semver.valid 1.0.0
+490 silly addNamed semver.validRange 1.0.0
+491 silly addNameTag next cb for gulp with tag latest
+492 verbose addNamed gulp@3.9.0
+493 silly addNamed semver.valid 3.9.0
+494 silly addNamed semver.validRange 3.9.0
+495 silly addNameTag next cb for bespoke-theme-voltaire with tag latest
+496 verbose addNamed bespoke-theme-voltaire@1.0.1
+497 silly addNamed semver.valid 1.0.1
+498 silly addNamed semver.validRange 1.0.1
+499 verbose afterAdd /Users/michaelmartinez/.npm/gulp-rename/1.2.2/package/package.json written
+500 info already installed gulp-rename@1.2.2
+501 verbose afterAdd /Users/michaelmartinez/.npm/bespoke-hash/1.0.2/package/package.json written
+502 info already installed bespoke-hash@1.0.2
+503 silly addNameTag next cb for consolidate with tag latest
+504 verbose addNamed consolidate@0.13.1
+505 silly addNamed semver.valid 0.13.1
+506 silly addNamed semver.validRange 0.13.1
+507 silly addNameTag next cb for bespoke with tag latest
+508 verbose addNamed bespoke@1.1.0
+509 silly addNamed semver.valid 1.1.0
+510 silly addNamed semver.validRange 1.1.0
+511 verbose afterAdd /Users/michaelmartinez/.npm/bespoke-backdrop/1.0.0/package/package.json written
+512 info already installed bespoke-backdrop@1.0.0
+513 silly addNameTag next cb for bespoke-keys with tag latest
+514 verbose addNamed bespoke-keys@1.1.0
+515 silly addNamed semver.valid 1.1.0
+516 silly addNamed semver.validRange 1.1.0
+517 silly cache afterAdd gulp-browserify@0.5.1
+518 verbose afterAdd /Users/michaelmartinez/.npm/gulp-browserify/0.5.1/package/package.json not in flight; writing
+519 silly addNameTag next cb for debowerify with tag latest
+520 verbose addNamed debowerify@1.3.1
+521 silly addNamed semver.valid 1.3.1
+522 silly addNamed semver.validRange 1.3.1
+523 silly cache afterAdd gulp-plumber@1.0.1
+524 verbose afterAdd /Users/michaelmartinez/.npm/gulp-plumber/1.0.1/package/package.json not in flight; writing
+525 silly cache afterAdd bespoke-scale@1.0.1
+526 verbose afterAdd /Users/michaelmartinez/.npm/bespoke-scale/1.0.1/package/package.json not in flight; writing
+527 silly cache afterAdd mustache@2.2.0
+528 verbose afterAdd /Users/michaelmartinez/.npm/mustache/2.2.0/package/package.json not in flight; writing
+529 verbose afterAdd /Users/michaelmartinez/.npm/through/2.3.8/package/package.json written
+530 info already installed through@2.3.8
+531 silly cache afterAdd bespoke-progress@1.0.0
+532 verbose afterAdd /Users/michaelmartinez/.npm/bespoke-progress/1.0.0/package/package.json not in flight; writing
+533 http 200 https://registry.npmjs.org/gulp-connect
+534 silly get cb [ 200,
+534 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+534 silly get     etag: '"ADMF0VEW9T5CF9ELZRDCPGMNY"',
+534 silly get     'content-type': 'application/json',
+534 silly get     'cache-control': 'max-age=60',
+534 silly get     'content-length': '46113',
+534 silly get     'accept-ranges': 'bytes',
+534 silly get     date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+534 silly get     via: '1.1 varnish',
+534 silly get     age: '0',
+534 silly get     connection: 'keep-alive',
+534 silly get     'x-served-by': 'cache-dfw1826-DFW',
+534 silly get     'x-cache': 'MISS',
+534 silly get     'x-cache-hits': '0',
+534 silly get     'x-timer': 'S1448769467.108807,VS0,VE272',
+534 silly get     vary: 'Accept' } ]
+535 verbose get saving gulp-connect to /Users/michaelmartinez/.npm/registry.npmjs.org/gulp-connect/.cache.json
+536 silly cache afterAdd bespoke-touch@1.0.0
+537 verbose afterAdd /Users/michaelmartinez/.npm/bespoke-touch/1.0.0/package/package.json not in flight; writing
+538 silly cache afterAdd gulp@3.9.0
+539 verbose afterAdd /Users/michaelmartinez/.npm/gulp/3.9.0/package/package.json not in flight; writing
+540 silly cache afterAdd bespoke-theme-voltaire@1.0.1
+541 verbose afterAdd /Users/michaelmartinez/.npm/bespoke-theme-voltaire/1.0.1/package/package.json not in flight; writing
+542 silly addNameTag next cb for del with tag latest
+543 verbose addNamed del@2.1.0
+544 silly addNamed semver.valid 2.1.0
+545 silly addNamed semver.validRange 2.1.0
+546 silly cache afterAdd consolidate@0.13.1
+547 verbose afterAdd /Users/michaelmartinez/.npm/consolidate/0.13.1/package/package.json not in flight; writing
+548 verbose afterAdd /Users/michaelmartinez/.npm/gulp-browserify/0.5.1/package/package.json written
+549 info already installed gulp-browserify@0.5.1
+550 verbose afterAdd /Users/michaelmartinez/.npm/bespoke-scale/1.0.1/package/package.json written
+551 info already installed bespoke-scale@1.0.1
+552 silly cache afterAdd debowerify@1.3.1
+553 verbose afterAdd /Users/michaelmartinez/.npm/debowerify/1.3.1/package/package.json not in flight; writing
+554 verbose afterAdd /Users/michaelmartinez/.npm/mustache/2.2.0/package/package.json written
+555 verbose afterAdd /Users/michaelmartinez/.npm/gulp-plumber/1.0.1/package/package.json written
+556 info already installed gulp-plumber@1.0.1
+557 silly cache afterAdd bespoke@1.1.0
+558 verbose afterAdd /Users/michaelmartinez/.npm/bespoke/1.1.0/package/package.json not in flight; writing
+559 silly cache afterAdd bespoke-keys@1.1.0
+560 verbose afterAdd /Users/michaelmartinez/.npm/bespoke-keys/1.1.0/package/package.json not in flight; writing
+561 verbose afterAdd /Users/michaelmartinez/.npm/bespoke-progress/1.0.0/package/package.json written
+562 info already installed bespoke-progress@1.0.0
+563 verbose afterAdd /Users/michaelmartinez/.npm/bespoke-touch/1.0.0/package/package.json written
+564 info already installed bespoke-touch@1.0.0
+565 verbose afterAdd /Users/michaelmartinez/.npm/bespoke-theme-voltaire/1.0.1/package/package.json written
+566 info already installed bespoke-theme-voltaire@1.0.1
+567 verbose afterAdd /Users/michaelmartinez/.npm/gulp/3.9.0/package/package.json written
+568 info already installed gulp@3.9.0
+569 silly addNameTag next cb for gulp-connect with tag latest
+570 verbose addNamed gulp-connect@2.2.0
+571 silly addNamed semver.valid 2.2.0
+572 silly addNamed semver.validRange 2.2.0
+573 verbose afterAdd /Users/michaelmartinez/.npm/bespoke/1.1.0/package/package.json written
+574 verbose afterAdd /Users/michaelmartinez/.npm/debowerify/1.3.1/package/package.json written
+575 info already installed debowerify@1.3.1
+576 verbose afterAdd /Users/michaelmartinez/.npm/consolidate/0.13.1/package/package.json written
+577 info already installed consolidate@0.13.1
+578 verbose afterAdd /Users/michaelmartinez/.npm/bespoke-keys/1.1.0/package/package.json written
+579 silly cache afterAdd del@2.1.0
+580 verbose afterAdd /Users/michaelmartinez/.npm/del/2.1.0/package/package.json not in flight; writing
+581 silly cache afterAdd gulp-connect@2.2.0
+582 verbose afterAdd /Users/michaelmartinez/.npm/gulp-connect/2.2.0/package/package.json not in flight; writing
+583 verbose afterAdd /Users/michaelmartinez/.npm/gulp-connect/2.2.0/package/package.json written
+584 info already installed gulp-connect@2.2.0
+585 verbose afterAdd /Users/michaelmartinez/.npm/del/2.1.0/package/package.json written
+586 http 200 https://registry.npmjs.org/express
+587 silly get cb [ 200,
+587 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+587 silly get     etag: '"9P23Z67DWYT7JYP7SKHWE9BXA"',
+587 silly get     'content-type': 'application/json',
+587 silly get     'cache-control': 'max-age=60',
+587 silly get     'content-length': '528620',
+587 silly get     'accept-ranges': 'bytes',
+587 silly get     date: 'Sun, 29 Nov 2015 03:57:47 GMT',
+587 silly get     via: '1.1 varnish',
+587 silly get     age: '43',
+587 silly get     connection: 'keep-alive',
+587 silly get     'x-served-by': 'cache-dfw1828-DFW',
+587 silly get     'x-cache': 'HIT',
+587 silly get     'x-cache-hits': '1',
+587 silly get     'x-timer': 'S1448769467.122779,VS0,VE4',
+587 silly get     vary: 'Accept' } ]
+588 verbose get saving express to /Users/michaelmartinez/.npm/registry.npmjs.org/express/.cache.json
+589 silly addNameTag next cb for express with tag latest
+590 verbose addNamed express@4.13.3
+591 silly addNamed semver.valid 4.13.3
+592 silly addNamed semver.validRange 4.13.3
+593 silly cache afterAdd express@4.13.3
+594 verbose afterAdd /Users/michaelmartinez/.npm/express/4.13.3/package/package.json not in flight; writing
+595 verbose afterAdd /Users/michaelmartinez/.npm/express/4.13.3/package/package.json written
+596 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/bbody-parser
+596 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:239:14)
+596 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+596 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:360:22)
+596 verbose stack     at Request.emit (events.js:110:17)
+596 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1202:14)
+596 verbose stack     at Request.emit (events.js:129:20)
+596 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1150:12)
+596 verbose stack     at IncomingMessage.emit (events.js:129:20)
+596 verbose stack     at _stream_readable.js:908:16
+596 verbose stack     at process._tickCallback (node.js:355:11)
+597 verbose statusCode 404
+598 verbose pkgid bbody-parser
+599 verbose cwd /Users/michaelmartinez/Desktop/code/dialup/DialUpSite
+600 error Darwin 13.4.0
+601 error argv "node" "/usr/local/bin/npm" "install"
+602 error node v0.12.0
+603 error npm  v2.7.5
+604 error code E404
+605 error 404 Registry returned 404 for GET on https://registry.npmjs.org/bbody-parser
+605 error 404
+605 error 404 'bbody-parser' is not in the npm registry.
+605 error 404 You should bug the author to publish it (or use the name yourself!)
+605 error 404 It was specified as a dependency of 'dialupsite'
+605 error 404
+605 error 404 Note that you can also install from a
+605 error 404 tarball, folder, http url, or git url.
+606 verbose exit [ 1, true ]

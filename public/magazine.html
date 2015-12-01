@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/magazine.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	</head>
+
+  <body onload="return ran_col()">
+      <div id="wrapper">
+
+          <div class="jumbotron">
+            <h1> DIAL UP MAGAZINE </h1>
+          </div>
+
+      </div>
+      <script type="text/javascript">
+          function ran_col() { //function name
+              var color = '#'; // hexadecimal starting symbol
+              var letters = ['000000','83EDDF','FDD7FD','111111','80E991','CBC7D7','EDBF49','4B1FF4',]; //Set your colors here
+              color += letters[Math.floor(Math.random() * letters.length)];
+              document.getElementById('wrapper').style.background = color; // Setting the random color on your div element.
+          }
+      </script>
+  </body>
+</html>
