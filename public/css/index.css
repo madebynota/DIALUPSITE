@@ -1,11 +1,20 @@
 @font-face {
-  font-family: 'KOFTH2';
-  src: url('../dialupfonts/KingOfTheHill2.eot'); /* IE9 Compat Modes */
-  src: url('../dialupfonts/KingOfTheHill2.eot?#iefix') format('embedded-opentype'),
-       url('../dialupfonts/KingOfTheHill2.woff2') format('woff2'),
-       url('../dialupfonts/KingOfTheHill2.woff') format('woff'),
-       url('../dialupfonts/KingOfTheHill2.ttf')  format('truetype'),
-       url('../dialupfonts/KingOfTheHill2.svg#svgFontName') format('svg'); /* Legacy iOS */
+	font-family: 'KOFTH2';
+	src: url('../dialupfonts/KingOfTheHill2.eot'); /* IE9 Compat Modes */
+	src: url('../dialupfonts/KingOfTheHill2.eot?#iefix') format('embedded-opentype'),
+	url('../dialupfonts/KingOfTheHill2.woff2') format('woff2'),
+	url('../dialupfonts/KingOfTheHill2.woff') format('woff'),
+	url('../dialupfonts/KingOfTheHill2.ttf')  format('truetype'),
+	url('../dialupfonts/KingOfTheHill2.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+	font-family: 'ArialRoundedMTBold';
+	src: url('../dialupfonts/ArialRoundedMTBold.eot'); /* IE9 Compat Modes */
+	src: url('../dialupfonts/ArialRoundedMTBold.eot?#iefix') format('embedded-opentype'),
+	url('../dialupfonts/ArialRoundedMTBold.woff2') format('woff2'),
+	url('../dialupfonts/ArialRoundedMTBold.woff') format('woff'),
+	url('../dialupfonts/ArialRoundedMTBold.ttf')  format('truetype'),
+	url('../dialupfonts/ArialRoundedMTBold.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 ul {
@@ -20,36 +29,12 @@ li {
   padding: 25px;
 }
 
-a {
-  color: white;
-  text-decoration: none !important;
-}
-
 .navbar {
   margin: auto;
     width: 60%;
     padding: 10px;
 }
 
-div.a {
-  	/*border-radius: 50%;
-  	width: 200px;
-  	height: 200px;*/
- 	/*background-color:pink;*/
- 	/*background:linear-gradient(30deg, pink, #ccc);*/
- 	/*radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);*/
-	position:fixed;
-	z-index: 998;
-}
-
-div.a p{
-	position: relative;
-	top:50;
-	left: 125;
-	font-family: 'KOFTH2';
-	color: yellow;
-
-}
 
 div.a img{
 
@@ -68,21 +53,7 @@ div.a img{
 html, body {
 	height: 100%;
 	margin: 0;
-	background: url(../img/OTF_Crumpled_Paper_04.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
-@font-face {
-	font-family: 'KOFTH2';
-	src: url('../fonts/KingOfTheHill2.eot'); /* IE9 Compat Modes */
-	src: url('../fonts/KingOfTheHill2.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/KingOfTheHill2.woff2') format('woff2'),
-	url('../fonts/KingOfTheHill2.woff') format('woff'),
-	url('../fonts/KingOfTheHill2.ttf')  format('truetype'),
-	url('../fonts/KingOfTheHill2.svg#svgFontName') format('svg'); /* Legacy iOS */
+	background: #000000;
 }
 
 #wrapper {
@@ -98,13 +69,13 @@ html, body {
 	z-index: 999;
 }
 
-#opacity-full {
-	color: rgba(255, 255, 255, 1);
-}
 
 .jumbotron h1 {
 	font-family: 'KOFTH2';
-	color: black;
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	font-size: 100px;
+	margin-top: 0px;
 }
 
 #menu {
@@ -140,7 +111,6 @@ html, body {
 	display: block;
 	vertical-align: middle;
 	text-decoration: none;
-	color: black;
 	/*padding:12px 0 13px 0;*/
 	margin:auto, 0;
 	/*border-left: 1px solid #fff;
@@ -175,12 +145,34 @@ html, body {
 	margin: 0;
 }
 
-.covers {
+.options {
 	margin: 0 auto;
-	padding-top: 10%;
-	width: 50%;
+	padding-top: 20%;
+	width: 70%;
+	text-align: center;
+	font-family: 'ArialRoundedMTBold';
+	color: white;
 } 
 
-#page {
-	width:48%;
+#fall {
+	font-size: 70px;
+	text-decoration: none;
+}
+
+#fall:hover {
+	text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
+}
+
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+#summer {
+	text-decoration: underline;
+}
+
+#summer:hover {
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }

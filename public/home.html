@@ -7,38 +7,27 @@
   </head>
   <body>
     <div id="wrapper">
-
-
       <div class="nav" id="opacity-full">
         <div class="jumbotron" id="opacity-full">
           <h1> DIAL UP </h1>
         </div>
-        <!--ul>
-          <li id='navbar-item'><a id='nav-center' href="#">ABOUT</a></li>
-          <li id='navbar-item'><a id='nav-center' href="#">MAGAZINE</a></li>
-          <li id='navbar-item'><a id='nav-center' href="#">PORTAL</a></li>
-          <li id='navbar-item'><a id='nav-center' href="#">CONTACT</a></li>
-        </ul>
-        <a id="menu" href="#menu">
-          &#9776;
-        </a-->
       </div>
 
-      <div class="covers">
-        <a href="http://sccs.meteor.com/" target="mag">
-          <img id="page" src="magazineAssets/fall2015/page-1.jpg"/>
+      <div class="options">
+        <a href="/magazines/fall2015" target="mag" id="fall">
+          READ THE NEW FALL MAGAZINE
         </a>
-        <a href="http://schoolofdata.org/" target="mag">
-          <img  id="page" src="magazineAssets/summer2015/page-1.jpg"/>
-        </a>
+        <br>
+        <p>THEN GO BACK AND READ THE <a href="/magazines/summer2015"  id="summer" target="mag">SUMMER MAGAZINE</a> TOO. 
       </div>
 
     </div>
     <script>
       $( document ).ready(function() {
-        var letters = ['0, 0, 0','255, 0, 0','0, 255, 0','0, 0, 255','255, 255, 0','0, 255, 255','255, 0, 255','192, 192, 192']; //Set your colors here
+        var letters = ['255, 0, 0','0, 255, 0','0, 0, 255','0, 255, 255','255, 0, 255']; //Set your colors here
         color = letters[Math.floor(Math.random() * letters.length)];
-        var finalColor = 'rgba(' + color + ', 0.1)'
+        var finalColor = 'rgba(' + color + ', 1)'
+        console.log(finalColor)
         document.getElementById('wrapper').style.background = finalColor // Setting the random color on your div element.
       });
     </script>
