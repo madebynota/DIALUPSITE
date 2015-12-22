@@ -164,8 +164,6 @@ html, body {
 	text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
 }
 
-
-/* visited link */
 a:visited {
     color: white;
 }
@@ -186,4 +184,23 @@ a:visited {
 	color: white;
 	width: 100%;
 	text-align: center;
+}
+
+.colorChange {
+	-webkit-animation-direction: normal;
+	-webkit-animation-duration: 10s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-name: colours;
+	-webkit-animation-timing-function: ease;
+}
+
+@-webkit-keyframes colours {
+	  0% {color: #39f;}
+	 15% {color: #8bc5d1;}
+	 30% {color: #f8cb4a;}
+	 45% {color: #95b850;}
+	 60% {color: #944893;}
+	 75% {color: #c71f00;}
+	 90% {color: #bdb280;}
+	100% {color: #39f;}
 }
