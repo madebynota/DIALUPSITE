@@ -73,7 +73,6 @@ html, body {
 .jumbotron h1 {
 	font-family: 'KOFTH2';
 	color: white;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	font-size: 100px;
 	margin-top: 0px;
 }
@@ -146,8 +145,10 @@ html, body {
 }
 
 .options {
+	position: relative;
 	margin: 0 auto;
-	padding-top: 20%;
+	padding-top: 50%;
+	transform: translateY(-50%);
 	width: 70%;
 	text-align: center;
 	font-family: 'ArialRoundedMTBold';
@@ -155,7 +156,7 @@ html, body {
 } 
 
 #fall {
-	font-size: 70px;
+	font-size: 4vw;
 	text-decoration: none;
 }
 
@@ -175,4 +176,14 @@ a:visited {
 
 #summer:hover {
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#logo {
+	position: absolute;
+	bottom: 5px;
+	font-size: 20px;
+	font-family: 'ArialRoundedMTBold';
+	color: white;
+	width: 100%;
+	text-align: center;
 }

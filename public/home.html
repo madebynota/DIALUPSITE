@@ -7,27 +7,18 @@
   </head>
   <body>
     <div id="wrapper">
-      <div class="nav" id="opacity-full">
-        <div class="jumbotron" id="opacity-full">
-          <h1> DIAL UP </h1>
-        </div>
-      </div>
-
       <div class="options">
-        <a href="/magazines/fall2015" target="mag" id="fall">
-          READ THE NEW FALL MAGAZINE
-        </a>
+        <a href="/magazines/fall2015" target="mag" id="fall">READ THE NEW FALL MAGAZINE</a>
         <br>
-        <p>THEN GO BACK AND READ THE <a href="/magazines/summer2015"  id="summer" target="mag">SUMMER MAGAZINE</a> TOO. 
+        <p>THEN GO BACK AND READ THE <a href="/magazines/summer2015"  id="summer" target="mag">SUMMER MAGAZINE</a> TOO.</p> 
       </div>
-
+      <div id='logo'>DIAL UP</div>
     </div>
     <script>
       $( document ).ready(function() {
-        var letters = ['255, 0, 0','0, 255, 0','0, 0, 255','0, 255, 255','255, 0, 255']; //Set your colors here
+        var letters = ['13, 192, 255','255, 198, 173','185, 215, 57','0, 239, 171', '251, 210, 43', '255, 69, 69', '140, 47, 151', '233, 50, 97']; //Set your colors here
         color = letters[Math.floor(Math.random() * letters.length)];
         var finalColor = 'rgba(' + color + ', 1)'
-        console.log(finalColor)
         document.getElementById('wrapper').style.background = finalColor // Setting the random color on your div element.
       });
     </script>
