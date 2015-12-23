@@ -195,12 +195,10 @@ a:visited {
 }
 
 @-webkit-keyframes colours {
-	  0% {color: #39f;}
-	 15% {color: #8bc5d1;}
-	 30% {color: #f8cb4a;}
-	 45% {color: #95b850;}
-	 60% {color: #944893;}
-	 75% {color: #c71f00;}
-	 90% {color: #bdb280;}
-	100% {color: #39f;}
+	  0% {color: #FFFFFF;} /*White*/
+	 20% {color: #8bc5d1;} /*Light Blue*/
+	 40% {color: #FFA998;} /*Light Pink*/
+	 60% {color: #FFF0AD;} /*Light Yellow*/
+	 80% {color: #FFCD47;} /*Gold-ish*/
+	100% {color: #CDFFA7;} /*Baby Green*/
 }
