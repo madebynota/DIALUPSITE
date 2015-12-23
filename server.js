@@ -2,7 +2,6 @@ var express = require('express');
 var engines = require('consolidate');
 var mustache = require('mustache');
 var bodyParser = require('body-parser');
-//var path = require('path');
 
 var app = express();
 
@@ -27,29 +26,10 @@ app.get('/portal', function(req, res) {
 app.get('/magazines', function(req, res) {
 	res.redirect('/');
 });
-// app.get('/summer2015', function(req, res) {res.render('summer2015.html')});
 
 //Routes for Magazines
 app.get('/magazines/summer2015', function(req, res) {res.render('reader.html')});
 app.get('/magazines/fall2015', function(req, res) {res.render('reader.html')});
-
-// app.post('/entry', function(req, res) {
-// 	var entry = req.body.textEntry;
-// 	editedEntry = entry.toLowerCase().trim();
-// 	console.log(entry);
-// 	console.log(editedEntry);
-// 	if(passwords[editedEntry]) {
-// 		console.log(passwords[editedEntry])
-// 		res.status(200).json({ correct:"YES", 
-// 			link : passwords[editedEntry],
-// 			message : "You got it."
-// 		})
-// 	}
-// 	else {
-// 		res.status(200).json({ correct:"NO" })
-// 	}
-// })
-
 
 
 /// catch 404 and forward to error handler
