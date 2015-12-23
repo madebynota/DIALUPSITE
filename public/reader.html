@@ -49,16 +49,62 @@
 	</head>
 	<body id="root">
 		<script>
+			function redirect(type) {
+				if(type == 0) { //Mobile -> Desktop
+					var url = window.location;
+					hash = url.hash
+					console.log(url)
+					if(hash.indexOf('pid') != -1) { //If this is a mobile link
+						pageNum = hash.split('pid=')[1];
+						
+						var redirectURL = url.origin + url.pathname + '#' + pageNum
+						
+						// use this to avoid redirects when a user clicks "back" in their browser
+						window.location.replace(redirectURL);
+
+						// use this to redirect, a back button call will trigger the redirection again
+						window.location.href = redirectURL;
+
+						// given for completeness, essentially an alias to window.location.href
+						window.location = redirectURL;
+
+					}
+				}
+				// if(type == 1) { //Desktop -> Mobile
+				// 	var url = window.location;
+				// 	hash = url.hash
+				// 	console.log(url)
+				// 	if(hash.indexOf('#') != -1) {  //If this is a desktop link
+				// 		pageNum = hash.split('#');
+				// 		console.log(pageNum)
+						
+				// 		var redirectURL = url.origin + url.pathname + '#&gid=1&pid=' + pageNum
+				// 		console.log(redirectURL)
+				// 		// // use this to avoid redirects when a user clicks "back" in their browser
+				// 		// window.location.replace(redirectURL);
+
+				// 		// // use this to redirect, a back button call will trigger the redirection again
+				// 		// window.location.href = redirectURL;
+
+				// 		// // given for completeness, essentially an alias to window.location.href
+				// 		// window.location = redirectURL;
+
+				// 	}
+				// }
+			}
+
 			var screenWidth = $(window).width();
 			console.log(screenWidth)
 			if(screenWidth < 1000) {
 				$( "#root" ).load( "../mobile.html", function() {
-				  console.log( "Load of mobile page was performed." );
+					redirect(1)
+				 	console.log( "Load of mobile page was performed." );
 				});
 			}
 			else {
 				$( "#root" ).load( "../desktop.html", function() {
-				  console.log( "Load of desktop page was performed." );
+					redirect(0)
+				 	console.log( "Load of desktop page was performed." );
 				});
 			}
 		</script>	
