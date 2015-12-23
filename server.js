@@ -21,30 +21,34 @@ var passwords = {"test":"https://www.youtube.com/"}
 
 
 app.get('/', function(req, res) {res.render('home.html')});
-app.get('/portal', function(req, res) {res.render('portal.html')});
-app.get('/magazines', function(req, res) {res.render('maglanding.html')});
+app.get('/portal', function(req, res) {
+	res.redirect('/');
+});
+app.get('/magazines', function(req, res) {
+	res.redirect('/');
+});
 // app.get('/summer2015', function(req, res) {res.render('summer2015.html')});
 
 //Routes for Magazines
 app.get('/magazines/summer2015', function(req, res) {res.render('reader.html')});
 app.get('/magazines/fall2015', function(req, res) {res.render('reader.html')});
 
-app.post('/entry', function(req, res) {
-	var entry = req.body.textEntry;
-	editedEntry = entry.toLowerCase().trim();
-	console.log(entry);
-	console.log(editedEntry);
-	if(passwords[editedEntry]) {
-		console.log(passwords[editedEntry])
-		res.status(200).json({ correct:"YES", 
-			link : passwords[editedEntry],
-			message : "You got it."
-		})
-	}
-	else {
-		res.status(200).json({ correct:"NO" })
-	}
-})
+// app.post('/entry', function(req, res) {
+// 	var entry = req.body.textEntry;
+// 	editedEntry = entry.toLowerCase().trim();
+// 	console.log(entry);
+// 	console.log(editedEntry);
+// 	if(passwords[editedEntry]) {
+// 		console.log(passwords[editedEntry])
+// 		res.status(200).json({ correct:"YES", 
+// 			link : passwords[editedEntry],
+// 			message : "You got it."
+// 		})
+// 	}
+// 	else {
+// 		res.status(200).json({ correct:"NO" })
+// 	}
+// })
 
 
 
