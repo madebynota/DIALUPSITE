@@ -2,23 +2,35 @@
 	"colorChoices":{
 		"1": {"firstColor":"#000000", "secondColor":"#000000"},
 
-		"2": {"firstColor":"#cbc7d7", "secondColor":"#fdd7fd"},
+		"2": {"firstColor":"#000000", "secondColor":"#000000"},
 
-		"4": {"firstColor":"#fffd38", "secondColor":"#000000"},
+		"4": {"firstColor":"#000000", "secondColor":"#000000"},
 
-		"6": {"firstColor":"#cbc7d7", "secondColor":"#fdd7fd"},
+		"6": {"firstColor":"#000000", "secondColor":"#000000"},
 
-		"8": {"firstColor":"#fffd38", "secondColor":"#000000"},
+		"8": {"firstColor":"#000000", "secondColor":"#000000"},
 
-		"10": {"firstColor":"#cbc7d7", "secondColor":"#fdd7fd"},
+		"10": {"firstColor":"#000000", "secondColor":"#000000"},
 
-		"12": {"firstColor":"#fffd38", "secondColor":"#000000"},
+		"12": {"firstColor":"#000000", "secondColor":"#000000"},
 
-		"14": {"firstColor":"#cbc7d7", "secondColor":"#fdd7fd"},
+		"14": {"firstColor":"#000000", "secondColor":"#000000"},
 
-		"16": {"firstColor":"#fffd38", "secondColor":"#000000"},
+		"16": {"firstColor":"#000000", "secondColor":"#000000"},
 
-		"18": {"firstColor":"#cbc7d7", "secondColor":"#fdd7fd"},
+		"18": {"firstColor":"#000000", "secondColor":"#000000"},
+
+		"20": {"firstColor":"#000000", "secondColor":"#000000"},
+
+		"22": {"firstColor":"#000000", "secondColor":"#000000"},
+
+		"24": {"firstColor":"#000000", "secondColor":"#000000"},
+
+		"26": {"firstColor":"#000000", "secondColor":"#000000"},
+
+		"28": {"firstColor":"#000000", "secondColor":"#000000"},
+
+		"30": {"firstColor":"#000000", "secondColor":"#000000"},
 
 		"default": {"firstColor":"#000000", "secondColor":"#000000"}
 	}
