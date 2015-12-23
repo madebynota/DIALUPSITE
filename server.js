@@ -15,10 +15,6 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-
-var passwords = {"test":"https://www.youtube.com/"}
-
-
 app.get('/', function(req, res) {res.render('home.html')});
 app.get('/portal', function(req, res) {
 	res.redirect('/');

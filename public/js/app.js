@@ -24,7 +24,7 @@
 					pageNum = pageNum.replace("#", "");
 				}
 				var pageColors = colorDict[pageNum];
-				console.log(colorDict[pageNum])
+				//console.log(colorDict[pageNum])
 
 				var c1 = pageColors["firstColor"];
 				var c2 = pageColors["secondColor"];
@@ -105,7 +105,7 @@
 		.done(function(data){
 			var pages = data.pages;
 			states.endPage = ''+(pages.length);
-			console.log(states.endPage)
+			//console.log(states.endPage)
 		})
 		.error(function(error){
 			alert('Error loading data. Data file is either missing or the JSON is malformed. Try running it through jsonlint.com');
@@ -1066,7 +1066,7 @@
 			colorSwitch: function(pageNum){
 				var colorDict = states.colors;
 				var pageColors = colorDict[pageNum];
-				console.log(colorDict[pageNum])
+				//console.log(colorDict[pageNum])
 
 				// #grad {
 				//   background: -webkit-linear-gradient(left, red , blue); /* For Safari 5.1 to 6.0 */
@@ -1120,7 +1120,7 @@
 						routing.router.navigate(newhash, {trigger: true});
 					}
 					else {
-						console.log(states.endPage);
+						//console.log(states.endPage);
 						if((states.currentPage != states.endPage) && (states.currentPage != 1)) {
 							$('#pages-wrapper').fadeOut(400, function() {
 								routing.set.colorSwitch(states.currentPage);

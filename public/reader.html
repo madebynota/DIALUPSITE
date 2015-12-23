@@ -53,7 +53,7 @@
 				if(type == 0) { //Mobile -> Desktop
 					var url = window.location;
 					hash = url.hash
-					console.log(url)
+					//console.log(url)
 					if(hash.indexOf('pid') != -1) { //If this is a mobile link
 						pageNum = hash.split('pid=')[1];
 						
@@ -94,17 +94,17 @@
 			}
 
 			var screenWidth = $(window).width();
-			console.log(screenWidth)
+			//console.log(screenWidth)
 			if(screenWidth < 1000) {
 				$( "#root" ).load( "../mobile.html", function() {
 					redirect(1)
-				 	console.log( "Load of mobile page was performed." );
+				 	//console.log( "Load of mobile page was performed." );
 				});
 			}
 			else {
 				$( "#root" ).load( "../desktop.html", function() {
 					redirect(0)
-				 	console.log( "Load of desktop page was performed." );
+				 	//console.log( "Load of desktop page was performed." );
 				});
 			}
 		</script>	
