@@ -148,16 +148,23 @@ html, body {
 	position: relative;
 	margin: 0 auto;
 	padding-top: 50%;
-	transform: translateY(-50%);
 	width: 70%;
 	text-align: center;
 	font-family: 'ArialRoundedMTBold';
 	color: white;
 } 
 
+
+
 #fall {
 	font-size: 4vw;
 	text-decoration: none;
+}
+
+@media only screen and (min-device-width : 800px){
+    .options {
+		transform: translateY(-50%);
+	} 
 }
 
 #fall:hover {
@@ -188,6 +195,18 @@ a:visited {
 
 a {
 	color: white;
+}
+
+@media only screen and (max-device-width : 800px){
+    #fall {
+		font-size: 30px;
+	}
+	#summer {
+		font-size: 15px;
+	}
+	p {
+		font-size: 15px;
+	}
 }
 
 .colorChange {
