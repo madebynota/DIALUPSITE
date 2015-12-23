@@ -1522,6 +1522,10 @@
 		}
 }
 
-	init.go();
+	var screenWidth = $(window).width();
+	console.log(screenWidth)
+	if(screenWidth > 1000) {
+		init.go();
+	}
 
 }).call(this);
