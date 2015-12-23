@@ -6,7 +6,6 @@
 	// window.pulpPageEvents = _.extend({}, Backbone.Events);
 	var pageURL = window.location.pathname;
 	pageURL = pageURL.replace("/magazines/", "");
-
 	var State = Backbone.Model.extend({
 		initialize: function(){
 			this.set('single-page-width', parseInt( $('#pages').css('max-width') ));
@@ -18,7 +17,12 @@
 			.done(function(data){
 				var colorDict = data.colorChoices;
 				var pageNum = window.location.hash;
-				pageNum = pageNum.replace("#", "");
+				if(pageNum == '') {
+					pageNum = 1;
+				}
+				else {
+					pageNum = pageNum.replace("#", "");
+				}
 				var pageColors = colorDict[pageNum];
 				console.log(colorDict[pageNum])
 
@@ -96,11 +100,12 @@
 		showNavHelpers: true
 	}	
 
-	function getEndPage() {
+	function getEndPage() { //End Pages is the value of the last page in the entire mag
 		$.getJSON('../data/'+pageURL+'.json')
 		.done(function(data){
 			var pages = data.pages;
 			states.endPage = ''+(pages.length);
+			console.log(states.endPage)
 		})
 		.error(function(error){
 			alert('Error loading data. Data file is either missing or the JSON is malformed. Try running it through jsonlint.com');
