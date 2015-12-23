@@ -186,15 +186,64 @@ a:visited {
 	text-align: center;
 }
 
+a {
+	color: white;
+}
+
 .colorChange {
 	-webkit-animation-direction: normal;
 	-webkit-animation-duration: 10s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-name: colours;
 	-webkit-animation-timing-function: ease;
+
+	-moz-animation-direction: normal;
+	-moz-animation-duration: 10s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-name: colours;
+	-moz-animation-timing-function: ease;
+
+	-o-animation-direction: normal;
+	-o-animation-duration: 10s;
+	-o-animation-iteration-count: infinite;
+	-o-animation-name: colours;
+	-o-animation-timing-function: ease;
+
+	animation-direction: normal;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-name: colours;
+	animation-timing-function: ease;
 }
 
 @-webkit-keyframes colours {
+	  0% {color: #FFFFFF;} /*White*/
+	 20% {color: #8bc5d1;} /*Light Blue*/
+	 40% {color: #FFA998;} /*Light Pink*/
+	 60% {color: #FFF0AD;} /*Light Yellow*/
+	 80% {color: #FFCD47;} /*Gold-ish*/
+	100% {color: #CDFFA7;} /*Baby Green*/
+}
+
+@-moz-keyframes colours {
+	  0% {color: #FFFFFF;} /*White*/
+	 20% {color: #8bc5d1;} /*Light Blue*/
+	 40% {color: #FFA998;} /*Light Pink*/
+	 60% {color: #FFF0AD;} /*Light Yellow*/
+	 80% {color: #FFCD47;} /*Gold-ish*/
+	100% {color: #CDFFA7;} /*Baby Green*/
+}
+
+@-o-keyframes colours {
+	  0% {color: #FFFFFF;} /*White*/
+	 20% {color: #8bc5d1;} /*Light Blue*/
+	 40% {color: #FFA998;} /*Light Pink*/
+	 60% {color: #FFF0AD;} /*Light Yellow*/
+	 80% {color: #FFCD47;} /*Gold-ish*/
+	100% {color: #CDFFA7;} /*Baby Green*/
+}
+
+@keyframes colours {
 	  0% {color: #FFFFFF;} /*White*/
 	 20% {color: #8bc5d1;} /*Light Blue*/
 	 40% {color: #FFA998;} /*Light Pink*/
