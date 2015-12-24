@@ -236,37 +236,37 @@ a {
 }
 
 @-webkit-keyframes colours {
-	  0% {color: #FFFFFF;} /*White*/
+	  0% {color: #CDFFA7;} /*Baby Green*/
 	 20% {color: #8bc5d1;} /*Light Blue*/
 	 40% {color: #FFA998;} /*Light Pink*/
 	 60% {color: #FFF0AD;} /*Light Yellow*/
-	 80% {color: #FFCD47;} /*Gold-ish*/
+	 80% {color: #E6FF47;} /*Gold-ish*/
 	100% {color: #CDFFA7;} /*Baby Green*/
 }
 
 @-moz-keyframes colours {
-	  0% {color: #FFFFFF;} /*White*/
+	  0% {color: #CDFFA7;} /*Baby Green*/
 	 20% {color: #8bc5d1;} /*Light Blue*/
 	 40% {color: #FFA998;} /*Light Pink*/
 	 60% {color: #FFF0AD;} /*Light Yellow*/
-	 80% {color: #FFCD47;} /*Gold-ish*/
+	 80% {color: #E6FF47;} /*Gold-ish*/
 	100% {color: #CDFFA7;} /*Baby Green*/
 }
 
 @-o-keyframes colours {
-	  0% {color: #FFFFFF;} /*White*/
+	  0% {color: #CDFFA7;} /*Baby Green*/
 	 20% {color: #8bc5d1;} /*Light Blue*/
 	 40% {color: #FFA998;} /*Light Pink*/
 	 60% {color: #FFF0AD;} /*Light Yellow*/
-	 80% {color: #FFCD47;} /*Gold-ish*/
+	 80% {color: #E6FF47;} /*Gold-ish*/
 	100% {color: #CDFFA7;} /*Baby Green*/
 }
 
 @keyframes colours {
-	  0% {color: #FFFFFF;} /*White*/
+	  0% {color: #CDFFA7;} /*Baby Green*/
 	 20% {color: #8bc5d1;} /*Light Blue*/
 	 40% {color: #FFA998;} /*Light Pink*/
 	 60% {color: #FFF0AD;} /*Light Yellow*/
-	 80% {color: #FFCD47;} /*Gold-ish*/
+	 80% {color: #E6FF47;} /*Gold-ish*/
 	100% {color: #CDFFA7;} /*Baby Green*/
 }
