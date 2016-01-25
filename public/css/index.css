@@ -56,6 +56,36 @@ html, body {
 	background: #000000;
 }
 
+#safari-img
+{
+	position: absolute;
+	max-width: 80%;
+	top: 10%;
+	left: 10%;
+	border-radius: 3px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.9);
+}
+
+#safari-img:empty
+{
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+#safari-header {
+	font-family: 'ArialRoundedMTBold';
+	color: white;
+	font-size: 6vw;
+	padding-top: 2%;
+	/*margin: 0 auto;*/
+	width: 50%;
+}
+
 #wrapper {
 	/*width: 100%;
 	margin: auto*/
@@ -164,6 +194,11 @@ html, body {
 @media only screen and (min-device-width : 800px){
     .options {
 		transform: translateY(-50%);
+	}
+	#safari-header {
+		width: 100%;
+		margin-left:auto;
+		margin-right:auto;
 	} 
 }
 
@@ -206,6 +241,11 @@ a {
 	}
 	p {
 		font-size: 15px;
+	}
+	#safari-header {
+		width: 100%;
+		margin-left:auto;
+		margin-right:auto;
 	}
 }
 
