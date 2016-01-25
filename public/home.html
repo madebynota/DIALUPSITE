@@ -41,9 +41,9 @@
   </head>
   <body>
     <div id="wrapper">
-        <div id="safari-header">USE A REAL BROWSER</div>
+        <!-- <div id="safari-header">USE A REAL BROWSER</div>
         <img id="safari-img" src="/img/fucksafari.png">
-        <div id="logo">DIAL UP</div>
+        <div id="logo">DIAL UP</div> -->
     </div>
     <script>
       $( document ).ready(function() {
@@ -62,8 +62,13 @@
         })();
 
         var browser_version      = navigator.sayswho;
-        if(browser_version[0] == "Safari") {
-          var safariPage = ''
+        screenWidth = $( window ).width();
+        if(browser_version[0] == "Safari" && (screenWidth > 800)) {
+          var safariPage = '<img id="safari-img" src="/img/fucksafari.png">' +
+          '<div id="logo">USE A REAL BROWSER - DIAL UP</div>' 
+
+          console.log('It is Safari Desktop')
+          $('#wrapper').append(safariPage);
         }
         else {
           var realPage = '<div class="options">' +
@@ -72,9 +77,19 @@
           '<p>THEN GO BACK AND READ THE <a href="/magazines/summer2015" id="summer" target="mag">SUMMER MAGAZINE</a> TOO.</p>' +
           '</div>' +
           '<div id="logo">DIAL UP</div>'
+
+          console.log('It isnt Safari Desktop')
+          $('#wrapper').append(realPage);
         }
+
       });
 
+      $(window).load(function() {
+        $('safari-header').flowtype({
+             fontRatio : 30
+          });
+      });
+  
       
     </script>
   </body>

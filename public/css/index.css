@@ -59,7 +59,7 @@ html, body {
 #safari-img
 {
 	position: absolute;
-	max-width: 80%;
+	width: 80%;
 	top: 10%;
 	left: 10%;
 	border-radius: 3px;
@@ -80,10 +80,12 @@ html, body {
 #safari-header {
 	font-family: 'ArialRoundedMTBold';
 	color: white;
-	font-size: 6vw;
+	font-size: 60px;
 	padding-top: 2%;
-	/*margin: 0 auto;*/
-	width: 50%;
+	width: 80%;
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
 }
 
 #wrapper {
@@ -195,11 +197,6 @@ html, body {
     .options {
 		transform: translateY(-50%);
 	}
-	#safari-header {
-		width: 100%;
-		margin-left:auto;
-		margin-right:auto;
-	} 
 }
 
 #fall:hover {
@@ -241,11 +238,6 @@ a {
 	}
 	p {
 		font-size: 15px;
-	}
-	#safari-header {
-		width: 100%;
-		margin-left:auto;
-		margin-right:auto;
 	}
 }
 
