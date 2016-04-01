@@ -41,9 +41,12 @@
   </head>
   <body>
     <div id="wrapper">
-        <!-- <div id="safari-header">USE A REAL BROWSER</div>
-        <img id="safari-img" src="/img/fucksafari.png">
-        <div id="logo">DIAL UP</div> -->
+        <div class="options">
+          <a href="/magazines/fall2015" target="mag" class="colorChange" id="fall">READ THE NEW FALL MAGAZINE</a>
+          <br> 
+          <p>THEN GO BACK AND READ THE <a href="/magazines/summer2015" id="summer" target="mag">SUMMER MAGAZINE</a> TOO.</p>
+        </div>
+        <div id="logo">DIAL UP</div>
     </div>
     <script>
       $( document ).ready(function() {
@@ -51,45 +54,7 @@
         color = letters[Math.floor(Math.random() * letters.length)];
         var finalColor = 'rgba(' + color + ', 1)'
         document.getElementById('wrapper').style.background = finalColor // Setting the random color on your div element.
-
-        // Browser with  Detection
-        navigator.sayswho= (function(){
-            var N= navigator.appName, ua= navigator.userAgent, tem;
-            var M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
-            if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
-            M= M? [M[1], M[2]]: [N, navigator.appVersion,'-?'];
-            return M;
-        })();
-
-        var browser_version      = navigator.sayswho;
-        screenWidth = $( window ).width();
-        if(browser_version[0] == "Safari" && (screenWidth > 800)) {
-          var safariPage = '<img id="safari-img" src="/img/fucksafari.png">' +
-          '<div id="logo">USE A REAL BROWSER - DIAL UP</div>' 
-
-          console.log('It is Safari Desktop')
-          $('#wrapper').append(safariPage);
-        }
-        else {
-          var realPage = '<div class="options">' +
-          '<a href="/magazines/fall2015" target="mag" class="colorChange" id="fall">READ THE NEW FALL MAGAZINE</a>' +
-          '<br>' + 
-          '<p>THEN GO BACK AND READ THE <a href="/magazines/summer2015" id="summer" target="mag">SUMMER MAGAZINE</a> TOO.</p>' +
-          '</div>' +
-          '<div id="logo">DIAL UP</div>'
-
-          console.log('It isnt Safari Desktop')
-          $('#wrapper').append(realPage);
-        }
-
       });
-
-      $(window).load(function() {
-        $('safari-header').flowtype({
-             fontRatio : 30
-          });
-      });
-  
       
     </script>
   </body>

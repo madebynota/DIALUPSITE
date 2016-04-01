@@ -178,7 +178,7 @@ html, body {
 
 .options {
 	position: relative;
-	margin: 0 auto;
+	margin: auto;
 	padding-top: 50%;
 	width: 70%;
 	text-align: center;
@@ -196,6 +196,8 @@ html, body {
 @media only screen and (min-device-width : 800px){
     .options {
 		transform: translateY(-50%);
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
 	}
 }
 
