@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-app.set('port', 3000);
+app.set('port', (process.env.PORT || 3000));
 app.set('views', __dirname + '/public');
 app.set('view engine', 'html');
 app.engine('html', engines.mustache);
