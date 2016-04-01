@@ -28,7 +28,7 @@
 
 				var c1 = pageColors["firstColor"];
 				var c2 = pageColors["secondColor"];
-				$("#main-content-wrapper").css({"background": "-webkit-linear-gradient(left, " + c1 + " , " + c2 + ")", "background": "-o-linear-gradient(right, " + c1 + " , " + c2 + ")", "background": "-moz-linear-gradient(right, " + c1 + " , " + c2 + ")", "background": "linear-gradient(to right, " + c1 + " , " + c2 + ")" })
+				// $("#main-content-wrapper").css({"background": "-webkit-linear-gradient(left, " + c1 + " , " + c2 + ")", "background": "-o-linear-gradient(right, " + c1 + " , " + c2 + ")", "background": "-moz-linear-gradient(right, " + c1 + " , " + c2 + ")", "background": "linear-gradient(to right, " + c1 + " , " + c2 + ")" })
 
 			})
 			.error(function(error){
@@ -1078,7 +1078,7 @@
 				var c1 = pageColors["firstColor"];
 				var c2 = pageColors["secondColor"];
 
-				$("#main-content-wrapper").css({"background": "-webkit-linear-gradient(left, " + c1 + " , " + c2 + ")", "background": "-o-linear-gradient(right, " + c1 + " , " + c2 + ")", "background": "-moz-linear-gradient(right, " + c1 + " , " + c2 + ")", "background": "linear-gradient(to right, " + c1 + " , " + c2 + ")" })
+				// $("#main-content-wrapper").css({"background": "-webkit-linear-gradient(left, " + c1 + " , " + c2 + ")", "background": "-o-linear-gradient(right, " + c1 + " , " + c2 + ")", "background": "-moz-linear-gradient(right, " + c1 + " , " + c2 + ")", "background": "linear-gradient(to right, " + c1 + " , " + c2 + ")" })
 			},
 			fromKeyboardOrGesture: function(direction){
 				// direction can be: next, prev, pageView or false if it wasn't a key code we captured
