@@ -13,6 +13,8 @@
 	 	<link rel="stylesheet" type="text/css" href="../css/thirdparty/pulp-icon.css">
 	 	<link rel="stylesheet" type="text/css" href="../css/styles.css">
 	 	<link rel="stylesheet" type="text/css" href="../css/custom.css">
+	 	<link rel="stylesheet" type="text/css" href="../css/safari.css">
+
 
 	 	<!-- Core CSS file -->
 		<link rel="stylesheet" href="../photoswipe/photoswipe.css"> 
@@ -91,6 +93,17 @@
 				// }
 			}
 
+			// Browser with  Detection
+			navigator.sayswho= (function(){
+				var N = navigator.appName, ua= navigator.userAgent, tem;
+				var M = ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+				if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+				M= M? [M[1], M[2]]: [N, navigator.appVersion,'-?'];
+				return M;
+			})();
+
+			var browser_version = navigator.sayswho;
+
 			var screenWidth = $(window).width();
 			//console.log(screenWidth)
 			if(screenWidth < 1000) {
@@ -100,10 +113,17 @@
 				});
 			}
 			else {
-				$( "#root" ).load( "../desktop.html", function() {
-					redirect(0)
-				 	//console.log( "Load of desktop page was performed." );
-				});
+				if(browser_version[0] == "Safari") {
+					$( "#root" ).load( "../desktop-safari.html", function() {
+						redirect(0)
+						console.log("Safari load occured")
+					});
+				}
+				else {
+					$( "#root" ).load( "../desktop.html", function() {
+						redirect(0)
+					});
+				}
 			}
 		</script>	
  	</body>
