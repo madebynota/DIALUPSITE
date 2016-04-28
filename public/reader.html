@@ -106,24 +106,16 @@
 
 			var screenWidth = $(window).width();
 			//console.log(screenWidth)
-			if(screenWidth < 1000) {
+			if(screenWidth < 1000 || browser_version[0] == "Safari") {
 				$( "#root" ).load( "../mobile.html", function() {
 					redirect(1)
 				 	//console.log( "Load of mobile page was performed." );
 				});
 			}
 			else {
-				if(browser_version[0] == "Safari") {
-					$( "#root" ).load( "../desktop-safari.html", function() {
-						redirect(0)
-						console.log("Safari load occured")
-					});
-				}
-				else {
-					$( "#root" ).load( "../desktop.html", function() {
-						redirect(0)
-					});
-				}
+				$( "#root" ).load( "../desktop.html", function() {
+					redirect(0)
+				});
 			}
 		</script>	
  	</body>
