@@ -16,6 +16,10 @@
 	font-family: 'KOFTH2';
 }
 
+.pswp {
+	font-family: 'KOFTH2';
+}
+
 #title, #scornIE {
 	font-family: 'KOFTH2';
 	font-size: 20vh;
@@ -34,6 +38,3 @@
 	display: none;
 }
 
-/*.articleBody {
-	display: none;
-}*/
