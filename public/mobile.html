@@ -1,6 +1,7 @@
+<p id='title'>DIAL UP</p>
 
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" style="display:none">
 
     <!-- Background of PhotoSwipe. 
          It's a separate element as animating opacity is faster than rgba(). -->
@@ -64,41 +65,53 @@
 
 </div>
 <script>
-	var pswpElement = document.querySelectorAll('.pswp')[0];
+    $( document ).ready(function() {  
+      $('#title').fadeIn(1000, function() {
+        $('#title').fadeOut(1000, function() {
+            $('.pswp').fadeIn(1000);
+            console.log('Fade In article');
+            loadPhotoswipe()
+        });
+      }).delay(1500);   
+    });
+    function loadPhotoswipe() {
+        var pswpElement = document.querySelectorAll('.pswp')[0];
 
-	var pageURL = window.location.pathname;
-	pageURL = pageURL.replace("/magazines/", "");
+        var pageURL = window.location.pathname;
+        pageURL = pageURL.replace("/magazines/", "");
 
-	var magDict = {
-		"summer2015": 18,
-		"fall2015": 30
-	}
+        var magDict = {
+            "summer2015": 18,
+            "fall2015": 30
+        }
 
-	var pageCount = magDict[pageURL]
+        var pageCount = magDict[pageURL]
 
-	// build items array
-	var items = []
-	for (var i = 1; i <= pageCount; i++) {
-		var photoObject = {
-        src: '../magazineAssets/'+ pageURL + '/page-' + i + '.jpg',
-        w: 1503,
-        h: 1980
+        // build items array
+        var items = []
+        for (var i = 1; i <= pageCount; i++) {
+            var photoObject = {
+            src: '../magazineAssets/'+ pageURL + '/page-' + i + '.jpg',
+            w: 1503,
+            h: 1980
+        }
+        items.push(photoObject)
+        };
+
+        // define options (if needed)
+        var options = {
+            // optionName: 'option value'
+            // for example:
+            index: 0, // start at first slide
+            pinchToClose: false,
+            closeOnScroll: false,
+            closeOnVerticalDrag: false
+
+        };
+
+        // Initializes and opens PhotoSwipe
+        var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery.init();
     }
-    items.push(photoObject)
-	};
-
-	// define options (if needed)
-	var options = {
-	    // optionName: 'option value'
-	    // for example:
-	    index: 0, // start at first slide
-	    pinchToClose: false,
-	    closeOnScroll: false,
-	    closeOnVerticalDrag: false
-
-	};
-
-	// Initializes and opens PhotoSwipe
-	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-	gallery.init();
+	
 </script>
