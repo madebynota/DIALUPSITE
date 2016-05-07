@@ -1,4 +1,44 @@
 /* Test CSS */
 
-.row {
+body {
+	background-image: url("/img/wood.jpg");
+}
+
+.container-fluid {
+	padding: 3%;
+}
+
+#soon {
+	width: 120%;
+}
+
+#video {
+	width: 70%;
+	margin-left: 20%;
+}
+
+#radio {
+	width: 80%;
+}
+
+#stuff {
+	width: 120%;
+	margin-top: -10%;
+	margin-left: 15%;
+}
+
+#magazine {
+	width: 100%;
+	margin-right: 20%;
+}
+
+#podcast {
+	width: 120%;
+	margin-top: -50%;
+}
+
+#music {
+	width: 160%;
+	margin-top: -30%;
+	margin-left: 5%;	
 }
