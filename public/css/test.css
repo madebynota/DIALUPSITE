@@ -72,7 +72,7 @@ body {
 
 }
 
-@media only screen and (max-device-width: 991px) {
+@media (max-device-width: 991px) {
 
     [class*="col-"]{
           margin-bottom: 100px;
@@ -105,7 +105,7 @@ body {
         text-align: center;
 
        -webkit-text-fill-color: white; /* Will override color (regardless of order) */
-       -webkit-text-stroke-width: 1px;
+       -webkit-text-stroke-width: 2px;
        -webkit-text-stroke-color: black;
     }
 }
