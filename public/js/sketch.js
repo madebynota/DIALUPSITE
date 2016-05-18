@@ -26,8 +26,8 @@ function setup() {
     xpos = floor(random(imgWidth, width-imgWidth));
     ypos = floor(random(imgHeight, height-imgHeight));
 
-    xvel = random(1, 4);
-    yvel = random(1, 4);
+    xvel = random(-4, 4);
+    yvel = random(-4, 4);
 
     createCanvas(width,height);
 
