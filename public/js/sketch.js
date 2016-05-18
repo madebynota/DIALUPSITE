@@ -30,7 +30,7 @@ function setup() {
 
     gifStart = false;
 
-    img = createImg("bo.png");
+    img = createImg("img/bo.png");
     img.position(radius, radius);
     img.size(175, 150);
 }
