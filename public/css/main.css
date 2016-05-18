@@ -1,10 +1,10 @@
 body {
-	/*background-image: url("../img/gifs/squad.gif"); 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover;*/
+	background-size: cover;
 	background-color: white;
+	background-position: center;
 }
 
 .verticalCenter {
