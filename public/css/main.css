@@ -35,6 +35,7 @@ body {
 
 #mediaItem {
 	color: black;
+	font-weight: bold;
 }
 
 @media (max-device-width: 767px) {
