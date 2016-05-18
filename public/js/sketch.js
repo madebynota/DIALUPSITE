@@ -8,6 +8,7 @@ var yvel;
 var xvel;
 
 var img;
+var img2;
 
 var imgWidth;
 var imgHeight;
@@ -20,8 +21,13 @@ function setup() {
     width = window.innerWidth;
     height = window.innerHeight;
 
-    imgWidth = width/5;
-    imgHeight = width/8;
+    if(width > 768){
+        imgWidth = width/7;
+        imgHeight = width/10;
+    } else {
+        imgWidth = width/3;
+        imgHeight = width/5;
+    }
 
     xpos = floor(random(imgWidth, width-imgWidth));
     ypos = floor(random(imgHeight, height-imgHeight));
@@ -33,9 +39,13 @@ function setup() {
 
     gifStart = false;
 
+    img2 = createImg("img/bo2.png");
     img = createImg("img/bo.png");
 
-    
+    img2.position(xpos, ypos);
+    img2.size(imgWidth, imgHeight);
+    img2.id("bo2");
+
     img.position(xpos, ypos);
     img.size(imgWidth, imgHeight);
     img.id("bo");
@@ -60,16 +70,16 @@ function draw() {
     ypos += yvel;
     }
 
+    img2.position(xpos, ypos);
     img.position(xpos, ypos);
 }
 
 function stop() {
     if(!gifStart){
         switchBackground();
-        img = createImage("img/bo2.png");
-        img.mousePressed(stop);
+        img2.mousePressed(stop);
+        img.hide();
         gifStart = true;
     }
-    img = createImage("img/bo2.png");
     switchBackground();
 }
