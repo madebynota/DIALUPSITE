@@ -112,6 +112,12 @@ function switchBackgroundMobile() {
 	$(".content #mediaItem").css("color", "white");
 }
 
+
 $(function() {
 	selectLogo()
+
+	$(".contact").click(function() {
+		var contactString = "EMAIL US AT DIALUPSTUFF@GMAIL.COM"
+		alert(contactString);
+	});
 });
