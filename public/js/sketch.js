@@ -4,12 +4,13 @@ var height;
 var xpos;
 var ypos;
 
-var radius;
-
 var yvel;
 var xvel;
 
 var img;
+
+var imgWidth;
+var imgHeight;
 
 var link;
 var gifStart;
@@ -18,10 +19,8 @@ function setup() {
     width = window.innerWidth;
     height = window.innerHeight;
 
-    radius = width/20;
-
-    xpos = radius+1;
-    ypos = radius+1;
+    xpos = width/2;
+    ypos = height/2;
 
     xvel = 2;
     yvel = 2;
@@ -31,17 +30,23 @@ function setup() {
     gifStart = false;
 
     img = createImg("img/bo.png");
-    img.position(radius, radius);
-    img.size(175, 150);
+
+    imgWidth = 175;
+    imgHeight = 150;
+    
+    img.position(xpos, ypos);
+    img.size(imgWidth, imgHeight);
+    img.id("bo");
+
+    img.mousePressed(hide);
 }
 
 function draw() {
-    // background(255);
-    if((xpos >= width) | (xpos <= 0)){
+    if((xpos >= (width-(imgWidth))) | (xpos <= 0)){
         xvel *= -1;
     }
 
-    if((ypos >= height) | (ypos <= 0)){
+    if((ypos >= (height-(imgHeight))) | (ypos <= 0)){
         yvel *= -1;
     }
 
@@ -49,13 +54,11 @@ function draw() {
     ypos += yvel;
 
     img.position(xpos, ypos);
-
 }
 
-function mouseClicked() {
-    if(sqrt(pow((xpos-mouseX), 2) + pow((ypos-mouseY), 2)) < (1/2)*radius) {
-        gifStart = true;
-        xvel = 0;
-        yvel = 0;
-    }
+function hide() {
+    gifStart = true;
+    switchBackground();
+    xvel = 0;
+    yvel = 0;
 }
