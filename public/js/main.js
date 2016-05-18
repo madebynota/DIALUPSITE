@@ -103,6 +103,15 @@ function switchBackground() {
 	index++;
 }
 
+function switchBackgroundMobile() {
+    var letters = ['13, 192, 255','255, 198, 173','185, 215, 57','0, 239, 171', '251, 210, 43', '255, 69, 69', '140, 47, 151', '233, 50, 97']; //Set your colors here
+    color = letters[Math.floor(Math.random() * letters.length)];
+    var finalColor = 'rgba(' + color + ', 1)'
+    document.body.style.background = finalColor
+
+	$(".content #mediaItem").css("color", "white");
+}
+
 $(function() {
 	selectLogo()
 });

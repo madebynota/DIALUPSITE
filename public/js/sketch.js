@@ -51,6 +51,7 @@ function setup() {
     img.id("bo");
 
     img.mousePressed(stop);
+    img2.mousePressed(stop);
 }
 
 function draw() {
@@ -65,21 +66,19 @@ function draw() {
         yvel *= -1;
     }
 
-    if(!gifStart){
     xpos += xvel;
     ypos += yvel;
-    }
 
     img2.position(xpos, ypos);
     img.position(xpos, ypos);
 }
 
 function stop() {
-    if(!gifStart){
+    img.hide();
+
+    if(width<767){
+        switchBackgroundMobile();
+    } else {
         switchBackground();
-        img2.mousePressed(stop);
-        img.hide();
-        gifStart = true;
     }
-    switchBackground();
 }
