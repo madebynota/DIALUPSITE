@@ -2,18 +2,10 @@ body {
 	height: 100%;
 	background-color: white;
     overflow: hidden;
-}
-/*.bg-image {
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	background-color: white;
-
-	-webkit-background-size: cover;
+    -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-}*/
+}
 
 .verticalCenter {
 	position: relative;
