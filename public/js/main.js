@@ -63,7 +63,12 @@ function switchBackground() {
 
 	var chosenGif = shuffled[index%mapCount].gifPath;
 	var chosenColor = shuffled[index%mapCount].color; 
+
 	$("body").css("background-image", "url(" + chosenGif + ")");
+	$("body").css("background-position", "center center");
+	$("body").css("background-size", "cover");
+	$("body").css("background-attachment", "fixed");
+
 	$(".content #mediaItem").css("color", chosenColor);
 
 
