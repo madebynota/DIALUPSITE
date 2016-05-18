@@ -16,14 +16,18 @@ var link;
 var gifStart;
 
 function setup() {
+
     width = window.innerWidth;
     height = window.innerHeight;
 
-    xpos = width/2;
-    ypos = height/2;
+    imgWidth = width/5;
+    imgHeight = width/8;
 
-    xvel = 2;
-    yvel = 2;
+    xpos = floor(random(imgWidth, width-imgWidth));
+    ypos = floor(random(imgHeight, height-imgHeight));
+
+    xvel = random(1, 4);
+    yvel = random(1, 4);
 
     createCanvas(width,height);
 
@@ -31,8 +35,6 @@ function setup() {
 
     img = createImg("img/bo.png");
 
-    imgWidth = width/5;
-    imgHeight = width/8;
     
     img.position(xpos, ypos);
     img.size(imgWidth, imgHeight);
