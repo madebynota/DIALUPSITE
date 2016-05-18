@@ -4,6 +4,30 @@ var gifMap = [
 		"color": "#FFFFFF"
 	},
 	{
+		"gifPath": "../img/gifs/WHITE-TEE.gif",
+		"color": "#44BBEC"
+	},
+	{
+		"gifPath": "../img/gifs/dave-wasabi.gif",
+		"color": "#44BBEC"
+	},
+	{
+		"gifPath": "../img/gifs/slim-twirl.gif",
+		"color": "#44BBEC"
+	},
+	{
+		"gifPath": "../img/gifs/archie-turnt.gif",
+		"color": "#FFFFFF"
+	},
+	{
+		"gifPath": "../img/gifs/bo-ollie.gif",
+		"color": "#FFFFFF"
+	},
+	{
+		"gifPath": "../img/gifs/stamina-crowd.gif",
+		"color": "#FFFFFF"
+	},
+	{
 		"gifPath": "../img/gifs/jeff-eggos.gif",
 		"color": "#FFA998"
 	},
@@ -20,13 +44,17 @@ var gifMap = [
 		"color": "#FFA998"
 	},
 	{
+		"gifPath": "../img/gifs/eddie-dunk.gif",
+		"color": "#FFA998"
+	},
+	{
 		"gifPath": "../img/gifs/squad.gif",
 		"color": "#FFFFFF"
 	}
 ]
 
 var shuffled = shuffle(gifMap);
-var mapCount = 6;
+var mapCount = 13;
 var index = 0;
 
 function shuffle(array) {
