@@ -31,7 +31,7 @@ function setup() {
 
     img = createImg("img/bo.png");
 
-    imgWidth = width/6;
+    imgWidth = width/5;
     imgHeight = width/8;
     
     img.position(xpos, ypos);
