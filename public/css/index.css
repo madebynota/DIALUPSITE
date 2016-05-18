@@ -17,6 +17,15 @@
 	url('../dialupfonts/ArialRoundedMTBold.ttf')  format('truetype'),
 	url('../dialupfonts/ArialRoundedMTBold.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
+@font-face {
+	font-family: 'SummerJams-Outline';
+	src: url('../dialupfonts/SummerJams-Outline.eot'); /* IE9 Compat Modes */
+	src: url('../dialupfonts/SummerJams-Outline.eot?#iefix') format('embedded-opentype'),
+	url('../dialupfonts/SummerJams-Outline.woff2') format('woff2'),
+	url('../dialupfonts/SummerJams-Outline.woff') format('woff'),
+	url('../dialupfonts/SummerJams-Outline.ttf')  format('truetype'),
+	url('../dialupfonts/SummerJams-Outline.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
 
 ul {
     list-style-type: none;
@@ -186,7 +195,32 @@ html, body {
 	color: white;
 } 
 
+.verticalCenter {
+	position: relative;
+	margin: auto;
+	margin-bottom: 0px;
+	padding-top: 50%;
+	width: 80%;
+	text-align: center;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+}
 
+#mainName {
+	font-family: 'ArialRoundedMTBold';
+	font-size: 6vw;
+	text-decoration: none;
+}
+
+.bottomLink {
+	display: inline-block;
+	margin: 0px 5px 0px 5px;
+}
+
+#mediaItem {
+	color: black;
+}
 
 #fall {
 	font-size: 4vw;
