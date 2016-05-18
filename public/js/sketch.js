@@ -25,23 +25,26 @@ function setup() {
     xvel = 2;
     yvel = 2;
 
-    createCanvas(width, height);
+    createCanvas(width,height);
 
     gifStart = false;
 
     img = createImg("img/bo.png");
 
-    imgWidth = 175;
-    imgHeight = 150;
+    imgWidth = width/6;
+    imgHeight = width/8;
     
     img.position(xpos, ypos);
     img.size(imgWidth, imgHeight);
     img.id("bo");
 
-    img.mousePressed(hide);
+    img.mousePressed(stop);
 }
 
 function draw() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+
     if((xpos >= (width-(imgWidth))) | (xpos <= 0)){
         xvel *= -1;
     }
@@ -50,15 +53,21 @@ function draw() {
         yvel *= -1;
     }
 
+    if(!gifStart){
     xpos += xvel;
     ypos += yvel;
+    }
 
     img.position(xpos, ypos);
 }
 
-function hide() {
-    gifStart = true;
+function stop() {
+    if(!gifStart){
+        switchBackground();
+        img = createImage("img/bo2.png");
+        img.mousePressed(stop);
+        gifStart = true;
+    }
+    img = createImage("img/bo2.png");
     switchBackground();
-    xvel = 0;
-    yvel = 0;
 }
