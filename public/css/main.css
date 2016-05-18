@@ -1,0 +1,37 @@
+body {
+	/*background-image: url("../img/gifs/squad.gif"); 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;*/
+	background-color: white;
+}
+
+.verticalCenter {
+	position: relative;
+	margin: auto;
+	margin-bottom: 0px;
+	padding-top: 50%;
+	width: 80%;
+	text-align: center;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+}
+
+#mainName {
+	/*font-family: 'ArialRoundedMTBold';
+	font-size: 6vw;
+	text-decoration: none;
+	color: black;*/
+	width: 100%;
+}
+
+.bottomLink {
+	display: inline-block;
+	margin: 0px 5px 0px 5px;
+}
+
+#mediaItem {
+	color: white;
+}

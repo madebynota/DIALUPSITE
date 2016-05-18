@@ -195,32 +195,6 @@ html, body {
 	color: white;
 } 
 
-.verticalCenter {
-	position: relative;
-	margin: auto;
-	margin-bottom: 0px;
-	padding-top: 50%;
-	width: 80%;
-	text-align: center;
-	transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-}
-
-#mainName {
-	font-family: 'ArialRoundedMTBold';
-	font-size: 6vw;
-	text-decoration: none;
-}
-
-.bottomLink {
-	display: inline-block;
-	margin: 0px 5px 0px 5px;
-}
-
-#mediaItem {
-	color: black;
-}
 
 #fall {
 	font-size: 4vw;
