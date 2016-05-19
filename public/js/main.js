@@ -4,6 +4,10 @@ var gifMap = [
 		"color": "#FFFFFF"
 	},
 	{
+		"gifPath": "../img/gifs/dunks.gif",
+		"color": "#FFFFFF"
+	},
+	{
 		"gifPath": "../img/gifs/WHITE-TEE.gif",
 		"color": "#44BBEC"
 	},
@@ -54,7 +58,7 @@ var gifMap = [
 ]
 
 var shuffled = shuffle(gifMap);
-var mapCount = 13;
+var mapCount = 14;
 var index = 0;
 
 function shuffle(array) {
