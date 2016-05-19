@@ -29,7 +29,7 @@ var gifMap = [
 	},
 	{
 		"gifPath": "../img/gifs/jeff-eggos.gif",
-		"color": "#FFA998"
+		"color": "#FFFFFF"
 	},
 	{
 		"gifPath": "../img/gifs/jeff-open-door.gif",
@@ -41,7 +41,7 @@ var gifMap = [
 	},
 	{
 		"gifPath": "../img/gifs/slim-dance.gif",
-		"color": "#FFA998"
+		"color": "#FFFFFF"
 	},
 	{
 		"gifPath": "../img/gifs/eddie-dunk.gif",
