@@ -48,17 +48,13 @@ var gifMap = [
 		"color": "#FFFFFF"
 	},
 	{
-		"gifPath": "../img/gifs/eddie-dunk.gif",
-		"color": "#FFA998"
-	},
-	{
 		"gifPath": "../img/gifs/squad.gif",
 		"color": "#FFFFFF"
 	}
 ]
 
 var shuffled = shuffle(gifMap);
-var mapCount = 14;
+var mapCount = 13;
 var index = 0;
 
 function shuffle(array) {
