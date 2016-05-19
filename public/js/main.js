@@ -29,7 +29,7 @@ var gifMap = [
 	},
 	{
 		"gifPath": "../img/gifs/jeff-eggos.gif",
-		"color": "#FFA998"
+		"color": "#FFFFFF"
 	},
 	{
 		"gifPath": "../img/gifs/jeff-open-door.gif",
@@ -41,7 +41,7 @@ var gifMap = [
 	},
 	{
 		"gifPath": "../img/gifs/slim-dance.gif",
-		"color": "#FFA998"
+		"color": "#FFFFFF"
 	},
 	{
 		"gifPath": "../img/gifs/eddie-dunk.gif",
@@ -112,6 +112,12 @@ function switchBackgroundMobile() {
 	$(".content #mediaItem").css("color", "white");
 }
 
+
 $(function() {
 	selectLogo()
+
+	$(".contact").click(function() {
+		var contactString = "EMAIL US AT DIALUPSTUFF@GMAIL.COM\n\nFACEBOOK AT HTTPS://WWW.FACEBOOK.COM/DIALUPSTUFF"
+		alert(contactString);
+	});
 });
