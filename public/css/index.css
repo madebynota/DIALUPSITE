@@ -1,4 +1,5 @@
 @font-face {
+	margin-left: 20%;
 	font-family: 'KOFTH2';
 	src: url('../dialupfonts/KingOfTheHill2.eot'); /* IE9 Compat Modes */
 	src: url('../dialupfonts/KingOfTheHill2.eot?#iefix') format('embedded-opentype'),
@@ -15,6 +16,15 @@
 	url('../dialupfonts/ArialRoundedMTBold.woff') format('woff'),
 	url('../dialupfonts/ArialRoundedMTBold.ttf')  format('truetype'),
 	url('../dialupfonts/ArialRoundedMTBold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+	font-family: 'SummerJams-Outline';
+	src: url('../dialupfonts/SummerJams-Outline.eot'); /* IE9 Compat Modes */
+	src: url('../dialupfonts/SummerJams-Outline.eot?#iefix') format('embedded-opentype'),
+	url('../dialupfonts/SummerJams-Outline.woff2') format('woff2'),
+	url('../dialupfonts/SummerJams-Outline.woff') format('woff'),
+	url('../dialupfonts/SummerJams-Outline.ttf')  format('truetype'),
+	url('../dialupfonts/SummerJams-Outline.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 ul {
@@ -53,7 +63,6 @@ div.a img{
 html, body {
 	height: 100%;
 	margin: 0;
-	background: #000000;
 }
 
 #safari-img
@@ -185,7 +194,6 @@ html, body {
 	font-family: 'ArialRoundedMTBold';
 	color: white;
 } 
-
 
 
 #fall {

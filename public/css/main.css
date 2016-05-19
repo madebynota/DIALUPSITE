@@ -1,0 +1,62 @@
+@font-face {
+	font-family: 'ArialRoundedMTBold';
+	src: url('../dialupfonts/ArialRoundedMTBold.eot'); /* IE9 Compat Modes */
+	src: url('../dialupfonts/ArialRoundedMTBold.eot?#iefix') format('embedded-opentype'),
+	url('../dialupfonts/ArialRoundedMTBold.woff2') format('woff2'),
+	url('../dialupfonts/ArialRoundedMTBold.woff') format('woff'),
+	url('../dialupfonts/ArialRoundedMTBold.ttf')  format('truetype'),
+	url('../dialupfonts/ArialRoundedMTBold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+body {
+	height: 100%;
+	background-color: white;
+    overflow: hidden;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+.verticalCenter {
+	position: relative;
+	margin: auto;
+	margin-bottom: 0px;
+	padding-top: 50%;
+	width: 80%;
+    top: 50%;
+	text-align: center;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+}
+
+#mainName {
+	/*font-family: 'ArialRoundedMTBold';
+	font-size: 6vw;
+	text-decoration: none;
+	color: black;*/
+	width: 100%;
+}
+
+.bottomLink {
+	display: inline-block;
+	margin: 10px 5px 0px 5px;
+}
+
+#mediaItem {
+	color: black;
+	font-weight: bold;
+	font-family: 'ArialRoundedMTBold';
+}
+
+@media (max-device-width: 767px) {
+    .bottomLink {
+        display: block;
+    }
+
+    .verticalCenter {
+        transform: translateY(0%);
+        -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+    }
+}

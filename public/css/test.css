@@ -1,0 +1,111 @@
+/* Test CSS */
+
+@font-face {
+    font-family: 'KOFTH2';
+    src: url('../dialupfonts/KingOfTheHill2.eot'); /* IE9 Co    mpat Modes */
+    src: url('../dialupfonts/KingOfTheHill2.eot?#iefix') for    mat('embedded-opentype'),
+    url('../dialupfonts/KingOfTheHill2.woff2') format('woff2    '),
+    url('../dialupfonts/KingOfTheHill2.woff') format('woff')    ,
+    url('../dialupfonts/KingOfTheHill2.ttf')  format('truety    pe'),
+    url('../dialupfonts/KingOfTheHill2.svg#svgFontName') for    mat('svg');
+}
+
+body {
+	background-image: url("/img/wood.jpg");
+}
+
+.container-fluid {
+	padding: 3%;
+}
+
+@media only screen and (min-device-width: 992px){
+    .full-height-column {
+        height:100%;
+    }
+
+    #soon {
+        width: 120%;
+    }
+
+    #video {
+        width: 70%;
+        margin-left: 20%;
+    }
+
+    #radio {
+        width: 80%;
+    }
+
+    #stuff {
+        width: 120%;
+        margin-top: -10%;
+        margin-left: 15%;
+    }
+
+    #magazine {
+        width: 100%;
+        margin-right: 20%;
+    }
+
+    #podcast {
+        width: 120%;
+        margin-top: -50%;
+    }
+
+    #music {
+        width: 160%;
+        margin-top: -30%;
+        margin-left: 5%;	
+    }
+
+    footer {
+        padding-top: 10px;
+        position: fixed;
+        top: 0;
+        left: 10;
+    }
+    
+    footer p {
+        font-size: 3em;
+        color: white;
+    }
+
+}
+
+@media (max-device-width: 991px) {
+
+    [class*="col-"]{
+          margin-bottom: 100px;
+          text-align: center;
+      }
+
+    img {
+        max-width: 60%;
+        max-height: 60%;
+    }
+
+    #soon {
+        max-width: 70%;
+    }
+
+    #music {
+       margin-bottom: 20px; 
+    }
+
+    footer {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    p {
+        text-size: 40px;
+        color: white;
+        position: fixed;
+        top: 0;
+        text-align: center;
+
+       -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+       -webkit-text-stroke-width: 2px;
+       -webkit-text-stroke-color: black;
+    }
+}
