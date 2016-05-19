@@ -4,6 +4,10 @@ var gifMap = [
 		"color": "#FFFFFF"
 	},
 	{
+		"gifPath": "../img/gifs/dunks.gif",
+		"color": "#FFFFFF"
+	},
+	{
 		"gifPath": "../img/gifs/WHITE-TEE.gif",
 		"color": "#44BBEC"
 	},
@@ -42,10 +46,6 @@ var gifMap = [
 	{
 		"gifPath": "../img/gifs/slim-dance.gif",
 		"color": "#FFFFFF"
-	},
-	{
-		"gifPath": "../img/gifs/eddie-dunk.gif",
-		"color": "#FFA998"
 	},
 	{
 		"gifPath": "../img/gifs/squad.gif",
