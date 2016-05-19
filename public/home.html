@@ -78,7 +78,7 @@
     <meta name="twitter:site" content="DIAL UP">
     <meta name="twitter:creator" content="@DialUpRadio">
     <meta name="twitter:title" content="DIAL UP">
-    <meta name="twitter:description" content="Fall Magazine Out Now.">
+    <meta name="twitter:description" content="Winter Magazine Out Now.">
     <meta name="twitter:image:src" content="https://scontent-atl3-1.xx.fbcdn.net/hphotos-xpt1/t31.0-8/12186309_1823137727912882_1555131398876370272_o.png"> <!-- at least 280px x 150px for Twitter (image must be < 1MB) -->
     <meta name="twitter:domain" content="dialupstuff.com">
 
@@ -118,6 +118,7 @@
 
   <!-- HTML Body Start -->
   <body>
+<<<<<<< HEAD
       <div class="container-fluid verticalCenter">
           <div class="row">
               <div id="site-text" class="col-md-6 col-md-offset-3">
@@ -145,5 +146,25 @@
               </div>
           </div>
       </div>
+=======
+    <div id="wrapper">
+        <div class="options">
+          <a href="/magazines/winter2016" target="mag" class="colorChange" id="fall">READ THE NEW WINTER MAGAZINE</a>
+          <br> 
+          <p>THEN GO BACK AND READ THE <a href="/magazines/fall2015" id="summer" target="mag">FALL MAGAZINE</a></p>
+          <p>AND THE <a href="/magazines/summer2015" id="summer" target="mag">SUMMER MAGAZINE</a> TOO</p>
+        </div>
+        <div id="logo">DIAL UP</div>
+    </div>
+    <script>
+      $( document ).ready(function() {
+        var letters = ['13, 192, 255','255, 198, 173','185, 215, 57','0, 239, 171', '251, 210, 43', '255, 69, 69', '140, 47, 151', '233, 50, 97']; //Set your colors here
+        color = letters[Math.floor(Math.random() * letters.length)];
+        var finalColor = 'rgba(' + color + ', 1)'
+        document.getElementById('wrapper').style.background = finalColor // Setting the random color on your div element.
+      });
+      
+    </script>
+>>>>>>> master
   </body>
 </html>
