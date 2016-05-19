@@ -117,7 +117,7 @@ $(function() {
 	selectLogo()
 
 	$(".contact").click(function() {
-		var contactString = "EMAIL US AT DIALUPSTUFF@GMAIL.COM"
+		var contactString = "EMAIL US AT DIALUPSTUFF@GMAIL.COM\n\nFACEBOOK AT HTTPS://WWW.FACEBOOK.COM/DIALUPSTUFF"
 		alert(contactString);
 	});
 });
