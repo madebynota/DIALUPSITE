@@ -49,6 +49,19 @@ body {
 	font-family: 'ArialRoundedMTBold';
 }
 
+#grant {
+	position: absolute;
+	bottom: 20px;
+	font-size: 15px;
+	font-family: 'ArialRoundedMTBold';
+	width: 100%;
+	text-align: center;
+}
+
+#grant a {
+    color: red;
+}
+
 @media (max-device-width: 767px) {
     .bottomLink {
         display: block;
