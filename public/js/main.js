@@ -53,8 +53,28 @@ var gifMap = [
 	}
 ]
 
-var shuffled = shuffle(gifMap);
-var mapCount = 13;
+var vidMap = [
+	{
+		"vidPath": "../img/vids/aj-eggo.mp4",
+		"color": "#FFFFFF"
+	},
+	{
+		"vidPath": "../img/vids/jeff-eggo.mp4",
+		"color": "#FFFFFF"
+	},
+	{
+		"vidPath": "../img/vids/party.mp4",
+		"color": "#44BBEC"
+	},
+	{
+		"vidPath": "../img/vids/slim-dillo.mp4",
+		"color": "#44BBEC"
+	}
+]
+
+
+var shuffled = shuffle(vidMap);
+var mapCount = 4;
 var index = 0;
 
 function shuffle(array) {
@@ -89,13 +109,15 @@ function switchBackground() {
 		$("body").css("background-color", "");
 	}
 
-	var chosenGif = shuffled[index%mapCount].gifPath;
+	var chosenVid = shuffled[index%mapCount].vidPath;
 	var chosenColor = shuffled[index%mapCount].color; 
 
-	$("body").css("background-image", "url(" + chosenGif + ")");
-	$("body").css("background-position", "center center");
-	$("body").css("background-size", "cover");
-	$("body").css("background-attachment", "fixed");
+
+	$("#bgvid").attr("src", "chosenVid");
+	$("#bgvid").css("background-position", "center center");
+	$("#bgvid").css("background-size", "cover");
+	$("#bgvid").css("background-position", "fixed");
+	$("#bgvid").css("z-index", -100);
 
 	$(".content #mediaItem").css("color", chosenColor);
 
