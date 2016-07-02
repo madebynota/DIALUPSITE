@@ -113,7 +113,7 @@ function switchBackground() {
 	var chosenColor = shuffled[index%mapCount].color; 
 
 
-	$("#bgvid").attr("src", "chosenVid");
+	$("#bgvid").attr("src", chosenVid);
 	$("#bgvid").css("background-position", "center center");
 	$("#bgvid").css("background-size", "cover");
 	$("#bgvid").css("background-position", "fixed");
