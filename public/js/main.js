@@ -1,58 +1,3 @@
-var gifMap = [
-	{
-		"gifPath": "../img/gifs/dillo.gif",
-		"color": "#FFFFFF"
-	},
-	{
-		"gifPath": "../img/gifs/dunks.gif",
-		"color": "#FFFFFF"
-	},
-	{
-		"gifPath": "../img/gifs/WHITE-TEE.gif",
-		"color": "#44BBEC"
-	},
-	{
-		"gifPath": "../img/gifs/dave-wasabi.gif",
-		"color": "#44BBEC"
-	},
-	{
-		"gifPath": "../img/gifs/slim-twirl.gif",
-		"color": "#44BBEC"
-	},
-	{
-		"gifPath": "../img/gifs/archie-turnt.gif",
-		"color": "#FFFFFF"
-	},
-	{
-		"gifPath": "../img/gifs/bo-ollie.gif",
-		"color": "#FFFFFF"
-	},
-	{
-		"gifPath": "../img/gifs/stamina-crowd.gif",
-		"color": "#FFFFFF"
-	},
-	{
-		"gifPath": "../img/gifs/jeff-eggos.gif",
-		"color": "#FFFFFF"
-	},
-	{
-		"gifPath": "../img/gifs/jeff-open-door.gif",
-		"color": "#FFA998"
-	},
-	{
-		"gifPath": "../img/gifs/sk8.gif",
-		"color": "#FFFFFF"
-	},
-	{
-		"gifPath": "../img/gifs/slim-dance.gif",
-		"color": "#FFFFFF"
-	},
-	{
-		"gifPath": "../img/gifs/squad.gif",
-		"color": "#FFFFFF"
-	}
-]
-
 var vidMap = [
 	{
 		"vidPath": "../img/vids/aj-eggo.mp4",
@@ -68,13 +13,41 @@ var vidMap = [
 	},
 	{
 		"vidPath": "../img/vids/slim-dillo.mp4",
+		"color": "#ff2847"
+	},
+	{
+		"vidPath": "../img/vids/party-hypeness.mp4",
+		"color": "#fe944f"
+	},
+	{
+		"vidPath": "../img/vids/luchador.mp4",
 		"color": "#44BBEC"
+	},
+	{
+		"vidPath": "../img/vids/party-2.mp4",
+		"color": "#18faee"
+	},
+	{
+		"vidPath": "../img/vids/dave-wasabi.mp4",
+		"color": "#FFB9A3"
+	},
+	{
+		"vidPath": "../img/vids/feed-streets.mp4",
+		"color": "#fdd848"
+	},
+	{
+		"vidPath": "../img/vids/jeff-yam.mp4",
+		"color": "#44BBEC"
+	},
+	{
+		"vidPath": "../img/vids/archie-turnt.mp4",
+		"color": "#FFB9A3"
 	}
 ]
 
 
 var shuffled = shuffle(vidMap);
-var mapCount = 4;
+var mapCount = 11;
 var index = 0;
 
 function shuffle(array) {
