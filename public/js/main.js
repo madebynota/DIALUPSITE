@@ -42,12 +42,36 @@ var vidMap = [
 	{
 		"vidPath": "../img/vids/archie-turnt.mp4",
 		"color": "#FFB9A3"
+	},
+	{
+		"vidPath": "../img/vids/magic-go-crazy.mp4",
+		"color": "#18faee"
+	},
+	{
+		"vidPath": "../img/vids/aj-dap.mp4",
+		"color": "#FFB9A3"
+	},
+	{
+		"vidPath": "../img/vids/nbn2.mp4",
+		"color": "#44BBEC"
+	},
+	{
+		"vidPath": "../img/vids/jeff-only-up.mp4",
+		"color": "#FFB9A3"
+	},
+	{
+		"vidPath": "../img/vids/jack-dap.mp4",
+		"color": "#18faee"
+	},
+	{
+		"vidPath": "../img/vids/archie-jerk.mp4",
+		"color": "#18faee"
 	}
 ]
 
 
 var shuffled = shuffle(vidMap);
-var mapCount = 11;
+var mapCount = 17;
 var index = 0;
 
 function shuffle(array) {
