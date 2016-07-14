@@ -140,3 +140,12 @@ $(function() {
 		alert(contactString);
 	});
 });
+
+//Function to call the date ticker on page load
+$(document).ready(function(){
+date = new Date(new Date().valueOf() + 15 * 24 * 60 * 60 * 1000);
+$('#clock').countdown(date, function(event) {
+    $(this).html(event.strftime('%D days %H:%M:%S'));
+  });
+});
+

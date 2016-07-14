@@ -33,6 +33,8 @@ app.get('/magazines/summer2015', function(req, res) {res.render('reader.html')})
 app.get('/magazines/fall2015', function(req, res) {res.render('reader.html')});
 app.get('/magazines/winter2016', function(req, res) {res.render('reader.html')});
 
+//Routes for Radio
+app.get('/radio', function(req, res) {res.render('radio.html')});
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
