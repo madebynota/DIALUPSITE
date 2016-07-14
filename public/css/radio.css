@@ -1,2 +1,11 @@
 /** Radio CSS File **/
 
+body {
+  background-color:#FFCFE7;
+  vertical-align: center;
+}
+
+#text-container {
+  text-align:center;
+  padding-top:25%;
+}
