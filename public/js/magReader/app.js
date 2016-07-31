@@ -13,7 +13,7 @@
 			this.set('zoom', null);
 
 			//For loading a set of background colors to have as the reader progresses.
-			$.getJSON('../colors/'+pageURL+'-colors.json')
+			$.getJSON('../magazineAssets/colors/'+pageURL+'-colors.json')
 			.done(function(data){
 				var colorDict = data.colorChoices;
 				var pageNum = window.location.hash;
@@ -101,7 +101,7 @@
 	}	
 
 	function getEndPage() { //End Pages is the value of the last page in the entire mag
-		$.getJSON('../data/'+pageURL+'.json')
+		$.getJSON('../magazineAssets/data/'+pageURL+'.json')
 		.done(function(data){
 			var pages = data.pages;
 			states.endPage = ''+(pages.length);
@@ -114,7 +114,7 @@
 
 	function getColors() {
 		//For loading a set of background colors to have as the reader progresses.
-		$.getJSON('../colors/'+pageURL+'-colors.json')
+		$.getJSON('../magazineAssets/colors/'+pageURL+'-colors.json')
 		.done(function(data){
 			var colorChoices = data.colorChoices;
 			states.colors = colorChoices;
@@ -1454,7 +1454,7 @@
 			this.browserHacks();
 		},
 		loadPages: function(){
-			$.getJSON('../data/'+pageURL+'.json')
+			$.getJSON('../magazineAssets/data/'+pageURL+'.json')
 				.done(function(data){
 					var pages = data.pages,
 							endnotes = data.endnotes;
