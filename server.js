@@ -17,15 +17,6 @@ app.use(bodyParser.urlencoded({
 
 app.get('/', function(req, res) {res.render('home.html')});
 app.get('/magazines', function(req, res) {res.render('magazine.html')});
-app.get('/soon', function(req, res) {res.render('soon.html')});
-
-//Routes for pages that are coming soon
-app.get('/portal', function(req, res) {
-	res.redirect('/soon');
-});
-app.get('/tracks', function(req, res) {
-	res.redirect('/soon');
-});
 
 
 //Routes for Magazines
