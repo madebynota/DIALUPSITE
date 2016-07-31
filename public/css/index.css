@@ -1,30 +1,21 @@
 @font-face {
 	margin-left: 20%;
 	font-family: 'KOFTH2';
-	src: url('../dialupfonts/KingOfTheHill2.eot'); /* IE9 Compat Modes */
-	src: url('../dialupfonts/KingOfTheHill2.eot?#iefix') format('embedded-opentype'),
-	url('../dialupfonts/KingOfTheHill2.woff2') format('woff2'),
-	url('../dialupfonts/KingOfTheHill2.woff') format('woff'),
-	url('../dialupfonts/KingOfTheHill2.ttf')  format('truetype'),
-	url('../dialupfonts/KingOfTheHill2.svg#svgFontName') format('svg'); /* Legacy iOS */
+	src: url('../fonts/dialupfonts/KingOfTheHill2.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/dialupfonts/KingOfTheHill2.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/dialupfonts/KingOfTheHill2.woff2') format('woff2'),
+	url('../fonts/dialupfonts/KingOfTheHill2.woff') format('woff'),
+	url('../fonts/dialupfonts/KingOfTheHill2.ttf')  format('truetype'),
+	url('../fonts/dialupfonts/KingOfTheHill2.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 @font-face {
 	font-family: 'ArialRoundedMTBold';
-	src: url('../dialupfonts/ArialRoundedMTBold.eot'); /* IE9 Compat Modes */
-	src: url('../dialupfonts/ArialRoundedMTBold.eot?#iefix') format('embedded-opentype'),
-	url('../dialupfonts/ArialRoundedMTBold.woff2') format('woff2'),
-	url('../dialupfonts/ArialRoundedMTBold.woff') format('woff'),
-	url('../dialupfonts/ArialRoundedMTBold.ttf')  format('truetype'),
-	url('../dialupfonts/ArialRoundedMTBold.svg#svgFontName') format('svg'); /* Legacy iOS */
-}
-@font-face {
-	font-family: 'SummerJams-Outline';
-	src: url('../dialupfonts/SummerJams-Outline.eot'); /* IE9 Compat Modes */
-	src: url('../dialupfonts/SummerJams-Outline.eot?#iefix') format('embedded-opentype'),
-	url('../dialupfonts/SummerJams-Outline.woff2') format('woff2'),
-	url('../dialupfonts/SummerJams-Outline.woff') format('woff'),
-	url('../dialupfonts/SummerJams-Outline.ttf')  format('truetype'),
-	url('../dialupfonts/SummerJams-Outline.svg#svgFontName') format('svg'); /* Legacy iOS */
+	src: url('../fonts/dialupfonts/ArialRoundedMTBold.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/dialupfonts/ArialRoundedMTBold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/dialupfonts/ArialRoundedMTBold.woff2') format('woff2'),
+	url('../fonts/dialupfonts/ArialRoundedMTBold.woff') format('woff'),
+	url('../fonts/dialupfonts/ArialRoundedMTBold.ttf')  format('truetype'),
+	url('../fonts/dialupfonts/ArialRoundedMTBold.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 ul {
