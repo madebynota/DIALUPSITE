@@ -102,6 +102,8 @@ function selectLogo() {
 }
 
 function switchBackground() {
+	$("video").show();
+	
 	if(index == 1) {
 		$("body").css("background-color", "");
 	}

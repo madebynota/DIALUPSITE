@@ -86,3 +86,7 @@ body {
         -ms-transform: translateY(0%);
     }
 }
+
+video {
+	display: none;
+}
