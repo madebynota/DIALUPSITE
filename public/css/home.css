@@ -15,6 +15,7 @@ body {
     -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
+	background-color: #FAD141;
 }
 
 .verticalCenter {
@@ -38,6 +39,10 @@ body {
 	width: 100%;
 }
 
+#andrew {
+	z-index: -300;
+}
+
 #bgvid {
 	 position: fixed;
     top: 50%;
@@ -57,7 +62,7 @@ body {
 }
 
 #mediaItem {
-	color: black;
+	color: white;
 	font-weight: bold;
 	font-family: 'ArialRoundedMTBold';
 }
