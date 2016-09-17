@@ -1,3 +1,45 @@
+//Function for handling contact button press.
+$(function() {
+	modeSelection();
+	selectLogo();
+
+	$(".contact").click(function() {
+		var contactString = "EMAIL US AT DIALUPSTUFF@GMAIL.COM\n\nFACEBOOK AT HTTPS://WWW.FACEBOOK.COM/DIALUPSTUFF"
+		alert(contactString);
+	});
+});
+
+
+//Selects a random color for the logo on refresh
+function selectLogo() {
+	var logoOptions = [0, 1, 2, 3, 4, 5, 6];
+	var choice = logoOptions[Math.floor(Math.random()*7)]
+	var filename = "img/logos/logo-" + choice + ".png";
+	console.log(filename)
+	$("#mainName").attr("src", filename);
+}
+
+// Determines if the website should use the Bo Face or
+// Andrew Face animations.
+function modeSelection() {
+	var browser_version = getBrowser();
+	var andrewFace = 'js/andrewFaceAnimation/andrewface.js';
+	var boFace = 'js/boFaceAnimation/sketch.js';
+
+	if(browser_version[0] == "Safari" && $(window).width() > 1000) {
+		$('#animationMode').attr("src", andrewFace);
+		$('[id=mediaItem]').css('color', 'white');
+		$('body').css('background-color', '#FAD141');
+	}
+	else {
+		$('#animationMode').attr("src", boFace)
+	}
+}
+
+//##### ANDREW FACE MODE #####
+
+
+//##### BO FACE MODE #####
 var vidMap = [
 	{
 		"vidPath": "../img/vids/aj-eggo.mp4",
@@ -93,13 +135,6 @@ function shuffle(array) {
   return array;
 }
 
-function selectLogo() {
-	var logoOptions = [0, 1, 2, 3, 4, 5, 6];
-	var choice = logoOptions[Math.floor(Math.random()*7)]
-	var filename = "img/logos/logo-" + choice + ".png";
-	console.log(filename)
-	$("#mainName").attr("src", filename);
-}
 
 function switchBackground() {
 	$("video").show();
@@ -124,6 +159,7 @@ function switchBackground() {
 	index++;
 }
 
+//##### MOBILE MODE #####
 function switchBackgroundMobile() {
     var letters = ['13, 192, 255','255, 198, 173','185, 215, 57','0, 239, 171', '251, 210, 43', '255, 69, 69', '140, 47, 151', '233, 50, 97']; //Set your colors here
     color = letters[Math.floor(Math.random() * letters.length)];
@@ -134,11 +170,3 @@ function switchBackgroundMobile() {
 }
 
 
-$(function() {
-	selectLogo()
-
-	$(".contact").click(function() {
-		var contactString = "EMAIL US AT DIALUPSTUFF@GMAIL.COM\n\nFACEBOOK AT HTTPS://WWW.FACEBOOK.COM/DIALUPSTUFF"
-		alert(contactString);
-	});
-});

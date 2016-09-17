@@ -15,7 +15,6 @@ body {
     -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-color: #FAD141;
 }
 
 .verticalCenter {
@@ -62,7 +61,7 @@ body {
 }
 
 #mediaItem {
-	color: white;
+	color: black;
 	font-weight: bold;
 	font-family: 'ArialRoundedMTBold';
 }

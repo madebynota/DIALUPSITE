@@ -45,6 +45,9 @@
 
 		<script src="../js/magReader/thirdparty/jquery-1.11.0.min.js"></script>
 
+		<!-- Helper functions -->
+		<script src="../js/helper.js"></script>
+
 	</head>
 	<body id="root">
 		<script>
@@ -92,16 +95,7 @@
 				// }
 			}
 
-			// Browser with  Detection
-			navigator.sayswho= (function(){
-				var N = navigator.appName, ua= navigator.userAgent, tem;
-				var M = ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
-				if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
-				M= M? [M[1], M[2]]: [N, navigator.appVersion,'-?'];
-				return M;
-			})();
-
-			var browser_version = navigator.sayswho;
+			var browser_version = getBrowser();
 
 			var screenWidth = $(window).width();
 			//console.log(screenWidth)
