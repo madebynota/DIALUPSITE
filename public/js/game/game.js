@@ -10,11 +10,13 @@ game_state.main.prototype = {
 		// Function called first to load all the assets
         game.load.image('sky', 'img/game/sky.jpg');
         game.load.image('ground', 'img/game/ground.png');
-        game.load.image('sprite', 'img/bo2.png', 32, 48);
+        game.load.image('sprite', 'img/bo2.png', 3, 4);
     },
 
     create: function() { 
-         //  We're going to be using physics, so enable the Arcade Physics system
+        cursors = game.input.keyboard.createCursorKeys();
+
+        //  We're going to be using physics, so enable the Arcade Physics system
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
         //  A simple background for our game
@@ -35,14 +37,35 @@ game_state.main.prototype = {
         //  This stops it from falling away when you jump on it
         ground.body.immovable = true;
 
-    	// Fuction called after 'preload' to setup the game
-        this.sprite = game.add.sprite(30, 30, 'sprite');
+
+      // The player and its settings
+      player = game.add.sprite(32, game.world.height - 350, 'sprite');
+
+      //  We need to enable physics on the player
+      game.physics.arcade.enable(player);
+
+      //  Player physics properties. Give the little guy a slight bounce.
+      player.body.bounce.y = 0.2;
+      player.body.gravity.y = 300;
+      player.body.collideWorldBounds = true;
+
+      player.scale.setTo(0.25, 0.25);
     },
     
     update: function() {
+   var hitPlatform = game.physics.arcade.collide(player, platforms);
 		// Function called 60 times per second
-        var sprite = this.sprite;
-        sprite.angle += 1;
+      player.body.velocity.x = 0;
+    if (cursors.left.isDown)
+      {
+          //  Move to the left
+          player.body.velocity.x = -150;
+      }
+      else if (cursors.right.isDown)
+      {
+          //  Move to the right
+          player.body.velocity.x = 150;
+      }
     },
 };
 
