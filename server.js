@@ -23,6 +23,7 @@ app.get('/magazines', function(req, res) {res.render('magazine.html')});
 app.get('/magazines/summer2015', function(req, res) {res.render('reader.html')});
 app.get('/magazines/fall2015', function(req, res) {res.render('reader.html')});
 app.get('/magazines/winter2016', function(req, res) {res.render('reader.html')});
+app.get('/magazines/summer2016', function(req, res) {res.render('reader.html')});
 
 
 /// catch 404 and forward to error handler
