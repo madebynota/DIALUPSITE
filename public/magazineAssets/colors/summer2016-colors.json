@@ -43,6 +43,10 @@
 		"40": {"firstColor":"#000000", "secondColor":"#000000"},
 
 		"42": {"firstColor":"#000000", "secondColor":"#000000"},
+		
+		"44": {"firstColor":"#000000", "secondColor":"#000000"},
+
+		"46": {"firstColor":"#000000", "secondColor":"#000000"},
 
 		"default": {"firstColor":"#000000", "secondColor":"#000000"}
 	}
