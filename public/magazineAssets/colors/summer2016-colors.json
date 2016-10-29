@@ -48,6 +48,8 @@
 
 		"46": {"firstColor":"#000000", "secondColor":"#000000"},
 
+		"48": {"firstColor":"#000000", "secondColor":"#000000"},
+
 		"default": {"firstColor":"#000000", "secondColor":"#000000"}
 	}
 }
