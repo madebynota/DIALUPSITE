@@ -4,8 +4,7 @@
   "dependencies": {
     "consolidate": "latest",
     "express": "latest",
-    "mustache": "latest",
-    "body-parser": "latest"
+    "mustache": "latest"
   },
   "description": "Dial Up Website",
   "main": "server.js",

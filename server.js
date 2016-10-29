@@ -1,7 +1,6 @@
 var express = require('express');
 var engines = require('consolidate');
 var mustache = require('mustache');
-var bodyParser = require('body-parser');
 
 var app = express();
 
@@ -10,10 +9,7 @@ app.set('views', __dirname + '/public');
 app.set('view engine', 'html');
 app.engine('html', engines.mustache);
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+
 
 app.get('/', function(req, res) {res.render('home.html')});
 app.get('/magazines', function(req, res) {res.render('magazine.html')});
