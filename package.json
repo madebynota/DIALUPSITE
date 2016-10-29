@@ -4,6 +4,7 @@
   "dependencies": {
     "consolidate": "latest",
     "express": "latest",
+    "fs": "0.0.1-security",
     "mustache": "latest"
   },
   "description": "Dial Up Website",

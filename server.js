@@ -1,6 +1,7 @@
 var express = require('express');
 var engines = require('consolidate');
 var mustache = require('mustache');
+var fs = require('fs');
 
 var app = express();
 
@@ -18,6 +19,13 @@ app.get('/magazines/summer2015', function(req, res) {res.render('reader.html')})
 app.get('/magazines/fall2015', function(req, res) {res.render('reader.html')});
 app.get('/magazines/winter2016', function(req, res) {res.render('reader.html')});
 app.get('/magazines/summer2016', function(req, res) {res.render('reader.html')});
+
+//Routes for exposed static content
+app.get('/embedimage.png', function(req, res) {
+	var img = fs.readFileSync('./public/img/embedimage.png');
+	res.writeHead(200, {'Content-Type': 'image/png' });
+	res.end(img, 'binary');
+});
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
