@@ -4,7 +4,8 @@
   "description": "A website for Dial Up, a small collective that I'm a part of. We DJ, write, and make music if we can. This website is for displaying our online magazines and other forms of conent. Generally though, we just want a space to be as creative as we want with the design/technology on this site!",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production node_modules/.bin/webpack -p && node_modules/.bin/http-server src/static"
   },
   "repository": {
     "type": "git",
