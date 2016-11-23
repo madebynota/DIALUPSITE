@@ -1,11 +1,15 @@
 import React from 'react';
-import { Router, browserHistory } from 'react-router';
-import routes from '../routes';
+import { Route, Router, browserHistory } from 'react-router';
+import HomePage from './HomePage';
+import MagazinesPage from './MagazinesPage';
 
 class SiteRoutes extends React.Component {
 	render() {
 		return (
-			<Router history={browserHistory} routes={routes} onUpdate={() => window.scrollTo(0, 0)}/>
+			<Router history={browserHistory} onUpdate={() => window.scrollTo(0, 0)}>
+				<Route path="/" component={HomePage} />
+				<Route path="/magazines" component={MagazinesPage} />
+			</Router>
 		);
 	}
 }
