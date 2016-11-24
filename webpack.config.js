@@ -1,11 +1,12 @@
 const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: path.join(__dirname, 'src', 'main.js'),
     output: {
-        path: path.join(__dirname, 'src', 'static', 'js'),
-        filename: 'bundle.js'
+        path: path.join(__dirname, 'src', 'static'),
+        filename: 'js/bundle.js'
     },
     resolve: {
         extensions: ['', '.js', '.jsx', '.json']
@@ -22,17 +23,25 @@ module.exports = {
             {
                 test: /\.js|.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: ['babel-loader'],
+                loader: 'babel',
                 query: {
                     cacheDirectory: 'babel_cache',
                     presets: ['react', 'es2015']
                 }
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract("css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]")
             }
         ]
     },
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        }),
+        new ExtractTextPlugin('css/styles.css', {
+          publicPath: '/css/',
+          allChunks: true
         }),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
