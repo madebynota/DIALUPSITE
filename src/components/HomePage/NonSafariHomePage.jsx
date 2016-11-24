@@ -7,6 +7,7 @@ class NonSafariHomePage extends React.Component {
         return (
             <div>
 				<h1>Non Safari Home Page</h1>
+				<LogoSection />
             </div>
         );
     }
