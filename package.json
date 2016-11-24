@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=production node_modules/.bin/webpack -p && node_modules/.bin/http-server src/static"
+    "start": "NODE_ENV=production node_modules/.bin/webpack -p && NODE_ENV=production node_modules/.bin/babel-node --presets 'react,es2015' src/server.js"
   },
   "repository": {
     "type": "git",
