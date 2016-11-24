@@ -18,14 +18,17 @@ module.exports = {
     },
     devtool: 'source-map',
     module: {
-        loaders: [{
-            test: path.join(__dirname, 'src'),
-            loader: ['babel-loader'],
-            query: {
-                cacheDirectory: 'babel_cache',
-                presets: ['react', 'es2015']
+        loaders: [
+            {
+                test: /\.js|.jsx?$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: ['babel-loader'],
+                query: {
+                    cacheDirectory: 'babel_cache',
+                    presets: ['react', 'es2015']
+                }
             }
-        }]
+        ]
     },
     plugins: [
         new webpack.DefinePlugin({
