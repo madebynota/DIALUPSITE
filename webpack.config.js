@@ -11,7 +11,7 @@ module.exports = {
         extensions: ['', '.js', '.jsx', '.json']
     },
     devServer: {
-        contentBase: path.join(__dirname, 'static'),
+        contentBase: path.join(__dirname, 'src', 'static'),
         inline: true,
         port: 8080,
         stats: 'errors-only'
