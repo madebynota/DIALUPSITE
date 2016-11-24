@@ -1,17 +1,36 @@
 {
   "name": "dialupsite",
   "version": "1.0.0",
-  "dependencies": {
-    "consolidate": "latest",
-    "express": "latest",
-    "fs": "0.0.1-security",
-    "mustache": "latest"
-  },
-  "description": "Dial Up Website",
+  "description": "A website for Dial Up, a small collective that I'm a part of. We DJ, write, and make music if we can. This website is for displaying our online magazines and other forms of conent. Generally though, we just want a space to be as creative as we want with the design/technology on this site!",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production node_modules/.bin/webpack -p && NODE_ENV=production node_modules/.bin/babel-node --presets 'react,es2015' src/server.js"
   },
-  "author": "Dial Up",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bomanimc/DialUpSite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bomanimc/DialUpSite/issues"
+  },
+  "homepage": "https://github.com/bomanimc/DialUpSite#readme",
+  "dependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.13.2",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.6.1"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.8",
+    "http-server": "^0.9.0",
+    "webpack": "^1.13.3"
+  }
 }
