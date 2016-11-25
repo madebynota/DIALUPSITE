@@ -76,6 +76,17 @@ const bgVideos = [
         "color": "#18faee"
     }
 ];
+const bgColors = [
+    '13, 192, 255',
+    '255, 198, 173',
+    '185, 215, 57',
+    '0, 239, 171',
+    '251, 210, 43',
+    '255, 69, 69',
+    '140, 47, 151',
+    '233, 50, 97'
+];
+
 let bgIndex = 0;
 let shuffledVideos = Utils.arrayShuffle(bgVideos);
 
@@ -88,22 +99,29 @@ class VideoBackground extends React.Component {
         };
     }
     switchBackground(width) {
-        let chosenVid = shuffledVideos[bgIndex % bgVideos.length].vidPath;
-        let chosenColor = shuffledVideos[bgIndex % bgVideos.length].color; 
+        if (width >= 767) {
+            let chosenVid = shuffledVideos[bgIndex % bgVideos.length].vidPath;
+            let chosenColor = shuffledVideos[bgIndex % bgVideos.length].color; 
 
-        this.setState({
-            video: chosenVid,
-            displayStyle: {
-                display: "inline",
-                backgroundPosition: "center center",
-                backgroundSize: "cover",
-                zIndex: -100
-            }
-        });
+            this.setState({
+                video: chosenVid,
+                displayStyle: {
+                    display: "inline",
+                    backgroundPosition: "center center",
+                    backgroundSize: "cover",
+                    zIndex: -100
+                }
+            });
 
-        this.props.setLinkColor(chosenColor);
+            this.props.setLinkColor(chosenColor);
 
-        bgIndex++;
+            bgIndex++;
+        }
+        else {
+            let bgColor = 'rgba(' + bgColors[Math.floor(Math.random() * bgColors.length)] + ', 1)'
+            document.body.style.background = bgColor;
+            this.props.setLinkColor('#FFFFFF');
+        }
     }
     render() {
         return (
