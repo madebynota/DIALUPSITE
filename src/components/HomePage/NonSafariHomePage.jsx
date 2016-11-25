@@ -24,7 +24,6 @@ class NonSafariHomePage extends React.Component {
     	});
     }
     render() {
-    	console.log(this.state);
         return (
         	<div>
         		<VideoBackground setLinkColor={this.setLinkColor.bind(this)} />
