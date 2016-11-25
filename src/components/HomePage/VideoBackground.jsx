@@ -101,6 +101,8 @@ class VideoBackground extends React.Component {
             }
         });
 
+        this.props.setLinkColor(chosenColor);
+
         bgIndex++;
     }
     render() {

@@ -9,10 +9,25 @@ import styles from './styles/nonsafari.css';
 let cx = classNames.bind(styles);
 
 class NonSafariHomePage extends React.Component {
+	constructor(props) {
+        super(props);
+        this.state = {
+            linkColor: "#000000",
+        };
+    }
+    getLinkColor() {
+    	return this.state.linkColor;
+    }
+    setLinkColor(color) {
+    	this.setState({
+    		linkColor: color
+    	});
+    }
     render() {
+    	console.log(this.state);
         return (
         	<div>
-        		<VideoBackground />
+        		<VideoBackground setLinkColor={this.setLinkColor.bind(this)} />
 	            <div className={classNames('container-fluid', cx('verticalCenter'))}>
 					<div className={'row'}>
 						<div className={classNames('col-md-6', 'col-md-offset-3')}>
@@ -21,7 +36,7 @@ class NonSafariHomePage extends React.Component {
 					</div>
 					<div className={'row'}>
 						<div className={classNames('col-md-6', 'col-md-offset-3')}>
-							<LinksSection />
+							<LinksSection color={this.state.linkColor} />
 						</div>
 					</div>
 	            </div>

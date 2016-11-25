@@ -68,7 +68,7 @@ class LinksSection extends React.Component {
     render() {
         return (
             <div>
-                {this.generateLinkItems(linkItems, "#000000")}
+                {this.generateLinkItems(linkItems, this.props.color)}
             </div>
         );
     }
