@@ -12,7 +12,7 @@ class LogoSection extends React.Component {
 	}
     render() {
         return (
-			<img id="logo" src={this.chooseLogoImage()} />
+			<img className={this.props.styles} src={this.chooseLogoImage()} />
         );
     }
 }
