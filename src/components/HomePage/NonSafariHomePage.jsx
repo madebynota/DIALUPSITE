@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import VideoBackground from './VideoBackground';
 import LogoSection from './LogoSection';
 import LinksSection from './LinksSection';
-import styles from './styles/nonsafari.css';
+import styles from './styles/NonSafari.css';
 
 let cx = classNames.bind(styles);
 
