@@ -4,7 +4,7 @@ var yvel, xvel;
 var face1, face2;
 var imgWidth, imgHeight;
 
-function setup() {
+function setupBoFace() {
 
     width = window.innerWidth;
     height = window.innerHeight;
@@ -50,7 +50,7 @@ function setup() {
     );
 }
 
-function draw() {
+function drawBoFace() {
     face1.move();
     face2.move();
 }
