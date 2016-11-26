@@ -1,3 +1,5 @@
+import browser from 'detect-browser';
+
 class Utils {
     static arrayShuffle(array) {
         let currentIndex = array.length, temporaryValue, randomIndex;
@@ -16,6 +18,12 @@ class Utils {
 
         return array;
     }
+    static getBrowser() {
+        return browser.name;
+    }
 }
+
+//Adds function to global scope to be used by animation scripts.
+window.getBrowser = Utils.getBrowser;
 
 export default Utils;

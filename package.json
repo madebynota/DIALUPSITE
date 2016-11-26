@@ -24,6 +24,7 @@
     "babel-preset-react": "^6.11.1",
     "classnames": "^2.2.5",
     "consolidate": "^0.14.5",
+    "detect-browser": "^1.5.0",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "mustache": "^2.3.0",
