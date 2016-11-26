@@ -1,0 +1,18 @@
+@font-face {
+	font-family: 'ArialRoundedMTBold';
+	src: url('../fonts/dialupfonts/ArialRoundedMTBold.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/dialupfonts/ArialRoundedMTBold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/dialupfonts/ArialRoundedMTBold.woff2') format('woff2'),
+	url('../fonts/dialupfonts/ArialRoundedMTBold.woff') format('woff'),
+	url('../fonts/dialupfonts/ArialRoundedMTBold.ttf')  format('truetype'),
+	url('../fonts/dialupfonts/ArialRoundedMTBold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+body {
+	height: 100%;
+	background-color: white;
+    overflow: hidden;
+    -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}

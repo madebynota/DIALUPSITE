@@ -1,0 +1,15 @@
+.linkItem {
+	display: inline-block;
+	margin: 10px 5px 0px 5px;
+	font-family: 'ArialRoundedMTBold';
+}
+
+.link {
+	font-weight: bold;
+}
+
+@media (max-device-width: 767px) {
+	.linkItem {
+		display: block;
+	}
+}

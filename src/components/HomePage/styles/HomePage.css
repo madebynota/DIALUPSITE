@@ -1,0 +1,21 @@
+.verticalCenter {
+	margin-bottom: 0px;
+	padding-top: 50%;
+	width: 80%;
+	text-align: center;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+}
+
+.logo {
+	width: 100%;
+}
+
+@media (max-device-width: 767px) {
+    .verticalCenter {
+        transform: translateY(0%);
+        -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+    }
+}
