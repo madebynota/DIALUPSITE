@@ -8,7 +8,7 @@ import styles from './styles/HomePage.css';
 
 let cx = classNames.bind(styles);
 
-class NonSafariHomePage extends React.Component {
+class HomePage extends React.Component {
 	constructor(props) {
         super(props);
 
@@ -52,4 +52,4 @@ class NonSafariHomePage extends React.Component {
     }
 }
 
-export default NonSafariHomePage;
+export default HomePage;
