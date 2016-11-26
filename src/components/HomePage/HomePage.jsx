@@ -1,18 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router';
 import classNames from 'classnames/bind';
+import Utils from '../../utils.js';
 import VideoBackground from './VideoBackground';
 import LogoSection from './LogoSection';
 import LinksSection from './LinksSection';
-import styles from './styles/NonSafari.css';
+import styles from './styles/HomePage.css';
 
 let cx = classNames.bind(styles);
 
 class NonSafariHomePage extends React.Component {
 	constructor(props) {
         super(props);
+
+        let linkColor = "#000000";
+
+        if (Utils.getBrowser() == 'safari') {
+            linkColor = "#FFFFFF";
+            document.body.style.backgroundColor = "#FAD141";
+        }
+
         this.state = {
-            linkColor: "#000000",
+            linkColor: linkColor,
         };
     }
     getLinkColor() {
