@@ -4,6 +4,15 @@ var Express = require('express');
 var engines = require('consolidate');
 var mustache = require('mustache');
 
+// Chatroom Database Storage
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('we\'re connected!');
+});
+
 const app = new Express();
 
 app.set('port', (process.env.PORT || 3000));

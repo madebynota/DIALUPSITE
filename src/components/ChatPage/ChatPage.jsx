@@ -1,10 +1,15 @@
 import React from 'react';
+import ChatInput from './ChatInput'
 import styles from './styles/ChatPage.css'
 
 class ChatPage extends React.Component {
   render() {
     return (
-      <h1>Chatroom Page</h1>
+      <div>
+        <h1>Chatroom Page</h1>
+        <ChatInput />
+      </div>
+
     )
   }
 }
