@@ -2,10 +2,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var messageSchema = new Schema({
-  date: Date,
+  timestamp: Date,
   user: String,
   text: String
 });
 
-var Message = db.model('Message', messageSchema);
+var Message = mongoose.model('Message', messageSchema);
 module.exports = Message;
