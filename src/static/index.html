@@ -81,14 +81,14 @@
         <meta name="twitter:creator" content="@DialUpRadio">
         <meta name="twitter:title" content="DIAL UP">
         <meta name="twitter:description" content="Summer Magazine Out Now.">
-        <meta name="twitter:image:src" content="http://dialupstuff.com/embedimage.png"> 
+        <meta name="twitter:image:src" content="http://dialupstuff.com/embedimage.png">
         <!-- at least 280px x 150px for Twitter (image must be < 1MB) -->
         <meta name="twitter:domain" content="dialupstuff.com">
 
         <!-- Processing p5.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.4/p5.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.4/addons/p5.dom.min.js"></script>
-        
+
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
 
@@ -114,6 +114,18 @@
         <!-- Add Dedicated p5 animations to add functions to global scope for use in animations.js -->
         <script type="text/javascript" src="js/boFaceAnimation.js"></script>
         <script type="text/javascript" src="js/andrewFaceAnimation.js"></script>
+
+        <!-- Add Dedicated Socket.io funciton to handle chatroom -->
+        <!-- TODO: Remove this and move to external file -->
+        <!-- TODO: Update to use local instance of Socket.io instead of CDN -->
+        <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+        <script>
+          var socket = io.connect('http://localhost:3000');
+          socket.on('server event', function (data) {
+            console.log(data);
+            socket.emit('client event', {socket: 'io'});
+          })
+        </script>
 
         <!-- Central file for animation logic -->
         <script type="text/javascript" src="js/animations.js"></script>

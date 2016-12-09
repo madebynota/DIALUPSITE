@@ -30,7 +30,8 @@
     "path": "^0.12.7",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-router": "^2.6.1"
+    "react-router": "^2.6.1",
+    "socket.io": "^1.7.1"
   },
   "devDependencies": {
     "babel-loader": "^6.2.8",
