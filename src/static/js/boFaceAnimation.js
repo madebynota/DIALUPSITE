@@ -1,11 +1,13 @@
+var face1;
+var boFaceUrl1, boFaceUrl2;
+
+// Face properties
 var width, height;
 var xpos, ypos;
 var yvel, xvel;
-var face1, face2;
 var imgWidth, imgHeight;
 
 function setupBoFace() {
-
     width = window.innerWidth;
     height = window.innerHeight;
     createCanvas(width,height);
@@ -24,23 +26,13 @@ function setupBoFace() {
     xvel = random(-4, 4);
     yvel = random(-4, 4);
 
-    //Order matters, since we want face 1 to be on top
-    face2 = new BoFace(
-        "bo2", 
-        "/img/boFace/bo2.png", 
-        imgWidth, 
-        imgHeight,
-        xpos,
-        ypos,
-        xvel,
-        yvel,
-        false
-    );
+    boFaceUrl1 = "/img/boFace/bo.png"
+    boFaceUrl2 = "/img/boFace/bo2.png"
 
-    face1 = new BoFace(
-        "bo", 
-        "/img/boFace/bo.png", 
-        imgWidth, 
+    face = new BoFace(
+        "bo",
+        boFaceUrl1,
+        imgWidth,
         imgHeight,
         xpos,
         ypos,
@@ -51,8 +43,7 @@ function setupBoFace() {
 }
 
 function drawBoFace() {
-    face1.move();
-    face2.move();
+    face.move();
 }
 
 class BoFace {
@@ -72,6 +63,19 @@ class BoFace {
         this.img.id(this.id);
         this.img.mousePressed(this.click.bind(this));
     }
+    changeImage(imgSrc){
+      // Clear original image from Canvas
+      this.img.remove();
+
+      // Setup new face image
+      this.img = createImg(imgSrc);
+      this.img.position(this.xPos, this.yPos);
+      this.img.size(this.width, this.height);
+      this.img.id(this.id);
+      this.img.mousePressed(this.click.bind(this));
+
+      this.shouldHide = true;
+    }
     move() {
         if ((this.xPos >= (window.innerWidth - (this.width))) | (this.xPos <= 0)) {
             this.xVel *= -1;
@@ -83,12 +87,13 @@ class BoFace {
 
         this.xPos += this.xVel;
         this.yPos += this.yVel;
-        this.img.position(this.xPos, this.yPos); 
+        this.img.position(this.xPos, this.yPos);
     }
     click() {
-        if (this.shouldHide) {
-            this.img.hide();
-        }
-        switchBackground(window.innerWidth);
+      if(this.shouldHide){
+        this.changeImage(boFaceUrl2);
+      }
+      console.log("Background Switch");
+      switchBackground(window.innerWidth);
     }
 }
