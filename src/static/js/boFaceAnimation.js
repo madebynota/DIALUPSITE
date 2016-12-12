@@ -89,6 +89,6 @@ class BoFace {
         if (this.shouldHide) {
             this.img.hide();
         }
-        switchBackground(window.innerWidth);
+        switchBackground();
     }
 }

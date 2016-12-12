@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import Utils from '../../utils.js';
-import VideoBackground from './VideoBackground';
+import Background from './Background';
 import LogoSection from './LogoSection';
 import LinksSection from './LinksSection';
 import styles from './styles/HomePage.css';
@@ -34,7 +34,7 @@ class HomePage extends React.Component {
     render() {
         return (
         	<div>
-        		<VideoBackground setLinkColor={this.setLinkColor.bind(this)} />
+        		<Background setLinkColor={this.setLinkColor.bind(this)} />
 	            <div className={classNames('container-fluid', cx('verticalCenter'))}>
 					<div className={'row'}>
 						<div className={classNames('col-md-6', 'col-md-offset-3')}>
