@@ -47,7 +47,7 @@ function drawBoFace() {
 }
 
 class BoFace {
-    constructor(id, imgPath, width, height, xPos, yPos, xVel, yVel, shouldHide) {
+    constructor(id, imgPath, width, height, xPos, yPos, xVel, yVel, shouldSwap) {
         this.id = id;
         this.width = width;
         this.height = height;
@@ -55,7 +55,7 @@ class BoFace {
         this.yPos = yPos;
         this.xVel = xVel;
         this.yVel = yVel;
-        this.shouldHide = shouldHide;
+        this.shouldSwap = shouldSwap;
 
         this.img = createImg(imgPath);
         this.img.position(this.xPos, this.yPos);
@@ -74,7 +74,7 @@ class BoFace {
       this.img.id(this.id);
       this.img.mousePressed(this.click.bind(this));
 
-      this.shouldHide = false;
+      this.shouldSwap = false;
     }
     move() {
         if ((this.xPos >= (window.innerWidth - (this.width))) | (this.xPos <= 0)) {
@@ -90,7 +90,7 @@ class BoFace {
         this.img.position(this.xPos, this.yPos);
     }
     click() {
-      if(this.shouldHide){
+      if(this.shouldSwap){
         this.changeImage(boFaceUrl2);
       }
       switchBackground(window.innerWidth);
