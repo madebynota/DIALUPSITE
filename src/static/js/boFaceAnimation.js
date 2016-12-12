@@ -93,7 +93,6 @@ class BoFace {
       if(this.shouldHide){
         this.changeImage(boFaceUrl2);
       }
-      console.log("Background Switch");
       switchBackground(window.innerWidth);
     }
 }
