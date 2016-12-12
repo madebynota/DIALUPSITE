@@ -74,7 +74,7 @@ class BoFace {
       this.img.id(this.id);
       this.img.mousePressed(this.click.bind(this));
 
-      this.shouldHide = true;
+      this.shouldHide = false;
     }
     move() {
         if ((this.xPos >= (window.innerWidth - (this.width))) | (this.xPos <= 0)) {
