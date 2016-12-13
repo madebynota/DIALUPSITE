@@ -93,6 +93,7 @@ class BoFace {
       if(this.shouldSwap){
         this.changeImage(boFaceUrl2);
       }
-      switchBackground(window.innerWidth);
+      
+      switchBackground();
     }
 }

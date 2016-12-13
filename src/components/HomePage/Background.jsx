@@ -89,6 +89,18 @@ const bgColors = [
 let bgIndex = 0;
 let shuffledVideos = Utils.arrayShuffle(bgVideos);
 
+class Background extends React.Component {
+    render() {
+        return window.innerWidth >= 767
+            ?(
+                <VideoBackground setLinkColor={this.props.setLinkColor}/>
+            )
+            :(
+                <StaticBackground setLinkColor={this.props.setLinkColor}/>
+            );
+    }
+}
+
 class VideoBackground extends React.Component {
     constructor(props) {
         super(props);
@@ -97,32 +109,26 @@ class VideoBackground extends React.Component {
             displayStyle: {}
         };
     }
-    switchBackground(width) {
-        if (width >= 767) {
-            let chosenVid = shuffledVideos[bgIndex % bgVideos.length].vidPath;
-            let chosenColor = shuffledVideos[bgIndex % bgVideos.length].color; 
+    switchBackground() {
+        let chosenVid = shuffledVideos[bgIndex % bgVideos.length].vidPath;
+        let chosenColor = shuffledVideos[bgIndex % bgVideos.length].color; 
 
-            this.setState({
-                video: chosenVid,
-                displayStyle: {
-                    display: "inline",
-                    backgroundPosition: "center center",
-                    backgroundSize: "cover",
-                    zIndex: -100
-                }
-            });
+        this.setState({
+            video: chosenVid,
+            displayStyle: {
+                display: "inline",
+                backgroundPosition: "center center",
+                backgroundSize: "cover",
+                zIndex: -100
+            }
+        });
 
-            this.props.setLinkColor(chosenColor);
+        this.props.setLinkColor(chosenColor);
 
-            bgIndex++;
-        }
-        else {
-            let bgColor = 'rgba(' + bgColors[Math.floor(Math.random() * bgColors.length)] + ', 1)'
-            document.body.style.background = bgColor;
-            this.props.setLinkColor('#FFFFFF');
-        }
+        bgIndex++;
     }
     render() {
+        window.switchBackground = this.switchBackground.bind(this);
         return (
 			<video className={cx("bgvideo")} style={this.state.displayStyle} src={this.state.video} muted autoPlay loop></video>
         );
@@ -132,4 +138,21 @@ class VideoBackground extends React.Component {
     }
 }
 
-export default VideoBackground;
+class StaticBackground extends React.Component {
+    switchBackground() {
+        let bgColor = 'rgba(' + bgColors[Math.floor(Math.random() * bgColors.length)] + ', 1)'
+        document.body.style.background = bgColor;
+        this.props.setLinkColor('#FFFFFF');
+    }
+    render() {
+        window.switchBackground = this.switchBackground.bind(this);
+        return (
+            <div></div>
+        );
+    }
+    componentDidMount() {
+        window.switchBackground = this.switchBackground.bind(this);
+    }
+}
+
+export default Background;
