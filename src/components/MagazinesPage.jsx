@@ -4,7 +4,7 @@ class MagazinesPage extends React.Component {
     render() {
         return (
             <div>
-                <h1>MAGAZINE PAGE</h1>
+                <h1>THIS THE NEW MAG PAGE</h1>
             </div>
         );
     }
