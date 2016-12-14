@@ -25,7 +25,7 @@ class SiteMask extends React.Component {
         setTimeout(() => {
             this.turnStaticOff()
             },
-            500
+            650
         )
         switchBackground();
     }
