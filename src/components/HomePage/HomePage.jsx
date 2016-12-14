@@ -4,6 +4,7 @@ import Utils from '../../utils.js';
 import Background from './Background';
 import LogoSection from './LogoSection';
 import LinksSection from './LinksSection';
+import SiteMask from './SiteMask';
 import styles from './styles/HomePage.css';
 
 let cx = classNames.bind(styles);
@@ -31,9 +32,25 @@ class HomePage extends React.Component {
     		linkColor: color
     	});
     }
+
+    transitionToNextVideo() {
+			console.log("Switching Background to Static");
+			$('.site-mask').style.visibility = "visible";
+			$('.site-mask').src = 'img/staticGif/static.gif';
+
+			setTimeout(function() {
+				console.log("Removing mask")
+				$('.site-mask').style.visibility = "hidden";
+			}, 1500);
+
+			switchBackground();
+
+		}
+
     render() {
         return (
         	<div>
+						<SiteMask />
         		<Background setLinkColor={this.setLinkColor.bind(this)} />
 	            <div className={classNames('container-fluid', cx('verticalCenter'))}>
 					<div className={'row'}>
