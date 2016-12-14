@@ -9,10 +9,14 @@
 }
 
 body {
+	margin: 0;
+	padding: 0;
 	height: 100%;
+	width: 100%;
 	background-color: white;
-    overflow: hidden;
-    -webkit-background-size: cover;
+  overflow: hidden;
+	position: fixed;
+  -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 }
