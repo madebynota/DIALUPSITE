@@ -1,4 +1,8 @@
 import React from 'react';
+import classNames from 'classnames/bind';
+import styles from './styles/SiteMask.css';
+
+let cx = classNames.bind(styles);
 
 class SiteMask extends React.Component {
     constructor(props) {
@@ -12,11 +16,19 @@ class SiteMask extends React.Component {
     }
 
     turnStaticOn() {
-        this.setState({displayStyle: {display: 'inline'}});
+        this.setState({
+            displayStyle: {
+                display: 'inline'
+            }
+        });
     }
 
     turnStaticOff() {
-        this.setState({displayStyle: {display: 'none'}});
+        this.setState({
+            displayStyle: {
+                display: 'none'
+            }
+        });
     }
 
     transitionToNextVideo() {
@@ -32,7 +44,7 @@ class SiteMask extends React.Component {
 
     render() {
         return (
-            <img style={this.state.displayStyle} src={'img/staticGif/static.gif'} />
+            <img className={cx('siteMask')} style={this.state.displayStyle} src={'img/staticGif/static.gif'} />
         );
     }
 }
