@@ -1,15 +1,26 @@
-h1 {
-  color: green;
-}
-
-img {
-  height: 180px;
+.magazineCovers {
+  height: 300px;
   width: auto;
-  margin-left: 11%;
-  margin right: 11%;
-
 }
 
-body {
-  background-image: url('/img/misc/desk.jpg');
+.panel {
+    padding-top: 16%;
+    overflow: auto;
+}
+
+.icon-container {
+    float: left;
+    width: 33.3%;
+    text-align: center;
+}
+
+.bkgImage {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }

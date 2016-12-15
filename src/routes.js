@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 import App from './components/App';
 import HomePage from './components/HomePage/HomePage';
-import MagazinesPage from './components/MagazinesPage';
+import MagazinesPage from './components/Mag/MagazinesPage';
 import NotFoundPage from './components/NotFoundPage';
 
 const routes = (
