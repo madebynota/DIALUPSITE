@@ -44,7 +44,7 @@ class SiteMask extends React.Component {
 
     render() {
         return (
-            <video className={cx("siteMask")} style={this.state.displayStyle} src={'img/staticGif/static.mp4'} muted autoPlay loop></video>
+            <video className={cx("siteMask")} style={this.state.displayStyle} src={'img/static/static.mp4'} muted autoPlay loop></video>
         );
     }
 }
