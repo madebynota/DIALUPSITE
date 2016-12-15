@@ -1,4 +1,4 @@
-# Dial Up Website
+# DIAL UP WEBSITE
 See this project live at http://dialupstuff.com/.
 
 ###General Overview
