@@ -51,7 +51,7 @@ class ChatPage extends React.Component {
         });
         this.setState({users, messages});
     }
-    
+
     _userLeft(data) {
         var {users, messages} = this.state;
         var {name} = data;

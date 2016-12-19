@@ -19,7 +19,6 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
-  socket.emit('server event', { foo: 'bar' });
   socket.on('client event', function (data) {
     console.log("A User has connected");
     console.log(data);
@@ -27,9 +26,6 @@ io.on('connection', function (socket) {
   socket.on('disconnect', function (socket) {
     console.log('A User has disconnected');
   });
-  socket.on('chat', function (msg) {
-    socket.broadcast.emit('chat', msg);
-  })
   socket.on('send:message', function(message){
       console.log("Message Received! Contents: " + message.text);
       socket.broadcast.emit('send:message', {text: message.text});
