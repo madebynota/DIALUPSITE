@@ -32,8 +32,10 @@ io.on('connection', function (socket) {
   })
 });
 
-// dbUtils.saveMessage("slim", "This is my first message");
-// dbUtils.saveMessage("magic", "This is also my first message");
+dbUtils.saveMessage("slim", "This is my first message");
+dbUtils.saveMessage("magic", "This is also my first message");
+
+dbUtils.getMessages();
 
 // Chatroom Database Storage
 mongoose.connect('mongodb://localhost/test');
