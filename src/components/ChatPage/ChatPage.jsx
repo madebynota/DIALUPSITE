@@ -5,6 +5,7 @@ import MessageForm from './MessageForm'
 import MessageList from './MessageList'
 import styles from './styles/ChatPage.css'
 
+// Client end of the socket.io library
 let socket = io('http://localhost:3000');
 
 class ChatPage extends React.Component {
@@ -39,6 +40,7 @@ class ChatPage extends React.Component {
         this.setState({messages});
     }
 
+    // Code to be implemented with Usernames
     _userJoined(data) {
         var {users, messages} = this.state;
         var {name} = data;
@@ -49,7 +51,7 @@ class ChatPage extends React.Component {
         });
         this.setState({users, messages});
     }
-
+    
     _userLeft(data) {
         var {users, messages} = this.state;
         var {name} = data;
