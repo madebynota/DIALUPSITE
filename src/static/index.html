@@ -131,18 +131,6 @@
         <script type="text/javascript" src="js/boFaceAnimation.js"></script>
         <script type="text/javascript" src="js/andrewFaceAnimation.js"></script>
 
-        <!-- Add Dedicated Socket.io funciton to handle chatroom -->
-        <!-- TODO: Remove this and move to external file -->
-        <!-- TODO: Update to use local instance of Socket.io instead of CDN -->
-        <script src="http://localhost:3000/socket.io/socket.io.js"></script>
-        <script>
-          var socket = io.connect('http://localhost:3000');
-          socket.on('server event', function (data) {
-            console.log(data);
-            socket.emit('client event', {socket: 'io'});
-          })
-        </script>
-
         <!-- Central file for animation logic -->
         <script type="text/javascript" src="js/animations.js"></script>
     </body>

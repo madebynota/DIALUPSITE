@@ -30,11 +30,13 @@ io.on('connection', function (socket) {
   socket.on('chat', function (msg) {
     socket.broadcast.emit('chat', msg);
   })
+  socket.on('send:message', function(message){
+      console.log("Message Received! Contents: " + message.text);
+      socket.broadcast.emit('send:message', {text: message.text});
+  })
 });
 
-dbUtils.saveMessage("slim", "This is my first message");
-dbUtils.saveMessage("magic", "This is also my first message");
-
+// Testing dbUtil Functions
 dbUtils.getMessages();
 
 // Chatroom Database Storage
