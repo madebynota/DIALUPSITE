@@ -3,8 +3,9 @@ var path = require('path');
 var Express = require('express');
 var engines = require('consolidate');
 var mustache = require('mustache');
-var dbUtils = require('./dbUtils');
 var mongoose = require('mongoose');
+
+var dbUtils = require('./dbUtils');
 
 const app = new Express();
 
@@ -31,9 +32,6 @@ io.on('connection', function (socket) {
       socket.broadcast.emit('send:message', {text: message.text});
   })
 });
-
-// Testing dbUtil Functions
-dbUtils.getMessages();
 
 // Chatroom Database Storage
 mongoose.connect('mongodb://localhost/test');

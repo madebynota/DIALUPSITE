@@ -1,11 +1,12 @@
 import React from 'react';
-import io from 'socket.io-client'
 
 import MessageForm from './MessageForm'
 import MessageList from './MessageList'
+
 import styles from './styles/ChatPage.css'
 
 // Client end of the socket.io library
+import io from 'socket.io-client'
 let socket = io('http://localhost:3000');
 
 class ChatPage extends React.Component {
