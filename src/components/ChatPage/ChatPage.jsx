@@ -20,6 +20,8 @@ class ChatPage extends React.Component {
 
         this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
         this._messageRecieve = this._messageRecieve.bind(this);
+        this._initialize = this._initialize.bind(this);
+        this._userJoined = this._userJoined.bind(this);
     }
 
     componentDidMount() {
@@ -27,15 +29,20 @@ class ChatPage extends React.Component {
         socket.on('send:message', this._messageRecieve);
         socket.on('user:join', this._userJoined);
         socket.on('user:left', this._userLeft);
+
+        socket.emit('init');
     }
 
     _initialize(data) {
+        console.log("User has joined the chatroom");
+        console.log(data);
         var {users, name} = data;
         this.setState({users, user: name});
     }
 
     _messageRecieve(message) {
-        console.log('Received Message from Server: ' + message);
+        console.log('Received Message from Server: ');
+        console.log(message);
         var {messages} = this.state;
         messages.push(message);
         this.setState({messages});
