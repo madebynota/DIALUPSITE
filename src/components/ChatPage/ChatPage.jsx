@@ -52,7 +52,6 @@ class ChatPage extends React.Component {
     _userJoined(data) {
         var {users, messages} = this.state;
         var {name} = data;
-        users.push(name);
         messages.push({
             user: 'APPLICATION BOT',
             text : name +' Joined'

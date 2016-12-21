@@ -22,17 +22,12 @@ var users = [];
 
 //  Socket.io Server Event Handlers
 io.on('connection', function(socket) {
-    console.log('A client has connected to the site');
-
     socket.on('init', function() {
-        console.log('User has joined the chatroom');
         var name = "User"+(users.length+1).toString();
         users.push(name);
 
-        console.log(users);
-        console.log(name);
-
         socket.emit('init', {users: users, name});
+        socket.broadcast.emit('user:join', {name: name});
     });
 
     socket.on('disconnect', function(socket) {
