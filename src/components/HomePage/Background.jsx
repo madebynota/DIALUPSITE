@@ -181,7 +181,9 @@ class VideoBackground extends React.Component {
         window.switchBackground = this.switchBackground.bind(this);
     }
     componentDidUpdate(prevProps, prevState) {
-        document.getElementById(wrappedIndex).play();
+        let displayedVideo = document.getElementById(wrappedIndex);
+        displayedVideo.currentTime = 0;
+        displayedVideo.play();
     }
 }
 
