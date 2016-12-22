@@ -23,10 +23,6 @@ const bgVideos = [
         "color": "#ff2847"
     },
     {
-        "vidPath": "img/vids/party-hypeness.mp4",
-        "color": "#fe944f"
-    },
-    {
         "vidPath": "img/vids/luchador.mp4",
         "color": "#44BBEC"
     },
