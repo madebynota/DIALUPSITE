@@ -34,6 +34,7 @@ const linkItems = [
 class LinkItem extends React.Component {
     openContactAlert() {
         let contactString = "EMAIL US AT DIALUPSTUFF@GMAIL.COM\n\nFACEBOOK AT HTTPS://WWW.FACEBOOK.COM/DIALUPSTUFF";
+        console.log("LMAO")
         alert(contactString);
     }
     render() {
@@ -45,7 +46,7 @@ class LinkItem extends React.Component {
                         <p>{this.props.text}</p>
                     </a>
                 </div>
-            )   
+            )
             :(
                 <div className={cx('linkItem')}>
                     <a style={{"color": this.props.color}} target={target} href={this.props.path}>
@@ -62,7 +63,7 @@ class LinksSection extends React.Component {
         for (let item of items) {
           links.push(<LinkItem key={item.text} text={item.text} path={item.path} color={color}/>);
         }
-        return links;  
+        return links;
     }
     render() {
         return (

@@ -23,10 +23,6 @@ const bgVideos = [
         "color": "#ff2847"
     },
     {
-        "vidPath": "img/vids/party-hypeness.mp4",
-        "color": "#fe944f"
-    },
-    {
         "vidPath": "img/vids/luchador.mp4",
         "color": "#44BBEC"
     },
@@ -111,7 +107,7 @@ class VideoBackground extends React.Component {
     }
     switchBackground() {
         let chosenVid = shuffledVideos[bgIndex % bgVideos.length].vidPath;
-        let chosenColor = shuffledVideos[bgIndex % bgVideos.length].color; 
+        let chosenColor = shuffledVideos[bgIndex % bgVideos.length].color;
 
         this.setState({
             video: chosenVid,

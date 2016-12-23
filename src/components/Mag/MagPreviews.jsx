@@ -6,20 +6,26 @@ let cx = classNames.bind(styles);
 
 
 class MagPreviews extends React.Component {
+
+
     render() {
         return (
-              <div className={cx('panel')}>
-                <div className={cx('icon-container')}>
-                  <img className={classNames('img-fluid', cx('magazineCovers'))} src= "img/magIcons/summer15.png"/>
-                </div>
-                <div className={cx('icon-container')}>
-                  <img className={classNames('img-fluid', cx('magazineCovers'))} src= "img/magIcons/winter16.png"/>
-                </div>
-                <div className={cx('icon-container')}>
-                  <img className={classNames('img-fluid', cx('magazineCovers'))} src= "img/magIcons/summer16.png"/>
+              <div className={classNames(cx('panel'), 'container-fluid')}>
+                  <div className={classNames(cx('row'), 'row')}>
+                      <div className = {classNames(cx('firstSec'), 'col-md-6')}>
+                        <img className={classNames(cx('magazineCovers'))} src= 'img/magIcons/winter16.png' />
+
+                        <img className={classNames(cx('magazineCovers'))}  src= "img/magIcons/summer16.png"/>
+                      </div>
+
+                      <div className = {classNames(cx('secSec'), 'col-md-6')}>
+                        <img className={classNames(cx('magazineCovers'))} src= "/img/magIcons/summer15.png"/>
+
+                        <img className={classNames(cx('magazineCovers'))} src= "/img/magIcons/fall15.png" />
+                      </div>
+                      <span className = 'stretch'> </span>
                 </div>
             </div>
-
         );
     }
 }

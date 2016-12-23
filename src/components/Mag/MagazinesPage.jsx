@@ -7,9 +7,9 @@ let cx = classNames.bind(styles);
 
 class MagazinesPage extends React.Component {
     render() {
-        return (  
+        return (
             <div>
-            <img src="/img/misc/desk.jpg" className={cx("bkgImage")}/>
+            <img src="/img/misc/bedroom.png" className={cx("bkgImage")}/>
             <MagPreviews/>
             </div>
         );
