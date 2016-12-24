@@ -38,7 +38,7 @@ class HomePage extends React.Component {
     render() {
         return (
         	<div>
-						<SiteMask />
+				<SiteMask />
         		<Background setLinkColor={this.setLinkColor.bind(this)} />
 	            <div className={classNames('container-fluid', cx('verticalCenter'))}>
 					<div className={'row'}>

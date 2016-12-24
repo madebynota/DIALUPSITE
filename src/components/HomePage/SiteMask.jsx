@@ -9,8 +9,10 @@ class SiteMask extends React.Component {
         super(props);
         this.state = {
             displayStyle: {
-                display: 'none'
-            }
+                display: 'none',
+                zIndex: -1000
+            },
+            playing: false
         };
         window.transitionToNextVideo = this.transitionToNextVideo.bind(this);
     }
@@ -18,16 +20,20 @@ class SiteMask extends React.Component {
     turnStaticOn() {
         this.setState({
             displayStyle: {
-                display: 'inline'
-            }
+                display: 'inline',
+                zIndex: -90
+            }, 
+            playing: true
         });
     }
 
     turnStaticOff() {
         this.setState({
             displayStyle: {
-                display: 'none'
-            }
+                display: 'none',
+                zIndex: -1000
+            }, 
+            playing: true
         });
     }
 
@@ -42,9 +48,21 @@ class SiteMask extends React.Component {
         switchBackground();
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        let siteMask = document.getElementById("siteMask");
+
+        if (this.state.playing) {
+            siteMask.currentTime = 0;
+            siteMask.play();
+        }
+        else {
+            siteMask.pause();
+        }
+    }
+
     render() {
         return (
-            <video className={cx("siteMask")} style={this.state.displayStyle} src={'img/static/static.mp4'} muted autoPlay loop></video>
+            <video className={cx("siteMask")} id={"siteMask"} style={this.state.displayStyle} src={'img/static/static.mp4'} muted loop></video>
         );
     }
 }
