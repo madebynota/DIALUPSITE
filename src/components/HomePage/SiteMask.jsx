@@ -50,20 +50,26 @@ class SiteMask extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         let siteMask = document.getElementById("siteMask");
-
-        if (this.state.playing) {
-            siteMask.currentTime = 0;
-            siteMask.play();
-        }
-        else {
-            siteMask.pause();
+        
+        if (siteMask != null) {
+            if (this.state.playing) {
+                siteMask.currentTime = 0;
+                siteMask.play();
+            }
+            else {
+                siteMask.pause();
+            }
         }
     }
 
     render() {
-        return (
-            <video className={cx("siteMask")} id={"siteMask"} style={this.state.displayStyle} src={'img/static/static.mp4'} muted loop></video>
-        );
+        return window.innerWidth >= 767
+            ?(
+                <video className={cx("siteMask")} id={"siteMask"} style={this.state.displayStyle} src={'img/static/static.mp4'} muted loop></video>
+            )
+            :(
+                <div></div>
+            );
     }
 }
 export default SiteMask;
