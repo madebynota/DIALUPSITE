@@ -19,8 +19,8 @@ class ChatPage extends React.Component {
         };
 
         this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
-        this._messageRecieve = this._messageRecieve.bind(this);
         this._initialize = this._initialize.bind(this);
+        this._messageRecieve = this._messageRecieve.bind(this);
         this._userJoined = this._userJoined.bind(this);
         this._userLeft = this._userLeft.bind(this);
     }
@@ -32,6 +32,13 @@ class ChatPage extends React.Component {
         socket.on('user:left', this._userLeft);
 
         socket.emit('init');
+    }
+
+    handleMessageSubmit(message) {
+        var {messages} = this.state;
+        messages.push(message);
+        this.setState({messages});
+        socket.emit('send:message', message);
     }
 
     _initialize(data) {
@@ -46,7 +53,6 @@ class ChatPage extends React.Component {
         this.setState({messages});
     }
 
-    // Code to be implemented with Usernames
     _userJoined(data) {
         var {users, messages} = this.state;
         var {name} = data;
@@ -67,13 +73,6 @@ class ChatPage extends React.Component {
             text : name +' Left'
         });
         this.setState({users, messages});
-    }
-
-    handleMessageSubmit(message) {
-        var {messages} = this.state;
-        messages.push(message);
-        this.setState({messages});
-        socket.emit('send:message', message);
     }
 
     render() {
