@@ -22,6 +22,7 @@ class ChatPage extends React.Component {
         this._messageRecieve = this._messageRecieve.bind(this);
         this._initialize = this._initialize.bind(this);
         this._userJoined = this._userJoined.bind(this);
+        this._userLeft = this._userLeft.bind(this);
     }
 
     componentDidMount() {
@@ -34,15 +35,12 @@ class ChatPage extends React.Component {
     }
 
     _initialize(data) {
-        console.log("User has joined the chatroom");
         console.log(data);
         var {users, name} = data;
         this.setState({users, user: name});
     }
 
     _messageRecieve(message) {
-        console.log('Received Message from Server: ');
-        console.log(message);
         var {messages} = this.state;
         messages.push(message);
         this.setState({messages});

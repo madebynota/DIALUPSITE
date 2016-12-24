@@ -22,19 +22,22 @@ var users = [];
 
 //  Socket.io Server Event Handlers
 io.on('connection', function(socket) {
-    socket.on('init', function() {
-        var name = "User"+(users.length+1).toString();
-        users.push(name);
+    var name;
 
+    socket.on('init', function() {
+        name = "User"+(users.length+1).toString();
+        users.push(name);
         socket.emit('init', {users: users, name});
         socket.broadcast.emit('user:join', {name: name});
     });
 
-    socket.on('disconnect', function(socket) {
-        console.log('A User has disconnected');
+    socket.on('disconnect', function() {
+        if(typeof name !== 'undefined'){
+            socket.broadcast.emit('user:left', {name: name});
+        }
     });
+
     socket.on('send:message', function(message) {
-        console.log("Message Received! Contents: " + message.text);
         socket.broadcast.emit('send:message', {
             user: message.user,
             text: message.text
@@ -52,7 +55,6 @@ function usernameAvailable(users, newName){
         return True;
     }
 }
-
 
 // Chatroom Database Storage
 mongoose.connect('mongodb://localhost/test');
