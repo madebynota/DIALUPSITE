@@ -23,10 +23,6 @@ const bgVideos = [
         "color": "#ff2847"
     },
     {
-        "vidPath": "img/vids/party-hypeness.mp4",
-        "color": "#fe944f"
-    },
-    {
         "vidPath": "img/vids/luchador.mp4",
         "color": "#44BBEC"
     },
@@ -87,6 +83,7 @@ const bgColors = [
 ];
 
 let bgIndex = 0;
+let wrappedIndex = 0;
 let shuffledVideos = Utils.arrayShuffle(bgVideos);
 
 class Background extends React.Component {
@@ -106,35 +103,87 @@ class VideoBackground extends React.Component {
         super(props);
         this.state = {
             video: "",
+            videoElements: [],
             displayStyle: {}
         };
     }
     switchBackground() {
-        let chosenVid = shuffledVideos[bgIndex % bgVideos.length].vidPath;
-        let chosenColor = shuffledVideos[bgIndex % bgVideos.length].color; 
+        let chosenVid = shuffledVideos[wrappedIndex].vidPath;
+        let chosenColor = shuffledVideos[wrappedIndex].color; 
+
+        let displayStyle = {
+            display: "inline",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            zIndex: -100
+        };
+
+        let updatedElements = this.state.videoElements;
+        let displayedVideo = <video id={wrappedIndex} key={wrappedIndex} className={cx("bgvideo")} style={displayStyle} src={chosenVid} muted autoPlay loop></video>;
+        updatedElements[wrappedIndex] = displayedVideo;
+
+        if (wrappedIndex > 0) {
+            let switchedIndex = -100 -10*wrappedIndex;
+            let lastVideo = this.state.videoElements[wrappedIndex - 1];
+            let newLastVideo = <video id={lastVideo.props.id} key={lastVideo.key} className={cx("bgvideo")} style={{zIndex: switchedIndex}} src={lastVideo.props.src} muted loop></video>;
+            updatedElements[wrappedIndex - 1] = newLastVideo;
+        }
+
+        if (bgIndex % bgVideos.length === 0) {
+            let switchedIndex = -100 -10*(bgVideos.length);
+            let lastVideo = this.state.videoElements[bgVideos.length - 1];
+            let newLastVideo = <video id={lastVideo.props.id} key={lastVideo.key} className={cx("bgvideo")} style={{zIndex: switchedIndex}} src={lastVideo.props.src} muted loop></video>;
+            updatedElements[bgVideos.length - 1] = newLastVideo;
+        }   
 
         this.setState({
-            video: chosenVid,
-            displayStyle: {
-                display: "inline",
-                backgroundPosition: "center center",
-                backgroundSize: "cover",
-                zIndex: -100
-            }
+            videoElements: updatedElements
         });
 
         this.props.setLinkColor(chosenColor);
 
         bgIndex++;
+        wrappedIndex = bgIndex % bgVideos.length;
+    }
+    createVideoElements() {
+        let baseStyle = {
+            zIndex: -100
+        };
+
+        let videoElements = [];
+        let incrementer = 0;
+        for (let video of shuffledVideos) {
+            let baseStyle = {
+                zIndex: -100 - 10*incrementer
+            };
+
+            let element = <video id={incrementer} key={incrementer} className={cx("bgvideo")} style={baseStyle} src={video.vidPath} muted loop></video>;
+            videoElements.push(element);
+            incrementer++;
+        }
+        
+        this.setState({
+            videoElements: videoElements
+        });
+    }
+    componentWillMount() {
+        this.createVideoElements();
     }
     render() {
         window.switchBackground = this.switchBackground.bind(this);
         return (
-			<video className={cx("bgvideo")} style={this.state.displayStyle} src={this.state.video} muted autoPlay loop></video>
+            <div>
+                {this.state.videoElements}
+            </div>
         );
     }
     componentDidMount() {
         window.switchBackground = this.switchBackground.bind(this);
+    }
+    componentDidUpdate(prevProps, prevState) {
+        let displayedVideo = document.getElementById(wrappedIndex);
+        displayedVideo.currentTime = 0;
+        displayedVideo.play();
     }
 }
 

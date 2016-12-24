@@ -1,10 +1,13 @@
 import React from 'react';
-import classNames from 'classnames/bind';
-import Utils from '../../utils.js';
+
 import Background from './Background';
 import LogoSection from './LogoSection';
 import LinksSection from './LinksSection';
+import SiteMask from './SiteMask';
+
 import styles from './styles/HomePage.css';
+import classNames from 'classnames/bind';
+import Utils from '../../utils.js';
 
 let cx = classNames.bind(styles);
 
@@ -31,9 +34,11 @@ class HomePage extends React.Component {
     		linkColor: color
     	});
     }
+
     render() {
         return (
         	<div>
+				<SiteMask />
         		<Background setLinkColor={this.setLinkColor.bind(this)} />
 	            <div className={classNames('container-fluid', cx('verticalCenter'))}>
 					<div className={'row'}>
