@@ -13,6 +13,9 @@ class MessageForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        if(this.state.text == ''){
+            return;
+        }
         var message = {
             user: this.props.user,
             text: this.state.text
