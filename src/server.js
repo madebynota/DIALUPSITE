@@ -34,6 +34,8 @@ io.on('connection', function(socket) {
     socket.on('disconnect', function() {
         if(typeof name !== 'undefined'){
             socket.broadcast.emit('user:left', {name: name});
+            var index = users.indexOf(name);
+            users.splice(index, 1);
         }
     });
 
