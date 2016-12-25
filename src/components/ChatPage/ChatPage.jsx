@@ -1,12 +1,11 @@
 import React from 'react';
-
 import MessageForm from './MessageForm'
 import MessageList from './MessageList'
+import classNames from 'classnames/bind';
+import styles from './styles/ChatPage.css';
+import io from 'socket.io-client';
 
-import styles from './styles/ChatPage.css'
-
-// Client end of the socket.io library
-import io from 'socket.io-client'
+let cx = classNames.bind(styles);
 let socket = io('http://localhost:3000');
 
 class ChatPage extends React.Component {
@@ -77,7 +76,7 @@ class ChatPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={cx('chatPage')}>
                 <h1>Chatroom Page</h1>
                 <MessageList
                     messages={this.state.messages}

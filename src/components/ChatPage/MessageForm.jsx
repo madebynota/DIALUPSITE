@@ -1,4 +1,8 @@
 import React from 'react';
+import classNames from 'classnames/bind';
+import styles from './styles/MessageForm.css';
+
+let cx = classNames.bind(styles);
 
 class MessageForm extends React.Component {
 
@@ -30,7 +34,7 @@ class MessageForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={cx('messageForm')}>
                 <h3>Write New Message</h3>
                 <form onSubmit={this.handleSubmit}>
                     <label>{this.props.user}
