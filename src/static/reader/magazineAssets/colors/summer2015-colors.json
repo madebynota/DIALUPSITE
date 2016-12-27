@@ -1,0 +1,26 @@
+{
+	"colorChoices":{
+		"1": {"firstColor":"#000000", "secondColor":"#000000"},
+
+		"2": {"firstColor":"#000000", "secondColor":"#000000"},
+
+		"4": {"firstColor":"#000000", "secondColor":"#000000"},
+
+		"6": {"firstColor":"#000000", "secondColor":"#000000"},
+
+		"8": {"firstColor":"#000000", "secondColor":"#000000"},
+
+		"10":{"firstColor":"#000000", "secondColor":"#000000"},
+
+		"12":{"firstColor":"#000000", "secondColor":"#000000"},
+
+		"14":{"firstColor":"#000000", "secondColor":"#000000"},
+
+		"16":{"firstColor":"#000000", "secondColor":"#000000"},
+
+		"18":{"firstColor":"#000000", "secondColor":"#000000"},
+
+		"default": {"firstColor":"#000000", "secondColor":"#000000"}
+	}
+}
+
