@@ -8,10 +8,9 @@ class MagIcons extends React.Component {
 
     render() {
         return (
-             <img className={cx('magazineCovers')} src= {this.props.picPath} />
+             <img className = {cx('magazineCovers')} src = {this.props.picPath} />
         );
     }
 }
 
 export default MagIcons;
-

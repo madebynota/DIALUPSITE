@@ -10,12 +10,12 @@ class MagPage extends React.Component {
         return (
 
         	<div>
-            	<img className={cx("bkgImage")} src="/img/misc/bedroom.png" />
+            	<img className = {cx("bkgImage")} src = "/img/misc/bedroom.png" />
             	<div className = {cx("headerText")}>
 	            	<h1> MAGAZINES </h1>
 	            	<h4> READ THE NEWEST SUMMER 16 MAG!</h4>
 	            </div>
-            	<div className={"container-fluid"}>
+            	<div className = {"container-fluid"}>
 
             			<div className = {classNames("col-md-6", cx("magPanel"))}>
 		            		<MagIcons picPath = "/img/magIcons/summer16.png"/>
