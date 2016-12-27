@@ -106,8 +106,33 @@ class VideoBackground extends React.Component {
         };
     }
     switchBackground() {
-        let chosenVid = shuffledVideos[bgIndex % bgVideos.length].vidPath;
-        let chosenColor = shuffledVideos[bgIndex % bgVideos.length].color;
+        let chosenVid = shuffledVideos[wrappedIndex].vidPath;
+        let chosenColor = shuffledVideos[wrappedIndex].color; 
+
+        let displayStyle = {
+            display: "inline",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            zIndex: -100
+        };
+
+        let updatedElements = this.state.videoElements;
+        let displayedVideo = <video id={wrappedIndex} key={wrappedIndex} className={cx("bgvideo")} style={displayStyle} src={chosenVid} muted autoPlay loop></video>;
+        updatedElements[wrappedIndex] = displayedVideo;
+
+        if (wrappedIndex > 0) {
+            let switchedIndex = -100 -10*wrappedIndex;
+            let lastVideo = this.state.videoElements[wrappedIndex - 1];
+            let newLastVideo = <video id={lastVideo.props.id} key={lastVideo.key} className={cx("bgvideo")} style={{zIndex: switchedIndex}} src={lastVideo.props.src} muted loop></video>;
+            updatedElements[wrappedIndex - 1] = newLastVideo;
+        }
+
+        if (bgIndex % bgVideos.length === 0) {
+            let switchedIndex = -100 -10*(bgVideos.length);
+            let lastVideo = this.state.videoElements[bgVideos.length - 1];
+            let newLastVideo = <video id={lastVideo.props.id} key={lastVideo.key} className={cx("bgvideo")} style={{zIndex: switchedIndex}} src={lastVideo.props.src} muted loop></video>;
+            updatedElements[bgVideos.length - 1] = newLastVideo;
+        }   
 
         this.setState({
             video: chosenVid,
