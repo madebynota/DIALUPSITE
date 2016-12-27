@@ -34,7 +34,6 @@ const linkItems = [
 class LinkItem extends React.Component {
     openContactAlert() {
         let contactString = "EMAIL US AT DIALUPSTUFF@GMAIL.COM\n\nFACEBOOK AT HTTPS://WWW.FACEBOOK.COM/DIALUPSTUFF";
-        console.log("LMAO")
         alert(contactString);
     }
     render() {
