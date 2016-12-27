@@ -1,0 +1,14 @@
+.magazineCovers {
+  height: 250px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.magazineCovers:hover {
+  -webkit-transform: scale(1.4, 1.4) rotate(20deg); /* (Safari & Chrome) */
+  -moz-transform:    scale(1.4, 1.4) rotate(20deg); /* (Firefox) */
+  -o-transform:      scale(1.4, 1.4) rotate(20deg);/* (Opera) */
+  -ms-transform:     scale(1.4, 1.4) rotate(20deg); /* (Internet Explorer) */
+}
+

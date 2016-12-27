@@ -9,9 +9,14 @@
 }
 
 @font-face {
-	font-family: "Eurostile";
-	src: url("../fonts/Eurostile.ttf");
+	font-family: 'Eurostile';
+	src: url('../fonts/Eurostile.ttf'); /* IE9 Compat Modes */
+	url('../fonts/Eurostile.woff2') format('woff2'),
+	url('../fonts/Eurostile.woff') format('woff'),
+	url('../fonts/Eurostile.ttf')  format('truetype'),
+	url('../fonts/Eurostile.svg') format('svg'); /* Legacy iOS */
 }
+
 
 body {
 	overflow-y: scroll !important;
@@ -21,7 +26,6 @@ body {
 	width: 100%;
 	background-color: white;
 	overflow: hidden;
-	position: fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
