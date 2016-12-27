@@ -19,20 +19,13 @@
 
 
 body {
-<<<<<<< HEAD
 	overflow-y: scroll !important;
-=======
->>>>>>> master
 	margin: 0;
 	padding: 0;
 	height: 100%;
 	width: 100%;
 	background-color: white;
 	overflow: hidden;
-<<<<<<< HEAD
-=======
-	position: fixed;
->>>>>>> master
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;

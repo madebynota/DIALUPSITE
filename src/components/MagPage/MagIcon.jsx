@@ -1,10 +1,10 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import styles from './styles/MagIcons.css'
+import styles from './styles/MagIcon.css'
 
 let cx = classNames.bind(styles);
 
-class MagIcons extends React.Component {
+class MagIcon extends React.Component {
 
     render() {
         return (
@@ -13,4 +13,4 @@ class MagIcons extends React.Component {
     }
 }
 
-export default MagIcons;
+export default MagIcon;
