@@ -18,7 +18,7 @@ class MagPage extends React.Component {
             	<div className={classNames("container-fluid")}>
             		<div className = "row">
 
-            			<div className = {classNames("col-md-3", cx("magPanel"), cx("firstjawn"))}>
+            			<div className = {classNames("col-md-3", cx("magPanel"))}>
 		            		<PreviewRow picPath = "/img/magIcons/summer16.png"/>
 		            	</div>
 
@@ -30,7 +30,7 @@ class MagPage extends React.Component {
 		            		<PreviewRow picPath = "/img/magIcons/winter16.png"/>
 		            	</div>
 
-		            	<div className = {classNames("col-md-3", cx("magPanel"), cx("fourthjawn"))}>
+		            	<div className = {classNames("col-md-3", cx("magPanel"))}>
 		            		<PreviewRow picPath = "/img/magIcons/summer15.png"/>
 		            	</div>
             		</div>
