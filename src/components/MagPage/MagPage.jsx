@@ -12,8 +12,8 @@ class MagPage extends React.Component {
         	<div>
             	<img className={cx("bkgImage")} src="/img/misc/bedroom.png" />
             	<div className = {cx("headerText")}>
-	            	<h1> DIAL UP MAGAZINES </h1>
-	            	<h4> READ THE NEWEST SUMMER 16 MAG </h4>
+	            	<h1> MAGAZINES </h1>
+	            	<h4> READ THE NEWEST SUMMER 16 MAG! </h4>
 	            </div>
             	<div className={classNames("container-fluid")}>
             		<div className = "row">

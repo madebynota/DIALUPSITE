@@ -8,6 +8,11 @@
 	url('../fonts/ArialRoundedMTBold.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+	font-family: "Eurostile";
+	src: url("../fonts/Eurostile.ttf");
+}
+
 body {
 	overflow-y: scroll !important;
 	height: auto;
