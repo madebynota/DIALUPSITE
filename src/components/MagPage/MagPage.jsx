@@ -8,9 +8,33 @@ let cx = classNames.bind(styles);
 class MagPage extends React.Component {
     render() {
         return (
-            <div>
-            	<img src="/img/misc/bedroom.png" className={cx("bkgImage")}/>
-            	<PreviewRow/>
+
+        	<div>
+            	<img className={cx("bkgImage")} src="/img/misc/bedroom.png" />
+            	<div className = {cx("headerText")}>
+	            	<h1> DIAL UP MAGAZINES </h1>
+	            	<h4> READ THE NEWEST SUMMER 16 MAG </h4>
+	            </div>
+            	<div className={classNames("container-fluid")}>
+            		<div className = "row">
+
+            			<div className = {classNames("col-md-3", cx("magPanel"))}>
+		            		<PreviewRow picPath = "/img/magIcons/summer16.png"/>
+		            	</div>
+
+            			<div className = {classNames("col-md-3", cx("magPanel"))}>
+		            		<PreviewRow picPath = "/img/magIcons/fall15.png"/>
+		            	</div>
+
+		            	<div className = {classNames("col-md-3", cx("magPanel"))}>
+		            		<PreviewRow picPath = "/img/magIcons/winter16.png"/>
+		            	</div>
+
+		            	<div className = {classNames("col-md-3", cx("magPanel"))}>
+		            		<PreviewRow picPath = "/img/magIcons/summer15.png"/>
+		            	</div>
+            		</div>
+            	</div>
             </div>
         );
     }
