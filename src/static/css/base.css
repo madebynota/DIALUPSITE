@@ -8,14 +8,31 @@
 	url('../fonts/ArialRoundedMTBold.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+	font-family: 'Eurostile';
+	src: url('../fonts/Eurostile.ttf'); /* IE9 Compat Modes */
+	url('../fonts/Eurostile.woff2') format('woff2'),
+	url('../fonts/Eurostile.woff') format('woff'),
+	url('../fonts/Eurostile.ttf')  format('truetype'),
+	url('../fonts/Eurostile.svg') format('svg'); /* Legacy iOS */
+}
+
+
 body {
+<<<<<<< HEAD
+	overflow-y: scroll !important;
+=======
+>>>>>>> master
 	margin: 0;
 	padding: 0;
 	height: 100%;
 	width: 100%;
 	background-color: white;
 	overflow: hidden;
+<<<<<<< HEAD
+=======
 	position: fixed;
+>>>>>>> master
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
