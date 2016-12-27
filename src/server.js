@@ -14,18 +14,17 @@ app.engine('html', engines.mustache);
 app.use(Express.static(__dirname + '/static'));
 
 //Routes for Magazines. Must be defined before catch-all route.
-app.get('/magazines/summer2015', function(req, res) {res.render('reader/reader.html')});
-app.get('/magazines/fall2015', function(req, res) {
-	console.log("Reached Fall 2015 stuff");
-	res.render('reader/reader.html')
-});
-app.get('/magazines/winter2016', function(req, res) {res.render('reader/reader.html')});
-app.get('/magazines/summer2016', function(req, res) {res.render('reader/reader.html')});
+var magRoutes = [
+	'/magazines/summer2015', 
+	'/magazines/fall2015', 
+	'/magazines/winter2016',
+	'/magazines/summer2016'
+];
+app.get(magRoutes, function(req, res) {res.render('reader/reader.html')});
 
 // Universal routing and rendering handled by React & react-router
 // on the client-side.
 app.get('*', function(req, res) {
-	console.log("Reached catch-all: " + req.url);
     res.render('index.html');
 });
 
