@@ -58,7 +58,23 @@ Or multiple CSS classes with...
 ```
 
 ###Utilities & Helper Functions
-All utility/helper functions that don't have direct relation to the function of a component, or may need to be used in different places around the project should be added as static functions to Utils class in `src/utils.js`. 
+All utility/helper functions that don't have direct relation to the function of a component, or may need to be used in different places around the project should be added as static functions to Utils class in `src/utils.js`.
+
+###Releasing New Magazines
+This system will change entirely the new magazine reader project is complete. To add new magazine into the current project:
+
+1. Use Homebrew to install ImageMagick `brew install imagemagick`.
+2. Convert all pages in the magazine to `.jpg` format with naming convention `page-n.jpg`. This conversion can be done easily with `mogrify -format jpg *.png`.
+3. Move all of the reformatted images to `src/static/reader/magazineAssets/<newmagname>/`.
+4. Add a corresponding data JSON file using convention `src/static/reader/magazineAssets/data/<newmagname>.json`. Follow existing files, and add a block for each page in the magazine.
+5. Add a corresponding color JSON file using convention `src/static/reader/magazineAssets/data/<newmagname>-colors.json`. Follow existing files, and add a block for each pair of pages.
+6. In `src/static/reader/mobile.html`, add a new key-value pair in the `magDict` variable containing the new magazine's name, and the total number of pages it contains.
+7. In `src/server.js`, add the new magazine's name (`/magazines/<newmagname>`).
+8. Add a corresponding link on the `/magazines` page.
+9. Update Open Graph and Twitter description tags in `index.html` and `reader.html` to highlight that a new magazine has been released.
+10. Test changes after restarting the server with `npm start`.
+
+
 
 
 
