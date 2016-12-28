@@ -62,6 +62,7 @@ All utility/helper functions that don't have direct relation to the function of 
 
 ###Releasing New Magazines
 This system will change entirely the new magazine reader project is complete. To add new magazine into the current project:
+
 1. Use Homebrew to install ImageMagick `brew install imagemagick`.
 2. Convert all pages in the magazine to `.jpg` format with naming convention `page-n.jpg`. This conversion can be done easily with `mogrify -format jpg *.png`.
 3. Move all of the reformatted images to `src/static/reader/magazineAssets/<newmagname>/`.
