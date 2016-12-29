@@ -18,21 +18,21 @@ class MagPage extends React.Component {
             	<div className = {"container-fluid"}>
 
             			<div className = {classNames("col-md-6", cx("magPanel"))}>
-		            		<MagIcon picPath = "/img/magIcons/summer16.png"/>
+		            		<MagIcon picPath = "/img/magIcons/summer16.png" href = '/magazines/summer2016'/>
 		            	</div>
 
             			<div className = {classNames("col-md-6", cx("magPanel"))}>
-		            		<MagIcon picPath = "/img/magIcons/fall15.png"/>
+		            		<MagIcon picPath = "/img/magIcons/fall15.png" href = '/magazines/fall2015'/>
 		            	</div>
                     </div>
 
                     <div className = "row">
                         <div className = {classNames("col-md-6", cx("magPanel"))}>		            		
-		            		<MagIcon picPath = "/img/magIcons/winter16.png"/>
+		            		<MagIcon picPath = "/img/magIcons/winter16.png" href = '/magazines/winter2016'/>
 		            	</div>
 
 		            	<div className = {classNames("col-md-6", cx("magPanel"))}>
-		            		<MagIcon picPath = "/img/magIcons/summer15.png"/>
+		            		<MagIcon picPath = "/img/magIcons/summer15.png" href = '/magazines/summer2015'/>
 		            	</div>
             		</div>
             </div>
