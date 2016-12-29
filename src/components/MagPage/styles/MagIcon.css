@@ -12,3 +12,11 @@
   -ms-transform:     scale(1.4, 1.4) rotate(20deg); /* (Internet Explorer) */
 }
 
+@media (max-device-width: 767px) {
+	.magazineCovers {
+		height: 150px;
+		width: auto;
+		display: block;
+		margin: 0 auto;
+	}
+}
