@@ -9,14 +9,14 @@
 }
 
 @font-face {
-	font-family: 'Eurostile';
-	src: url('../fonts/Eurostile.ttf'); /* IE9 Compat Modes */
-	url('../fonts/Eurostile.woff2') format('woff2'),
-	url('../fonts/Eurostile.woff') format('woff'),
-	url('../fonts/Eurostile.ttf')  format('truetype'),
-	url('../fonts/Eurostile.svg') format('svg'); /* Legacy iOS */
+	font-family: 'EuroStile';
+	src: url('../fonts/EuroStile.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/EuroStile.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/EuroStile.woff2') format('woff2'),
+	url('../fonts/EuroStile.woff') format('woff'),
+	url('../fonts/EuroStile.ttf')  format('truetype'),
+	url('../fonts/EuroStile.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
-
 
 body {
 	overflow-y: scroll !important;
