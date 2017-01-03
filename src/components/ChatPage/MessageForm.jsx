@@ -35,7 +35,6 @@ class MessageForm extends React.Component {
     render() {
         return (
             <div className={cx('messageForm')}>
-                <h3>Write New Message</h3>
                 <form onSubmit={this.handleSubmit}>
                     <label>{this.props.user}
                         <input onChange={this.changeHandler} value={this.state.text}/>
