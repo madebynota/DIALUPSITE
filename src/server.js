@@ -13,7 +13,16 @@ app.set('env', (process.env.NODE_ENV || 'production'));
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'static'));
 app.engine('html', engines.mustache);
-app.use(Express.static(__dirname + '/static'))
+app.use(Express.static(__dirname + '/static'));
+
+//Routes for Magazines. Must be defined before catch-all route.
+var magRoutes = [
+	'/magazines/summer2015', 
+	'/magazines/fall2015', 
+	'/magazines/winter2016',
+	'/magazines/summer2016'
+];
+app.get(magRoutes, function(req, res) {res.render('reader/reader.html')});
 
 var server = require('http').Server(app);
 var io = require('socket.io')(server);

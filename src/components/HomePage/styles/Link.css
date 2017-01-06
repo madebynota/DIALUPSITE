@@ -2,10 +2,11 @@
 	display: inline-block;
 	margin: 10px 5px 0px 5px;
 	font-family: 'ArialRoundedMTBold';
+	font-weight: bold;
 }
 
-.link {
-	font-weight: bold;
+.linkItem a {
+	display: inline-block;
 }
 
 @media (max-device-width: 767px) {

@@ -62,6 +62,11 @@ class BoFace {
         this.img.size(this.width, this.height);
         this.img.id(this.id);
         this.img.mousePressed(this.click.bind(this));
+        this.img.touchStarted(this.preventZoom);
+
+        // var boFaceElement = document.getElementById(id);
+        
+        // boFaceElement.addEventListener('touchstart', preventZoom);
     }
     changeImage(imgSrc){
       // Clear original image from Canvas
@@ -73,6 +78,7 @@ class BoFace {
       this.img.size(this.width, this.height);
       this.img.id(this.id);
       this.img.mousePressed(this.click.bind(this));
+      this.img.touchStarted(this.preventZoom);
 
       this.shouldSwap = false;
     }
@@ -95,5 +101,19 @@ class BoFace {
       }
 
       transitionToNextVideo();
+    }
+    preventZoom(e) {
+        if(e.type !== 'touchstart') return; //not a touch-event 
+        
+        var t2 = e.timeStamp;
+        var t1 = e.currentTarget.dataset.lastTouch || t2;
+        var dt = t2 - t1;
+        var fingers = e.touches.length;
+        e.currentTarget.dataset.lastTouch = t2;
+
+        if (!dt || dt > 500 || fingers > 1) return; // not double-tap
+
+        e.preventDefault();
+        e.target.click();
     }
 }

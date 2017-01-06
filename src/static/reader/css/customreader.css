@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'KOFTH2';
+  src: url('../../reader/fonts/dialupfonts/KingOfTheHill2.eot'); /* IE9 Compat Modes */
+  src: url('../../reader/fonts/dialupfonts/KingOfTheHill2.eot?#iefix') format('embedded-opentype'),
+       url('../../reader/fonts/dialupfonts/KingOfTheHill2.woff2') format('woff2'),
+       url('../../reader/fonts/dialupfonts/KingOfTheHill2.woff') format('woff'),
+       url('../../reader/fonts/dialupfonts/KingOfTheHill2.ttf')  format('truetype'),
+       url('../../reader/fonts/dialupfonts/KingOfTheHill2.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+#header {
+	font-family: 'KOFTH2';
+}
+
+.nav-helpers-child {
+	font-family: 'KOFTH2';
+}
+
+.pswp {
+	font-family: 'KOFTH2';
+}
+
+#title, #scornIE {
+	font-family: 'KOFTH2';
+	font-size: 20vh;
+	text-align: center;
+	margin: 0;
+	color:white;
+	opacity: 1.0;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: auto;
+	height: auto;
+	z-index: 100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	display: none;
+}
+
