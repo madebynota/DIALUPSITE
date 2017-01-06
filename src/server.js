@@ -19,6 +19,8 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 var users = [];
+var message_queue = [];
+var message_queue_length = 10;
 
 //  Socket.io Server Event Handlers
 io.on('connection', function(socket) {
@@ -27,7 +29,7 @@ io.on('connection', function(socket) {
     socket.on('init', function() {
         name = "User"+(users.length+1).toString();
         users.push(name);
-        socket.emit('init', {users: users, name});
+        socket.emit('init', {users: users, messages: message_queue, name});
         socket.broadcast.emit('user:join', {name: name});
     });
 
@@ -40,6 +42,7 @@ io.on('connection', function(socket) {
     });
 
     socket.on('send:message', function(message) {
+        addMessageToQueue(message_queue, message);
         socket.broadcast.emit('send:message', {
             user: message.user,
             text: message.text
@@ -48,7 +51,6 @@ io.on('connection', function(socket) {
 });
 
 // Refactor these out into separate module later
-
 function usernameAvailable(users, newName){
     if(users.indexOf(newName) > -1){
         // Username taken
@@ -56,6 +58,12 @@ function usernameAvailable(users, newName){
     } else {
         return True;
     }
+}
+function addMessageToQueue(queue, message) {
+    if (queue.length >= message_queue_length) {
+        queue.shift();
+    }
+    queue.push(message);
 }
 
 // Chatroom Database Storage

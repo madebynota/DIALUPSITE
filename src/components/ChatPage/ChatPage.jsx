@@ -42,8 +42,8 @@ class ChatPage extends React.Component {
 
     _initialize(data) {
         console.log(data);
-        var {users, name} = data;
-        this.setState({users, user: name});
+        var {users, messages, name} = data;
+        this.setState({users, messages, user: name});
     }
 
     _messageRecieve(message) {
