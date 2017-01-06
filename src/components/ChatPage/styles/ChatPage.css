@@ -1,11 +1,19 @@
 /* ChatPage Stying */
 .chatPage {
     text-align: center;
-    margin: auto;
-    padding: auto;
+}
+
+.chatPage h1 {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .pageHeader {
     background: pink;
     height: 100px;
+    margin: 0;
+    padding: 0;
 }
