@@ -77,7 +77,7 @@ class ChatPage extends React.Component {
     render() {
         return (
             <div className={cx('chatPage')}>
-                <h1>Chatroom Page</h1>
+                <h1>DIAL UP RADIO CHAT</h1>
                 <MessageList
                     messages={this.state.messages}
                 />
