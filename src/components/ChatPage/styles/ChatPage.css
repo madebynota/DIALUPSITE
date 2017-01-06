@@ -1,5 +1,11 @@
 /* ChatPage Stying */
-
 .chatPage {
     text-align: center;
+    margin: auto;
+    padding: auto;
+}
+
+.pageHeader {
+    background: pink;
+    height: 100px;
 }
