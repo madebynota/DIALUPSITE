@@ -10,7 +10,6 @@ module.exports = {
     },
 
     saveMessage: function(username, text) {
-        console.log("saving message: " + text);
         var newMessage = new Message({
             timestamp: Date.now(),
             user: username,
