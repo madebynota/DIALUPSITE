@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 var Message = require('./models/Message');
 
 module.exports = {
-    getMessages: function() {
+    getMessages: function(numMessages, callback) {
         Message.find(function(err, messages) {
             if (err) return console.log(err);
-            console.log(messages);
-        })
+            callback(messages);
+        }).skip(Message.count() - numMessages);
     },
 
     saveMessage: function(username, text) {
@@ -19,7 +19,6 @@ module.exports = {
 
         newMessage.save(function(err, newMessage) {
             if (err) return console.log(err);
-            console.log("Message Saved Successfully")
         });
     }
 }
