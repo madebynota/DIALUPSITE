@@ -1,0 +1,14 @@
+.titleBar {
+	background-color: #FFADC6;
+	border-radius: 5px 5px 0px 0px;
+	height: 30px;
+}
+
+.title {
+	font-family: 'ArialRoundedMTBold';
+	color: white;
+	position: relative;
+	top: 50%;
+	left: 20px;
+	transform: translateY(-50%);
+}

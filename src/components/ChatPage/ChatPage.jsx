@@ -1,6 +1,8 @@
+
 import React from 'react';
 import MessageForm from './MessageForm'
 import MessageList from './MessageList'
+import TitleBar from './TitleBar'
 import classNames from 'classnames/bind';
 import styles from './styles/ChatPage.css';
 import io from 'socket.io-client';
@@ -75,20 +77,12 @@ class ChatPage extends React.Component {
     }
 
     render() {
-        return (
-            <div className={cx('chatPage')}>
-                <div className={cx('pageHeader')}>
-                    <h1>DIAL UP RADIO CHATROOM</h1>
-                </div>
-                <MessageList
-                    messages={this.state.messages}
-                />
-                <MessageForm
-                    onMessageSubmit={this.handleMessageSubmit}
-                    user={this.state.user}
-                />
-            </div>
+        document.body.style.backgroundColor = "#10C0FF";
 
+        return (
+            <div className={cx('chatWindow')}>
+                <TitleBar />
+            </div>
         )
     }
 }
