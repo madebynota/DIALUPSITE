@@ -37,7 +37,11 @@ class MessageForm extends React.Component {
             <div className={cx('inputSection')}>
                 <div className={cx('messageForm')}>
                     <form onSubmit={this.handleSubmit}>
-                        <input className={cx('input')} onChange={this.changeHandler} value={this.state.text}/>
+                        <input 
+                            className={cx('input')} 
+                            onChange={this.changeHandler} 
+                            value={this.state.text}
+                        />
                     </form>
                 </div>
                 <div className={cx('buttonSection')}>

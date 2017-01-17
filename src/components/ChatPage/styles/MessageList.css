@@ -1,8 +1,6 @@
-/*.messageList {
-    position: fixed;
-    top: 100px;
-    bottom: 100px;
+.messageList {
     overflow-y: scroll;
     width: 100%;
+    background: yellow;
+    max-height: 500px;
 }
-*/

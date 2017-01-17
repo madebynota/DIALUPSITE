@@ -82,6 +82,7 @@ class ChatPage extends React.Component {
         return (
             <div className={cx('chatWindow')}>
                 <TitleBar />
+                <MessageList messages={this.state.messages}/>
                 <MessageForm />
             </div>
         )

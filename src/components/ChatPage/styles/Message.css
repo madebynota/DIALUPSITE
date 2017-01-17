@@ -1,0 +1,14 @@
+.messageBubble {
+	display: inline-block;
+	border-radius: 5px;
+	background-color: #50E3C2;
+	color: white;
+	min-height: 60px;
+	max-width: 400px;
+	margin: 20px 0px;
+}
+
+.username, .message {
+	display: inline-block;
+	clear:both;
+}

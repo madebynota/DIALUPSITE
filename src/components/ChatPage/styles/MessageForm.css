@@ -1,6 +1,9 @@
 .inputSection {
+	position: absolute;
 	width: 100%;
 	padding: 0px 10px; 
+	height: 50px;
+	bottom: 0px;
 }
 
 .messageForm {
@@ -32,6 +35,7 @@
 	box-shadow: none;
 	border-radius: none;
 	width: 100%;
+	vertical-align: middle;
 }
 
 .input:focus, textarea:focus {
