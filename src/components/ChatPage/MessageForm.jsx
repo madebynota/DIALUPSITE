@@ -34,12 +34,20 @@ class MessageForm extends React.Component {
 
     render() {
         return (
-            <div className={cx('messageForm')}>
-                <form onSubmit={this.handleSubmit}>
-                    <label>{this.props.user}:&nbsp;
-                        <input onChange={this.changeHandler} value={this.state.text}/>
-                    </label>
-                </form>
+            <div className={cx('inputSection')}>
+                <div className={cx('messageForm')}>
+                    <form onSubmit={this.handleSubmit}>
+                        <input className={cx('input')} onChange={this.changeHandler} value={this.state.text}/>
+                    </form>
+                </div>
+                <div className={cx('buttonSection')}>
+                    <div className={classNames(cx('button'))}>
+                        Change Username
+                    </div>
+                    <div className={classNames(cx('button'))}>
+                        Set Message Color
+                    </div>
+                </div>
             </div>
         );
     }
