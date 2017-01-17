@@ -8,8 +8,14 @@ class TitleBar extends React.Component {
     render() {
         return (
             <div className={cx('titleBar')}>
-                <div className={cx('title')}>
-                    DIAL UP INSTANT MESSENGER
+                <div className={cx('barContents')}>
+                    <div className={classNames(cx('title'), cx('centerInBar'))}>
+                        DIAL UP INSTANT MESSENGER
+                    </div>
+                    <div className={classNames(cx('online'), cx('centerInBar'))}>
+                        <div className={cx('greenCircle')}></div>
+                        3 PEOPLE ON
+                    </div>
                 </div>
             </div>
         );
