@@ -24,12 +24,32 @@ var magRoutes = [
 ];
 app.get(magRoutes, function(req, res) {res.render('reader/reader.html')});
 
+// Chatroom Database Storage
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://root:root@ds157278.mlab.com:57278/dialup');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    console.log('Connected to MongoDB');
+});
+
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 var users = [];
 var message_queue = [];
 var message_queue_length = 10;
+
+var previousMessages = dbUtils.getMessages(message_queue_length, function(messages) {
+    messages.map(function(obj) {
+        var message = {
+            user: obj.user,
+            text: obj.text
+        };
+
+        addMessageToQueue(message_queue, message);
+    });
+});
 
 //  Socket.io Server Event Handlers
 io.on('connection', function(socket) {
@@ -51,6 +71,7 @@ io.on('connection', function(socket) {
     });
 
     socket.on('send:message', function(message) {
+        dbUtils.saveMessage(message.user, message.text);
         addMessageToQueue(message_queue, message);
         socket.broadcast.emit('send:message', {
             user: message.user,
@@ -74,14 +95,6 @@ function addMessageToQueue(queue, message) {
     }
     queue.push(message);
 }
-
-// Chatroom Database Storage
-mongoose.connect('mongodb://localhost/test');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-    console.log('Connected to MongoDB');
-});
 
 // Universal routing and rendering handled by React & react-router
 // on the client-side.
