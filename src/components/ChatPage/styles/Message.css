@@ -9,6 +9,13 @@
 	padding: 5px 10px 5px 10px;
 }
 
+.time {
+	color: #9B9B9B;
+	margin: 0px 10px;
+	vertical-align: middle;
+	display: inline-block;
+}
+
 .username, .message {
 	display: inline-block;
 	clear:both;

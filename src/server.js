@@ -44,7 +44,8 @@ var previousMessages = dbUtils.getMessages(message_queue_length, function(messag
     messages.map(function(obj) {
         var message = {
             user: obj.user,
-            text: obj.text
+            text: obj.text,
+            timestamp: obj.timestamp
         };
 
         addMessageToQueue(message_queue, message);
