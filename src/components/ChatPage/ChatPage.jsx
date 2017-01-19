@@ -8,7 +8,11 @@ import styles from './styles/ChatPage.css';
 import io from 'socket.io-client';
 
 let cx = classNames.bind(styles);
-let socket = io('http://localhost:3000');
+let path = 'http://' + window.location.hostname;
+if (window.location.hostname == "localhost") {
+    path += ":" + window.location.port;
+}
+let socket = io(path);
 
 class ChatPage extends React.Component {
     constructor(props) {
