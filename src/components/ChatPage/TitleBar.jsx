@@ -14,7 +14,7 @@ class TitleBar extends React.Component {
                     </div>
                     <div className={classNames(cx('online'), cx('centerInBar'))}>
                         <div className={cx('greenCircle')}></div>
-                        3 PEOPLE ON
+                        {this.props.userCount} PEOPLE ON
                     </div>
                 </div>
             </div>

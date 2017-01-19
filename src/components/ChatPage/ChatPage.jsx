@@ -59,8 +59,8 @@ class ChatPage extends React.Component {
     }
 
     _userJoined(data) {
-        var {users, messages} = this.state;
-        var {name} = data;
+        var {messages} = this.state;
+        var {users, name} = data;
         messages.push({
             user: 'APPLICATION BOT',
             text: name +' Joined',
@@ -70,10 +70,8 @@ class ChatPage extends React.Component {
     }
 
     _userLeft(data) {
-        var {users, messages} = this.state;
-        var {name} = data;
-        var index = users.indexOf(name);
-        users.splice(index, 1);
+        var {messages} = this.state;
+        var {users, name} = data;
         messages.push({
             user: 'APPLICATION BOT',
             text: name +' Left',
@@ -87,7 +85,7 @@ class ChatPage extends React.Component {
 
         return (
             <div className={cx('chatWindow')}>
-                <TitleBar />
+                <TitleBar userCount={this.state.users.length}/>
                 <MessageList messages={this.state.messages}/>
                 <MessageForm 
                     onMessageSubmit={this.handleMessageSubmit}

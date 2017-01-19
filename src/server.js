@@ -60,14 +60,14 @@ io.on('connection', function(socket) {
         name = "User"+(users.length+1).toString();
         users.push(name);
         socket.emit('init', {users: users, messages: message_queue, name});
-        socket.broadcast.emit('user:join', {name: name});
+        socket.broadcast.emit('user:join', {name: name, users: users});
     });
 
     socket.on('disconnect', function() {
         if(typeof name !== 'undefined'){
-            socket.broadcast.emit('user:left', {name: name});
             var index = users.indexOf(name);
             users.splice(index, 1);
+            socket.broadcast.emit('user:left', {name: name, users: users});
         }
     });
 
