@@ -76,7 +76,8 @@ io.on('connection', function(socket) {
         addMessageToQueue(message_queue, message);
         socket.broadcast.emit('send:message', {
             user: message.user,
-            text: message.text
+            text: message.text,
+            timestamp: Date.now()
         });
     })
 });

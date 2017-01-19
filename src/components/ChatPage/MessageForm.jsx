@@ -22,7 +22,8 @@ class MessageForm extends React.Component {
         }
         var message = {
             user: this.props.user,
-            text: this.state.text
+            text: this.state.text,
+            timestamp: Date.now()
         }
         this.props.onMessageSubmit(message);
         this.setState({text: ''});

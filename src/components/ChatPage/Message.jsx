@@ -14,7 +14,7 @@ class Message extends React.Component {
         hours = hours ? hours : 12; // the hour '0' should be '12'
         hours = this.pad(2, hours);
         minutes = minutes < 10 ? '0'+minutes : minutes;
-        var strTime = hours + ':' + minutes + ' ' + ampm;
+        let strTime = hours + ':' + minutes + ' ' + ampm;
         return strTime;
     }
     pad(size, num) {
