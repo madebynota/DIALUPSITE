@@ -5,7 +5,8 @@
 	color: white;
 	min-height: 60px;
 	max-width: 400px;
-	margin: 20px 0px;
+	margin: 20px 0px 0px 10px;
+	padding: 5px 10px 5px 10px;
 }
 
 .username, .message {

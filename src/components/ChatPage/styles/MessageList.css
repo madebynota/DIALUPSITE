@@ -1,6 +1,5 @@
 .messageList {
     overflow-y: scroll;
     width: 100%;
-    background: yellow;
-    max-height: 500px;
+    max-height: 520px;
 }
