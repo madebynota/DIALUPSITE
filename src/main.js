@@ -5,3 +5,7 @@ import SiteRoutes from './components/SiteRoutes';
 window.onload = () => {
   ReactDOM.render(<SiteRoutes/>, document.getElementById('main'));
 };
+
+if (module.hot) {
+	module.hot.accept();
+}

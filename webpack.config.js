@@ -3,7 +3,10 @@ const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    entry: path.join(__dirname, 'src', 'main.js'),
+    entry: [
+        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+        path.join(__dirname, 'src', 'main.js'),
+    ],
     output: {
         path: path.join(__dirname, 'src', 'static'),
         filename: 'js/bundle.js'
@@ -56,6 +59,9 @@ module.exports = {
             sourcemap: false,
             beautify: false,
             dead_code: true
-        })
+        }),
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
     ]
 };
