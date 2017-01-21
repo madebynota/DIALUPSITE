@@ -23,18 +23,15 @@ app.set('views', path.join(__dirname, 'static'));
 app.engine('html', engines.mustache);
 app.use(Express.static(__dirname + '/static'));
 app.use(webpackDevMiddleware(compiler, {
-    hot: true,
-    filename: 'bundle.js',
+    noInfo: true, 
+    publicPath: webpackConfig.output.publicPath,
     stats: {
         colors: true,
     },
-    historyApiFallback: true,
+    historyApiFallback: true
 }));
-app.use(webpackHotMiddleware(compiler, {
-    log: console.log,
-    path: '/__webpack_hmr',
-    heartbeat: 10 * 1000,
-}));
+
+app.use(webpackHotMiddleware(compiler));
 
 //Routes for Magazines. Must be defined before catch-all route.
 var magRoutes = [
