@@ -13,6 +13,11 @@ class MessageForm extends React.Component {
         };
         this.changeHandler = this.changeHandler.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleUsernameChange = this.handleUsernameChange.bind(this);
+    }
+
+    handleUsernameChange() {
+        this.props.onUsernameChange();
     }
 
     handleSubmit(e) {
@@ -38,16 +43,16 @@ class MessageForm extends React.Component {
             <div className={cx('inputSection')}>
                 <div className={cx('messageForm')}>
                     <form onSubmit={this.handleSubmit}>
-                        <input 
-                            className={cx('input')} 
-                            onChange={this.changeHandler} 
+                        <input
+                            className={cx('input')}
+                            onChange={this.changeHandler}
                             value={this.state.text}
                         />
                     </form>
                 </div>
                 <div className={cx('buttonSection')}>
                     <div className={classNames(cx('button'))}>
-                        Change Username
+                        <a onClick={this.handleUsernameChange}>Change Username</a>
                     </div>
                     <div className={classNames(cx('button'))}>
                         Set Message Color

@@ -24,10 +24,13 @@ class ChatPage extends React.Component {
         };
 
         this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
+        this.handleUsernameChange = this.handleUsernameChange.bind(this);
+
         this._initialize = this._initialize.bind(this);
         this._messageRecieve = this._messageRecieve.bind(this);
         this._userJoined = this._userJoined.bind(this);
         this._userLeft = this._userLeft.bind(this);
+        this._userChangedName = this._userChangedName.bind(this);
     }
 
     componentDidMount() {
@@ -44,6 +47,10 @@ class ChatPage extends React.Component {
         messages.push(message);
         this.setState({messages});
         socket.emit('send:message', message);
+    }
+
+    handleUsernameChange(userName){
+        alert('Username Changed');
     }
 
     _initialize(data) {
@@ -80,6 +87,34 @@ class ChatPage extends React.Component {
         this.setState({users, messages});
     }
 
+    _userChangedName(data) {
+        var {messages} = this.state;
+        var {oldName, newName} = data;
+
+        // Update User List with new name
+        var index = users.indexOf(oldName);
+        users.splice(index, 1);
+        users.push(newName);
+
+        // Update all corresponding messages with newName
+        var messagesLength = this.state.messages.length;
+        for(var i = 0; i < messagesLength; i++){
+            if (messages[0].user == oldName) {
+                messages[0].user = newName;
+            }
+        }
+
+        // Let rest of user know
+        messages.push({
+            user: 'APPLICATION BOT',
+            text: oldName + " changed name to " + newName,
+            timestamp: Date.now()
+        })
+
+        this.setState({users, messages});
+
+    }
+
     render() {
         document.body.style.backgroundColor = "#10C0FF";
 
@@ -87,8 +122,9 @@ class ChatPage extends React.Component {
             <div className={cx('chatWindow')}>
                 <TitleBar userCount={this.state.users.length}/>
                 <MessageList messages={this.state.messages}/>
-                <MessageForm 
+                <MessageForm
                     onMessageSubmit={this.handleMessageSubmit}
+                    onUsernameChange={this.handleUsernameChange}
                     user={this.state.user}
                 />
             </div>
