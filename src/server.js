@@ -23,7 +23,7 @@ app.set('views', path.join(__dirname, 'static'));
 app.engine('html', engines.mustache);
 app.use(Express.static(__dirname + '/static'));
 app.use(webpackDevMiddleware(compiler, {
-    noInfo: true, 
+    noInfo: true,
     publicPath: webpackConfig.output.publicPath,
     stats: {
         colors: true,
@@ -35,8 +35,8 @@ app.use(webpackHotMiddleware(compiler));
 
 //Routes for Magazines. Must be defined before catch-all route.
 var magRoutes = [
-	'/magazines/summer2015', 
-	'/magazines/fall2015', 
+	'/magazines/summer2015',
+	'/magazines/fall2015',
 	'/magazines/winter2016',
 	'/magazines/summer2016'
 ];
@@ -90,6 +90,7 @@ io.on('connection', function(socket) {
     });
 
     socket.on('send:message', function(message) {
+		console.log("send:message recorded")
         dbUtils.saveMessage(message.user, message.text);
         addMessageToQueue(message_queue, message);
         socket.broadcast.emit('send:message', {
@@ -97,7 +98,15 @@ io.on('connection', function(socket) {
             text: message.text,
             timestamp: Date.now()
         });
-    })
+    });
+
+	socket.on('change:username', function(names) {
+		var index = users.indexOf(names.oldName);
+        users.splice(index, 1);
+        users.push(names.newName);
+		console.log(users);
+		socket.broadcast.emit('change:username', {oldName: names.oldName, newName: names.newName});
+	})
 });
 
 // Refactor these out into separate module later

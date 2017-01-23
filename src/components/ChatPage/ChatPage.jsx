@@ -25,6 +25,7 @@ class ChatPage extends React.Component {
 
         this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
         this.handleUsernameChange = this.handleUsernameChange.bind(this);
+        this.updateMessagesWithNewUsername = this.updateMessagesWithNewUsername.bind(this);
 
         this._initialize = this._initialize.bind(this);
         this._messageRecieve = this._messageRecieve.bind(this);
@@ -38,6 +39,7 @@ class ChatPage extends React.Component {
         socket.on('send:message', this._messageRecieve);
         socket.on('user:join', this._userJoined);
         socket.on('user:left', this._userLeft);
+        socket.on('change:username', this._userChangedName);
 
         socket.emit('init');
     }
@@ -49,8 +51,34 @@ class ChatPage extends React.Component {
         socket.emit('send:message', message);
     }
 
-    handleUsernameChange(userName){
-        alert('Username Changed');
+    handleUsernameChange(username){
+        var {messages} = this.state;
+        var names = {
+            oldName: this.state.user,
+            newName: username
+        }
+        messages = this.updateMessagesWithNewUsername(names.oldName, names.newName, messages);
+        this.setState({messages, user: names.newName});
+        socket.emit('change:username', names);
+
+    }
+
+    updateMessagesWithNewUsername(oldName, newName, messages){
+        // Update all corresponding messages with newName
+        var messagesLength = messages.length;
+        for(var i = 0; i < messagesLength; i++){
+            if (messages[i].user == oldName) {
+                messages[i].user = newName;
+            }
+        }
+
+        messages.push({
+            user: 'APPLICATION BOT',
+            text: oldName + " changed name to " + newName,
+            timestamp: Date.now()
+        });
+
+        return messages;
     }
 
     _initialize(data) {
@@ -88,7 +116,7 @@ class ChatPage extends React.Component {
     }
 
     _userChangedName(data) {
-        var {messages} = this.state;
+        var {users, messages} = this.state;
         var {oldName, newName} = data;
 
         // Update User List with new name
@@ -96,21 +124,7 @@ class ChatPage extends React.Component {
         users.splice(index, 1);
         users.push(newName);
 
-        // Update all corresponding messages with newName
-        var messagesLength = this.state.messages.length;
-        for(var i = 0; i < messagesLength; i++){
-            if (messages[0].user == oldName) {
-                messages[0].user = newName;
-            }
-        }
-
-        // Let rest of user know
-        messages.push({
-            user: 'APPLICATION BOT',
-            text: oldName + " changed name to " + newName,
-            timestamp: Date.now()
-        })
-
+        messages = this.updateMessagesWithNewUsername(oldName, newName, messages);
         this.setState({users, messages});
 
     }

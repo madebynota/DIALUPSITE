@@ -12,12 +12,12 @@ class MessageForm extends React.Component {
             text: ''
         };
         this.changeHandler = this.changeHandler.bind(this);
+        this.changeUsername = this.changeUsername.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleUsernameChange = this.handleUsernameChange.bind(this);
     }
 
-    handleUsernameChange() {
-        this.props.onUsernameChange();
+    changeUsername(username) {
+        this.props.onUsernameChange(username);
     }
 
     handleSubmit(e) {
@@ -25,12 +25,25 @@ class MessageForm extends React.Component {
         if(this.state.text == ''){
             return;
         }
-        var message = {
-            user: this.props.user,
-            text: this.state.text,
-            timestamp: Date.now()
+        var tokenized_commands = this.state.text.split(" ");
+        switch (tokenized_commands[0].toLowerCase()) {
+            case "/changename":
+                if (tokenized_commands[1] != null) {
+                    this.changeUsername(tokenized_commands[1]);
+                }
+                break;
+            case "/roast":
+                console.log("Roast Request towards: " + tokenized_commands[1]);
+                break;
+            default:
+                var message = {
+                    user: this.props.user,
+                    text: this.state.text,
+                    timestamp: Date.now()
+                }
+                this.props.onMessageSubmit(message);
         }
-        this.props.onMessageSubmit(message);
+        console.log("Clearing State Text");
         this.setState({text: ''});
     }
 
@@ -52,7 +65,7 @@ class MessageForm extends React.Component {
                 </div>
                 <div className={cx('buttonSection')}>
                     <div className={classNames(cx('button'))}>
-                        <a onClick={this.handleUsernameChange}>Change Username</a>
+                        Change Username
                     </div>
                     <div className={classNames(cx('button'))}>
                         Set Message Color
