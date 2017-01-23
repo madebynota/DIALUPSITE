@@ -24,10 +24,14 @@ class ChatPage extends React.Component {
         };
 
         this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
+        this.handleUsernameChange = this.handleUsernameChange.bind(this);
+        this.updateMessagesWithNewUsername = this.updateMessagesWithNewUsername.bind(this);
+
         this._initialize = this._initialize.bind(this);
         this._messageRecieve = this._messageRecieve.bind(this);
         this._userJoined = this._userJoined.bind(this);
         this._userLeft = this._userLeft.bind(this);
+        this._userChangedName = this._userChangedName.bind(this);
     }
 
     componentDidMount() {
@@ -35,6 +39,7 @@ class ChatPage extends React.Component {
         socket.on('send:message', this._messageRecieve);
         socket.on('user:join', this._userJoined);
         socket.on('user:left', this._userLeft);
+        socket.on('change:username', this._userChangedName);
 
         socket.emit('init');
     }
@@ -44,6 +49,48 @@ class ChatPage extends React.Component {
         messages.push(message);
         this.setState({messages});
         socket.emit('send:message', message);
+    }
+
+    handleUsernameChange(username){
+        var {users, messages} = this.state;
+        // If username already exists
+        if(users.indexOf(username) != -1) { // Yo idk why the fuck this works but it does lmaoooooooo
+            console.log("Username taken");
+            messages.push({
+                user: 'APPLICATION BOT',
+                text: "NAME ALREADY TAKEN YOU IDIOT",
+                timestamp: Date.now()
+            });
+            this.setState({messages});
+        } else {
+            // Send username change request to server
+            var names = {
+                oldName: this.state.user,
+                newName: username
+            }
+            messages = this.updateMessagesWithNewUsername(names.oldName, names.newName, messages);
+            this.setState({messages, user: names.newName});
+            socket.emit('change:username', names);
+        }
+
+    }
+
+    updateMessagesWithNewUsername(oldName, newName, messages){
+        // Update all corresponding messages with newName
+        var messagesLength = messages.length;
+        for(var i = 0; i < messagesLength; i++){
+            if (messages[i].user == oldName) {
+                messages[i].user = newName;
+            }
+        }
+
+        messages.push({
+            user: 'APPLICATION BOT',
+            text: oldName + " changed name to " + newName,
+            timestamp: Date.now()
+        });
+
+        return messages;
     }
 
     _initialize(data) {
@@ -80,6 +127,20 @@ class ChatPage extends React.Component {
         this.setState({users, messages});
     }
 
+    _userChangedName(data) {
+        var {users, messages} = this.state;
+        var {oldName, newName} = data;
+
+        // Update User List with new name
+        var index = users.indexOf(oldName);
+        users.splice(index, 1);
+        users.push(newName);
+
+        messages = this.updateMessagesWithNewUsername(oldName, newName, messages);
+        this.setState({users, messages});
+
+    }
+
     render() {
         document.body.style.backgroundColor = "#10C0FF";
 
@@ -87,8 +148,9 @@ class ChatPage extends React.Component {
             <div className={cx('chatWindow')}>
                 <TitleBar userCount={this.state.users.length}/>
                 <MessageList messages={this.state.messages}/>
-                <MessageForm 
+                <MessageForm
                     onMessageSubmit={this.handleMessageSubmit}
+                    onUsernameChange={this.handleUsernameChange}
                     user={this.state.user}
                 />
             </div>
