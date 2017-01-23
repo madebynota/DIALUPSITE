@@ -11,63 +11,51 @@ const bgVideos = [
         "color": "#FFFFFF"
     },
     {
-        "vidPath": "img/vids/jeff-eggo.mp4",
+        "vidPath": "img/vids/archie-jerk.mp4",
         "color": "#FFFFFF"
     },
     {
-        "vidPath": "img/vids/party.mp4",
+        "vidPath": "img/vids/archie-link.mp4",
         "color": "#44BBEC"
     },
     {
-        "vidPath": "img/vids/slim-dillo.mp4",
+        "vidPath": "img/vids/bo-ollie.mp4",
         "color": "#ff2847"
     },
     {
-        "vidPath": "img/vids/luchador.mp4",
+        "vidPath": "img/vids/dave-mike-nbn2.mp4",
         "color": "#44BBEC"
     },
     {
-        "vidPath": "img/vids/party-2.mp4",
-        "color": "#18faee"
-    },
-    {
-        "vidPath": "img/vids/dave-wasabi.mp4",
+        "vidPath": "img/vids/jeff-skate.mp4",
         "color": "#FFB9A3"
-    },
-    {
-        "vidPath": "img/vids/feed-streets.mp4",
-        "color": "#fdd848"
     },
     {
         "vidPath": "img/vids/jeff-yam.mp4",
+        "color": "#fdd848"
+    },
+    {
+        "vidPath": "img/vids/link-dance.mp4",
         "color": "#44BBEC"
     },
     {
-        "vidPath": "img/vids/archie-turnt.mp4",
-        "color": "#FFB9A3"
-    },
-    {
-        "vidPath": "img/vids/magic-go-crazy.mp4",
+        "vidPath": "img/vids/magic-jump.mp4",
         "color": "#18faee"
     },
     {
-        "vidPath": "img/vids/aj-dap.mp4",
-        "color": "#FFB9A3"
+        "vidPath": "img/vids/slim-dillo.mp4",
+        "color": "#18faee"
     },
     {
-        "vidPath": "img/vids/nbn2.mp4",
+        "vidPath": "img/vids/squad-eggos.mp4",
         "color": "#44BBEC"
     },
     {
-        "vidPath": "img/vids/jeff-only-up.mp4",
+        "vidPath": "img/vids/squad-skydeck.mp4",
         "color": "#FFB9A3"
     },
     {
-        "vidPath": "img/vids/jack-dap.mp4",
-        "color": "#18faee"
-    },
-    {
-        "vidPath": "img/vids/archie-jerk.mp4",
+        "vidPath": "img/vids/teah-talk.mp4",
         "color": "#18faee"
     }
 ];
