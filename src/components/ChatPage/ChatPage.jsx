@@ -52,14 +52,26 @@ class ChatPage extends React.Component {
     }
 
     handleUsernameChange(username){
-        var {messages} = this.state;
-        var names = {
-            oldName: this.state.user,
-            newName: username
+        var {users, messages} = this.state;
+        // If username already exists
+        if(users.indexOf(username) != -1) { // Yo idk why the fuck this works but it does lmaoooooooo
+            console.log("Username taken");
+            messages.push({
+                user: 'APPLICATION BOT',
+                text: "NAME ALREADY TAKEN YOU IDIOT",
+                timestamp: Date.now()
+            });
+            this.setState({messages});
+        } else {
+            // Send username change request to server
+            var names = {
+                oldName: this.state.user,
+                newName: username
+            }
+            messages = this.updateMessagesWithNewUsername(names.oldName, names.newName, messages);
+            this.setState({messages, user: names.newName});
+            socket.emit('change:username', names);
         }
-        messages = this.updateMessagesWithNewUsername(names.oldName, names.newName, messages);
-        this.setState({messages, user: names.newName});
-        socket.emit('change:username', names);
 
     }
 

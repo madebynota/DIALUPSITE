@@ -43,7 +43,6 @@ class MessageForm extends React.Component {
                 }
                 this.props.onMessageSubmit(message);
         }
-        console.log("Clearing State Text");
         this.setState({text: ''});
     }
 
