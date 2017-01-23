@@ -23,7 +23,7 @@ app.set('views', path.join(__dirname, 'static'));
 app.engine('html', engines.mustache);
 app.use(Express.static(__dirname + '/static'));
 app.use(webpackDevMiddleware(compiler, {
-    noInfo: true, 
+    noInfo: true,
     publicPath: webpackConfig.output.publicPath,
     stats: {
         colors: true,
@@ -35,8 +35,8 @@ app.use(webpackHotMiddleware(compiler));
 
 //Routes for Magazines. Must be defined before catch-all route.
 var magRoutes = [
-	'/magazines/summer2015', 
-	'/magazines/fall2015', 
+	'/magazines/summer2015',
+	'/magazines/fall2015',
 	'/magazines/winter2016',
 	'/magazines/summer2016'
 ];
@@ -62,7 +62,8 @@ var previousMessages = dbUtils.getMessages(message_queue_length, function(messag
     messages.map(function(obj) {
         var message = {
             user: obj.user,
-            text: obj.text
+            text: obj.text,
+            timestamp: obj.timestamp
         };
 
         addMessageToQueue(message_queue, message);
@@ -77,25 +78,35 @@ io.on('connection', function(socket) {
         name = "User"+(users.length+1).toString();
         users.push(name);
         socket.emit('init', {users: users, messages: message_queue, name});
-        socket.broadcast.emit('user:join', {name: name});
+        socket.broadcast.emit('user:join', {name: name, users: users});
     });
 
     socket.on('disconnect', function() {
         if(typeof name !== 'undefined'){
-            socket.broadcast.emit('user:left', {name: name});
             var index = users.indexOf(name);
             users.splice(index, 1);
+            socket.broadcast.emit('user:left', {name: name, users: users});
         }
     });
 
     socket.on('send:message', function(message) {
+		console.log("send:message recorded")
         dbUtils.saveMessage(message.user, message.text);
         addMessageToQueue(message_queue, message);
         socket.broadcast.emit('send:message', {
             user: message.user,
-            text: message.text
+            text: message.text,
+            timestamp: Date.now()
         });
-    })
+    });
+
+	socket.on('change:username', function(names) {
+		var index = users.indexOf(names.oldName);
+        users.splice(index, 1);
+        users.push(names.newName);
+		console.log(users);
+		socket.broadcast.emit('change:username', {oldName: names.oldName, newName: names.newName});
+	})
 });
 
 // Refactor these out into separate module later
