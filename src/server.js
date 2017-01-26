@@ -63,6 +63,7 @@ var previousMessages = dbUtils.getMessages(message_queue_length, function(messag
         var message = {
             user: obj.user,
             text: obj.text,
+            color: obj.color,
             timestamp: obj.timestamp
         };
 
@@ -90,12 +91,12 @@ io.on('connection', function(socket) {
     });
 
     socket.on('send:message', function(message) {
-		console.log("send:message recorded")
         dbUtils.saveMessage(message.user, message.text);
         addMessageToQueue(message_queue, message);
         socket.broadcast.emit('send:message', {
             user: message.user,
             text: message.text,
+            color: message.color,
             timestamp: Date.now()
         });
     });
@@ -104,7 +105,6 @@ io.on('connection', function(socket) {
 		var index = users.indexOf(names.oldName);
         users.splice(index, 1);
         users.push(names.newName);
-		console.log(users);
 		socket.broadcast.emit('change:username', {oldName: names.oldName, newName: names.newName});
 	})
 });

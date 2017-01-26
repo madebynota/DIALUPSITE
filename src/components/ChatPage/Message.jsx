@@ -23,12 +23,16 @@ class Message extends React.Component {
         return s;
     }
     render() {
+        let style = {
+            backgroundColor: this.props.color
+        };
+
         return (
             <div>
                 <div className={cx('time')}>
                     {this.formatAMPM(this.props.timestamp)}
                 </div>
-            	<div className={cx('messageBubble')}>
+            	<div className={cx('messageBubble')} style={style}>
             		<div className={cx('username')}>
             			<strong>{this.props.user}</strong>
             		</div>

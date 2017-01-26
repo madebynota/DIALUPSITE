@@ -18,13 +18,16 @@ class ChatPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            user: '',
             users: [],
             messages: [],
+            color: '',
             text: ''
         };
 
         this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
         this.handleUsernameChange = this.handleUsernameChange.bind(this);
+        this.handleColorChange = this.handleColorChange.bind(this);
         this.updateMessagesWithNewUsername = this.updateMessagesWithNewUsername.bind(this);
 
         this._initialize = this._initialize.bind(this);
@@ -45,7 +48,11 @@ class ChatPage extends React.Component {
     }
 
     handleMessageSubmit(message) {
-        var {messages} = this.state;
+        var {messages, color} = this.state;
+
+        //Adds color to message
+        message.color = color;
+
         messages.push(message);
         this.setState({messages});
         socket.emit('send:message', message);
@@ -55,7 +62,6 @@ class ChatPage extends React.Component {
         var {users, messages} = this.state;
         // If username already exists
         if(users.indexOf(username) != -1) { // Yo idk why the fuck this works but it does lmaoooooooo
-            console.log("Username taken");
             messages.push({
                 user: 'APPLICATION BOT',
                 text: "NAME ALREADY TAKEN YOU IDIOT",
@@ -73,6 +79,22 @@ class ChatPage extends React.Component {
             socket.emit('change:username', names);
         }
 
+    }
+
+    handleColorChange(color){
+        var messages = this.state.messages;
+
+        messages.push({
+            user: 'APPLICATION BOT',
+            text: name + " changed color to " + color,
+            color: color,
+            timestamp: Date.now()
+        });
+
+        this.setState({
+            messages: messages,
+            color: color
+        });
     }
 
     updateMessagesWithNewUsername(oldName, newName, messages){
@@ -94,7 +116,6 @@ class ChatPage extends React.Component {
     }
 
     _initialize(data) {
-        console.log(data);
         var {users, messages, name} = data;
         this.setState({users, messages, user: name});
     }
@@ -150,6 +171,7 @@ class ChatPage extends React.Component {
                 <MessageList messages={this.state.messages}/>
                 <MessageForm
                     onMessageSubmit={this.handleMessageSubmit}
+                    onColorChange={this.handleColorChange}
                     onUsernameChange={this.handleUsernameChange}
                     user={this.state.user}
                 />

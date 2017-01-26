@@ -18,7 +18,7 @@ class MessageList extends React.Component {
             <div className={cx('messageList')} ref={node => this.node = node}>
                 {this.props.messages.map((message, i) => {
                     return (
-                        <Message user={message.user} text={message.text} timestamp={message.timestamp}/>
+                        <Message user={message.user} color={message.color} text={message.text} key={i} timestamp={message.timestamp}/>
                     );
                 })
             }

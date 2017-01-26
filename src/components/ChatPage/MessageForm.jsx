@@ -13,11 +13,16 @@ class MessageForm extends React.Component {
         };
         this.changeHandler = this.changeHandler.bind(this);
         this.changeUsername = this.changeUsername.bind(this);
+        this.setColor = this.setColor.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     changeUsername(username) {
         this.props.onUsernameChange(username);
+    }
+
+    setColor(color) {
+        this.props.onColorChange(color);
     }
 
     handleSubmit(e) {
@@ -30,6 +35,11 @@ class MessageForm extends React.Component {
             case "/changename":
                 if (tokenized_commands[1] != null) {
                     this.changeUsername(tokenized_commands[1]);
+                }
+                break;
+            case "/setcolor":
+                if (tokenized_commands[1] != null) {
+                    this.setColor(tokenized_commands[1]);
                 }
                 break;
             case "/roast":
