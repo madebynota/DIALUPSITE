@@ -66,6 +66,7 @@ class ChatPage extends React.Component {
             messages.push({
                 user: 'APPLICATION BOT',
                 text: "NAME ALREADY TAKEN YOU IDIOT",
+                color: this.state.color,
                 timestamp: Date.now()
             });
             this.setState({messages});
@@ -117,6 +118,7 @@ class ChatPage extends React.Component {
         messages.push({
             user: 'APPLICATION BOT',
             text: oldName + " changed name to " + newName,
+            color: this.state.color,
             timestamp: Date.now()
         });
 
@@ -124,8 +126,13 @@ class ChatPage extends React.Component {
     }
 
     _initialize(data) {
-        var {users, messages, name} = data;
-        this.setState({users, messages, user: name});
+        var {users, messages, name, color} = data;
+        this.setState({
+            users, 
+            messages, 
+            user: name,
+            color: color
+        });
     }
 
     _messageRecieve(message) {
@@ -140,6 +147,7 @@ class ChatPage extends React.Component {
         messages.push({
             user: 'APPLICATION BOT',
             text: name +' Joined',
+            color: this.state.color,
             timestamp: Date.now()
         });
         this.setState({users, messages});
@@ -151,6 +159,7 @@ class ChatPage extends React.Component {
         messages.push({
             user: 'APPLICATION BOT',
             text: name +' Left',
+            color: this.state.color,
             timestamp: Date.now()
         });
         this.setState({users, messages});

@@ -77,8 +77,9 @@ io.on('connection', function(socket) {
 
     socket.on('init', function() {
         name = "User"+(users.length+1).toString();
+        color = dbUtils.getColor(users.length);
         users.push(name);
-        socket.emit('init', {users: users, messages: message_queue, name});
+        socket.emit('init', {users: users, messages: message_queue, name, color});
         socket.broadcast.emit('user:join', {name: name, users: users});
     });
 
