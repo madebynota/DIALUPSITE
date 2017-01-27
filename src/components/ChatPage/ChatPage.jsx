@@ -22,7 +22,7 @@ class ChatPage extends React.Component {
             user: '',
             users: [],
             messages: [],
-            color: '',
+            color: '#ffadc6',
             text: ''
         };
 
@@ -88,21 +88,25 @@ class ChatPage extends React.Component {
 
         let isHex = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color);
         let isNamedColor = toHex(color) !== undefined;
+        let isValid = isHex || isNamedColor;
 
-        let botText = (isHex || isNamedColor) 
+        let botText = isValid 
                         ? "Changed message color to " + color
                         : "That's not a valid color";
+
+        let newColor = isNamedColor ? toHex(color) : color;
+        let prevColor = this.state.color;
 
         messages.push({
             user: 'APPLICATION BOT',
             text: botText,
-            color: color,
+            color: isValid ? newColor : prevColor,
             timestamp: Date.now()
         });
 
         this.setState({
             messages: messages,
-            color: color
+            color: isValid ? newColor : prevColor
         });
     }
 

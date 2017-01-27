@@ -22,9 +22,19 @@ class Message extends React.Component {
         while (s.length < (size || 2)) {s = "0" + s;}
         return s;
     }
+    getSmartTextColor(backgroundColor){
+        let hexColor = backgroundColor.slice(1);
+        let r = parseInt(hexColor.substr(0,2),16);
+        let g = parseInt(hexColor.substr(2,2),16);
+        let b = parseInt(hexColor.substr(4,2),16);
+        let yiq = ((r*299)+(g*587)+(b*114))/1000;
+
+        return (yiq >= 230) ? 'black' : 'white';
+    }
     render() {
         let style = {
-            backgroundColor: this.props.color
+            backgroundColor: this.props.color,
+            color: this.getSmartTextColor(this.props.color)
         };
 
         return (
