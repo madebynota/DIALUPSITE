@@ -6,6 +6,7 @@ import TitleBar from './TitleBar'
 import classNames from 'classnames/bind';
 import styles from './styles/ChatPage.css';
 import io from 'socket.io-client';
+import toHex from 'colornames';
 
 let cx = classNames.bind(styles);
 let path = 'http://' + window.location.hostname;
@@ -18,13 +19,16 @@ class ChatPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            user: '',
             users: [],
             messages: [],
+            color: '#ffadc6',
             text: ''
         };
 
         this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
         this.handleUsernameChange = this.handleUsernameChange.bind(this);
+        this.handleColorChange = this.handleColorChange.bind(this);
         this.updateMessagesWithNewUsername = this.updateMessagesWithNewUsername.bind(this);
 
         this._initialize = this._initialize.bind(this);
@@ -45,7 +49,11 @@ class ChatPage extends React.Component {
     }
 
     handleMessageSubmit(message) {
-        var {messages} = this.state;
+        var {messages, color} = this.state;
+
+        //Adds color to message
+        message.color = color;
+
         messages.push(message);
         this.setState({messages});
         socket.emit('send:message', message);
@@ -55,10 +63,10 @@ class ChatPage extends React.Component {
         var {users, messages} = this.state;
         // If username already exists
         if(users.indexOf(username) != -1) { // Yo idk why the fuck this works but it does lmaoooooooo
-            console.log("Username taken");
             messages.push({
                 user: 'APPLICATION BOT',
                 text: "NAME ALREADY TAKEN YOU IDIOT",
+                color: this.state.color,
                 timestamp: Date.now()
             });
             this.setState({messages});
@@ -75,6 +83,33 @@ class ChatPage extends React.Component {
 
     }
 
+    handleColorChange(color){
+        var messages = this.state.messages;
+
+        let isHex = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color);
+        let isNamedColor = toHex(color) !== undefined;
+        let isValid = isHex || isNamedColor;
+
+        let botText = isValid 
+                        ? "Changed message color to " + color
+                        : "That's not a valid color";
+
+        let newColor = isNamedColor ? toHex(color) : color;
+        let prevColor = this.state.color;
+
+        messages.push({
+            user: 'APPLICATION BOT',
+            text: botText,
+            color: isValid ? newColor : prevColor,
+            timestamp: Date.now()
+        });
+
+        this.setState({
+            messages: messages,
+            color: isValid ? newColor : prevColor
+        });
+    }
+
     updateMessagesWithNewUsername(oldName, newName, messages){
         // Update all corresponding messages with newName
         var messagesLength = messages.length;
@@ -87,6 +122,7 @@ class ChatPage extends React.Component {
         messages.push({
             user: 'APPLICATION BOT',
             text: oldName + " changed name to " + newName,
+            color: this.state.color,
             timestamp: Date.now()
         });
 
@@ -94,9 +130,13 @@ class ChatPage extends React.Component {
     }
 
     _initialize(data) {
-        console.log(data);
-        var {users, messages, name} = data;
-        this.setState({users, messages, user: name});
+        var {users, messages, name, color} = data;
+        this.setState({
+            users, 
+            messages, 
+            user: name,
+            color: color
+        });
     }
 
     _messageRecieve(message) {
@@ -111,6 +151,7 @@ class ChatPage extends React.Component {
         messages.push({
             user: 'APPLICATION BOT',
             text: name +' Joined',
+            color: this.state.color,
             timestamp: Date.now()
         });
         this.setState({users, messages});
@@ -122,6 +163,7 @@ class ChatPage extends React.Component {
         messages.push({
             user: 'APPLICATION BOT',
             text: name +' Left',
+            color: this.state.color,
             timestamp: Date.now()
         });
         this.setState({users, messages});
@@ -150,8 +192,10 @@ class ChatPage extends React.Component {
                 <MessageList messages={this.state.messages}/>
                 <MessageForm
                     onMessageSubmit={this.handleMessageSubmit}
+                    onColorChange={this.handleColorChange}
                     onUsernameChange={this.handleUsernameChange}
                     user={this.state.user}
+                    color={this.props.color}
                 />
             </div>
         )

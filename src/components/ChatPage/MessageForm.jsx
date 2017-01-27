@@ -13,11 +13,16 @@ class MessageForm extends React.Component {
         };
         this.changeHandler = this.changeHandler.bind(this);
         this.changeUsername = this.changeUsername.bind(this);
+        this.setColor = this.setColor.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     changeUsername(username) {
         this.props.onUsernameChange(username);
+    }
+
+    setColor(color) {
+        this.props.onColorChange(color);
     }
 
     handleSubmit(e) {
@@ -32,6 +37,11 @@ class MessageForm extends React.Component {
                     this.changeUsername(tokenized_commands[1]);
                 }
                 break;
+            case "/setcolor":
+                if (tokenized_commands[1] != null) {
+                    this.setColor(tokenized_commands[1]);
+                }
+                break;
             case "/roast":
                 console.log("Roast Request towards: " + tokenized_commands[1]);
                 break;
@@ -39,6 +49,7 @@ class MessageForm extends React.Component {
                 var message = {
                     user: this.props.user,
                     text: this.state.text,
+                    color: this.props.color,
                     timestamp: Date.now()
                 }
                 this.props.onMessageSubmit(message);
