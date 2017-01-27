@@ -27,7 +27,7 @@ class MessageForm extends React.Component {
         }
         var tokenized_commands = this.state.text.split(" ");
         switch (tokenized_commands[0].toLowerCase()) {
-            case "/changename":
+            case "/setname":
                 if (tokenized_commands[1] != null) {
                     this.changeUsername(tokenized_commands[1]);
                 }
