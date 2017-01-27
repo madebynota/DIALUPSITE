@@ -9,10 +9,11 @@ module.exports = {
         }).skip(Message.count() - numMessages);
     },
 
-    saveMessage: function(username, text) {
+    saveMessage: function(username, text, color) {
         var newMessage = new Message({
             timestamp: Date.now(),
             user: username,
+            color: color,
             text: text
         });
 

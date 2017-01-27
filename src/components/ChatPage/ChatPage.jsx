@@ -182,6 +182,7 @@ class ChatPage extends React.Component {
                     onColorChange={this.handleColorChange}
                     onUsernameChange={this.handleUsernameChange}
                     user={this.state.user}
+                    color={this.props.color}
                 />
             </div>
         )

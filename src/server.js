@@ -91,7 +91,7 @@ io.on('connection', function(socket) {
     });
 
     socket.on('send:message', function(message) {
-        dbUtils.saveMessage(message.user, message.text);
+        dbUtils.saveMessage(message.user, message.text, message.color);
         addMessageToQueue(message_queue, message);
         socket.broadcast.emit('send:message', {
             user: message.user,
