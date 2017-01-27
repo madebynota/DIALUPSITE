@@ -6,6 +6,7 @@ import TitleBar from './TitleBar'
 import classNames from 'classnames/bind';
 import styles from './styles/ChatPage.css';
 import io from 'socket.io-client';
+import toHex from 'colornames';
 
 let cx = classNames.bind(styles);
 let path = 'http://' + window.location.hostname;
@@ -84,9 +85,16 @@ class ChatPage extends React.Component {
     handleColorChange(color){
         var messages = this.state.messages;
 
+        let isHex = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color);
+        let isNamedColor = toHex(color) !== undefined;
+
+        let botText = (isHex || isNamedColor) 
+                        ? "Changed message color to " + color
+                        : "That's not a valid color";
+
         messages.push({
             user: 'APPLICATION BOT',
-            text: name + " changed color to " + color,
+            text: botText,
             color: color,
             timestamp: Date.now()
         });
