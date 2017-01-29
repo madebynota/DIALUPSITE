@@ -51,7 +51,7 @@ const bgVideos = [
         "color": "#44BBEC"
     },
     {
-        "vidPath": "img/vids/squad-skydeck.mp4",
+        "vidPath": "img/vids/twins-yacc.mp4",
         "color": "#FFB9A3"
     },
     {
