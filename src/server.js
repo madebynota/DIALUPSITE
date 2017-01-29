@@ -3,16 +3,9 @@ var Express = require('express');
 var engines = require('consolidate');
 var mustache = require('mustache');
 var mongoose = require('mongoose');
-var webpack = require("webpack");
-var webpackConfig = require('../webpack.config.js')
-var webpackDevMiddleware = require("webpack-dev-middleware");
-var webpackHotMiddleware = require("webpack-hot-middleware");
 
 // Utilities for getting/saving messages to MongoDB
 var dbUtils = require('./dbUtils');
-
-// Setup for HMR
-var compiler = webpack(webpackConfig);
 
 var app = new Express();
 
@@ -22,16 +15,6 @@ app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'static'));
 app.engine('html', engines.mustache);
 app.use(Express.static(__dirname + '/static'));
-app.use(webpackDevMiddleware(compiler, {
-    noInfo: true,
-    publicPath: webpackConfig.output.publicPath,
-    stats: {
-        colors: true,
-    },
-    historyApiFallback: true
-}));
-
-app.use(webpackHotMiddleware(compiler));
 
 //Routes for Magazines. Must be defined before catch-all route.
 var magRoutes = [

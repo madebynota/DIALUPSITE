@@ -3,13 +3,9 @@ const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    entry: [
-        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
-        path.join(__dirname, 'src', 'main.js'),
-    ],
+    entry: path.join(__dirname, 'src', 'main.js'),
     output: {
         path: path.join(__dirname, 'src', 'static'),
-        publicPath: path.join(__dirname, 'src', 'static'),
         filename: 'js/bundle.js'
     },
     resolve: {
@@ -28,10 +24,11 @@ module.exports = {
             {
                 test: /\.js|.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
-                loaders: ['react-hot', 'babel?' + JSON.stringify({
+                loader: 'babel',
+                query: {
                     cacheDirectory: 'babel_cache',
                     presets: ['react', 'es2015']
-                })]
+                }
             },
             {
                 test: /\.css$/,
@@ -59,9 +56,6 @@ module.exports = {
             sourcemap: false,
             beautify: false,
             dead_code: true
-        }),
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        })
     ]
 };
