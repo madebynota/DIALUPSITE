@@ -23,6 +23,10 @@ class Message extends React.Component {
         return s;
     }
     getSmartTextColor(backgroundColor){
+        if (!backgroundColor) {
+            return 'white';
+        }
+
         let hexColor = backgroundColor.slice(1);
         let r = parseInt(hexColor.substr(0,2),16);
         let g = parseInt(hexColor.substr(2,2),16);
