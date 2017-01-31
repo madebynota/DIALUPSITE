@@ -12,23 +12,28 @@ class StreamPlayer extends React.Component {
             playing: false
         };
     }
-	play() {
-		this.setState({playing: true});
-	}
-	pause() {
-		this.setState({playing: false});
+	playPauseStream() {
+		this.setState({
+			playing: !this.state.playing
+		});
 	}
 	render() {
+		let buttonText = this.state.playing
+			? "PAUSE RADIO STREAM"
+			: "PLAY RADIO STREAM";
+
 		return (
 			<div>
-				<div>
-					<button onClick={this.play.bind(this)}>Play</button>
-					<button onClick={this.pause.bind(this)}>Pause</button>
+				<div className={cx('playPauseButton', 'riseButton')} onClick={this.playPauseStream.bind(this)}>
+					{buttonText}
 				</div>
 				<ReactPlayer 
 					url='http://sc1.spacialnet.com:32660/;wnur.mp3' 
 					playing={this.state.playing}
-					hidden={true} />
+					width={0}
+					height={0}
+					hidden={true} 
+				/>
 			</div>
 		);
 	}
