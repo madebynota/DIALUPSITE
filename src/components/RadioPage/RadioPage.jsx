@@ -5,7 +5,7 @@ import MessageList from './MessageList'
 import TitleBar from './TitleBar'
 import StreamPlayer from './StreamPlayer'
 import classNames from 'classnames/bind';
-import styles from './styles/ChatPage.css';
+import styles from './styles/RadioPage.css';
 import io from 'socket.io-client';
 import toHex from 'colornames';
 
@@ -16,7 +16,7 @@ if (window.location.hostname == "localhost") {
 }
 let socket = io(path);
 
-class ChatPage extends React.Component {
+class RadioPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -206,4 +206,4 @@ class ChatPage extends React.Component {
     }
 }
 
-export default ChatPage;
+export default RadioPage;
