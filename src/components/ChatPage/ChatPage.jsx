@@ -3,6 +3,7 @@ import React from 'react';
 import MessageForm from './MessageForm'
 import MessageList from './MessageList'
 import TitleBar from './TitleBar'
+import StreamPlayer from './StreamPlayer'
 import classNames from 'classnames/bind';
 import styles from './styles/ChatPage.css';
 import io from 'socket.io-client';
@@ -197,6 +198,7 @@ class ChatPage extends React.Component {
                     user={this.state.user}
                     color={this.props.color}
                 />
+                <StreamPlayer />
             </div>
         )
     }
