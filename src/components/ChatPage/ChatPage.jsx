@@ -188,16 +188,18 @@ class ChatPage extends React.Component {
         document.body.style.backgroundColor = "#10C0FF";
 
         return (
-            <div className={cx('chatWindow')}>
-                <TitleBar userCount={this.state.users.length}/>
-                <MessageList messages={this.state.messages}/>
-                <MessageForm
-                    onMessageSubmit={this.handleMessageSubmit}
-                    onColorChange={this.handleColorChange}
-                    onUsernameChange={this.handleUsernameChange}
-                    user={this.state.user}
-                    color={this.props.color}
-                />
+            <div>
+                <div className={cx('chatWindow')}>
+                    <TitleBar userCount={this.state.users.length}/>
+                    <MessageList messages={this.state.messages}/>
+                    <MessageForm
+                        onMessageSubmit={this.handleMessageSubmit}
+                        onColorChange={this.handleColorChange}
+                        onUsernameChange={this.handleUsernameChange}
+                        user={this.state.user}
+                        color={this.props.color}
+                    />
+                </div>
                 <StreamPlayer />
             </div>
         )
