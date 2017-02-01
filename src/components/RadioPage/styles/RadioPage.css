@@ -5,7 +5,7 @@
 }
 
 @media only screen and (min-device-width : 480px) {
-    img {
+    img, h3{
         display: none;
     }
 }
@@ -30,4 +30,10 @@ img {
     margin: 0 auto;
     display: block;
     margin-top: 10vh;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+    margin-top: 40vh;
 }

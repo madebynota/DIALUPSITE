@@ -201,6 +201,7 @@ class RadioPage extends React.Component {
                     />
                 </div>
                 <StreamPlayer className={cx('streamButton')}/>
+                <h3> DIAL UP </h3>
             </div>
         )
     }
