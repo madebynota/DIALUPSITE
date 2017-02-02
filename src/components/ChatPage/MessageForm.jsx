@@ -14,6 +14,7 @@ class MessageForm extends React.Component {
         this.changeHandler = this.changeHandler.bind(this);
         this.changeUsername = this.changeUsername.bind(this);
         this.setColor = this.setColor.bind(this);
+        this.showHelpText = this.showHelpText.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -25,6 +26,10 @@ class MessageForm extends React.Component {
         this.props.onColorChange(color);
     }
 
+    showHelpText() {
+        this.props.showHelpText();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         if(this.state.text == ''){
@@ -32,6 +37,9 @@ class MessageForm extends React.Component {
         }
         var tokenized_commands = this.state.text.split(" ");
         switch (tokenized_commands[0].toLowerCase()) {
+            case "/help":
+                this.showHelpText();
+                break;
             case "/setname":
                 if (tokenized_commands[1] != null) {
                     this.changeUsername(tokenized_commands[1]);
