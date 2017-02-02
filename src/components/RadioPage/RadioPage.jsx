@@ -1,4 +1,3 @@
-
 import React from 'react';
 import MessageForm from './MessageForm'
 import MessageList from './MessageList'
@@ -189,6 +188,7 @@ class RadioPage extends React.Component {
 
         return (
             <div>
+                <img src = "/img/andrewFace/andrew.png"/>
                 <div className={cx('chatWindow')}>
                     <TitleBar userCount={this.state.users.length}/>
                     <MessageList messages={this.state.messages}/>
@@ -200,7 +200,8 @@ class RadioPage extends React.Component {
                         color={this.props.color}
                     />
                 </div>
-                <StreamPlayer />
+                <StreamPlayer className={cx('streamButton')}/>
+                <h3> DIAL UP </h3>
             </div>
         )
     }

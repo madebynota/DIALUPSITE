@@ -2,7 +2,7 @@ import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 import App from './components/App';
 import HomePage from './components/HomePage/HomePage';
-import RadioPage from './components/RadioPage/RadioPage'
+import RadioPage from './components/RadioPage/RadioPage';
 import MagPage from './components/MagPage/MagPage';
 import NotFoundPage from './components/NotFoundPage';
 

@@ -1,3 +1,15 @@
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .chatWindow {
+        display: none;
+    }
+}
+
+@media only screen and (min-device-width : 480px) {
+    img, h3{
+        display: none;
+    }
+}
+
 .chatWindow {
     width: 800px;
     height: 620px;
@@ -10,4 +22,18 @@
     background-color: white;
     transform: translateY(-53%);
     box-shadow: 2px 7px 10px rgba(0,0,0,0.5);
+}
+
+img {
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10vh;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+    margin-top: 40vh;
 }
