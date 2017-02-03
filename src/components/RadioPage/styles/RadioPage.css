@@ -1,16 +1,15 @@
 @media only screen and (min-device-width : 320px) and (max-device-width : 780px) {
-    html {
-        padding: 0;
-        margin: 0;
-    }
 
     .chatWindow {
         display: none;
     }
+    .andrewRadioFace {
+        display: block;
+    }
 }
 
 @media only screen and (min-device-width : 780px) {
-    img, h3{
+    .andrewRadioFace, .footerText {
         display: none;
     }
 }
@@ -29,15 +28,14 @@
     box-shadow: 2px 7px 10px rgba(0,0,0,0.5);
 }
 
-img {
+.andrewRadioFace {
     width: 200px;
     height: auto;
     margin: 0 auto;
-    display: block;
     margin-top: 10vh;
 }
 
-h3 {
+.footerText {
     color: white;
     font-size: 20px;
     text-align: center;

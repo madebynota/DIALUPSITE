@@ -38,8 +38,8 @@ class RadioPage extends React.Component {
         this._userChangedName = this._userChangedName.bind(this);
     }
 
-    componentDidMount() {        
-        socket.on('init', this._initialize); 
+    componentDidMount() {
+        socket.on('init', this._initialize);
         socket.on('send:message', this._messageRecieve);
         socket.on('user:join', this._userJoined);
         socket.on('user:left', this._userLeft);
@@ -92,7 +92,7 @@ class RadioPage extends React.Component {
         let isNamedColor = toHex(color) !== undefined;
         let isValid = isHex || isNamedColor;
 
-        let botText = isValid 
+        let botText = isValid
                         ? "Changed message color to " + color
                         : "That's not a valid color";
 
@@ -134,8 +134,8 @@ class RadioPage extends React.Component {
     _initialize(data) {
         var {users, messages, name, color} = data;
         this.setState({
-            users, 
-            messages, 
+            users,
+            messages,
             user: name,
             color: color
         });
@@ -190,7 +190,7 @@ class RadioPage extends React.Component {
 
         return (
             <div>
-                <img src = "/img/andrewFace/andrew.png"/>
+                <img className={cx('andrewRadioFace')} src = "/img/andrewFace/andrew.png"/>
                 <div className={cx('chatWindow')}>
                     <TitleBar userCount={this.state.users.length}/>
                     <MessageList messages={this.state.messages}/>
@@ -203,7 +203,7 @@ class RadioPage extends React.Component {
                     />
                 </div>
                 <StreamPlayer className={cx('streamButton')}/>
-                <h3> DIAL UP </h3>
+                <h3 className={cx('footerText')}> DIAL UP </h3>
             </div>
         )
     }
