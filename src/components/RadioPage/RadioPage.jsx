@@ -38,14 +38,16 @@ class RadioPage extends React.Component {
         this._userChangedName = this._userChangedName.bind(this);
     }
 
-    componentDidMount() {
-        socket.on('init', this._initialize);
+    componentDidMount() {        
+        socket.on('init', this._initialize); 
         socket.on('send:message', this._messageRecieve);
         socket.on('user:join', this._userJoined);
         socket.on('user:left', this._userLeft);
         socket.on('change:username', this._userChangedName);
 
-        socket.emit('init');
+        if (window.innerWidth > 780) {
+            socket.emit('init');
+        }
     }
 
     handleMessageSubmit(message) {
