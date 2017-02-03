@@ -1,4 +1,4 @@
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-device-width : 320px) and (max-device-width : 780px) {
     .playPauseButton {
     	margin-left: 20vw;
     	margin-top: 10vh;
@@ -6,7 +6,7 @@
     }
 }
 
-@media only screen and (min-device-width : 480px){
+@media only screen and (min-device-width : 780px){
     .playPauseButton {
 	position: fixed;
     transform: translateX(-50%);
