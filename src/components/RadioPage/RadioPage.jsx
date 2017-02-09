@@ -1,10 +1,10 @@
-
 import React from 'react';
 import MessageForm from './MessageForm'
 import MessageList from './MessageList'
 import TitleBar from './TitleBar'
+import StreamPlayer from './StreamPlayer'
 import classNames from 'classnames/bind';
-import styles from './styles/ChatPage.css';
+import styles from './styles/RadioPage.css';
 import io from 'socket.io-client';
 import toHex from 'colornames';
 
@@ -15,7 +15,7 @@ if (window.location.hostname == "localhost") {
 }
 let socket = io(path);
 
-class ChatPage extends React.Component {
+class RadioPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -46,7 +46,9 @@ class ChatPage extends React.Component {
         socket.on('user:left', this._userLeft);
         socket.on('change:username', this._userChangedName);
 
-        socket.emit('init');
+        if (window.innerWidth > 780) {
+            socket.emit('init');
+        }
     }
 
     handleMessageSubmit(message) {
@@ -205,20 +207,25 @@ class ChatPage extends React.Component {
         document.body.style.backgroundColor = "#10C0FF";
 
         return (
-            <div className={cx('chatWindow')}>
-                <TitleBar userCount={this.state.users.length}/>
-                <MessageList messages={this.state.messages}/>
-                <MessageForm
-                    onMessageSubmit={this.handleMessageSubmit}
-                    onColorChange={this.handleColorChange}
-                    onUsernameChange={this.handleUsernameChange}
-                    showHelpText={this.showHelpText}
-                    user={this.state.user}
-                    color={this.props.color}
-                />
+            <div>
+                <img className={cx('andrewRadioFace')} src = "/img/andrewFace/andrew.png"/>
+                <div className={cx('chatWindow')}>
+                    <TitleBar userCount={this.state.users.length}/>
+                    <MessageList messages={this.state.messages}/>
+                    <MessageForm
+                        onMessageSubmit={this.handleMessageSubmit}
+                        onColorChange={this.handleColorChange}
+                        onUsernameChange={this.handleUsernameChange}
+                        showHelpText={this.showHelpText}
+                        user={this.state.user}
+                        color={this.props.color}
+                    />
+                </div>
+                <StreamPlayer className={cx('streamButton')}/>
+                <h3 className={cx('footerText')}> DIAL UP </h3>
             </div>
         )
     }
 }
 
-export default ChatPage;
+export default RadioPage;
