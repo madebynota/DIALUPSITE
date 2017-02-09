@@ -30,6 +30,7 @@ class RadioPage extends React.Component {
         this.handleUsernameChange = this.handleUsernameChange.bind(this);
         this.handleColorChange = this.handleColorChange.bind(this);
         this.updateMessagesWithNewUsername = this.updateMessagesWithNewUsername.bind(this);
+        this.showHelpText = this.showHelpText.bind(this);
 
         this._initialize = this._initialize.bind(this);
         this._messageRecieve = this._messageRecieve.bind(this);
@@ -66,7 +67,7 @@ class RadioPage extends React.Component {
         // If username already exists
         if(users.indexOf(username) != -1) { // Yo idk why the fuck this works but it does lmaoooooooo
             messages.push({
-                user: 'APPLICATION BOT',
+                user: 'DIAL UP BOT',
                 text: "NAME ALREADY TAKEN YOU IDIOT",
                 color: this.state.color,
                 timestamp: Date.now()
@@ -100,7 +101,7 @@ class RadioPage extends React.Component {
         let prevColor = this.state.color;
 
         messages.push({
-            user: 'APPLICATION BOT',
+            user: 'DIAL UP BOT',
             text: botText,
             color: isValid ? newColor : prevColor,
             timestamp: Date.now()
@@ -122,7 +123,7 @@ class RadioPage extends React.Component {
         }
 
         messages.push({
-            user: 'APPLICATION BOT',
+            user: 'DIAL UP BOT',
             text: oldName + " changed name to " + newName,
             color: this.state.color,
             timestamp: Date.now()
@@ -131,8 +132,25 @@ class RadioPage extends React.Component {
         return messages;
     }
 
+    showHelpText() {
+        var {messages} = this.state;
+        messages.push({
+            user: 'DIAL UP BOT',
+            text: 'THIS SHIT IS NOT HARD, Y\'ALL BUGGIN SMGDH. TYPE /setname __________ TO CHANGE YOUR NAME TO __________.\nTYPE /setcolor __________ TO CHANGE YOUR MESSAGE BUBBLE COLOR TO __________. \nIF YOU REALLY NEED ME TO REPEAT THIS TYPE /help (THOUGH THIS SHIT REALLY ISN\'T THAT HARD GOD DAMN)',
+            color: this.state.color,
+            timestamp: Date.now()
+        });
+        this.setState({messages});
+    }
+
     _initialize(data) {
         var {users, messages, name, color} = data;
+        messages.push({
+            user: 'DIAL UP BOT',
+            text: 'WELCOME TO THE DIAL UP RADIO CHATROOM. I\'M ONLY GONNA SAY THIS ONCE SO FUCKING LISTEN. TYPE /setname __________ TO CHANGE YOUR NAME TO __________.\nTYPE /setcolor __________ TO CHANGE YOUR MESSAGE BUBBLE COLOR TO __________. \nIF YOU REALLY NEED ME TO REPEAT THIS TYPE /help (THOUGH THIS SHIT REALLY ISN\'T THAT HARD GOD DAMN)',
+            color: this.state.color,
+            timestamp: Date.now()
+        });
         this.setState({
             users,
             messages,
@@ -151,7 +169,7 @@ class RadioPage extends React.Component {
         var {messages} = this.state;
         var {users, name} = data;
         messages.push({
-            user: 'APPLICATION BOT',
+            user: 'DIAL UP BOT',
             text: name +' Joined',
             color: this.state.color,
             timestamp: Date.now()
@@ -163,7 +181,7 @@ class RadioPage extends React.Component {
         var {messages} = this.state;
         var {users, name} = data;
         messages.push({
-            user: 'APPLICATION BOT',
+            user: 'DIAL UP BOT',
             text: name +' Left',
             color: this.state.color,
             timestamp: Date.now()
@@ -198,6 +216,7 @@ class RadioPage extends React.Component {
                         onMessageSubmit={this.handleMessageSubmit}
                         onColorChange={this.handleColorChange}
                         onUsernameChange={this.handleUsernameChange}
+                        showHelpText={this.showHelpText}
                         user={this.state.user}
                         color={this.props.color}
                     />

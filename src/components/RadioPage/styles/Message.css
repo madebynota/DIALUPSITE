@@ -19,4 +19,6 @@
 .username, .message {
 	display: inline-block;
 	clear:both;
+	word-wrap: break-word;
+	width: 100%;
 }
