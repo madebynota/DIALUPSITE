@@ -10,4 +10,6 @@
 	font-size: 15px;
 	cursor: pointer;
 	text-align: center;
+	position: fixed;
+    transform: translateX(-50%);
 }
