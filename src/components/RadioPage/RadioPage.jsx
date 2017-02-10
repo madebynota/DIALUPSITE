@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import MobileRadio from './Mobile/MobileRadio'
 import DesktopRadio from './Desktop/DesktopRadio'
 
@@ -11,6 +11,9 @@ class RadioPage extends React.Component {
     }
 
     render() {
+        // Set background to Blue
+        document.body.style.backgroundColor = "#10C0FF";
+
         if(this.state.windowWidth < 760) {
             return <MobileRadio />
         } else {

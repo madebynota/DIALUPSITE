@@ -215,11 +215,8 @@ class DesktopRadio extends React.Component {
     }
 
     render() {
-        document.body.style.backgroundColor = "#10C0FF";
-
         return (
             <div>
-                <img className={cx('andrewRadioFace')} src = "/img/andrewFace/andrew.png"/>
                 <div className={cx('chatWindow')}>
                     <TitleBar userCount={this.state.users.length}/>
                     <MessageList messages={this.state.messages}/>
