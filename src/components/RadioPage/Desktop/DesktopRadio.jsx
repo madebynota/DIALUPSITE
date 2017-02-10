@@ -1,14 +1,18 @@
-import React from 'react';
+import React from 'react'
+
 import MessageForm from './MessageForm'
 import MessageList from './MessageList'
 import TitleBar from './TitleBar'
 import StreamPlayer from './StreamPlayer'
-import classNames from 'classnames/bind';
-import styles from './styles/RadioPage.css';
-import io from 'socket.io-client';
-import toHex from 'colornames';
+
+import classNames from 'classnames/bind'
+import styles from './styles/RadioPage.css'
+import io from 'socket.io-client'
+import toHex from 'colornames'
 
 let cx = classNames.bind(styles);
+
+// Socket.io Setup
 let path = 'http://' + window.location.hostname;
 if (window.location.hostname == "localhost") {
     path += ":" + window.location.port;
@@ -22,16 +26,18 @@ class DesktopRadio extends React.Component {
             user: '',
             users: [],
             messages: [],
-            color: '#ffadc6',
+            color: '#ffadc6', // DIAL UP pink
             text: ''
         };
 
+        // Bind all handlers to DesktopPage context
         this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
         this.handleUsernameChange = this.handleUsernameChange.bind(this);
         this.handleColorChange = this.handleColorChange.bind(this);
         this.updateMessagesWithNewUsername = this.updateMessagesWithNewUsername.bind(this);
         this.showHelpText = this.showHelpText.bind(this);
 
+        // Bind all private functions to DesktopPage context
         this._initialize = this._initialize.bind(this);
         this._messageRecieve = this._messageRecieve.bind(this);
         this._userJoined = this._userJoined.bind(this);
@@ -40,12 +46,18 @@ class DesktopRadio extends React.Component {
     }
 
     componentDidMount() {
+        // On connection to server
         socket.on('init', this._initialize);
-        socket.on('send:message', this._messageRecieve);
+
+        // When other users join/leave chatroom
         socket.on('user:join', this._userJoined);
         socket.on('user:left', this._userLeft);
+
+        // When current user changes properties
+        socket.on('send:message', this._messageRecieve);
         socket.on('change:username', this._userChangedName);
 
+        // Send initialization message to server
         socket.emit('init');
     }
 
@@ -62,6 +74,7 @@ class DesktopRadio extends React.Component {
 
     handleUsernameChange(username){
         var {users, messages} = this.state;
+
         // If username already exists
         if(users.indexOf(username) != -1) {
             messages.push({
