@@ -19,7 +19,12 @@ class MessageForm extends React.Component {
     }
 
     changeUsername(username) {
-        this.props.onUsernameChange(username);
+        var name = username;
+        if(name.length > 16) {
+            name = username.substring(0, 15);
+            this.props.showUsernameFail();
+        }
+        this.props.onUsernameChange(name);
     }
 
     setColor(color) {

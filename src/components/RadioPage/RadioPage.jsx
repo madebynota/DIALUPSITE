@@ -31,6 +31,7 @@ class RadioPage extends React.Component {
         this.handleColorChange = this.handleColorChange.bind(this);
         this.updateMessagesWithNewUsername = this.updateMessagesWithNewUsername.bind(this);
         this.showHelpText = this.showHelpText.bind(this);
+        this.showUsernameFail = this.showUsernameFail.bind(this);
 
         this._initialize = this._initialize.bind(this);
         this._messageRecieve = this._messageRecieve.bind(this);
@@ -142,6 +143,17 @@ class RadioPage extends React.Component {
         });
         this.setState({messages});
     }
+    
+    showUsernameFail() {
+        var {messages} = this.state;
+        messages.push({
+            user: 'DIAL UP BOT',
+            text: 'YOUR USERNAME GOTTA BE ONE WORD AND IT CAN\'T BE MORE THAN 16 CHARACTERS. IMMA SHORTEN THAT FOR YOU, BUT YOU CAN TRY AGAIN IF U WANT.',
+            color: this.state.color,
+            timestamp: Date.now()
+        });
+        this.setState({messages});
+    }
 
     _initialize(data) {
         var {users, messages, name, color} = data;
@@ -214,6 +226,7 @@ class RadioPage extends React.Component {
                     <MessageList messages={this.state.messages}/>
                     <MessageForm
                         onMessageSubmit={this.handleMessageSubmit}
+                        showUsernameFail={this.showUsernameFail}
                         onColorChange={this.handleColorChange}
                         onUsernameChange={this.handleUsernameChange}
                         showHelpText={this.showHelpText}
