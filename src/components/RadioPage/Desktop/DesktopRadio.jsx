@@ -1,12 +1,13 @@
 import React from 'react'
 
+// Components
 import MessageForm from './MessageForm'
 import MessageList from './MessageList'
 import TitleBar from './TitleBar'
 import StreamPlayer from './StreamPlayer'
 
 import classNames from 'classnames/bind'
-import styles from './styles/RadioPage.css'
+import styles from './styles/DesktopRadio.css'
 import io from 'socket.io-client'
 import toHex from 'colornames'
 

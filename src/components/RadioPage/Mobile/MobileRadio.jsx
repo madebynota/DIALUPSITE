@@ -1,9 +1,10 @@
 import React from 'react'
 
+// Components
 import StreamPlayer from './StreamPlayer'
 
 import classNames from 'classnames/bind'
-import styles from './styles/RadioPage.css'
+import styles from './styles/MobileRadio.css'
 
 let cx = classNames.bind(styles);
 
