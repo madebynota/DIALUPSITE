@@ -1,0 +1,46 @@
+@media only screen and (min-device-width : 320px) and (max-device-width : 780px) {
+
+    .chatWindow {
+        display: none;
+    }
+    .andrewRadioFace {
+        display: block;
+    }
+}
+
+@media only screen and (min-device-width : 780px) {
+    .andrewRadioFace, .footerText {
+        display: none;
+    }
+}
+
+.chatWindow {
+    width: 800px;
+    height: 620px;
+    position: absolute;
+    border-radius: 5px;
+    top: 50%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background-color: white;
+    transform: translateY(-53%);
+    box-shadow: 2px 7px 10px rgba(0,0,0,0.5);
+}
+
+.andrewRadioFace {
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 10vh;
+}
+
+.footerText {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
