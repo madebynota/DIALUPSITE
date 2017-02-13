@@ -28,7 +28,7 @@ class StreamPlayer extends React.Component {
 					{buttonText}
 				</div>
 				<ReactPlayer 
-					url='http://sc1.spacialnet.com:32660/;wnur.mp3' 
+					url='http://198.143.144.226:8023/stream' 
 					playing={true}
 					volume={this.state.playing ? 1 : 0}
 					width={0}
