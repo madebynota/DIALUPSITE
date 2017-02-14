@@ -38,6 +38,7 @@ class MessageForm extends React.Component {
     setInputTextWithCommand(e) {
         let commandText = e.target.dataset.command;
         this.setState({text: commandText});
+        document.getElementById('chatInputForm').focus();
     }
 
     handleSubmit(e) {
@@ -85,6 +86,7 @@ class MessageForm extends React.Component {
                 <div className={cx('messageForm')}>
                     <form onSubmit={this.handleSubmit}>
                         <input
+                            id="chatInputForm"
                             className={cx('input')}
                             onChange={this.changeHandler}
                             value={this.state.text}
@@ -93,7 +95,7 @@ class MessageForm extends React.Component {
                 </div>
                 <div className={cx('buttonSection')}>
                     <div className={classNames(cx('button'))}>
-                        <a 
+                        <a
                             onClick={this.setInputTextWithCommand.bind(this)}
                             data-command="/setname ">
                             Set Username
