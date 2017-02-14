@@ -36,6 +36,7 @@
     "mongoose": "^4.7.2",
     "mustache": "^2.3.0",
     "path": "^0.12.7",
+    "random-lorem": "^1.0.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-player": "^0.14.1",
