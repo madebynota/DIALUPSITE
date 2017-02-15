@@ -19,7 +19,6 @@ class MessageForm extends React.Component {
     }
 
     changeUsername(username) {
-        console.log(username);
         var name = username;
         if((name == null) || (name == '')) {
             return;
