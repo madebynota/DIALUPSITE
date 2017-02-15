@@ -30,7 +30,7 @@ class StreamPlayer extends React.Component {
 				</div>
 				<ReactPlayer
 					url='http://198.143.144.226:8023/stream.mp3'
-					playing={this.state.playing ? 1 : 0}
+					playing={this.state.playing}
 					volume={0.8}
 					width={0}
 					height={0}

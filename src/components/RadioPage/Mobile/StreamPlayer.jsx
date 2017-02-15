@@ -35,7 +35,7 @@ class StreamPlayer extends React.Component {
 				</div>
 				<ReactPlayer
 					url={this.state.streamUrl}
-					playing={this.state.playing ? 1 : 0}
+					playing={this.state.playing}
 					volume={0.8}
 					width={0}
 					height={0}
