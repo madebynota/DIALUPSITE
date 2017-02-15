@@ -80,7 +80,7 @@ class DesktopRadio extends React.Component {
         if(users.indexOf(username) != -1) {
             messages.push({
                 user: 'DIAL UP BOT',
-                text: "NAME ALREADY TAKEN YOU IDIOT",
+                text: "SOMEONE ALREADY HAS THAT NAME YOU IDIOT",
                 color: this.state.color,
                 timestamp: Date.now()
             });
