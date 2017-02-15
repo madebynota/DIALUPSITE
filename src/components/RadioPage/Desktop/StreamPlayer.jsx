@@ -27,13 +27,13 @@ class StreamPlayer extends React.Component {
 				<div className={cx('playPauseButton', 'riseButton')} onClick={this.playPauseStream.bind(this)}>
 					{buttonText}
 				</div>
-				<ReactPlayer 
-					url='http://198.143.144.226:8023/stream' 
-					playing={true}
-					volume={this.state.playing ? 1 : 0}
+				<ReactPlayer
+					url='http://198.143.144.226:8023/stream'
+					playing={this.state.playing ? 1 : 0}
+					volume={0.8}
 					width={0}
 					height={0}
-					hidden={true} 
+					hidden={true}
 				/>
 			</div>
 		);
