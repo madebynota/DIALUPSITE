@@ -9,14 +9,20 @@ class StreamPlayer extends React.Component {
 	constructor(props) {
         super(props);
         this.state = {
-            playing: false
+            playing: false,
+			streamUrl: 'http://198.143.144.226:8023/stream.mp3'
         };
     }
+
+	// Pausing and resuming the player leaves a users stream behind the live stream
+	// Resetting the streamUrl on pause resets the stream to the most current blob
 	playPauseStream() {
 		this.setState({
-			playing: !this.state.playing
+			playing: !this.state.playing,
+			streamUrl: 'http://198.143.144.226:8023/stream.mp3'
 		});
 	}
+
 	render() {
 		let buttonText = this.state.playing
 			? "PAUSE RADIO STREAM"
@@ -28,7 +34,7 @@ class StreamPlayer extends React.Component {
 					{buttonText}
 				</div>
 				<ReactPlayer
-					url='http://198.143.144.226:8023/stream.mp3'
+					url={this.state.streamUrl}
 					playing={this.state.playing ? 1 : 0}
 					volume={0.8}
 					width={0}
