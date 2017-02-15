@@ -10,6 +10,10 @@ const linkItems = [
         path: "/magazines"
     },
     {
+        text: "RADIO",
+        path: "/radio"
+    },
+    {
         text: "MUSIC",
         path: "https://soundcloud.com/dialupstuff"
     },
