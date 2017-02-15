@@ -90,6 +90,7 @@ class MessageForm extends React.Component {
                             className={cx('input')}
                             onChange={this.changeHandler}
                             value={this.state.text}
+                            autoComplete="off"
                         />
                     </form>
                 </div>
