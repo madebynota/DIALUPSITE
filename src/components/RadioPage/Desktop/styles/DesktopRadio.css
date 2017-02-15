@@ -1,6 +1,7 @@
 .chatWindow {
     width: 800px;
-    height: 620px;
+    height: 80%;
+    min-height: 300px;
     position: absolute;
     border-radius: 5px;
     top: 50%;
