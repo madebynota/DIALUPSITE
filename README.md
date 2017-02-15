@@ -1,4 +1,7 @@
 # DIAL UP WEBSITE
+
+<img width="1280" alt="screen shot 2017-02-15 at 2 15 16 pm" src="https://cloud.githubusercontent.com/assets/3255833/22993624/3d859e2a-f389-11e6-871c-b87c74c295ab.png">
+
 See this project live at http://dialupstuff.com/.
 
 ###General Overview
