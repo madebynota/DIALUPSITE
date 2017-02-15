@@ -11,7 +11,7 @@ class RadioPage extends React.Component {
         // Set background to Blue
         document.body.style.backgroundColor = "#10C0FF";
 
-        if(window.windowWidth < 760) {
+        if(window.windowWidth < 600) {
             return <MobileRadio />
         } else {
             return <DesktopRadio />
