@@ -35,6 +35,12 @@ class MessageForm extends React.Component {
         this.props.showHelpText();
     }
 
+    setInputTextWithCommand(e) {
+        let commandText = e.target.dataset.command;
+        this.setState({text: commandText});
+        document.getElementById('chatInputForm').focus();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         if(this.state.text == ''){
@@ -80,6 +86,7 @@ class MessageForm extends React.Component {
                 <div className={cx('messageForm')}>
                     <form onSubmit={this.handleSubmit}>
                         <input
+                            id="chatInputForm"
                             className={cx('input')}
                             onChange={this.changeHandler}
                             value={this.state.text}
@@ -88,10 +95,18 @@ class MessageForm extends React.Component {
                 </div>
                 <div className={cx('buttonSection')}>
                     <div className={classNames(cx('button'))}>
-                        Change Username
+                        <a
+                            onClick={this.setInputTextWithCommand.bind(this)}
+                            data-command="/setname ">
+                            Set Username
+                        </a>
                     </div>
                     <div className={classNames(cx('button'))}>
-                        Set Message Color
+                        <a
+                            onClick={this.setInputTextWithCommand.bind(this)}
+                            data-command="/setcolor ">
+                            Set Message Color
+                        </a>
                     </div>
                 </div>
             </div>
