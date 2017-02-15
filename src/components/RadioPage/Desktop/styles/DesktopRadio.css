@@ -1,4 +1,6 @@
 .chatWindow {
+    display: flex;
+    flex-direction: column;
     width: 800px;
     height: 80%;
     min-height: 300px;
