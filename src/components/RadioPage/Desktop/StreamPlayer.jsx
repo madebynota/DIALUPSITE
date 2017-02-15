@@ -14,7 +14,8 @@ class StreamPlayer extends React.Component {
     }
 	playPauseStream() {
 		this.setState({
-			playing: !this.state.playing
+			playing: !this.state.playing,
+			streamUrl: 'http://198.143.144.226:8023/stream.mp3'
 		});
 	}
 	render() {
