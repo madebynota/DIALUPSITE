@@ -9,29 +9,29 @@ class StreamPlayer extends React.Component {
 	constructor(props) {
         super(props);
         this.state = {
-            playing: false
+            volumeOn: false
         };
     }
 	playPauseStream() {
 		this.setState({
-			playing: !this.state.playing,
+			volumeOn: !this.state.volumeOn,
 			streamUrl: 'http://198.143.144.226:8023/stream.mp3'
 		});
 	}
 	render() {
-		let buttonText = this.state.playing
+		let buttonText = this.state.volumeOn
 			? "PAUSE RADIO STREAM"
 			: "PLAY RADIO STREAM";
 
 		return (
 			<div>
-				<div className={cx('playPauseButton', 'riseButton')} onClick={this.playPauseStream.bind(this)}>
+				<div className={cx('playPauseButton')} onClick={this.playPauseStream.bind(this)}>
 					{buttonText}
 				</div>
 				<ReactPlayer
-					url='http://198.143.144.226:8023/stream.mp3'
-					playing={this.state.playing}
-					volume={0.8}
+					url='http://198.143.144.226:8023/stream' 
+ 					playing={true}
+ 					volume={this.state.volumeOn ? 1 : 0}
 					width={0}
 					height={0}
 					hidden={true}
