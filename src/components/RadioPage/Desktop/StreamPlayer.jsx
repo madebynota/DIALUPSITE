@@ -9,13 +9,13 @@ class StreamPlayer extends React.Component {
 	constructor(props) {
         super(props);
         this.state = {
-            volumeOn: false
+            volumeOn: false,
+            streamUrl: 'http://198.143.144.226:8023/stream.mp3'
         };
     }
 	playPauseStream() {
 		this.setState({
-			volumeOn: !this.state.volumeOn,
-			streamUrl: 'http://198.143.144.226:8023/stream.mp3'
+			volumeOn: !this.state.volumeOn
 		});
 	}
 	render() {
@@ -29,7 +29,7 @@ class StreamPlayer extends React.Component {
 					{buttonText}
 				</div>
 				<ReactPlayer
-					url='http://198.143.144.226:8023/stream' 
+					url={this.state.streamUrl}
  					playing={true}
  					volume={this.state.volumeOn ? 1 : 0}
 					width={0}
