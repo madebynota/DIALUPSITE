@@ -3,7 +3,7 @@ var Express = require('express');
 var engines = require('consolidate');
 var mustache = require('mustache');
 var mongoose = require('mongoose');
-var randomLorem = require('random-lorem');
+var marklar = require('marklar');
 
 // Utilities for getting/saving messages to MongoDB
 var dbUtils = require('./dbUtils');
@@ -60,7 +60,8 @@ io.on('connection', function(socket) {
     var name;
 
     socket.on('init', function() {
-        name = randomLorem({ min: 8, max: 16 });
+        marklar.nameFile['rappers'] = './src/rapper-names.txt';
+        name = marklar.getName('rappers');
         color = dbUtils.getColor(users.length);
         users.push(name);
         socket.emit('init', {users: users, messages: message_queue, name, color});
