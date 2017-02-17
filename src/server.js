@@ -61,7 +61,7 @@ io.on('connection', function(socket) {
 
     socket.on('init', function() {
         marklar.nameFile['rappers'] = './src/rapper-names.txt';
-        name = marklar.getName('rappers');
+        name = marklar.getName('rappers').split(" ")[0];
         color = dbUtils.getColor(users.length);
         users.push(name);
         socket.emit('init', {users: users, messages: message_queue, name, color});
