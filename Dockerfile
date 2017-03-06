@@ -6,6 +6,7 @@ WORKDIR /usr/src/dialupsite
 
 # Install app dependencies
 COPY package.json /usr/src/dialupsite/
+RUN npm install webpack@1.13.3 -g
 RUN npm install
 
 # Bundle app source
