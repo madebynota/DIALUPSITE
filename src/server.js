@@ -3,6 +3,8 @@ var Express = require('express');
 var engines = require('consolidate');
 var mustache = require('mustache');
 var mongoose = require('mongoose');
+var bodyParser   = require('body-parser');
+var mongodb   = require('mongodb');
 var marklar = require('marklar');
 
 // Utilities for getting/saving messages to MongoDB
@@ -10,9 +12,13 @@ var dbUtils = require('./dbUtils');
 
 var app = new Express();
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 app.set('port', (process.env.PORT || 3000));
 app.set('env', (process.env.NODE_ENV || 'production'));
-app.set('view engine', 'html');
+app.set('mongo_url', (process.env.MONGO_URL || "mongodb://localhost:27017/madcastdb"));
+app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'static'));
 app.engine('html', engines.mustache);
 app.use(Express.static(__dirname + '/static'));

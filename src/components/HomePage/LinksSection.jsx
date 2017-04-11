@@ -22,6 +22,10 @@ const linkItems = [
         path: "https://www.youtube.com/channel/UCLbmvnHClDh_y8imC1wAuDA"
     },
     {
+        text: "FINANCE",
+        path: "http://finance.dialupstuff.com"
+    },
+    {
         text: "PODCAST",
         path: "https://soundcloud.com/dial-up-podcast"
     },
