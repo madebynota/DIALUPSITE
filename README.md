@@ -77,6 +77,17 @@ This system will change entirely the new magazine reader project is complete. To
 9. Update Open Graph and Twitter description tags in `index.html` and `reader.html` to highlight that a new magazine has been released.
 10. Test changes after restarting the server with `npm start`.
 
+### Adding New Videos to the Home Page
+The primary tradeoff we have to make is between video file-size (related to video quality) and video load time.s The larger the file size, the slower it'll be on our website. That said, there's more work to be done on how to setup our caching and lazy-loading approaches to make this work better! Here's a few guidelines for now:
+
+- Videos should be under 1.5MB.
+- Videos should be in a format [supported by HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats). All of the current videos are MP4s.
+- Remove the audio tracks from every video, which can cut the file size down by about ~12.5% (from observation). This can be done using typical video-editing software, or with the FFMPEG CLI (`ffmpeg -i example.mkv -c copy -an example-nosound.mkv`.
+- Videos should look reasonable displayed at large sizes.
+- Videos should be shot in landscape mode.
+
+
+
 
 
 
