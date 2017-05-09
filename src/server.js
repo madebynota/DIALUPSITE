@@ -119,6 +119,11 @@ function addMessageToQueue(queue, message) {
     queue.push(message);
 }
 
+// Google verification code
+app.get('/google241026178fd51955.html', function(req, res) {
+    res.render('google241026178fd51955.html');
+});
+
 // Universal routing and rendering handled by React & react-router
 // on the client-side.
 app.get('*', function(req, res) {
