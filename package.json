@@ -31,6 +31,7 @@
     "css-loader": "^0.26.0",
     "detect-browser": "^1.5.0",
     "express": "^4.14.0",
+    "express-robots": "^0.1.6",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "marklar": "0.0.5",

@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 var bodyParser   = require('body-parser');
 var mongodb   = require('mongodb');
 var marklar = require('marklar');
+var robots = require('express-robots');
 
 // Utilities for getting/saving messages to MongoDB
 var dbUtils = require('./dbUtils');
@@ -22,6 +23,7 @@ app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'static'));
 app.engine('html', engines.mustache);
 app.use(Express.static(__dirname + '/static'));
+app.use(robots(__dirname + '/robots.txt'));
 
 //Routes for Magazines. Must be defined before catch-all route.
 var magRoutes = [
