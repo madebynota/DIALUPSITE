@@ -18,6 +18,12 @@
 	url('../fonts/EuroStile.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
+
+@font-face {
+	font-family: 'Dotty';
+	src: url('../fonts/dotty.ttf');
+}
+
 body {
 	overflow-y: scroll !important;
 	margin: 0;
