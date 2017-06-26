@@ -19,7 +19,7 @@ const linkItems = [
     },
     {
         text: "VIDEO",
-        path: "https://www.youtube.com/channel/UCLbmvnHClDh_y8imC1wAuDA"
+        path: "https://www.youtube.com/channel/UCUGXrwLsvT0Wnaho9Rp1FCw"
     },
     {
         text: "PODCAST",
