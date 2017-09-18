@@ -14,6 +14,7 @@ class SplashPage extends React.Component {
   componentDidMount() {
     document.getElementById("bo").style.visibility = "hidden";
     document.getElementById("promoVideo").style.display = "block";
+    document.getElementById("defaultCanvas0").style.height = "0px";
 
     var countDownDate = new Date("Sept 25, 2017 17:00:00").getTime();
 
@@ -33,8 +34,14 @@ class SplashPage extends React.Component {
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       // Display the result in the element with id="demo"
-      document.getElementById("timer").innerHTML = "0" + days + ":" + hours + ":"
+      if (seconds < 10) {
+        document.getElementById("timer").innerHTML = "0" + days + ":" + hours + ":"
+      + minutes + ":" + "0" + seconds;
+    } else {
+        document.getElementById("timer").innerHTML = "0" + days + ":" + hours + ":"
       + minutes + ":" + seconds;
+    }
+      
 
       // If the count down is finished, write some text 
       if (distance < 0) {
@@ -46,10 +53,10 @@ class SplashPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={cx("container")}>
 			  <video id="promoVideo" className={cx("promoVideo")} src="img/vids/TAPTEASER.mp4" autoPlay loop></video>
         <h3 id="timer" className="labels"> timer here </h3>
-        <h3 className="labels"> enter here </h3>
+        <h3 className="labels"> enter the site </h3>
       </div>
     );
   }
