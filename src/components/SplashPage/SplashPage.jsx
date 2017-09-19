@@ -67,7 +67,7 @@ class SplashPage extends React.Component {
               </div>
             </a>
           </div>
-			  <video id="promoVideo" className={cx("promoVideo")} src="img/vids/TAPTEASER.mp4" autoPlay loop></video>
+			  <video id="promoVideo" className={cx("promoVideo")} src="img/vids/TAPTEASER-720.mp4" autoPlay loop></video>
       </div>
     );
   }
