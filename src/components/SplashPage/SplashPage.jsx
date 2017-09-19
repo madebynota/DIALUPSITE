@@ -60,7 +60,7 @@ class SplashPage extends React.Component {
     return (
       <div className={cx("container")}>
         <div className={cx("extras")}>
-            <h3 id="timer"> timer here </h3>
+            <h3 id="timer"></h3>
             <a className={cx("link")} href="/home">
               <div className={cx("playPauseButton")}>
                 ENTER THE SITE
