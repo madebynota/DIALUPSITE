@@ -12,7 +12,6 @@ class SplashPage extends React.Component {
   }
 
   componentDidMount() {
-    document.getElementById("bo").style.visibility = "hidden";
     document.getElementById("promoVideo").style.display = "block";
     document.getElementById("defaultCanvas0").style.height = "0px";
 
