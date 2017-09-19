@@ -3,16 +3,11 @@ var Express = require('express');
 var engines = require('consolidate');
 var mustache = require('mustache');
 var mongoose = require('mongoose');
-var webpack = require("webpack");
-var webpackConfig = require('../webpack.config.js')
-var webpackDevMiddleware = require("webpack-dev-middleware");
-var webpackHotMiddleware = require("webpack-hot-middleware");
+var marklar = require('marklar');
+var robots = require('express-robots');
 
 // Utilities for getting/saving messages to MongoDB
 var dbUtils = require('./dbUtils');
-
-// Setup for HMR
-var compiler = webpack(webpackConfig);
 
 var app = new Express();
 
@@ -22,16 +17,7 @@ app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'static'));
 app.engine('html', engines.mustache);
 app.use(Express.static(__dirname + '/static'));
-app.use(webpackDevMiddleware(compiler, {
-    noInfo: true,
-    publicPath: webpackConfig.output.publicPath,
-    stats: {
-        colors: true,
-    },
-    historyApiFallback: true
-}));
-
-app.use(webpackHotMiddleware(compiler));
+app.use(robots(__dirname + '/robots.txt'));
 
 //Routes for Magazines. Must be defined before catch-all route.
 var magRoutes = [
@@ -76,7 +62,8 @@ io.on('connection', function(socket) {
     var name;
 
     socket.on('init', function() {
-        name = "User"+(users.length+1).toString();
+        marklar.nameFile['rappers'] = './src/rapper-names.txt';
+        name = marklar.getName('rappers').split(" ")[0];
         color = dbUtils.getColor(users.length);
         users.push(name);
         socket.emit('init', {users: users, messages: message_queue, name, color});
@@ -125,6 +112,11 @@ function addMessageToQueue(queue, message) {
     }
     queue.push(message);
 }
+
+// Google verification code
+app.get('/google241026178fd51955.html', function(req, res) {
+    res.render('google241026178fd51955.html');
+});
 
 // Universal routing and rendering handled by React & react-router
 // on the client-side.

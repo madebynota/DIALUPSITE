@@ -1,0 +1,18 @@
+.andrewRadioFace {
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 10vh;
+    display: block;
+}
+
+.footerText {
+    font-family: 'ArialRoundedMTBold';
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}

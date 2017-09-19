@@ -1,0 +1,45 @@
+.titleBar {
+	background-color: #FFADC6;
+	border-radius: 5px 5px 0px 0px;
+	height: 30px;
+	position: relative;
+	flex: none;
+}
+
+.barContents {
+	position: relative;
+	color: white;
+	top: 50%;
+}
+
+
+.centerInBar {
+	transform: translateY(-50%);
+	position: relative;
+}
+
+.title {
+	font-family: 'ArialRoundedMTBold';
+	font-size: 15px;
+	color: white;
+	display: inline-block;
+	padding-left: 10px;
+}
+
+.online {
+	font-family: arial;
+	font-size: 10px;
+	display: inline-block;
+	float: right;
+	padding-right: 10px;
+}
+
+.greenCircle {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    background: #7ED321;
+    vertical-align: middle;
+}

@@ -1,7 +1,10 @@
 # DIAL UP WEBSITE
+
+<img width="1280" alt="screen shot 2017-02-15 at 2 15 16 pm" src="https://cloud.githubusercontent.com/assets/3255833/22993624/3d859e2a-f389-11e6-871c-b87c74c295ab.png">
+
 See this project live at http://dialupstuff.com/.
 
-###General Overview
+### General Overview
 **Technology TLDR**:
 The project uses Node with Express for the server-side, and React on the client-side. Routing for the project is also handled on the client-side by react-router. Webpack handles building our client-side JS and CSS. Since this project primarily uses ES6 (aka ES2015) Javascript, Webpack uses Babel to transpile the JS so it can be interpreted by the browser.
 
@@ -13,7 +16,7 @@ To setup up this project, `git clone` it onto your machine, `cd` into the projec
 **Code Styling & Deployment**:
 See our [styles and process guidelines repo](https://github.com/DialUpStuff/CODINGRULES). Leave the `prod` and `staging` branches untouched unless you are deploying something to either of those environments. 
 
-###Server-Side (Node & Express)
+### Server-Side (Node & Express)
 Currently, the Node server is simply used to serve the project when we deploy it. Note that `src/server.js` has a single request handler that catches all routes and simply renders `index.html`, where react-router will handle all detailed routing.
 
 ```
@@ -25,14 +28,14 @@ app.get('*', function(req, res) {
 
 In the future, we can also use the server as an API.
 
-###Client-Side (React & react-router)
+### Client-Side (React & react-router)
 **Components**: All React components should be placed in the `src/components` directory, with dedicated directories for specific sections of the site (for example, our all the components for the home page are in `src/static/HomePage/`).
 
 **Routing**: With react-router, routes are defined just like other component. We define routes in `src/routes.js`, and the routes component is rendered in `src/components/SiteRoutes.jsx`. Here's a helpful [tutorial on react-router](https://css-tricks.com/learning-react-router/).
 
 **Static Files**: When we build/rebuild our project with Webpack, it produces a file called `src/static/js/bundle.js`. `bundle.js` contains our entire React project bundled into one uglified JS file. Our root HTML file, `src/static/index.html`, imports this file as a script and the uglified React updates the contents of the DOM element with `id="main"`. Our Webpack build process also builds CSS from around the project into a uglified CSS file called `src/static/css/styles.css`, which is also imported into our root HTML file. There's an additional `src/static/base.css` file that holds CSS that needs to affect DOM elements that are higher than the scope of React components (like `<body>` or `<html>`). Static assets like images, videos, p5.js animations, etc are also in the `src/static` directory. 
 
-###Working with CSS
+### Working with CSS
 Create a `styles/` directory in the dedicated component directory. It's our practice to create separate CSS files to match individual compoenents (ie. `LinksSection.jsx` uses `Links.css`).
 
 To apply classes to the elements in your JSX code, we use the [classnames](https://github.com/JedWatson/classnames) module. Here's how it's used:
@@ -57,10 +60,10 @@ Or multiple CSS classes with...
 <div className={classNames('col-md-6', 'col-md-offset-3')}></div>
 ```
 
-###Utilities & Helper Functions
+### Utilities & Helper Functions
 All utility/helper functions that don't have direct relation to the function of a component, or may need to be used in different places around the project should be added as static functions to Utils class in `src/utils.js`.
 
-###Releasing New Magazines
+### Releasing New Magazines
 This system will change entirely the new magazine reader project is complete. To add new magazine into the current project:
 
 1. Use Homebrew to install ImageMagick `brew install imagemagick`.
@@ -73,6 +76,17 @@ This system will change entirely the new magazine reader project is complete. To
 8. Add a corresponding link on the `/magazines` page.
 9. Update Open Graph and Twitter description tags in `index.html` and `reader.html` to highlight that a new magazine has been released.
 10. Test changes after restarting the server with `npm start`.
+
+### Adding New Videos to the Home Page
+The primary tradeoff we have to make is between video file-size (related to video quality) and video load time.s The larger the file size, the slower it'll be on our website. That said, there's more work to be done on how to setup our caching and lazy-loading approaches to make this work better! Here's a few guidelines for now:
+
+- Videos should be under 1.5MB.
+- Videos should be in a format [supported by HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats). All of the current videos are MP4s.
+- Remove the audio tracks from every video, which can cut the file size down by about ~12.5% (from observation). This can be done using typical video-editing software, or with the FFMPEG CLI (`ffmpeg -i example.mkv -c copy -an example-nosound.mkv`.
+- Videos should look reasonable displayed at large sizes.
+- Videos should be shot in landscape mode.
+
+
 
 
 
