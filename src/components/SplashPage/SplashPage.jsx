@@ -33,16 +33,22 @@ class SplashPage extends React.Component {
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      // Display the result in the element with id="demo"
-      if (seconds < 10) {
-        document.getElementById("timer").innerHTML = "0" + days + ":" + hours + ":"
-      + minutes + ":" + "0" + seconds;
-    } else {
-        document.getElementById("timer").innerHTML = "0" + days + ":" + hours + ":"
-      + minutes + ":" + seconds;
-    }
-      
+      if (parseInt(hours) < 10) {
+        hours = "0" + hours;
+      }
 
+      if (parseInt(minutes) < 10) {
+        minutes = "0" + minutes;
+      }
+
+      if (parseInt(seconds) < 10) {
+        seconds = "0" + seconds;
+      }
+
+      // Display the result in the element with id="demo"
+      document.getElementById("timer").innerHTML = "0" + days + ":" + hours + ":"
+      + minutes + ":" + seconds;
+      
       // If the count down is finished, write some text 
       if (distance < 0) {
         clearInterval(x);
@@ -54,9 +60,15 @@ class SplashPage extends React.Component {
   render() {
     return (
       <div className={cx("container")}>
+        <div className={cx("extras")}>
+            <h3 id="timer"> timer here </h3>
+            <a className={cx("link")} href="/home">
+              <div className={cx("playPauseButton")}>
+                ENTER THE SITE
+              </div>
+            </a>
+          </div>
 			  <video id="promoVideo" className={cx("promoVideo")} src="img/vids/TAPTEASER.mp4" autoPlay loop></video>
-        <h3 id="timer" className="labels"> timer here </h3>
-        <h3 className="labels"> enter the site </h3>
       </div>
     );
   }

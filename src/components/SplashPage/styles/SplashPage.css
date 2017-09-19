@@ -1,22 +1,19 @@
-.youtubeVideo {
-    width: 840px; /* you have to have a size or this method doesn't work */
-    height: 472.5px; /* think about making these max-width instead - might give you some more responsiveness */
-
-    position: absolute; /* positions out of the flow, but according to the nearest parent */
-    top: 0; right: 0; /* confuse it i guess */
-    bottom: 0; left: 0;
-    margin: auto; /* make em equal */
+.promoVideo {
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
 }
 
 .lmao {
 	color: red;
 }
 
-.promoVideo {
-	margin: 0 auto;
-	height: 70vh;
-	margin-top: 10vh;
-}
 
 .labels {
 	text-align: center;
@@ -38,4 +35,32 @@ body {
 	text-transform: uppercase;
 	color: white;
 	font-family: 'ArialRoundedMTBold';
+	font-size: 2.5em;
+}
+
+.playPauseButton {
+	background: #F04673;
+	color: white;
+	padding: 5px 15px 5px 15px;
+	border-radius: 5px;
+	display: inline-block;
+	font-family: 'ArialRoundedMTBold';
+	font-size: 15px;
+	cursor: pointer;
+	text-align: center;
+    margin-top: 20px;
+}
+
+.extras {
+	width: 20vw;
+	margin-left: 40vw;
+	text-align: center;
+	align-content: center;
+	position: absolute;
+	padding-top: 84vh;
+	z-index: 12;
+}
+
+.link {
+	display: block;
 }
