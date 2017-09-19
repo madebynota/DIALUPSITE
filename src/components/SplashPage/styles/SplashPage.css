@@ -1,0 +1,66 @@
+.promoVideo {
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+}
+
+.lmao {
+	color: red;
+}
+
+
+.labels {
+	text-align: center;
+}
+
+.container {
+	background-color: #10c0ff;
+	height: 100vh;
+	width: 100vw;
+	overflow-y: hidden;
+}
+
+body {
+	overflow-y: hidden;
+}
+
+.container h3 {
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	font-family: 'ArialRoundedMTBold';
+	font-size: 2.5em;
+}
+
+.playPauseButton {
+	background: #F04673;
+	color: white;
+	padding: 5px 15px 5px 15px;
+	border-radius: 5px;
+	display: inline-block;
+	font-family: 'ArialRoundedMTBold';
+	font-size: 15px;
+	cursor: pointer;
+	text-align: center;
+    margin-top: 20px;
+}
+
+.extras {
+	width: 20vw;
+	margin-left: 40vw;
+	text-align: center;
+	align-content: center;
+	position: absolute;
+	padding-top: 75vh;
+	z-index: 12;
+}
+
+.link {
+	display: block;
+}
