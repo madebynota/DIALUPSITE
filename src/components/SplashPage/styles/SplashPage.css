@@ -64,3 +64,19 @@ body {
 .link {
 	display: block;
 }
+
+@media (max-device-width: 767px) {
+    .promoVideo {
+		visibility: hidden;
+    }
+
+    .extras {
+    	padding-top: 30vh;
+    	margin-left: 23vw;
+    }
+
+    .playPauseButton {
+    	margin-left: 16vw;
+    }
+}
+
