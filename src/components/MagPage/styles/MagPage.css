@@ -1,29 +1,29 @@
-.bkgImage {
-  min-height: 100%;
-  min-width: 1024px;
-  width: 100%;
-  height: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-
-  -webkit-filter: blur(5px);
-  -moz-filter:    blur(5px); /* (Firefox) */
-  -o-filter:      blur(5px);/* (Opera) */
-  -ms-filter:     blur(5px); /* (Internet Explorer) */
-
-  -webkit-transition: -webkit-filter .50s;
-  -moz-transition:    -moz-filter .50s;
-  -o-transition:      -o-filter .50s; 
-  -ms-transition:     -ms-filter .50s;
-
+.container-fluid {
+  background-color: #10c0ff;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: hidden;
+  font-family: 'ArialRoundedMTBold';
 }
 
-.headerText {
-  text-align: center;
+.magList a {
+  display: block;
+  text-transform: uppercase;
+  font-size: 2em;
   color: white;
-  font-size: 125%;
-  padding-bottom: 5%;
-  font-family: 'EuroStile';
+  font-weight: bold;
+}
+
+.magList {
+  height: 40vh;
+  margin-top: 30vh;
+  text-align: center;
+}
+
+.magList h3 {
+  color: #dedede;
+}
+.current {
+  font-size: 3em !important;
+  margin-bottom: 25px;
 }
