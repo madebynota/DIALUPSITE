@@ -68,6 +68,7 @@ body {
 @media (max-device-width: 767px) {
     .promoVideo {
 		visibility: hidden;
+		z-index: -1000;
     }
 
     .container {
@@ -84,5 +85,10 @@ body {
     .playPauseButton {
     	margin-left: 16vw;
     }
+
+	video::-webkit-media-controls {
+    	display:none !important;
+	}
+
 }
 
