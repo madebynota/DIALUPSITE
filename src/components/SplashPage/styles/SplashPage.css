@@ -70,8 +70,14 @@ body {
 		visibility: hidden;
     }
 
+    .container {
+    	background-image: url("https://media.giphy.com/media/xT9IgmprnekCvgbEWc/giphy.gif");
+    	background-size: cover;
+    	background-repeat: none;
+    }
+
     .extras {
-    	padding-top: 30vh;
+    	padding-top: 70vh;
     	margin-left: 23vw;
     }
 
