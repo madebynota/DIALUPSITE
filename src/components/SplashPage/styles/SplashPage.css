@@ -10,19 +10,14 @@
     background-size: cover;
 }
 
-.rotateMessage {
-	display: none;
-}
-
-
 .labels {
 	text-align: center;
 }
 
 .container {
-	background-color: #10c0ff;
-	height: 100vh;
-	width: 100vw;
+	background-color: #000;
+	height: 101vh;
+	width: 101vw;
 	overflow-y: hidden;
 }
 
@@ -57,7 +52,7 @@ body {
 	text-align: center;
 	align-content: center;
 	position: absolute;
-	padding-top: 75vh;
+	bottom: 8vh;
 	z-index: 12;
 }
 
@@ -66,23 +61,8 @@ body {
 }
 
 @media (max-device-width: 767px) {
-    .promoVideo {
-		visibility: hidden;
-		z-index: -1000;
-    }
-
-    .rotateMessage {
-		display: none;
-	}
-
-    .container {
-    	background-image: url("https://media.giphy.com/media/xT9IgmprnekCvgbEWc/giphy.gif");
-    	background-size: cover;
-    	background-repeat: none;
-    }
-
     .extras {
-    	padding-top: 70vh;
+    	bottom: 8vh;
     	margin-left: 23vw;
     }
 
@@ -107,14 +87,11 @@ body {
   	.extras {
   		width: 50vw;
   		margin-left: 25vw;
-  		padding-top: 35vh;
+  		bottom: 8vh;
   	}
 
   	.playPauseButton {
   		margin: 0 auto;
-  	}
-
-  	.rotateMessage {
-  		display: block;
+  		display: none;
   	}
 }
