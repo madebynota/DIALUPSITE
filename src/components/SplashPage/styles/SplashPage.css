@@ -15,9 +15,9 @@
 }
 
 .container {
-	background-color: #10c0ff;
-	height: 100vh;
-	width: 100vw;
+	background-color: #000;
+	height: 101vh;
+	width: 101vw;
 	overflow-y: hidden;
 }
 
