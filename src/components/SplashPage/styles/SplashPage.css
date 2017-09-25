@@ -92,6 +92,9 @@ body {
 
   	.playPauseButton {
   		margin: 0 auto;
+<<<<<<< HEAD
   		display: none;
+=======
+>>>>>>> f9eb659f50202dc53c8479d7a624a741ee07d63b
   	}
 }
