@@ -230,7 +230,6 @@ class DesktopRadio extends React.Component {
                         color={this.props.color}
                     />
                 </div>
-                <StreamPlayer className={cx('streamButton')}/>
             </div>
         )
     }
