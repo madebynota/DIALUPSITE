@@ -60,6 +60,7 @@ class SplashPage extends React.Component {
     return (
       <div className={cx("container")}>
         <div className={cx("extras")}>
+            <h5 className={cx("rotateMessage")}>Yo, rotate your screen back to normal, this is weird.</h5>
             <h3 id="timer"></h3>
             <a className={cx("link")} href="/home">
               <div className={cx("playPauseButton")}>

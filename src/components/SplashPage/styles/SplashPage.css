@@ -10,8 +10,8 @@
     background-size: cover;
 }
 
-.lmao {
-	color: red;
+.rotateMessage {
+	display: none;
 }
 
 
@@ -68,7 +68,12 @@ body {
 @media (max-device-width: 767px) {
     .promoVideo {
 		visibility: hidden;
+		z-index: -1000;
     }
+
+    .rotateMessage {
+		display: none;
+	}
 
     .container {
     	background-image: url("https://media.giphy.com/media/xT9IgmprnekCvgbEWc/giphy.gif");
@@ -84,5 +89,32 @@ body {
     .playPauseButton {
     	margin-left: 16vw;
     }
+
+	video::-webkit-media-controls {
+    	display:none !important;
+	}
+
 }
 
+@media only screen 
+  and (max-device-width: 767px)
+  and (orientation: landscape) {
+  	.container {
+  		background-image: none;
+  		background: #10c0ff;
+  	}
+
+  	.extras {
+  		width: 50vw;
+  		margin-left: 25vw;
+  		padding-top: 35vh;
+  	}
+
+  	.playPauseButton {
+  		margin: 0 auto;
+  	}
+
+  	.rotateMessage {
+  		display: block;
+  	}
+}
