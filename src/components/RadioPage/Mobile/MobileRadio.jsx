@@ -19,7 +19,7 @@ class MobileRadio extends React.Component {
                 <img className={cx('andrewRadioFace')} src = "/img/andrewFace/andrew.png"/>
                 <StreamPlayer className={cx('streamButton')}/>
                 <h3 className={cx('footerText')}> DIAL UP </h3>
-            </div>
+            </div> 
         )
     }
 }
