@@ -10,11 +10,6 @@
     background-size: cover;
 }
 
-.rotateMessage {
-	display: none;
-}
-
-
 .labels {
 	text-align: center;
 }
@@ -66,21 +61,6 @@ body {
 }
 
 @media (max-device-width: 767px) {
-    .promoVideo {
-		visibility: hidden;
-		z-index: -1000;
-    }
-
-    .rotateMessage {
-		display: none;
-	}
-
-    .container {
-    	background-image: url("https://media.giphy.com/media/xT9IgmprnekCvgbEWc/giphy.gif");
-    	background-size: cover;
-    	background-repeat: none;
-    }
-
     .extras {
     	padding-top: 70vh;
     	margin-left: 23vw;
@@ -112,9 +92,5 @@ body {
 
   	.playPauseButton {
   		margin: 0 auto;
-  	}
-
-  	.rotateMessage {
-  		display: block;
   	}
 }

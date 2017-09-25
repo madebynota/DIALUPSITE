@@ -60,7 +60,6 @@ class SplashPage extends React.Component {
     return (
       <div className={cx("container")}>
         <div className={cx("extras")}>
-            <h5 className={cx("rotateMessage")}>Yo, rotate your screen back to normal, this is weird.</h5>
             <h3 id="timer"></h3>
             <a className={cx("link")} href="/home">
               <div className={cx("playPauseButton")}>
@@ -68,7 +67,7 @@ class SplashPage extends React.Component {
               </div>
             </a>
           </div>
-			  <video id="promoVideo" className={cx("promoVideo")} src="img/vids/TAPTEASER-720-1.mp4" autoPlay loop></video>
+        <iframe className={cx("promoVideo")} width="560" height="315" src="https://www.youtube.com/embed/osV-dzRRcKY?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
     );
   }
