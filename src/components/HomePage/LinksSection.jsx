@@ -10,16 +10,12 @@ const linkItems = [
         path: "/magazines"
     },
     {
-        text: "RADIO",
-        path: "/radio"
-    },
-    {
         text: "MUSIC",
         path: "https://soundcloud.com/dialupstuff"
     },
     {
         text: "VIDEO",
-        path: "https://www.youtube.com/channel/UCUGXrwLsvT0Wnaho9Rp1FCw"
+        path: "https://www.youtube.com/dialupstuff"
     },
     {
         text: "PODCAST",
