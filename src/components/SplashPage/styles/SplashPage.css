@@ -52,7 +52,7 @@ body {
 	text-align: center;
 	align-content: center;
 	position: absolute;
-	padding-top: 75vh;
+	bottom: 8vh;
 	z-index: 12;
 }
 
