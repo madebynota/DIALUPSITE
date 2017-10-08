@@ -5,6 +5,7 @@ import HomePage from './components/HomePage/HomePage';
 import RadioPage from './components/RadioPage/RadioPage';
 import SplashPage from './components/SplashPage/SplashPage';
 import MagPage from './components/MagPage/MagPage';
+import StorePage from './components/StorePage/StorePage';
 import NotFoundPage from './components/NotFoundPage';
 
 const routes = (
@@ -13,6 +14,7 @@ const routes = (
 		<Route path="home" component={HomePage} />
 		<Route path="radio" component={RadioPage} />
 		<Route path="magazines" component={MagPage} />
+		<Route path="store" component={StorePage} />
 		<Route path="*" component={NotFoundPage} />
 	</Route>
 );

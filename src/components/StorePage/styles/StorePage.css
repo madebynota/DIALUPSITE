@@ -1,0 +1,41 @@
+.StorePage {
+  position: relative;
+  height: 100vh;
+  background-color: #44BBEC;
+  margin-bottom: -105px;
+}
+
+.header {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.productContainer {
+  margin: auto 0;
+  width: 100%;
+}
+
+.storeFooter {
+  position: absolute;
+  font-family: 'ArialRoundedMTBold';
+  font-size: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .StorePage {
+    height: 100%;
+  }
+  .storeFooter {
+    position: relative;
+    font-family: 'ArialRoundedMTBold';
+    font-size: 22px;
+    text-align: center;
+    margin-top: 25px;
+    color: #fff;
+  }
+}
