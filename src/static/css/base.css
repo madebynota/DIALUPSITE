@@ -23,12 +23,12 @@
 	src: url('../fonts/ArialRoundedMTLight.otf')
 }
 body {
-	overflow-y: scroll !important;
+	overflow-y: hidden !important;
 	margin: 0;
 	padding: 0;
 	height: 100%;
 	width: 100%;
-	background-color: #44BBEC;
+	background-color: white !important;
 	overflow: hidden;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
