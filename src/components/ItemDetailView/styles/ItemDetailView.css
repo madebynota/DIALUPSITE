@@ -1,3 +1,9 @@
+.container { 
+  height: 100vh; 
+  width: 100vw;
+  background-color: #44BBEC;
+}
+
 .checkoutImage {
   width: 100%;
 }

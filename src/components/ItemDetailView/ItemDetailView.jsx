@@ -1,36 +1,31 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import styles from "./styles/Checkout.css";
+import styles from './styles/ItemDetailView.css';
 
 let cx = classNames.bind(styles);
 
-class Checkout extends React.Component {
+class ItemDetailView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      image: 'img/products/tee1.png',
+      image: '../../../img/products/tee1.png',
       description: 'SuperLucha Tee (White)',
       price: '$19.99',
     }
-    this.closeCheckout = this.closeCheckout.bind(this);
-  }
-
-  closeCheckout() {
-    this.props.closeCheckout();
   }
 
   render() {
     return (
-      <div>
+      <div className={cx("container")}>
         <Grid fluid>
           <Row>
             <Col xs={12} smOffset={1} sm={5}>
-              <img className={cx("checkoutImage")} src={this.props.product.image}/>
+              <img className={cx("checkoutImage")} src={this.state.image}/>
             </Col>
             <Col xs={12} smOffset={1} sm={5}>
-              <h1 className={cx("checkoutDescription")}> {this.props.product.description} </h1>
-              <h1 className={cx("checkoutDescription")}> {this.props.product.price} </h1>
+              <h1 className={cx("checkoutDescription")}> {this.state.description} </h1>
+              <h1 className={cx("checkoutDescription")}> {this.state.price} </h1>
               <div className={cx("sizeContainer")}>
                 <p className={cx("optionSize")}> Size </p>
                 <select className={cx("sizeButton")}>
@@ -49,10 +44,8 @@ class Checkout extends React.Component {
           </Row>
         </Grid>
       </div>
-
     )
   }
-
 }
 
-export default Checkout;
+export default ItemDetailView;

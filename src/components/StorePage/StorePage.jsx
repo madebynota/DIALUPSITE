@@ -2,8 +2,8 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import ItemCard from './ItemCard';
-import Checkout from './Checkout';
 import styles from './styles/StorePage.css';
+import { Link } from 'react-router';
 
 let cx = classNames.bind(styles);
 
@@ -16,38 +16,29 @@ class StorePage extends React.Component {
         image: 'img/products/tee1.png',
         description: 'SuperLucha Tee (White)',
         price: '$19.99',
+        url: '/store/item/tee',
       },
       products: [
         {
           image: 'img/products/tee1.png',
           description: 'SuperLucha Tee (White)',
           price: '$19.99',
+          url: '/store/item/tee',
         },
         {
           image: 'img/products/stickers.png',
           description: 'StickerPack (5 count)',
           price: '$3.99',
+          url: '/store/item/stickerpack1',
         },
         {
           image: 'img/products/tee2.png',
           description: 'Archie Blocka Dirty Laundry Shirt',
           price: '$14.99',
+          url: '/store/item/archie_bocka_shirt',
         },
       ]
     }
-    this.openPage = this.openPage.bind(this);
-    this.closeCheckout = this.closeCheckout.bind(this);
-  }
-
-  openPage(product) {
-    this.setState({
-      showProduct: !this.state.showProduct,
-      checkoutProduct: product,
-     });
-  }
-
-  closeCheckout() {
-    this.setState({ showProduct: !this.state.showProduct, });
   }
 
   render() {
@@ -68,20 +59,15 @@ class StorePage extends React.Component {
           <Row className={cx("productContainer")} style={openProducts}>
             {this.state.products.map((product, index) => (
               <Col xs={12} sm={4} key={index}>
-                <ItemCard
-                  image={product.image}
-                  description={product.description}
-                  price={product.price}
-                  onClick={this.openPage}
-                />
+                <Link to={product.url}>
+                  <ItemCard
+                    image={product.image}
+                    description={product.description}
+                    price={product.price}
+                  />
+                </Link>
               </Col>
             ))}
-          </Row>
-          <Row style={showCheckoutProduct}>
-            <Checkout
-              product={this.state.checkoutProduct}
-              closeCheckout = {this.closeCheckout}
-             />
           </Row>
         </Grid>
         <p className={cx("storeFooter")}>STORE</p>
