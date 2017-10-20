@@ -18,12 +18,8 @@ class PressPage extends React.Component {
         },
         {
           publication: "Ruby Hornet 2.0",
-          url: "http://rubyhornet.com/jemal-four-take-picture/",
-        },
-        {
-          publication: "NBN",
-          url: "http://apps.northbynorthwestern.com/magazine/2016/winter/quad/dial-up/",
-        },
+          url: "http://rubyhornet.com/jemal-four-take-picture/"
+        }
       ]
     }
   }
@@ -45,7 +41,6 @@ class PressPage extends React.Component {
           <Row className={cx("linkSection")}>
             <Col xs={4} xsOffset={2}>
               <PressLinks publisher={this.state.press[0].publication} url={this.state.press[0].url} />
-              <PressLinks publisher={this.state.press[2].publication} url={this.state.press[2].url} />
             </Col>
             <Col xs={4}>
               <PressLinks publisher={this.state.press[1].publication} url={this.state.press[1].url} />
