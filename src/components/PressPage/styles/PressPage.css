@@ -1,0 +1,39 @@
+.PressPage {
+  height: 100vh;
+  background-color: #44BBEC;
+  font-family: 'ArialRoundedMTBold';
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  color: white;
+}
+
+.header {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.pressTitle {
+  position: relative;
+  border-bottom: 1px solid white;
+  margin-bottom: 10px;
+  font-size: 3em;
+  width: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.publication {
+  position: relative;
+  font-size: 2em;
+  text-decoration: none;
+  margin: 20px 0px;
+  display: block;
+  color: white;
+}
+
+.publication:hover {
+  color: white;
+  text-decoration: underline;
+}
