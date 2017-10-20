@@ -39,6 +39,7 @@
     "path": "^0.12.7",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-flexbox-grid": "^1.1.5",
     "react-player": "^0.14.2",
     "react-router": "^2.6.1",
     "socket.io": "^1.7.2",
