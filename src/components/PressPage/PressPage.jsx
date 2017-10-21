@@ -36,16 +36,21 @@ class PressPage extends React.Component {
           <Row>
             <iframe src="https://player.vimeo.com/video/188082029?color=ffb9a3&portrait=0" width="640" height="469" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </Row>
-        </Grid>
-        <h2 className={cx("pressTitle")}> ARTICLES </h2>
+          <Row>
+            <Col xs={12} smOffset={2} sm={8}>
+              <h2 className={cx("pressTitle")}> ARTICLES </h2>
+            </Col>
+          </Row>
+
           <Row className={cx("linkSection")}>
-            <Col xs={4} xsOffset={2}>
+            <Col xs={12} sm={4} smOffset={2}>
               <PressLinks publisher={this.state.press[0].publication} url={this.state.press[0].url} />
             </Col>
-            <Col xs={4}>
+            <Col xs={12} sm={4}>
               <PressLinks publisher={this.state.press[1].publication} url={this.state.press[1].url} />
             </Col>
           </Row>
+        </Grid>
       </div>
 
     )
