@@ -8,12 +8,30 @@ let cx = classNames.bind(styles);
 class ItemDetailView extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      image: '../../../img/products/tee1.png',
-      description: 'SuperLucha Tee (White)',
-      price: '$19.99',
-    }
-  }
+    console.log(this.props.params)
+
+    const itemId = this.props.params.id;
+
+    if (itemId === "tee") {
+      this.state = {
+        image: '../../../img/products/tee1.png',
+        description: 'SuperLucha Tee (White)',
+        price: '$19.99',
+      };
+    } else if (itemId === "stickerpack1"){
+      this.state = {
+        image: '../../../img/products/stickers.png',
+        description: 'StickerPack (5 Count)',
+        price: '$3.99',
+      };
+    } else {
+      this.state = {
+      image: '../../../img/products/tee2.png',
+      description: 'Archie Blocka Dirty Laundry Shirt',
+      price: '$14.99',
+    };
+  };
+}
 
   render() {
     return (

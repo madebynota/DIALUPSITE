@@ -17,7 +17,6 @@ class ItemCard extends React.Component {
      description: this.props.description,
      price: this.props.price,
    }
-   this.props.onClick(product);
  }
 
   render() {

@@ -11,43 +11,33 @@ class StorePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showProduct: false,
-      checkoutProduct: {
-        image: 'img/products/tee1.png',
-        description: 'SuperLucha Tee (White)',
-        price: '$19.99',
-        url: '/store/item/tee',
-      },
       products: [
         {
           image: 'img/products/tee1.png',
           description: 'SuperLucha Tee (White)',
           price: '$19.99',
           url: '/store/item/tee',
+          id: 'tee',
         },
         {
           image: 'img/products/stickers.png',
           description: 'StickerPack (5 count)',
           price: '$3.99',
           url: '/store/item/stickerpack1',
+          id: 'stickerpack1',
         },
         {
           image: 'img/products/tee2.png',
           description: 'Archie Blocka Dirty Laundry Shirt',
           price: '$14.99',
           url: '/store/item/archie_bocka_shirt',
+          id: 'archie_blocka_shirt',
         },
       ]
     }
   }
 
   render() {
-    const openProducts = {
-      display: this.state.showProduct ? 'none' : 'flex',
-    }
-    const showCheckoutProduct = {
-      display: this.state.showProduct ? 'block' : 'none',
-    }
     return (
       <div className={cx("StorePage")}>
         <Grid fluid>
@@ -56,10 +46,10 @@ class StorePage extends React.Component {
               <img className={cx("header")} src="img/logos/logo-2.png"/>
             </Col>
           </Row>
-          <Row className={cx("productContainer")} style={openProducts}>
+          <Row className={cx("productContainer")}>
             {this.state.products.map((product, index) => (
-              <Col xs={12} sm={4} key={index}>
-                <Link to={product.url}>
+              <Col xs={12} sm={4} key={index}> 
+                <Link to={product.url} params={{img: product.image}}>
                   <ItemCard
                     image={product.image}
                     description={product.description}
