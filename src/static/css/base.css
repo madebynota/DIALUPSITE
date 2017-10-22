@@ -30,3 +30,11 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 }
+
+:root {
+	--active-button-color: #e2065b;
+	--inactive-button-color: #af9d90;
+	--primary-border: 2px solid black;
+	--primary-border-radius: 10px;
+	--inactive-button-color: #af9d90;
+}
