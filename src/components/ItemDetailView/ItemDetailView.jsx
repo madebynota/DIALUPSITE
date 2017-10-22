@@ -17,27 +17,35 @@ class ItemDetailView extends React.Component {
         image: '../../../img/products/tee1.png',
         description: 'SuperLucha Tee (White)',
         price: '$19.99',
+        wearable: true
       };
     } else if (itemId === "stickerpack1"){
       this.state = {
         image: '../../../img/products/stickers.png',
         description: 'StickerPack (5 Count)',
         price: '$3.99',
+        wearable: false
       };
     } else {
       this.state = {
-      image: '../../../img/products/tee2.png',
-      description: 'Archie Blocka Dirty Laundry Shirt',
-      price: '$14.99',
+        image: '../../../img/products/tee2.png',
+        description: 'Archie Blocka Dirty Laundry Shirt',
+        price: '$14.99',
+        wearable: true
     };
   };
 }
 
   render() {
+
+    const wearableStyle = {
+      display: this.state.wearable ? 'block' : 'none',
+    };
+
     return (
       <div className={cx("container")}>
         <Grid fluid>
-          <Row>
+          <Row className={cx("itemView")}>
             <Col xs={12} smOffset={1} sm={5}>
               <img className={cx("checkoutImage")} src={this.state.image}/>
             </Col>
@@ -45,8 +53,8 @@ class ItemDetailView extends React.Component {
               <h1 className={cx("checkoutDescription")}> {this.state.description} </h1>
               <h1 className={cx("checkoutDescription")}> {this.state.price} </h1>
               <div className={cx("sizeContainer")}>
-                <p className={cx("optionSize")}> Size </p>
-                <select className={cx("sizeButton")}>
+                <p className={cx("optionSize")} style={wearableStyle}> Size </p>
+                <select className={cx("sizeButton")} style={wearableStyle}>
                   <option value="Small"> Small </option>
                   <option value="Medium"> Medium </option>
                   <option value="Large"> Large </option>
