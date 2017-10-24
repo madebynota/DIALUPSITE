@@ -1,0 +1,18 @@
+.itemCard {
+  position: relative;
+  text-align: center;
+}
+
+.itemImage {
+  position: relative;
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.itemDescription {
+  font-family: 'ArialRoundedMTBold';
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+  color: white;
+}

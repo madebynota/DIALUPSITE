@@ -1,0 +1,79 @@
+.container { 
+  height: 100vh; 
+  width: 100vw;
+  background-color: #44BBEC;
+  font-family: 'ArialRoundedMTBold';
+  font-size: 20px;
+}
+
+.itemView {
+  padding-top: 100px;
+}
+
+.checkoutImage {
+  width: 100%;
+}
+
+.checkoutDescription {
+  font-size: 38px;
+}
+
+.sizeContainer, .quantityContainer {
+  position: relative;
+  width: 100%;
+  margin: 15% 0;
+}
+
+.sizeButton {
+  width: 180px;
+  height: 40px;
+  font-size: 22px;
+  padding: 10px 20px;
+  border: var(--primary-border);
+}
+
+.inputQuantity {
+  width: 50px;
+  height: 40px;
+  border: var(--primary-border);
+  text-align: center;
+}
+
+.optionSize, .optionQuantity {
+  display: inline;
+}
+
+.optionQuantity {
+  margin-right: 20px;
+}
+
+.shoppingButton, .checkoutButton {
+  color: #fff;
+  display: inline;
+  padding: 10px 20px;
+  border-radius: var(--primary-border-radius);
+  background-color: var(--inactive-button-color);
+  text-align: center;
+  margin-right: 20px;
+}
+
+.checkoutButton {
+  background-color: var(--active-button-color);
+}
+
+@media only screen and (max-width: 768px) {
+  .sizeButton {
+    height: 50px;
+    font-size: 22px;
+    padding: 10px 20px;
+    border: var(--primary-border);
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .shoppingButton {
+    display: block;
+    margin-top: 10px;
+    width: 200px;
+  }
+}
