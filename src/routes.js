@@ -6,7 +6,9 @@ import RadioPage from './components/RadioPage/RadioPage';
 import MagPage from './components/MagPage/MagPage';
 import StorePage from './components/StorePage/StorePage';
 import ItemDetailView from './components/ItemDetailView/ItemDetailView';
+import PressPage from './components/PressPage/PressPage';
 import NotFoundPage from './components/NotFoundPage';
+
 
 const routes = (
 	<Route path="/" component={App}>
@@ -15,6 +17,7 @@ const routes = (
 		<Route path="magazines" component={MagPage} />
 		<Route path="store" component={StorePage} />
 		<Route path="store/item/:id" component={ItemDetailView}/>		
+		<Route path="press" component={PressPage} />
 		<Route path="*" component={NotFoundPage} />
 	</Route>
 );

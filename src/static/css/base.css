@@ -18,6 +18,10 @@
 	url('../fonts/EuroStile.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
+@font-face {
+	font-family: 'ArialRoundedMTLight';
+	src: url('../fonts/ArialRoundedMTLight.otf')
+}
 body {
 	overflow-y: scroll !important;
 	margin: 0;
