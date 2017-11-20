@@ -10,6 +10,7 @@ import classNames from 'classnames/bind'
 import styles from './styles/DesktopRadio.css'
 import io from 'socket.io-client'
 import toHex from 'colornames'
+import FileSaver from 'file-saver'
 
 let cx = classNames.bind(styles);
 
@@ -31,7 +32,8 @@ class DesktopRadio extends React.Component {
             text: ''
         };
 
-        // Bind all handlers to DesktopPage context
+        // Bind all handlers to DesktopPage context 
+        this.handleVaultRequest = this.handleVaultRequest.bind(this);
         this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
         this.handleUsernameChange = this.handleUsernameChange.bind(this);
         this.handleColorChange = this.handleColorChange.bind(this);
@@ -122,6 +124,33 @@ class DesktopRadio extends React.Component {
         this.setState({
             messages: messages,
             color: isValid ? newColor : prevColor
+        });
+    }
+
+    handleVaultRequest(pass){
+        var messages = this.state.messages;
+
+        if (pass === "STATIC") {
+            var content = "What's up , hello world";
+            // any kind of extension (.txt,.cpp,.cs,.bat)
+            var filename = "hello.txt";
+
+            var blob = new Blob([content], {
+             type: "text/plain;charset=utf-8"
+            });
+
+            FileSaver.saveAs(blob, filename);
+        }
+
+        messages.push({
+            user: 'DIAL UP BOT',
+            text: "WOW. GREAT FIND. SALUTE.",
+            color: this.state.color,
+            timestamp: Date.now()
+        });
+
+        this.setState({
+            messages: messages,
         });
     }
 
@@ -222,6 +251,7 @@ class DesktopRadio extends React.Component {
                     <TitleBar userCount={this.state.users.length}/>
                     <MessageList messages={this.state.messages}/>
                     <MessageForm
+                        onVaultRequest={this.handleVaultRequest}
                         onMessageSubmit={this.handleMessageSubmit}
                         onColorChange={this.handleColorChange}
                         onUsernameChange={this.handleUsernameChange}
