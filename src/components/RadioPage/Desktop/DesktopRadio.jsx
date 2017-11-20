@@ -11,6 +11,7 @@ import styles from './styles/DesktopRadio.css'
 import io from 'socket.io-client'
 import toHex from 'colornames'
 import FileSaver from 'file-saver'
+import lamejs from 'lamejs'
 
 let cx = classNames.bind(styles);
 
@@ -129,15 +130,29 @@ class DesktopRadio extends React.Component {
 
     handleVaultRequest(pass){
         var messages = this.state.messages;
+        var mp3Enc = lamejs.Mp3Encoder(2, 44100, 192);
+        var mp3data = [];
+
+        var leftChannel = new Int16Array(44100); //one second of silence (get your data from the source you have) 
+        var rightChannel = new Int16Array(44100); //one second of silence (get your data from the source you have) 
+        var sampleBlockSize = 1152; //can be anything but make it a multiple of 576 to make encoders life easier 
+
+        var leftChunk;
+        var rightChunk;
+        var mp3buf;
+
+        for (var i = 0; i < leftChannel.length; i += sampleBlockSize) {
+          leftChunk = leftChannel.subarray(i, i + sampleBlockSize);
+          rightChunk = rightChannel.subarray(i, i + sampleBlockSize);
+        }
+
+
+        var blob = new Blob(mp3data, {type: 'audio/mp3'});
+        console.log(blob);
 
         if (pass === "STATIC") {
-            var content = "What's up , hello world";
-            // any kind of extension (.txt,.cpp,.cs,.bat)
-            var filename = "hello.txt";
-
-            var blob = new Blob([content], {
-             type: "text/plain;charset=utf-8"
-            });
+            var filename = "STATIC.mp3";
+            var actualFile = 'http://davidlatimore.me/bbro.mp4';
 
             FileSaver.saveAs(blob, filename);
         }
@@ -153,6 +168,9 @@ class DesktopRadio extends React.Component {
             messages: messages,
         });
     }
+
+
+
 
     updateMessagesWithNewUsername(oldName, newName, messages){
         // Update all corresponding messages with newName
