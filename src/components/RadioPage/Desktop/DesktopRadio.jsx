@@ -129,32 +129,13 @@ class DesktopRadio extends React.Component {
     }
 
     handleVaultRequest(pass){
-        var messages = this.state.messages;
-        var mp3Enc = lamejs.Mp3Encoder(2, 44100, 192);
-        var mp3data = [];
-
-        var leftChannel = new Int16Array(44100); //one second of silence (get your data from the source you have) 
-        var rightChannel = new Int16Array(44100); //one second of silence (get your data from the source you have) 
-        var sampleBlockSize = 1152; //can be anything but make it a multiple of 576 to make encoders life easier 
-
-        var leftChunk;
-        var rightChunk;
-        var mp3buf;
-
-        for (var i = 0; i < leftChannel.length; i += sampleBlockSize) {
-          leftChunk = leftChannel.subarray(i, i + sampleBlockSize);
-          rightChunk = rightChannel.subarray(i, i + sampleBlockSize);
-        }
-
-
-        var blob = new Blob(mp3data, {type: 'audio/mp3'});
-        console.log(blob);
-
+        
         if (pass === "STATIC") {
-            var filename = "STATIC.mp3";
-            var actualFile = 'http://davidlatimore.me/bbro.mp4';
-
-            FileSaver.saveAs(blob, filename);
+            document.getElementsByClassName("dl")[0].setAttribute("href", "/vault/static.mp3");
+            document.getElementsByClassName("dl")[0].setAttribute("download", "STATIC");
+            document.getElementsByClassName("dl")[0].click();
+            document.getElementsByClassName("dl")[0].setAttribute("href", "#");
+            document.getElementsByClassName("dl")[0].setAttribute("download", "");
         }
 
         messages.push({
@@ -279,6 +260,7 @@ class DesktopRadio extends React.Component {
                     />
                 </div>
                 <StreamPlayer className={cx('streamButton')}/>
+                <a className={cx('dl')} href="#" download=""></a>
             </div>
         )
     }
