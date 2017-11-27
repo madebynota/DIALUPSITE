@@ -10,8 +10,6 @@ import classNames from 'classnames/bind'
 import styles from './styles/DesktopRadio.css'
 import io from 'socket.io-client'
 import toHex from 'colornames'
-import FileSaver from 'file-saver'
-import lamejs from 'lamejs'
 
 let cx = classNames.bind(styles);
 
@@ -129,29 +127,30 @@ class DesktopRadio extends React.Component {
     }
 
     handleVaultRequest(pass){
+
+        var messages = this.state.messages;
         
-        if (pass === "STATIC") {
-            document.getElementsByClassName("dl")[0].setAttribute("href", "/vault/static.mp3");
-            document.getElementsByClassName("dl")[0].setAttribute("download", "STATIC");
-            document.getElementsByClassName("dl")[0].click();
-            document.getElementsByClassName("dl")[0].setAttribute("href", "#");
-            document.getElementsByClassName("dl")[0].setAttribute("download", "");
+        if (pass === "STATIC" || pass === "static") {
+            let dl = document.getElementsByClassName("dl")[0];
+
+            dl.setAttribute("href", "/vault/static.mp3");
+            dl.setAttribute("download", "STATIC");
+            dl.click();
+            dl.setAttribute("href", "#");
+            dl.setAttribute("download", "");
+
+            messages.push({
+                user: 'DIAL UP BOT',
+                text: "WOW. GREAT FIND. SALUTE.",
+                color: this.state.color,
+                timestamp: Date.now()
+            });
+
+            this.setState({
+                messages: messages,
+            });
         }
-
-        messages.push({
-            user: 'DIAL UP BOT',
-            text: "WOW. GREAT FIND. SALUTE.",
-            color: this.state.color,
-            timestamp: Date.now()
-        });
-
-        this.setState({
-            messages: messages,
-        });
     }
-
-
-
 
     updateMessagesWithNewUsername(oldName, newName, messages){
         // Update all corresponding messages with newName
