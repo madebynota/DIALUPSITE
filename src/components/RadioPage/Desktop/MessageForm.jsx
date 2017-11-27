@@ -16,6 +16,7 @@ class MessageForm extends React.Component {
         this.setColor = this.setColor.bind(this);
         this.showHelpText = this.showHelpText.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleVaultRequest = this.handleVaultRequest.bind(this);
     }
 
     changeUsername(username) {
@@ -38,6 +39,10 @@ class MessageForm extends React.Component {
         this.props.showHelpText();
     }
 
+    handleVaultRequest(password) {
+        this.props.onVaultRequest(password);
+    }
+
     setInputTextWithCommand(e) {
         let commandText = e.target.dataset.command;
         this.setState({text: commandText});
@@ -53,6 +58,9 @@ class MessageForm extends React.Component {
         switch (tokenized_commands[0].toLowerCase()) {
             case "/help":
                 this.showHelpText();
+                break;
+            case "/vault":
+                this.handleVaultRequest(tokenized_commands[1]);
                 break;
             case "/setname":
                 if (tokenized_commands[1] != null) {

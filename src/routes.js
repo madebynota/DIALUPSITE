@@ -15,8 +15,6 @@ const routes = (
 		<IndexRoute component={HomePage} />
 		<Route path="radio" component={RadioPage} />
 		<Route path="magazines" component={MagPage} />
-		<Route path="store" component={StorePage} />
-		<Route path="store/item/:id" component={ItemDetailView}/>		
 		<Route path="press" component={PressPage} />
 		<Route path="*" component={NotFoundPage} />
 	</Route>

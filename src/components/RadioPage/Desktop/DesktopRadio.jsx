@@ -31,7 +31,8 @@ class DesktopRadio extends React.Component {
             text: ''
         };
 
-        // Bind all handlers to DesktopPage context
+        // Bind all handlers to DesktopPage context 
+        this.handleVaultRequest = this.handleVaultRequest.bind(this);
         this.handleMessageSubmit = this.handleMessageSubmit.bind(this);
         this.handleUsernameChange = this.handleUsernameChange.bind(this);
         this.handleColorChange = this.handleColorChange.bind(this);
@@ -125,6 +126,43 @@ class DesktopRadio extends React.Component {
         });
     }
 
+    handleVaultRequest(pass){
+
+        var messages = this.state.messages;
+        
+        if (pass === "STATIC" || pass === "static") {
+            let dl = document.getElementsByClassName("dl")[0];
+
+            dl.setAttribute("href", "/vault/static.mp3");
+            dl.setAttribute("download", "STATIC");
+            dl.click();
+            dl.setAttribute("href", "#");
+            dl.setAttribute("download", "");
+
+            messages.push({
+                user: 'DIAL UP BOT',
+                text: "WOW. GREAT FIND. SALUTE.",
+                color: this.state.color,
+                timestamp: Date.now()
+            });
+
+            this.setState({
+                messages: messages,
+            });
+        } else {
+            messages.push({
+                user: 'DIAL UP BOT',
+                text: "SORRY. NOT A VALID CODE. LOOK HARDER AND TRY AGAIN, BRUH",
+                color: this.state.color,
+                timestamp: Date.now()
+            });
+
+            this.setState({
+                messages: messages,
+            });
+        }
+    }
+
     updateMessagesWithNewUsername(oldName, newName, messages){
         // Update all corresponding messages with newName
         var messagesLength = messages.length;
@@ -148,7 +186,7 @@ class DesktopRadio extends React.Component {
         var {messages} = this.state;
         messages.push({
             user: 'DIAL UP BOT',
-            text: 'THIS SHIT IS NOT HARD, Y\'ALL BUGGIN SMGDH. TYPE /setname __________ TO CHANGE YOUR NAME TO __________.\nTYPE /setcolor __________ TO CHANGE YOUR MESSAGE BUBBLE COLOR TO __________. \nIF YOU REALLY NEED ME TO REPEAT THIS TYPE /help (THOUGH THIS SHIT REALLY ISN\'T THAT HARD GOD DAMN)',
+            text: 'THIS SHIT IS NOT HARD, Y\'ALL BUGGIN SMGDH.\nTYPE /setname __________ TO CHANGE YOUR NAME TO __________.\nTYPE /setcolor __________ TO CHANGE YOUR MESSAGE BUBBLE COLOR TO __________. \nTYPE /vault __________ TO ACCESS HIDDEN CONTENT.\n IF YOU REALLY NEED ME TO REPEAT THIS TYPE /help (THOUGH THIS SHIT REALLY ISN\'T THAT HARD GOD DAMN)',
             color: this.state.color,
             timestamp: Date.now()
         });
@@ -222,6 +260,7 @@ class DesktopRadio extends React.Component {
                     <TitleBar userCount={this.state.users.length}/>
                     <MessageList messages={this.state.messages}/>
                     <MessageForm
+                        onVaultRequest={this.handleVaultRequest}
                         onMessageSubmit={this.handleMessageSubmit}
                         onColorChange={this.handleColorChange}
                         onUsernameChange={this.handleUsernameChange}
@@ -231,6 +270,7 @@ class DesktopRadio extends React.Component {
                     />
                 </div>
                 <StreamPlayer className={cx('streamButton')}/>
+                <a className={cx('dl')} href="#" download=""></a>
             </div>
         )
     }
