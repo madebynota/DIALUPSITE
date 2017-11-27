@@ -149,6 +149,17 @@ class DesktopRadio extends React.Component {
             this.setState({
                 messages: messages,
             });
+        } else {
+            messages.push({
+                user: 'DIAL UP BOT',
+                text: "SORRY. NOT A VALID CODE. LOOK HARDER AND TRY AGAIN, BRUH",
+                color: this.state.color,
+                timestamp: Date.now()
+            });
+
+            this.setState({
+                messages: messages,
+            });
         }
     }
 
