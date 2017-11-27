@@ -15,6 +15,7 @@ class MessageForm extends React.Component {
         this.changeUsername = this.changeUsername.bind(this);
         this.setColor = this.setColor.bind(this);
         this.showHelpText = this.showHelpText.bind(this);
+        this.showMessageLengthPrompt = this.showMessageLengthPrompt.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleVaultRequest = this.handleVaultRequest.bind(this);
     }
@@ -39,6 +40,10 @@ class MessageForm extends React.Component {
         this.props.showHelpText();
     }
 
+    showMessageLengthPrompt() {
+        this.props.showMessageLengthPrompt();
+    }
+
     handleVaultRequest(password) {
         this.props.onVaultRequest(password);
     }
@@ -50,12 +55,21 @@ class MessageForm extends React.Component {
     }
 
     handleSubmit(e) {
+
         e.preventDefault();
         if(this.state.text == ''){
             return;
         }
+
+        if((this.state.text).length > 280){
+            this.showMessageLengthPrompt();
+            this.setState({text: ''});
+            return;
+        }
+
         var tokenized_commands = this.state.text.split(" ");
         switch (tokenized_commands[0].toLowerCase()) {
+
             case "/help":
                 this.showHelpText();
                 break;

@@ -38,6 +38,7 @@ class DesktopRadio extends React.Component {
         this.handleColorChange = this.handleColorChange.bind(this);
         this.updateMessagesWithNewUsername = this.updateMessagesWithNewUsername.bind(this);
         this.showHelpText = this.showHelpText.bind(this);
+        this.showMessageLengthPrompt = this.showMessageLengthPrompt.bind(this);
 
         // Bind all private functions to DesktopPage context
         this._initialize = this._initialize.bind(this);
@@ -152,7 +153,7 @@ class DesktopRadio extends React.Component {
         } else {
             messages.push({
                 user: 'DIAL UP BOT',
-                text: "SORRY. NOT A VALID CODE. LOOK HARDER AND TRY AGAIN, BRUH",
+                text: "SORRY. NOT A VALID CODE. LOOK HARDER AND TRY AGAIN, BRUH.",
                 color: this.state.color,
                 timestamp: Date.now()
             });
@@ -192,6 +193,18 @@ class DesktopRadio extends React.Component {
         });
         this.setState({messages});
     }
+
+    showMessageLengthPrompt() {
+        var {messages} = this.state;
+        messages.push({
+            user: 'DIAL UP BOT',
+            text: 'HOW IN GOD\'S NAME YOU GOT THAT MUCH TO SAY? 280 CHARACTERS OR LESS, MY G.',
+            color: this.state.color,
+            timestamp: Date.now()
+        });
+        this.setState({text, messages});
+    }
+
 
     _initialize(data) {
         var {users, messages, name, color} = data;
@@ -264,6 +277,7 @@ class DesktopRadio extends React.Component {
                         onMessageSubmit={this.handleMessageSubmit}
                         onColorChange={this.handleColorChange}
                         onUsernameChange={this.handleUsernameChange}
+                        showMessageLengthPrompt={this.showMessageLengthPrompt}
                         showHelpText={this.showHelpText}
                         user={this.state.user}
                         color={this.props.color}
