@@ -11,16 +11,19 @@
 } */
 
 .video-container {
-  height: 473;
-  width: 840;
-  position: absolute;
-  margin: auto;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
 }
 
 .promoVideo {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border: 1px solid #222;
 }
 
@@ -57,16 +60,16 @@ body {
 	font-size: 15px;
 	cursor: pointer;
 	text-align: center;
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .extras {
-	width: 20vw;
-	margin-left: 40vw;
+	width: 30vw;
+	margin-left: 35vw;
 	text-align: center;
 	align-content: center;
 	position: absolute;
-	bottom: 8vh;
+	bottom: 40px;
 	z-index: 12;
 }
 
@@ -77,12 +80,17 @@ body {
 @media (max-device-width: 767px) {
     .extras {
     	bottom: 8vh;
-    	margin-left: 23vw;
     }
 
     .playPauseButton {
-    	margin-left: 16vw;
+    	margin: 0 auto;
     }
+
+
+    .video-container {
+      margin-top: 40%;
+    }
+
 
 	video::-webkit-media-controls {
     	display:none !important;
@@ -97,6 +105,7 @@ body {
   		background-image: none;
   		background: #10c0ff;
   	}
+
 
   	.extras {
   		width: 50vw;
