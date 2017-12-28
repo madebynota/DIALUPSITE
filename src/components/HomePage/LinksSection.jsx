@@ -6,20 +6,12 @@ let cx = classNames.bind(styles);
 
 const linkItems = [
     {
-        text: "MAGAZINE",
-        path: "/magazines"
-    },
-    {
         text: "MUSIC",
         path: "https://soundcloud.com/dialupstuff"
     },
     {
         text: "VIDEO",
         path: "https://www.youtube.com/dialupstuff"
-    },
-    {
-        text: "PODCAST",
-        path: "https://soundcloud.com/dial-up-podcast"
     },
     {
         text: "PHOTO",
