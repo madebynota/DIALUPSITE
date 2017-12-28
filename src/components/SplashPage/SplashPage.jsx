@@ -12,8 +12,11 @@ class SplashPage extends React.Component {
   }
 
   componentDidMount() {
-    document.getElementById("promoVideo").style.display = "block";
-    document.getElementById("defaultCanvas0").style.height = "0px";
+
+    let canvas = document.getElementById("defaultCanvas0");
+    canvas.parentNode.removeChild(canvas);
+
+
 
     var countDownDate = new Date("Dec 28, 2017 19:00:00").getTime();
 
@@ -63,7 +66,6 @@ class SplashPage extends React.Component {
           <iframe className={cx("promoVideo")} width="840" height="473" src="https://www.youtube.com/embed/SvMIA1UFeeE?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div className={cx("extras")}>
-            <h3 id="timer"></h3>
             <a className={cx("link")} href="/home">
               <div className={cx("playPauseButton")}>
                 ENTER THE SITE

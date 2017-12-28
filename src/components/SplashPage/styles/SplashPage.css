@@ -33,12 +33,8 @@
 
 .container {
 	background-color: #101010;
-	height: 101vh;
-	width: 101vw;
-	overflow-y: hidden;
-}
-
-body {
+	height: 100vh;
+	width: 100vw;
 	overflow-y: hidden;
 }
 
@@ -105,7 +101,6 @@ body {
   		background-image: none;
   		background: #10c0ff;
   	}
-
 
   	.extras {
   		width: 50vw;
