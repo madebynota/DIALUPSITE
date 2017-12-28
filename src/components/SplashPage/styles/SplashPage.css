@@ -1,13 +1,27 @@
+/* .promoVideo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+} */
+
+.video-container {
+  height: 473;
+  width: 840;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .promoVideo {
-	position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translateX(-50%) translateY(-50%);
-    background-size: cover;
+  border: 1px solid #222;
 }
 
 .labels {
@@ -15,7 +29,7 @@
 }
 
 .container {
-	background-color: #000;
+	background-color: #101010;
 	height: 101vh;
 	width: 101vw;
 	overflow-y: hidden;

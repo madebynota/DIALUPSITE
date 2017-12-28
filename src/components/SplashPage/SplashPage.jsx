@@ -15,7 +15,7 @@ class SplashPage extends React.Component {
     document.getElementById("promoVideo").style.display = "block";
     document.getElementById("defaultCanvas0").style.height = "0px";
 
-    var countDownDate = new Date("Sept 25, 2017 17:00:00").getTime();
+    var countDownDate = new Date("Dec 28, 2017 19:00:00").getTime();
 
     // Update the count down every 1 second
     var x = setInterval(function() {
@@ -59,6 +59,9 @@ class SplashPage extends React.Component {
   render() {
     return (
       <div className={cx("container")}>
+        <div className={cx("video-container")}>
+          <iframe className={cx("promoVideo")} width="840" height="473" src="https://www.youtube.com/embed/SvMIA1UFeeE?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
         <div className={cx("extras")}>
             <h3 id="timer"></h3>
             <a className={cx("link")} href="/home">
@@ -67,7 +70,6 @@ class SplashPage extends React.Component {
               </div>
             </a>
           </div>
-        <iframe className={cx("promoVideo")} width="560" height="315" src="https://www.youtube.com/embed/SvMIA1UFeeE?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
     );
   }
