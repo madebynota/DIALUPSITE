@@ -108,8 +108,11 @@
   		bottom: 8vh;
   	}
 
+    .video-container {
+      margin-top: 0;
+    }
+
   	.playPauseButton {
   		margin: 0 auto;
-  		display: none;
   	}
 }

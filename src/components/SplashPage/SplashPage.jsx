@@ -63,7 +63,7 @@ class SplashPage extends React.Component {
     return (
       <div className={cx("container")}>
         <div className={cx("video-container")}>
-          <iframe className={cx("promoVideo")} width="840" height="473" src="https://www.youtube.com/embed/SvMIA1UFeeE?rel=0" frameborder="0" allowfullscreen></iframe>
+          <iframe className={cx("promoVideo")} width="840" height="473" src="https://www.youtube.com/embed/zxHHeJO4g0Y?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
         <div className={cx("extras")}>
             <a className={cx("link")} href="/home">
