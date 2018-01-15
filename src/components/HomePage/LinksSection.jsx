@@ -18,6 +18,14 @@ const linkItems = [
         path: "https://instagram.com/dialupstuff"
     },
     {
+        text: "MAGAZINES",
+        path: "/magazines"
+    },
+    {
+        text: "PODCAST",
+        path: "https://soundcloud.com/dial-up-podcast"
+    },
+    {
         text: "CONTACT",
         path: ""
     }
