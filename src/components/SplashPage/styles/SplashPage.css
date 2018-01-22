@@ -12,9 +12,7 @@
 
 .video-container {
   position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 35px;
-  height: 0;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -65,7 +63,7 @@
 	text-align: center;
 	align-content: center;
 	position: absolute;
-	bottom: 40px;
+	bottom: 50px;
 	z-index: 12;
 }
 
