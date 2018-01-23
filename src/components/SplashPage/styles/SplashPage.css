@@ -100,11 +100,6 @@
     }
 
 
-    .video-container {
-      margin-top: 40%;
-    }
-
-
 	video::-webkit-media-controls {
     	display:none !important;
 	}
