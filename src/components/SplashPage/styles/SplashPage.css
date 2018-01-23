@@ -55,6 +55,25 @@
 	cursor: pointer;
 	text-align: center;
   margin-top: 20px;
+  animation: btnGlow 12s ease infinite;
+}
+
+.playPauseButton:hover {
+  opacity: 1;
+}
+
+@keyframes btnGlow {
+  0% {
+    opacity: .2;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: .2;
+  }
 }
 
 .extras {
