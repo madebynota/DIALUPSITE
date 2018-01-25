@@ -1,8 +1,6 @@
 .container-fluid {
-  background-color: #10c0ff;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
-  overflow-y: hidden;
   font-family: 'ArialRoundedMTBold';
 }
 
@@ -16,7 +14,6 @@
 
 .magList {
   height: 40vh;
-  margin-top: 30vh;
   text-align: center;
 }
 
@@ -26,4 +23,16 @@
 .current {
   font-size: 3em !important;
   margin-bottom: 25px;
+}
+
+@media screen and (max-width: 767px) {
+  .magList {
+    margin-top: 20vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .magList {
+    margin-top: 30vh;
+  }
 }

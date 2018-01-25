@@ -5,7 +5,16 @@ import styles from './styles/MagPage.css'; // show me my stylesheets
 let cx = classNames.bind(styles);
 
 class MagPage extends React.Component {
+
+    constructor(props) {
+        super(props);
+        document.body.style.backgroundColor = "#10C0FF";
+    }
+
+
+
     render() {
+
         return (
         	<div>
             	<div className={cx("container-fluid")}>
