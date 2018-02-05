@@ -42,12 +42,12 @@ class HomePage extends React.Component {
         		<Background setLinkColor={this.setLinkColor.bind(this)} />
 	            <div className={classNames('container-fluid', cx('verticalCenter'))}>
 					<div className={'row'}>
-						<div className={classNames('col-md-6', 'col-md-offset-3')}>
+						<div className={classNames('col-md-12')}>
 							<LogoSection styles={cx('logo')} />
 						</div>
 					</div>
 					<div className={'row'}>
-						<div className={classNames('col-md-6', 'col-md-offset-3')}>
+						<div className={classNames('col-md-12')}>
 							<LinksSection color={this.state.linkColor} />
 						</div>
 					</div>

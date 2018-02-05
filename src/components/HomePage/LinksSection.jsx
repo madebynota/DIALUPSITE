@@ -66,7 +66,7 @@ class LinksSection extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className={cx('linkSection')}>
                 {this.generateLinkItems(linkItems, this.props.color)}
             </div>
         );

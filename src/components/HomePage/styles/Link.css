@@ -9,6 +9,11 @@
 	display: inline-block;
 }
 
+.linkSection {
+	width: 50%;
+	margin: 0 auto;
+}
+
 @media (max-device-width: 767px) {
 	.linkItem {
 		display: block;
