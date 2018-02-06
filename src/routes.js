@@ -15,6 +15,7 @@ const routes = (
 		<Route path="radio" component={RadioPage} />
 		<Route path="magazines" component={MagPage} />
 		<Route path="press" component={PressPage} />
+    <Route path="store" component={StorePage} />
 		<Route path="*" component={NotFoundPage} />
 	</Route>
 );
