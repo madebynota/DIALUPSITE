@@ -1,4 +1,4 @@
-const drawOnPath = '/';
+const drawOnPath = '/home';
 var browser;
 
 function setup() {
