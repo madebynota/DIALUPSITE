@@ -10,9 +10,14 @@
   background-size: cover;
 } */
 
+html,body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
 .video-container {
   position: relative;
-  height: 100vh;
   overflow: hidden;
 }
 
@@ -31,10 +36,10 @@
 
 .container {
 	background-color: #101010;
-	height: 100vh;
-	width: 100vw;
 	text-align: center;
 	overflow-y: hidden;
+	width: 100vw;
+	height: 100vh;
 }
 
 .container h3 {
