@@ -270,15 +270,13 @@ class DesktopTwitch extends React.Component {
 
     render() {
         return (
-          <div className={cx('twitchEmbed')}>
-            <div className={classNames(cx('header'))}>
-              <h1>
+          <div className={classNames(cx('twitchpage'))}>
+              <h1 className={classNames(cx('header'))}>
                 DIAL UP RADIO
               </h1>
-            </div>
-            <div className={cx('alignerItem')}>
-              <ReactTwitchEmbedVideo channel="dialupstuff" height="400" width="950" />
-            </div>
+              <div className={cx('alignerItem')}>
+                <ReactTwitchEmbedVideo className='twitch-embed' channel="dialupstuff" height="400" width="950" />
+              </div>
 
           </div>
         )
