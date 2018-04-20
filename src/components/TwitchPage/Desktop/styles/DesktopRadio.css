@@ -1,0 +1,32 @@
+.twitchEmbed {
+      width
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      vertical-align: middle;
+
+
+}
+
+.alignerItem {
+  max-width: 50%;
+}
+
+.footerText {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+
+.header{
+	font-family: 'ArialRoundedMTBold';
+	font-size: 15px;
+  text-align: center;
+	color: white;
+	display: inline-block;
+
+}

@@ -1,0 +1,48 @@
+.inputSection {
+	width: 100%;
+	padding: 0px 10px;
+	margin-top: 10px; 
+	height: 50px;
+	bottom: 0px;
+	flex: none;
+}
+
+.messageForm {
+	width: 100%;
+}
+
+.buttonSection {
+	float: right;
+	padding-right: 10px;
+}
+
+.button {
+	font-size: 10px;
+	display: inline-block;
+	padding: 0px 5px;
+}
+
+.button a {
+	color: #4990E2;
+}
+
+.input {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px #979797;
+	border-style: solid;
+	border-width: 1px;
+	display: block;
+	margin: 0;
+	appearance: none;
+	box-shadow: none;
+	border-radius: none;
+	width: 100%;
+	vertical-align: middle;
+	padding-left: 5px;
+}
+
+.input:focus, textarea:focus {
+    outline: none;
+}
