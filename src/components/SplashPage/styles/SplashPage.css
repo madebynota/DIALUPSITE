@@ -22,7 +22,7 @@ html,body {
   grid-template-columns: 1fr 3fr 1fr;
   grid-gap: 10px;
   height: 100vh;
-  background-color: white;
+  background: transparent;
 }
 
 .classic {
@@ -36,6 +36,7 @@ html,body {
 
 .container {
 	text-align: center;
+  background-image: url("/img/graphics/dialup-bkg.png");
 	overflow-y: hidden;
 	width: 100vw;
 	height: 100vh;
