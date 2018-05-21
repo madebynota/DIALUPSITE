@@ -15,9 +15,7 @@ class SplashPage extends React.Component {
     return (
       <div className={cx("container")}>
           <div className={cx("video-container")}>
-            <video className={cx("classic")} preload="auto" autoPlay loop>
-              <source type="video/mp4" src="/img/vids/cp.mp4"/>
-            </video>
+            <iframe className={cx("classic")} width="840" height="472" src="https://www.youtube.com/embed/hrDsRGHDj-A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
 
         <div className={cx("extras")}>
