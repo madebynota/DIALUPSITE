@@ -13,12 +13,20 @@ class PressPage extends React.Component {
     this.state = {
       press: [
         {
-          publication: "The Daily Northwestern",
-          url: "https://dailynorthwestern.com/2016/05/22/top-stories/captured-dillo-day-evening-sets/"
+          publication: "Lyrical Lemonade",
+          url: "http://lyricallemonade.com/dial-up-cd-side-a-dial-up/"
+        },
+        {
+          publication: "Underground Underdogs",
+          url: "https://undergroundunderdogs.com/articles/dial-up-cd-side-a/"
         },
         {
           publication: "Ruby Hornet 2.0",
           url: "http://rubyhornet.com/jemal-four-take-picture/"
+        },
+        {
+          publication: "The Daily Northwestern",
+          url: "https://dailynorthwestern.com/2016/05/22/top-stories/captured-dillo-day-evening-sets/"
         }
       ]
     }
@@ -48,6 +56,14 @@ class PressPage extends React.Component {
             </Col>
             <Col xs={12} sm={4}>
               <PressLinks publisher={this.state.press[1].publication} url={this.state.press[1].url} />
+            </Col>
+          </Row>
+          <Row className={cx("linkSection")}>
+            <Col xs={12} sm={4} smOffset={2}>
+              <PressLinks publisher={this.state.press[2].publication} url={this.state.press[2].url} />
+            </Col>
+            <Col xs={12} sm={4}>
+              <PressLinks publisher={this.state.press[3].publication} url={this.state.press[3].url} />
             </Col>
           </Row>
         </Grid>
