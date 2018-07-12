@@ -31,6 +31,11 @@ app.get('/google241026178fd51955.html', function(req, res) {
     res.render('google241026178fd51955.html');
 });
 
+// Shopify verification code
+app.get('/shop', function(req, res) {
+    res.redirect('https://shop.dialupstuff.com');
+});
+
 // Universal routing and rendering handled by React & react-router
 // on the client-side.
 app.get('*', function(req, res) {
