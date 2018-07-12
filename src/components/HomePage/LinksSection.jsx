@@ -30,6 +30,10 @@ const linkItems = [
         path: "https://soundcloud.com/dial-up-podcast"
     },
     {
+        text: "STORE",
+        path: "/store"
+    },
+    {
         text: "CONTACT",
         path: ""
     }
