@@ -14,10 +14,6 @@ const linkItems = [
         path: "https://www.youtube.com/dialupstuff"
     },
     {
-        text: "RADIO",
-        path: "/radio"
-    },
-    {
         text: "PHOTO",
         path: "https://instagram.com/dialupstuff"
     },
