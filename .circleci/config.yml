@@ -5,6 +5,10 @@
 version: 2
 jobs:
   build:
+    branches:
+      only:
+        - prod
+
     docker:
       # specify the version you desire here
       - image: circleci/node:6.14-browsers
@@ -32,4 +36,4 @@ jobs:
 
       - deploy:
           name: digital-ocean
-          command: ssh -o "StrictHostKeyChecking no" -v $DROPLET_USER@$DROPLET_IP "cd ~/DIALUPSITE; git pull; npm install; npm install forever -g; npm run build; PORT=80 forever start src/server.js"
+          command: ssh -o "StrictHostKeyChecking no" -v $DROPLET_USER@$DROPLET_IP "cd ~/DIALUPSITE; git checkout prod; git pull; npm install; npm install forever -g; npm run build; PORT=80 forever start src/server.js"
