@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=production webpack -p && NODE_ENV=production node src/server.js",
+    "build": "NODE_ENV=production webpack -p",
     "server": "webpack -d && node src/server.js"
   },
   "repository": {
