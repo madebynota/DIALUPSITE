@@ -29,3 +29,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npm run build
+
+      - deploy:
+          name: digital-ocean
+          command: ssh -o "StrictHostKeyChecking no" -v $DROPLET_USER@$DROPLET_IP "cd ~/DIALUPSITE; git pull; npm install; npm install forever -g; npm run build; PORT=80 forever start src/server.js"
