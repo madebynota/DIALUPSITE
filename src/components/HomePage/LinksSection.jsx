@@ -36,18 +36,25 @@ const linkItems = [
 ];
 
 class LinkItem extends React.Component {
+
     openContactAlert() {
         let contactString = "EMAIL US AT DIALUPSTUFF@GMAIL.COM\n\nFACEBOOK AT HTTPS://WWW.FACEBOOK.COM/DIALUPSTUFF";
         alert(contactString);
     }
+
+
     render() {
         let target = this.props.text.toLowerCase().replace(/\s/g,'');
         return this.props.text == "CONTACT"
             ?(
                 <div className={cx('linkItem')}>
-                    <a style={{"color": this.props.color}} onClick={this.openContactAlert}>
+                    <button
+                        className={cx('contactBtn')}
+                        style={{"color": this.props.color}}
+                        onClick={this.openContactAlert}
+                    >
                         <p>{this.props.text}</p>
-                    </a>
+                    </button>
                 </div>
             )
             :(

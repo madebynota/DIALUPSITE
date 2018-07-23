@@ -14,6 +14,21 @@
 	margin: 0 auto;
 }
 
+.contactBtn {
+    background: transparent;
+    border: none;
+    outline: none;
+    display: inline-block;
+}
+
+.contactBtn:hover {
+    text-decoration: underline;
+}
+
+.contactBtn:active, .contactBtn:focus {
+    outline: none;
+}
+
 @media (max-device-width: 767px) {
 	.linkItem {
 		display: block;
