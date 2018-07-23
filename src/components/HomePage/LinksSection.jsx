@@ -31,7 +31,7 @@ const linkItems = [
     },
     {
         text: "CONTACT",
-        path: ""
+        path: "mailto:DIALUPSTUFF@GMAIL.COM"
     }
 ];
 
@@ -44,26 +44,15 @@ class LinkItem extends React.Component {
 
 
     render() {
-        let target = this.props.text.toLowerCase().replace(/\s/g,'');
-        return this.props.text == "CONTACT"
-            ?(
-                <div className={cx('linkItem')}>
-                    <button
-                        className={cx('contactBtn')}
-                        style={{"color": this.props.color}}
-                        onClick={this.openContactAlert}
-                    >
-                        <p>{this.props.text}</p>
-                    </button>
-                </div>
-            )
-            :(
-                <div className={cx('linkItem')}>
-                    <a style={{"color": this.props.color}} target={target} href={this.props.path}>
-                        <p>{this.props.text}</p>
-                    </a>
-                </div>
-            )
+        const contactLink = this.props.text === "CONTACT";
+        let target = contactLink ? null : this.props.text.toLowerCase().replace(/\s/g,'');
+        return (
+            <div className={cx('linkItem')}>
+                <a style={{"color": this.props.color}} target={target} href={this.props.path}>
+                    <p>{this.props.text}</p>
+                </a>
+            </div>
+        )
     }
 }
 
