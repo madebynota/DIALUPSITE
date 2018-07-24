@@ -1,5 +1,4 @@
 import React from 'react';
-
 import styles from './styles/SplashPage.css';
 import classNames from 'classnames/bind';
 import Utils from '../../utils.js';
