@@ -37,8 +37,8 @@ const linkItems = [
 
 class LinkItem extends React.Component {
     render() {
-        const contactLink = this.props.text === "CONTACT";
-        const target = contactLink ? null : this.props.text.toLowerCase().replace(/\s/g,'');
+        const isContactLink = this.props.text === "CONTACT";
+        const target = isContactLink ? null : this.props.text.toLowerCase().replace(/\s/g,'');
         return (
             <div className={cx('linkItem')}>
                 <a style={{"color": this.props.color}} target={target} href={this.props.path}>
