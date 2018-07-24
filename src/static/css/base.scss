@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @font-face {
 	font-family: 'ArialRoundedMTBold';
 	src: url('../fonts/ArialRoundedMTBold.eot'); /* IE9 Compat Modes */
@@ -22,13 +24,14 @@
 	font-family: 'ArialRoundedMTLight';
 	src: url('../fonts/ArialRoundedMTLight.otf')
 }
+
 body {
 	overflow-y: scroll !important;
 	margin: 0;
 	padding: 0;
 	height: 100%;
 	width: 100%;
-	background-color: white;
+	background-color: $white;
 	overflow: hidden;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -38,7 +41,7 @@ body {
 :root {
 	--active-button-color: #e2065b;
 	--inactive-button-color: #af9d90;
-	--primary-border: 2px solid black;
+	--primary-border: 2px solid $black;
 	--primary-border-radius: 10px;
 	--inactive-button-color: #af9d90;
 }

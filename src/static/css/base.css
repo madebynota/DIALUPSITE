@@ -22,7 +22,7 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: white;
+  background-color: #fff;
   overflow: hidden;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -31,6 +31,6 @@ body {
 :root {
   --active-button-color: #e2065b;
   --inactive-button-color: #af9d90;
-  --primary-border: 2px solid black;
+  --primary-border: 2px solid $black;
   --primary-border-radius: 10px;
   --inactive-button-color: #af9d90; }
