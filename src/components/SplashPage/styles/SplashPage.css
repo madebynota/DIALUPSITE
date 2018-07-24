@@ -30,7 +30,7 @@ html, body {
   text-align: center;
   text-transform: uppercase;
   color: #000;
-  font-family: 'ArialRoundedMTBold';
+  font-family: "ArialRoundedMTBold";
   font-size: 2.5em; }
 
 .playPauseButton {
@@ -39,7 +39,7 @@ html, body {
   padding: 5px 15px 5px 15px;
   border-radius: 5px;
   display: inline-block;
-  font-family: 'ArialRoundedMTBold';
+  font-family: "ArialRoundedMTBold";
   font-size: 15px;
   cursor: pointer;
   text-align: center;

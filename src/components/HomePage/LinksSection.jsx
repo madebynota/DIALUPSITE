@@ -42,7 +42,6 @@ class LinkItem extends React.Component {
         alert(contactString);
     }
 
-
     render() {
         const contactLink = this.props.text === "CONTACT";
         let target = contactLink ? null : this.props.text.toLowerCase().replace(/\s/g,'');

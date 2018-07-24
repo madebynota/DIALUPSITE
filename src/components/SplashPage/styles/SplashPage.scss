@@ -7,18 +7,18 @@ html, body {
 }
 
 .video-container {
-  display: grid;
-  grid-template-rows: 1fr 5fr 1fr;
-  grid-template-columns: 1fr 5fr 1fr;
-  grid-gap: 10px;
-  height: 100vh;
-  background: transparent;
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-gap: 10px;
+    height: 100vh;
+    background: transparent;
 }
 
 .classic {
-  grid-row: 2;
-  grid-column: 2;
-  border: none;
+    grid-row: 2;
+    grid-column: 2;
+    border: none;
 }
 
 .labels {
@@ -37,7 +37,7 @@ html, body {
 	text-align: center;
 	text-transform: uppercase;
 	color: $black;
-	font-family: 'ArialRoundedMTBold';
+	font-family: $ArialRoundedBold;
 	font-size: 2.5em;
 }
 
@@ -47,7 +47,7 @@ html, body {
 	padding: 5px 15px 5px 15px;
 	border-radius: 5px;
 	display: inline-block;
-	font-family: 'ArialRoundedMTBold';
+	font-family: $ArialRoundedBold;
 	font-size: 15px;
 	cursor: pointer;
 	text-align: center;
@@ -56,7 +56,7 @@ html, body {
 }
 
 .playPauseButton:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 @keyframes btnGlow {
