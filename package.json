@@ -5,8 +5,12 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=production webpack -p && NODE_ENV=production node src/server.js",
-    "build": "NODE_ENV=production webpack -p",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm-run-all build-css build-js",
+    "start-js": "NODE_ENV=production webpack -p && NODE_ENV=production node src/server.js",
+    "build-js": "NODE_ENV=production webpack -p",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "server": "webpack -d && node src/server.js"
   },
   "repository": {
