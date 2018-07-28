@@ -3,12 +3,9 @@ import { Route, IndexRoute } from 'react-router'
 import App from './components/App';
 import HomePage from './components/HomePage/HomePage';
 import MagPage from './components/MagPage/MagPage';
-import StorePage from './components/StorePage/StorePage';
-import ItemDetailView from './components/ItemDetailView/ItemDetailView';
 import PressPage from './components/PressPage/PressPage';
 import SplashPage from './components/SplashPage/SplashPage';
 import NotFoundPage from './components/NotFoundPage';
-
 
 const routes = (
 	<Route path="/" component={App}>

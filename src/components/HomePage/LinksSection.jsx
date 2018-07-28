@@ -31,32 +31,21 @@ const linkItems = [
     },
     {
         text: "CONTACT",
-        path: ""
+        path: "mailto:dialupstuff@gmail.com"
     }
 ];
 
 class LinkItem extends React.Component {
-    openContactAlert() {
-        let contactString = "EMAIL US AT DIALUPSTUFF@GMAIL.COM\n\nFACEBOOK AT HTTPS://WWW.FACEBOOK.COM/DIALUPSTUFF";
-        alert(contactString);
-    }
     render() {
-        let target = this.props.text.toLowerCase().replace(/\s/g,'');
-        return this.props.text == "CONTACT"
-            ?(
-                <div className={cx('linkItem')}>
-                    <a style={{"color": this.props.color}} onClick={this.openContactAlert}>
-                        <p>{this.props.text}</p>
-                    </a>
-                </div>
-            )
-            :(
-                <div className={cx('linkItem')}>
-                    <a style={{"color": this.props.color}} target={target} href={this.props.path}>
-                        <p>{this.props.text}</p>
-                    </a>
-                </div>
-            )
+        const isContactLink = this.props.text === "CONTACT";
+        const target = isContactLink ? null : this.props.text.toLowerCase().replace(/\s/g,'');
+        return (
+            <div className={cx('linkItem')}>
+                <a style={{"color": this.props.color}} target={target} href={this.props.path}>
+                    <p>{this.props.text}</p>
+                </a>
+            </div>
+        )
     }
 }
 
