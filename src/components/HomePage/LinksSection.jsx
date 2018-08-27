@@ -1,9 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './styles/Link.css';
-
 let cx = classNames.bind(styles);
-
 const linkItems = [
     {
         text: "MUSIC",
@@ -12,6 +10,10 @@ const linkItems = [
     {
         text: "VIDEO",
         path: "https://www.youtube.com/dialupstuff"
+    },
+    {
+        text: "RADIO",
+        path: "/radio"
     },
     {
         text: "PHOTO",
@@ -34,7 +36,6 @@ const linkItems = [
         path: "mailto:dialupstuff@gmail.com"
     }
 ];
-
 class LinkItem extends React.Component {
     render() {
         const isContactLink = this.props.text === "CONTACT";
@@ -48,7 +49,6 @@ class LinkItem extends React.Component {
         )
     }
 }
-
 class LinksSection extends React.Component {
     generateLinkItems(items, color) {
         let links = [];
@@ -65,5 +65,4 @@ class LinksSection extends React.Component {
         );
     }
 }
-
 export default LinksSection;
