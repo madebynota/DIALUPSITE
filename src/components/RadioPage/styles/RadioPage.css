@@ -1,0 +1,55 @@
+.RadioPage {
+  height: 100%;
+  min-height: 100vh;
+  padding-bottom: 25vh;
+  background-color: #FED141;
+  font-family: 'ArialRoundedMTBold';
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  color: white;
+  margin-bottom: -7vh;
+}
+
+.radioTitle {
+  position: relative;
+  border-bottom: 3px solid #F2F2F2;
+  color: #F2F2F2;
+  margin-bottom: 10px;
+  font-size: 2.3em;
+  width: 100%;
+  padding-bottom: 5px;
+  margin: 0 auto;
+}
+
+iframe {
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.headerTitle {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 4em
+}
+
+.header {
+  padding-top: 15px;
+}
+
+@media (max-device-width: 767px) {
+	iframe {
+		width: 100%;
+	}
+
+    .headerTitle {
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-device-width: 767px) {
+	.headerTitle {
+        margin-bottom: 110px;
+    }
+}

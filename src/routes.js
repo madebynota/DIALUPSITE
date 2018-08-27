@@ -3,6 +3,7 @@ import { Route, IndexRoute } from 'react-router'
 import App from './components/App';
 import HomePage from './components/HomePage/HomePage';
 import MagPage from './components/MagPage/MagPage';
+import RadioPage from './components/RadioPage/RadioPage';
 import PressPage from './components/PressPage/PressPage';
 import SplashPage from './components/SplashPage/SplashPage';
 import NotFoundPage from './components/NotFoundPage';
@@ -12,6 +13,7 @@ const routes = (
 		<IndexRoute component={SplashPage} />
 		<Route path="home" component={HomePage} />
 		<Route path="magazines" component={MagPage} />
+		<Route path="radio" component={RadioPage} />
 		<Route path="press" component={PressPage} />
 		<Route path="*" component={NotFoundPage} />
 	</Route>
