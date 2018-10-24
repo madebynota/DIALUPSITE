@@ -24,8 +24,8 @@ const linkItems = [
         path: "/magazines"
     },
     {
-        text: "PODCAST",
-        path: "https://soundcloud.com/dial-up-podcast"
+        text: "BLOG",
+        path: "https://dialupstuff.tumblr.com"
     },
     {
         text: "STORE",
