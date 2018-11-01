@@ -94,24 +94,13 @@ class LinksSection extends React.Component {
         const linksToRender = this.state.musicLinks ? musicLinks : linkItems;
         const backbtn = "img/misc/back-" + this.props.color.substr(1) + ".png";
         return (
-            <div>
-                <VelocityComponent animation={{ opacity: this.state.musicLinks ? 0 : 1 }} duration={200}>
-                    <div className={cx('linkSection')}>
-                        {this.generateLinkItems(linkItems, this.props.color)}
-                    </div>
-                </VelocityComponent>
-
-                <VelocityComponent animation={{ opacity: this.state.musicLinks ? 1 : 0 }} duration={200}>
-                    {this.state.musicLinks && (
-                        <img className={cx('back')} onClick={this.toggleMusicLinks} src={backbtn} />
-                    )}
-                    <div className={cx('linkSection')}>
-                        {this.generateLinkItems(musicLinks, this.props.color)}
-                    </div>
-                </VelocityComponent>
+            <div className={cx('linkSection')}>
+                {this.state.musicLinks && (
+                    <img className={cx('back')} onClick={this.toggleMusicLinks} src={backbtn} />
+                )}
+                {this.generateLinkItems(linksToRender, this.props.color)}
             </div>
         );
     }
 }
-
 export default LinksSection;
