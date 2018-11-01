@@ -95,7 +95,7 @@ class LinksSection extends React.Component {
 
     render() {
         const linksToRender = this.state.musicLinks ? musicLinks : linkItems;
-        const backbtn = "img/misc/back-" + this.props.color.substr(1) + ".png";
+        const backbtn = "img/misc/back-" + this.props.color.substr(1).toLowerCase() + ".png";
         return (
             <div className={cx('linkSection')}>
                 {this.state.musicLinks && (
