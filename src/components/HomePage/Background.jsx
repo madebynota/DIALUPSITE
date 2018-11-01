@@ -35,10 +35,6 @@ const bgVideos = [
         "color": "#fdd848"
     },
     {
-        "vidPath": "img/vids/link-dance.mp4",
-        "color": "#44BBEC"
-    },
-    {
         "vidPath": "img/vids/magic-jump.mp4",
         "color": "#18faee"
     },
@@ -49,10 +45,6 @@ const bgVideos = [
     {
         "vidPath": "img/vids/squad-eggos.mp4",
         "color": "#44BBEC"
-    },
-    {
-        "vidPath": "img/vids/twins-yacc.mp4",
-        "color": "#FFB9A3"
     },
     {
         "vidPath": "img/vids/teah-talk.mp4",
