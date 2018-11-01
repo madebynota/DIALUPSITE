@@ -22,8 +22,27 @@
 	margin: 0 auto;
 }
 
+.back-mobile {
+	display: none;
+	font-family: 'ArialRoundedMTBold';
+	font-weight: bold;
+}
+
 @media (max-device-width: 767px) {
 	.linkItem {
 		display: block;
+	}
+
+	.back {
+		display: none;
+	}
+	
+	.back-mobile {
+		display: inline-flex;	
+	}
+
+	.linkSection {
+		position: relative;
+		top: 15px;
 	}
 }

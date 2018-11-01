@@ -87,6 +87,9 @@ class LinksSection extends React.Component {
             const onClick = isMusicLink ? this.toggleMusicLinks : null;
             links.push(<LinkItem key={item.text} onClick={onClick} text={item.text} path={item.path} color={color}/>);
         }
+        links.push(this.state.musicLinks && (
+            <h6 className={cx('back-mobile')} onClick={this.toggleMusicLinks}> &#8249; BACK </h6>
+        ));
         return links;
     }
 
