@@ -9,6 +9,14 @@
 	display: inline-block;
 }
 
+.back {
+	position: relative;
+	fill: red;
+	height: 18px;
+	top: -2px;
+	margin-right: 8px;
+}
+
 .linkSection {
 	width: 60%;
 	margin: 0 auto;

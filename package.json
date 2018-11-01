@@ -46,12 +46,14 @@
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-flexbox-grid": "^1.1.5",
+    "react-inlinesvg": "^0.8.2",
     "react-player": "^0.14.2",
     "react-router": "^2.6.1",
     "react-twitch-embed-video": "^1.0.1",
     "socket.io-client": "^1.7.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
+    "velocity-react": "^1.4.1",
     "webpack": "^1.13.3"
   },
   "devDependencies": {
