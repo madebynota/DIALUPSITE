@@ -35,6 +35,10 @@ const bgVideos = [
         "color": "#FFB9A3"
     },
     {
+        "vidPath": "img/vids/party.mp4",
+        "color": "#FFB9A3"
+    },
+    {
         "vidPath": "img/vids/squad-car.mp4",
         "color": "#fdd848"
     },
