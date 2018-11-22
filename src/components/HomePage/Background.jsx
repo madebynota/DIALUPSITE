@@ -15,11 +15,15 @@ const bgVideos = [
         "color": "#FFFFFF"
     },
     {
-        "vidPath": "img/vids/archie-link.mp4",
+        "vidPath": "img/vids/archie-gun.mp4",
         "color": "#44BBEC"
     },
     {
         "vidPath": "img/vids/bo-ollie.mp4",
+        "color": "#ff2847"
+    },
+    {
+        "vidPath": "img/vids/teah-dave.mp4",
         "color": "#ff2847"
     },
     {
@@ -31,11 +35,15 @@ const bgVideos = [
         "color": "#FFB9A3"
     },
     {
-        "vidPath": "img/vids/jeff-yam.mp4",
+        "vidPath": "img/vids/party.mp4",
+        "color": "#FFB9A3"
+    },
+    {
+        "vidPath": "img/vids/squad-car.mp4",
         "color": "#fdd848"
     },
     {
-        "vidPath": "img/vids/magic-jump.mp4",
+        "vidPath": "img/vids/aj-pocket.mp4",
         "color": "#18faee"
     },
     {
@@ -89,7 +97,7 @@ class VideoBackground extends React.Component {
     }
     switchBackground() {
         let chosenVid = shuffledVideos[wrappedIndex].vidPath;
-        let chosenColor = shuffledVideos[wrappedIndex].color; 
+        let chosenColor = shuffledVideos[wrappedIndex].color;
 
         let displayStyle = {
             display: "inline",
@@ -114,7 +122,7 @@ class VideoBackground extends React.Component {
             let lastVideo = this.state.videoElements[bgVideos.length - 1];
             let newLastVideo = <video id={lastVideo.props.id} key={lastVideo.key} className={cx("bgvideo")} style={{zIndex: switchedIndex}} src={lastVideo.props.src} muted loop></video>;
             updatedElements[bgVideos.length - 1] = newLastVideo;
-        }   
+        }
 
         this.setState({
             videoElements: updatedElements
@@ -141,7 +149,7 @@ class VideoBackground extends React.Component {
             videoElements.push(element);
             incrementer++;
         }
-        
+
         this.setState({
             videoElements: videoElements
         });
