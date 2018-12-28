@@ -6,15 +6,13 @@ import MagPage from './components/MagPage/MagPage';
 import RadioPage from './components/RadioPage/RadioPage';
 import BlogPage from './components/BlogPage/BlogPage';
 import PressPage from './components/PressPage/PressPage';
-import SplashPage from './components/SplashPage/SplashPage';
 import NotFoundPage from './components/NotFoundPage';
 
-const redirect = () => <Redirect to="http://www.espn.com"/>
+// const redirect = () => <Redirect to="http://www.espn.com"/>
 
 const routes = (
 	<Route path="/" component={App}>
-		<IndexRoute component={SplashPage} />
-		<Route path="home" component={HomePage} />
+		<IndexRoute component={HomePage} />
 		<Route path="magazines" component={MagPage} />
 		<Route path="radio" component={RadioPage} />
 		<Route path="press" component={PressPage} />
@@ -22,7 +20,5 @@ const routes = (
 		<Route path="*" component={NotFoundPage} />
 	</Route>
 );
-
-
 
 export default routes;

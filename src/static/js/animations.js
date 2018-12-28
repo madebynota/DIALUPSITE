@@ -1,11 +1,11 @@
-const drawOnPath = '/home';
+const drawOnPath = '/';
 var browser;
 
 function setup() {
     if (window.location.pathname != drawOnPath) {
         return;
     }
-    
+
     browser = getBrowser();
 
     if (browser == "safari") {
@@ -27,5 +27,5 @@ function draw() {
     else {
         drawBoFace();
     }
-    
+
 }
