@@ -36,21 +36,13 @@
 }
 
 .playPauseButton:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 @keyframes btnGlow {
-    0% {
-        opacity: .5;
-    }
-
-    50% {
-        opacity: .9;
-    }
-
-    100% {
-        opacity: .5;
-    }
+  0% { opacity: .5; }
+  50% { opacity: .9; }
+  100% { opacity: .5; }
 }
 
 @media only screen and (max-width: 768px) {
