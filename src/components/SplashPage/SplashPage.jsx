@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from './styles/SplashPage.css';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import classNames from 'classnames/bind';
 import Utils from '../../utils.js';
+import styles from './styles/SplashPage.css';
 
 let cx = classNames.bind(styles);
 
@@ -12,10 +13,11 @@ class SplashPage extends React.Component {
 
   render() {
     return (
-      <div className={cx("container")}>
-          <div className={cx("video-container")}>
+      <Grid fluid className={cx('SplashPage')}>
+				<Row>
+					<Col xs={12} className={cx('video-container')}>
             <iframe
-							className={cx("classic")}
+							className={cx("video")}
 							width="840"
 							height="472"
 							src="https://www.youtube.com/embed/7phVCToiVdg"
@@ -23,16 +25,12 @@ class SplashPage extends React.Component {
 							allow="autoplay; encrypted-media"
 							allowfullscreen>
 							</iframe>
-          </div>
-
-        <div className={cx("extras")}>
-          <a className={cx("link")} href="/home">
-            <div className={cx("playPauseButton")}>
-              ENTER THE SITE
-            </div>
-          </a>
-        </div>
-      </div>
+							<div>
+			          <a className={cx("enter")} href="/home"> ENTER THE SITE </a>
+							</div>
+					</Col>
+				</Row>
+      </Grid>
     );
   }
 }

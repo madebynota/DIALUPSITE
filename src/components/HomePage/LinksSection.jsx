@@ -10,7 +10,7 @@ const linkItems = [
         path: "/home",
     },
     {
-        text: "VIDEO",
+        text: "VIDEOLLL",
         path: "https://www.youtube.com/dialupstuff"
     },
     {
