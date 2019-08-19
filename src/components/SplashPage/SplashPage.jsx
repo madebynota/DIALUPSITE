@@ -24,10 +24,10 @@ class SplashPage extends React.Component {
 							frameborder="0"
 							allow="autoplay; encrypted-media"
 							allowfullscreen>
-							</iframe>
-							<div>
-			          <a className={cx("enter")} href="/home"> ENTER THE SITE </a>
-							</div>
+						</iframe>
+						<div>
+		          <a className={cx("enter")} href="/home"> ENTER THE SITE </a>
+						</div>
 					</Col>
 				</Row>
       </Grid>

@@ -4,6 +4,9 @@
   align-items: center;
   justify-content: center;
   background-image: url("/img/graphics/dialup-bkg.png"); }
+  .SplashPage .title {
+    text-align: center;
+    margin-bottom: 30px; }
   .SplashPage .video-container div {
     display: flex;
     align-items: center;
@@ -32,3 +35,7 @@
     opacity: .9; }
   100% {
     opacity: .5; } }
+
+@media only screen and (max-width: 768px) {
+  .video {
+    height: 100%; } }
