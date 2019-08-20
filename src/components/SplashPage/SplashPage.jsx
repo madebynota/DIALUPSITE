@@ -20,7 +20,7 @@ class SplashPage extends React.Component {
 							className={cx("video")}
 							width="840"
 							height="472"
-							src="https://www.youtube.com/embed/7phVCToiVdg"
+							src="https://www.youtube.com/embed/QIpf4C480E0"
 							frameborder="0"
 							allow="autoplay; encrypted-media"
 							allowfullscreen>
