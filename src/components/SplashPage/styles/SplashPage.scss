@@ -3,13 +3,23 @@
 .SplashPage {
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 	background-image: url("/img/graphics/dialup-bkg.png");
+  background-size: cover;
+  padding: 50px;
+
+  .video {
+    margin-top: 5rem;
+  }
 
   .title {
     text-align: center;
     margin-bottom: 30px;
+  }
+
+  .SplashPage-body {
+    height: 60%;
   }
 
 	.video-container {

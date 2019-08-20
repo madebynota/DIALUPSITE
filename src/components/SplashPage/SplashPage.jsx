@@ -14,7 +14,7 @@ class SplashPage extends React.Component {
   render() {
     return (
       <Grid fluid className={cx('SplashPage')}>
-				<Row>
+				<Row className={cx('SplashPage-body')}>
 					<Col xs={12} className={cx('video-container')}>
             <iframe
 							className={cx("video")}
