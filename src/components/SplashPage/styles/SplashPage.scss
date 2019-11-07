@@ -1,29 +1,222 @@
+$color_1: white;
+$color_2: #c1c1c1;
+$color_3: #886E91;
+$font_family_1: 'Roboto', sans-serif;
+
+@keyframes "btnGlow" {
+	0% {
+		opacity: .5;
+	}
+	50% {
+		opacity: .9;
+	}
+	100% {
+		opacity: .5;
+	}
+}
 .RSVPPage {
-  height: 100vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  background-size: cover;
-  font-family: 'Roboto', sans-serif;
-  color: white;
-
-  .bkg {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-  }
+	min-height: 100vh;
+	height: 100%;
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	font-family: $font_family_1;
+	color: $color_1;
+	font-weight: bold;
 }
-
-@keyframes btnGlow {
-  0% { opacity: .5; }
-  50% { opacity: .9; }
-  100% { opacity: .5; }
+.bkg {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	background-size: cover;
 }
-
+.title {
+	width: 80%;
+}
+.subtitles {
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+.subtitle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	font-size: 3rem;
+	text-align: center;
+}
+.bottom {
+	position: relative;
+	top: -3px;
+	left: 3px;
+	color: $color_2;
+	z-index: -1;
+}
+.third-row {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 60px;
+	.left {
+		font-size: 2rem;
+		letter-spacing: 1px;
+		width: 50%;
+		text-align: left;
+	}
+	.right {
+		font-size: 2rem;
+		letter-spacing: 1px;
+		width: 50%;
+		text-align: right;
+		font-size: 1.75rem;
+	}
+}
+.form {
+	width: 100%;
+}
+form {
+	width: 90%;
+	margin: 50px auto;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.first-row-inputs {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+input[type='text'] {
+	padding: 5px 10px;
+	width: 47.5%;
+	height: 50px;
+	outline: none;
+	background: transparent;
+	border: 2px solid white;
+	font-size: 1.1rem;
+	color: $color_1;
+}
+input[type='textarea'] {
+	padding: 5px 10px;
+	width: 100%;
+	margin: 25px 0px;
+	outline: none;
+	height: 50px;
+	background: transparent;
+	border: 2px solid white;
+	margin-bottom: 75px;
+	font-size: 1.1rem;
+	color: $color_1;
+}
+::-webkit-input-placeholder {
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	opacity: .5;
+	letter-spacing: 1px;
+	color: $color_1;
+}
+::-moz-placeholder {
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	opacity: .5;
+	letter-spacing: 1px;
+	color: $color_1;
+}
+:-ms-input-placeholder {
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	opacity: .5;
+	letter-spacing: 1px;
+	color: $color_1;
+}
+:-moz-placeholder {
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	opacity: .5;
+	letter-spacing: 1px;
+	color: $color_1;
+}
+.btns {
+	display: flex;
+}
+.submit {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background: #C1C1C1;
+	position: relative;
+	left: -1.5px;
+	margin-right: 10px;
+	white-space: nowrap;
+	button {
+		position: relative;
+		top: -3px;
+		left: 3px;
+		width: 100%;
+		height: 40px;
+		background: white;
+		color: $color_3;
+		text-transform: uppercase;
+	}
+}
+.enter {
+	margin-top: 25px;
+	font-weight: 500;
+	text-decoration: underline;
+	color: $color_1;
+	bottom: 5px;
+}
 @media only screen and (max-width: 768px) {
-  .video {
-    height: 100%;
-  }
+	.RSVPPage {
+		padding: 25px;
+	}
+	.title {
+		width: 100%;
+		margin: 25px 0;
+	}
+	.subtitle {
+		font-size: 2rem;
+		text-align: left;
+	}
+	.third-row {
+		width: 100%;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-top: 30px;
+		.left {
+			font-size: 1.5rem;
+			letter-spacing: 1px;
+			width: 100%;
+			margin-bottom: 15px;
+		}
+		.right {
+			font-size: 1.5rem;
+			letter-spacing: 1px;
+			width: 100%;
+			text-align: left;
+		}
+	}
+	form {
+		width: 100%;
+		margin: 30px 0px;
+		margin-top: 55px;
+	}
+	input[type='textarea'] {
+		margin-bottom: 50px;
+		margin-top: 25px;
+	}
 }
