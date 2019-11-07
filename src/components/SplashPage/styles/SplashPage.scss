@@ -1,52 +1,19 @@
-@import '../../../static/css/variables.scss';
-
-.SplashPage {
+.RSVPPage {
   height: 100vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-	background-image: url("/img/graphics/dialup-bkg.png");
   background-size: cover;
-  padding: 50px;
+  font-family: 'Roboto', sans-serif;
+  color: white;
 
-  .video {
-    margin-top: 5rem;
+  .bkg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
   }
-
-  .title {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  .SplashPage-body {
-    height: 60%;
-  }
-
-	.video-container {
-    div {
-  		display: flex;
-  		align-items: center;
-  		justify-content: center;
-    }
-	}
-}
-
-.enter {
-	background: #F04673;
-	color: $white;
-	padding: 5px 15px 5px 15px;
-	border-radius: 5px;
-	display: inline-block;
-	font-family: $ArialRoundedBold;
-	font-size: 15px;
-	cursor: pointer;
-	text-align: center;
-  margin-top: 20px;
-  animation: btnGlow 12s ease infinite;
-}
-
-.playPauseButton:hover {
-  opacity: 1;
 }
 
 @keyframes btnGlow {

@@ -53,10 +53,12 @@
     "socket.io-client": "^1.7.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "velocity-react": "^1.4.1",
-    "webpack": "^1.13.3"
+    "velocity-react": "^1.4.1"
   },
   "devDependencies": {
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "webpack": "^1.15.0",
     "webpack-dev-server": "^1.16.2"
   }
 }

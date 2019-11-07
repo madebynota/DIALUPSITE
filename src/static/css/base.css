@@ -17,13 +17,12 @@
   src: url("../fonts/ArialRoundedMTLight.otf"); }
 
 body {
-  overflow-y: scroll !important;
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
   background-color: #fff;
-  overflow: hidden;
+  overflow: auto;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover; }

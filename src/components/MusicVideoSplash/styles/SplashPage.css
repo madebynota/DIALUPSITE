@@ -1,0 +1,47 @@
+.SplashPage {
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-image: url("/img/graphics/dialup-bkg.png");
+  background-size: cover;
+  padding: 50px; }
+  .SplashPage .video {
+    margin-top: 5rem; }
+  .SplashPage .title {
+    text-align: center;
+    margin-bottom: 30px; }
+  .SplashPage .SplashPage-body {
+    height: 60%; }
+  .SplashPage .video-container div {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+
+.enter {
+  background: #F04673;
+  color: #fff;
+  padding: 5px 15px 5px 15px;
+  border-radius: 5px;
+  display: inline-block;
+  font-family: "ArialRoundedMTBold";
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 20px;
+  animation: btnGlow 12s ease infinite; }
+
+.playPauseButton:hover {
+  opacity: 1; }
+
+@keyframes btnGlow {
+  0% {
+    opacity: .5; }
+  50% {
+    opacity: .9; }
+  100% {
+    opacity: .5; } }
+
+@media only screen and (max-width: 768px) {
+  .video {
+    height: 100%; } }
