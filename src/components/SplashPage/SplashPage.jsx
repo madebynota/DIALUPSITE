@@ -42,6 +42,11 @@ class SplashPage extends React.Component {
 		})
 	}
 
+	enterSite(e) {
+		e.preventDefault();
+		window.location.href = '/home';
+	}
+
 	handleSubmit(e) {
 		e.preventDefault();
 		const {name, email, referral} = this.state;
@@ -118,7 +123,7 @@ class SplashPage extends React.Component {
 								</div>
 							)}
 							<div className={cx('submit')}>
-								<button> ENTER SITE </button>
+								<button onClick={this.enterSite}> ENTER SITE </button>
 							</div>
 						</div>
 					</form>
