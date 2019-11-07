@@ -1,6 +1,6 @@
 import firebase from 'firebase'
 const config = {
-  apiKey: "AIzaSyBVhZ5SAhioqIebmumLMpNzr58JSOZ-a4I",
+  apiKey: process.env.API_KEY,
   authDomain: "eyes-closed-ef883.firebaseapp.com",
   databaseURL: "https://eyes-closed-ef883.firebaseio.com",
   projectId: "eyes-closed-ef883",

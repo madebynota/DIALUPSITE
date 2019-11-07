@@ -34,6 +34,7 @@
     "consolidate": "^0.14.5",
     "css-loader": "^0.26.0",
     "detect-browser": "^1.5.0",
+    "dotenv": "^8.2.0",
     "express": "^4.14.0",
     "express-robots": "^0.1.6",
     "extract-text-webpack-plugin": "^1.0.1",

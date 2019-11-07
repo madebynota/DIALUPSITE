@@ -5,3 +5,4 @@ babel_cache/
 src/static/js/bundle.js
 src/static/js/bundle.js.map
 src/static/css/styles.css
+.env
