@@ -14,6 +14,12 @@ $font_family_1: 'Roboto', sans-serif;
 		opacity: .5;
 	}
 }
+
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
 .RSVPPage {
 	min-height: 100vh;
 	height: 100%;
