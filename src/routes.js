@@ -14,12 +14,11 @@ import NotFoundPage from './components/NotFoundPage';
 
 const routes = (
 	<Route path="/" component={App}>
-		<IndexRoute component={MusicVideoSplash} />
+		<IndexRoute component={SplashPage} />
 		<Route path="home" component={HomePage} />
 		<Route path="magazines" component={MagPage} />
 		<Route path="radio" component={RadioPage} />
 		<Route path="blog" component={BlogPage} />
-		<Route path="eyes" component={SplashPage} />
 		<Route path="*" component={NotFoundPage} />
 	</Route>
 );
