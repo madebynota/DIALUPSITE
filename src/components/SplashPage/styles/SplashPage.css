@@ -183,6 +183,11 @@ input[type='textarea'] {
   bottom: 5px;
 }
 
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
 @keyframes btnGlow {
   0% { opacity: .5; }
   50% { opacity: .9; }
