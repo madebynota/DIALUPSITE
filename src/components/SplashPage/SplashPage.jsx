@@ -128,9 +128,7 @@ class SplashPage extends React.Component {
 						</div>
 					</form>
 				</div>
-				<video autoPlay muted loop className={cx('bkg')}>
-					<source src="/video/eyes-closed.mp4" type="video/mp4" />
-				</video>
+				<img src="/img/graphics/eyes-closed.gif" className={cx('bkg')} />
 			</div>
 		);
 	}
