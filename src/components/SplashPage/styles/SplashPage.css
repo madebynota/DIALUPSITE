@@ -66,6 +66,14 @@
   width: 50%;
 }
 
+.middle {
+  font-size: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  width: 33.3%;
+}
+
 .third-row .left {
   text-align: left;
 }
@@ -240,6 +248,14 @@ input[type='textarea'] {
   input[type='textarea'] {
     margin-bottom: 50px;
     margin-top: 25px;
+  }
+
+  .middle {
+    text-align: left;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    width: 100%;
   }
 
 
