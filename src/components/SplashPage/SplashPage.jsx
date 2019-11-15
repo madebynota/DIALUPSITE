@@ -31,6 +31,14 @@ class SplashPage extends React.Component {
 	}
 
 	handleEmailChange(e) {
+		firebase.database().ref('/guests').once('value').then(function(snapshot) {
+			console.log(snapshot.val());
+			const hashes = Object.keys(snapshot.val());
+			for (var a = 0; a < hashes.length; a++) {
+				console.log(snapshot.val()[Object.keys(snapshot.val())[a]].email);
+			}
+		});
+
 		this.setState({
 			email: e.target.value
 		})
