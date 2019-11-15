@@ -111,8 +111,8 @@ class SplashPage extends React.Component {
 				</div>
 				<div className={cx('third-row')}>
 					<h3 className={cx('left')}> november 15th, 2019 <br /> 8 P.M. - 11 P.M. </h3>
-					<h3 className={cx('middle')}> all ages <br/> free entry <br/> full service bar </h3>
-					<h3 className={cx('right')}> 1257 n. milwaukee st. <br /> chicago, il 60626 </h3>
+					<h3 className={cx('middle')}> all ages <br/> free entry <br/> full service bar </h3> 
+					<h3 className={cx('right')}> 1259 n. milwaukee st. <br /> chicago, il 60622 </h3>
 				</div>
 				<div className={cx('form')}>
 					<form>
