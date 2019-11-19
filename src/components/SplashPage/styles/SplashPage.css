@@ -46,7 +46,7 @@
 }
 
 .body img {
-  max-width: 500px;
+  max-width: 100%;
   border: 1px solid white;
 }
 
@@ -92,6 +92,10 @@ a { color: white }
 }
 
 @media only screen and (max-width: 768px) {
+  .body {
+    width: 100%;
+    margin-top: 50px;
+  }
   .RSVPPage {
     padding: 25px; }
   .title {
