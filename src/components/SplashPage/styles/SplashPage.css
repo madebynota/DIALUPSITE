@@ -50,6 +50,11 @@
   border: 1px solid white;
 }
 
+.type {
+  border: none !important;
+  margin-bottom: 25px;
+}
+
 .links {
   display: flex;
   justify-content: space-around;

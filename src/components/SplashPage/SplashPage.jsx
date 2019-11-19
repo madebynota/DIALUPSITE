@@ -29,6 +29,7 @@ class SplashPage extends React.Component {
 		return (
 			<div className={cx("RSVPPage")}>
 				<div className={cx("body")}>
+					<img className={cx("type")} src="/img/graphics/eyes_closed.png" alt="eyes closed 1." />
 					<img src="/img/graphics/album_cover.jpg" alt="eyes closed." />
 					<div className={cx('links')}>
 						<a href='https://open.spotify.com/album/0KqQ7GrUvoWIJvNLA8NDQb'>
