@@ -34,150 +34,62 @@
   transform: translateX(-50%) translateY(-50%);
   background-size: cover; }
 
-.title {
-  width: 80%; }
-
-.subtitles {
-  position: relative;
-  width: 100%;
-  height: auto; }
-
-.subtitle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  font-size: 3rem;
-  text-align: center; }
-
-.bottom {
-  position: relative;
-  top: -3px;
-  left: 3px;
-  color: #c1c1c1;
-  z-index: -1; }
-
-.third-row {
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 60px; }
-  .third-row .left {
-    font-size: 2rem;
-    letter-spacing: 1px;
-    width: 33.3%;
-    text-align: left; }
-  .third-row .middle {
-    font-size: 2rem;
+  h3 {
     text-align: center;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
-    width: 33.3%; }
-  .third-row .right {
-    font-size: 2rem;
-    letter-spacing: 1px;
-    width: 33.3%;
-    text-align: right;
-    font-size: 1.75rem; }
+    margin-bottom: 40px;
+  }
 
-.form {
-  width: 100%; }
-
-form {
-  width: 90%;
-  margin: 50px auto;
-  height: auto;
+.body {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  width: 500px;
+}
 
-.first-row-inputs {
+.body img {
+  max-width: 500px;
+  border: 1px solid white;
+}
+
+.links {
   display: flex;
-  width: 100%;
-  justify-content: space-between; }
-
-input[type='text'] {
-  padding: 5px 10px;
-  width: 47.5%;
-  height: 50px;
-  outline: none;
-  background: transparent;
-  border: 2px solid white;
-  font-size: 1.1rem;
-  color: white; }
-
-input[type='textarea'] {
-  padding: 5px 10px;
-  width: 100%;
-  margin: 25px 0px;
-  outline: none;
-  height: 50px;
-  background: transparent;
-  border: 2px solid white;
-  margin-bottom: 75px;
-  font-size: 1.1rem;
-  color: white; }
-
-::-webkit-input-placeholder {
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  opacity: .5;
-  letter-spacing: 1px;
-  color: white; }
-
-::-moz-placeholder {
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  opacity: .5;
-  letter-spacing: 1px;
-  color: white; }
-
-:-ms-input-placeholder {
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  opacity: .5;
-  letter-spacing: 1px;
-  color: white; }
-
-:-moz-placeholder {
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  opacity: .5;
-  letter-spacing: 1px;
-  color: white; }
-
-.btns {
-  display: flex; }
-
-.submit {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  position: relative;
-  background: #C1C1C1;
-  position: relative;
-  left: -1.5px;
-  margin-right: 10px;
-  white-space: nowrap; }
-  .submit button {
-    position: relative;
-    top: -3px;
-    left: 3px;
-    width: 100%;
-    height: 40px;
-    background: white;
-    color: #886E91;
-    text-transform: uppercase; }
+  width: 100%;
+  margin-top: 50px;
+  text-transform: lowercase;
+  text-decoration: underline;
+}
+
+a { color: white }
 
 .enter {
-  margin-top: 25px;
-  font-weight: 500;
-  text-decoration: underline;
+	width: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background: #C1C1C1;
+	position: relative;
+	left: -1.5px;
+	margin-right: 10px;
+	white-space: nowrap;
+  margin-top: 45px;
+}
+
+.enter button {
+	position: relative;
+	top: -3px;
+	left: 3px;
+	width: auto;
+	height: 40px;
+	background: white;
+	text-transform: uppercase;
+}
+
+.links a:hover {
   color: white;
-  bottom: 5px; }
+  -webkit-text-stroke: 1px #82608c;
+}
 
 @media only screen and (max-width: 768px) {
   .RSVPPage {

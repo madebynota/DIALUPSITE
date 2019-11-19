@@ -39,7 +39,7 @@ const linkItems = [
     },
     {
         text: "CONTACT",
-        path: "mailto:dialupstuff@gmail.com"
+        path: "mailto:mgmt@dialupstuff.com"
     }
 ];
 
