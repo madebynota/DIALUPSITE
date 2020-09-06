@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import Background from '../components/Background';
 import SiteMask from '../components/SiteMask';
-import { setup, draw } from "../public/js/animations";
+const BoFace = dynamic(() => import('../components/BoFace'), { ssr: false });
 
 export default class Home extends React.Component {
   state = {
@@ -12,8 +13,6 @@ export default class Home extends React.Component {
     color: '#000000',
   }
   componentDidMount() {
-		setup();
-		draw();
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
   }
@@ -196,15 +195,16 @@ function DesktopHome(props) {
   const randomIndex = Math.floor(Math.random() * 7);
   const wordmark = logos[randomIndex];
   const [linkColor, setLinkColor] = useState('#000000');
-  const boFace = bkg === null ? '/img/bo.png' : '/img/bo2.png';
+  // const boFace = bkg === null ? '/img/bo.png' : '/img/bo2.png';
 
   return (
     <div className='Home'>
+      <BoFace updateVideo={updateVideo} />
       <Background video={bkg}/>
       { playingStatic && (
         <SiteMask />
       )}
-      <img onClick={updateVideo} className='boFace' src={boFace} alt='Bo Face' />
+      {/* <img onClick={updateVideo} className='boFace' src={boFace} alt='Bo Face' /> */}
       <img className='wordmark' src={wordmark} alt='Dial Up'/>
       <div className='links'>
         {links.map((link, i) => {
