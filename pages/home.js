@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import browser from 'browser-detect';
 import Background from '../components/Background';
 import SiteMask from '../components/SiteMask';
 import PageAnimation from '../components/PageAnimation';
+
+const browserResult = browser();
 
 export default class Home extends React.Component {
   state = {
@@ -194,6 +197,11 @@ function DesktopHome(props) {
   const randomIndex = Math.floor(Math.random() * 7);
   const wordmark = logos[randomIndex];
   const [linkColor, setLinkColor] = useState('#000000');
+  const browserName = browserResult.name;
+
+  if (browserName === 'safari') {
+    document.body.style.backgroundColor = "#FAD141";
+  }
 
   return (
     <div className='Home'>
@@ -247,7 +255,7 @@ function DesktopHome(props) {
           margin: 0px 5px;
           text-decoration: none;
           font-family: "ArialRoundedMTBold";
-          color: ${color};
+          color: ${browserName === 'safari' ? 'white' : color};
         }
 
         .links a:hover {
