@@ -111,9 +111,9 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:domain" content="dialupstuff.com"/>
 
         {/* <!-- Important Initial Load Images --> */}
-        <link rel="preload" as="image" href="./img/boFace/bo.png"/>
-        <link rel="preload" as="image" href="./img/boFace/bo2.png"/>
-        <link rel="preload" as="image" href="./img/andrewFace/andrew.png"/>
+        <link rel="preload" as="image" href="./img/bo.png"/>
+        <link rel="preload" as="image" href="./img/bo2.png"/>
+        <link rel="preload" as="image" href="./img/andrew.png"/>
 
         {/* <!-- Bootstrap CSS --> */}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"/>

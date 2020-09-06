@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import Background from '../components/Background';
 import SiteMask from '../components/SiteMask';
-const BoFace = dynamic(() => import('../components/BoFace'), { ssr: false });
+import PageAnimation from '../components/PageAnimation';
 
 export default class Home extends React.Component {
   state = {
@@ -195,16 +194,14 @@ function DesktopHome(props) {
   const randomIndex = Math.floor(Math.random() * 7);
   const wordmark = logos[randomIndex];
   const [linkColor, setLinkColor] = useState('#000000');
-  // const boFace = bkg === null ? '/img/bo.png' : '/img/bo2.png';
 
   return (
     <div className='Home'>
-      <BoFace updateVideo={updateVideo} />
+      <PageAnimation updateVideo={updateVideo} />
       <Background video={bkg}/>
       { playingStatic && (
         <SiteMask />
       )}
-      {/* <img onClick={updateVideo} className='boFace' src={boFace} alt='Bo Face' /> */}
       <img className='wordmark' src={wordmark} alt='Dial Up'/>
       <div className='links'>
         {links.map((link, i) => {
