@@ -110,10 +110,6 @@ function MyApp({ Component, pageProps }) {
         {/* <!-- at least 280px x 150px for Twitter (image must be < 1MB) --> */}
         <meta name="twitter:domain" content="dialupstuff.com"/>
 
-        {/* <!-- Processing p5.js --> */}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.4/p5.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.4/addons/p5.dom.min.js"></script>
-
         {/* <!-- Important Initial Load Images --> */}
         <link rel="preload" as="image" href="./img/boFace/bo.png"/>
         <link rel="preload" as="image" href="./img/boFace/bo2.png"/>
@@ -124,14 +120,9 @@ function MyApp({ Component, pageProps }) {
 
         {/* <!-- Custom Styles --> */}
         <base href="/" />
-        <link rel="stylesheet" type="text/css" href="css/base.css"/>
-        <link rel="stylesheet" type="text/css" href="css/styles.css"/>
         <link href="https://fonts.googleapis.com/css?family=Roboto:500,900,900i&display=swap" rel="stylesheet"/>
 
       </Head>
-      <script type="module" src="js/boFaceAnimation.js"></script>
-      <script type="module" src="js/andrewFaceAnimation.js"></script>
-      <script type="module" src="js/animations.js"></script>
 
       <Component {...pageProps} />
       <style jsx global> {`
