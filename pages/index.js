@@ -1,8 +1,18 @@
-import Head from 'next/head'
-export default class SplashPage extends React.Component {
+import React, { useState, useEffect } from 'react';
+import browser from 'browser-detect';
+import Background from '../components/Background';
+import SiteMask from '../components/SiteMask';
+import PageAnimation from '../components/PageAnimation';
+
+const browserResult = browser();
+
+export default class Home extends React.Component {
   state = {
     width: -1,
     height: -1,
+    bkg: null,
+    playingStatic: false,
+    color: '#000000',
   }
   componentDidMount() {
     this.updateWindowDimensions();
@@ -19,195 +29,305 @@ export default class SplashPage extends React.Component {
       height: window.innerHeight
     });
   }
+
+  setColor = color => {
+    this.setState({ color: color });
+  }
+
+  setBkg = bkg => {
+    this.setState({ bkg: bkg });
+  }
+
+  setPlayingStatic = val => {
+    this.setState({ playingStatic: val })
+  }
   render() {
-    const dimensions = { 
-      width: this.state.width,
-      height: this.state.height
-    };
-    const isMobile = dimensions.width < 500;
+    const { width, height, bkg, color, playingStatic } = this.state;
+    const isMobile = width < 500;
+    const videos = [
+      {
+          "vidPath": "/videos/aj-eggo.mp4",
+          "color": "#FFFFFF"
+      },
+      {
+          "vidPath": "/videos/archie-jerk.mp4",
+          "color": "#FFFFFF"
+      },
+      {
+          "vidPath": "/videos/archie-gun.mp4",
+          "color": "#44BBEC"
+      },
+      {
+          "vidPath": "/videos/bo-ollie.mp4",
+          "color": "#ff2847"
+      },
+      {
+          "vidPath": "/videos/teah-dave.mp4",
+          "color": "#ff2847"
+      },
+      {
+          "vidPath": "/videos/dave-mike-nbn2.mp4",
+          "color": "#44BBEC"
+      },
+      {
+          "vidPath": "/videos/jeff-skate.mp4",
+          "color": "#FFB9A3"
+      },
+      {
+          "vidPath": "/videos/party.mp4",
+          "color": "#FFB9A3"
+      },
+      {
+          "vidPath": "/videos/squad-car.mp4",
+          "color": "#fdd848"
+      },
+      {
+          "vidPath": "/videos/aj-pocket.mp4",
+          "color": "#18faee"
+      },
+      {
+          "vidPath": "/videos/slim-dillo.mp4",
+          "color": "#18faee"
+      },
+      {
+          "vidPath": "/videos/squad-eggos.mp4",
+          "color": "#44BBEC"
+      },
+      {
+          "vidPath": "/videos/teah-talk.mp4",
+          "color": "#18faee"
+      }
+    ];
+    const links = [
+        {
+            text: "MUSIC",
+            path: "/home",
+        },
+        {
+            text: "VIDEO",
+            path: "https://www.youtube.com/dialupstuff"
+        },
+        {
+            text: "CODE",
+            path: "https://dialup.digital/"
+        },
+        {
+            text: "RADIO",
+            path: "/radio"
+        },
+        {
+            text: "PHOTO",
+            path: "https://instagram.com/dialupstuff"
+        },
+        {
+            text: "BLOG",
+            path: "https://dialupstuff.tumblr.com"
+        },
+        {
+            text: "STORE",
+            path: "https://store.dialupstuff.com/"
+        },
+        {
+            text: "CONTACT",
+            path: "mailto:mgmt@dialupstuff.com"
+        }
+    ];
+    const logoImages = [
+      '/img/logos/logo-0.png',
+      '/img/logos/logo-1.png',
+      '/img/logos/logo-2.png',
+      '/img/logos/logo-3.png',
+      '/img/logos/logo-4.png',
+      '/img/logos/logo-5.png',
+      '/img/logos/logo-6.png'
+    ];
+
+    const updateVideo = () => {
+      const i = Math.floor(videos.length * Math.random());
+      if (bkg !== videos[i].vidPath) {
+        this.setPlayingStatic(true);
+        setTimeout(() => {
+          this.setPlayingStatic(false);
+        }, 650);
+        this.setBkg(videos[i].vidPath);
+        this.setColor(videos[i].color);
+      } else {
+        updateVideo();
+      }
+    }
+
     const goHome = () => {
       window.location.href = '/home';
     }
 
-    if (dimensions.width === -1) {
+    if (width === -1) {
       return null;
     }
 
     return !isMobile ? (
-      <DesktopSplash dimensions={dimensions} goHome={goHome} />
+      <DesktopHome
+        updateVideo={updateVideo}
+        setPlayingStatic={this.setPlayingStatic}
+        playingStatic={playingStatic}
+        logos={logoImages}
+        links={links}
+        goHome={goHome}
+        bkg={bkg}
+        color={color}
+      />
     ) : (
-      <MobileSplash dimensions={dimensions} goHome={goHome} />
-    );
+      <MobileHome
+        updateVideo={updateVideo}
+        setPlayingStatic={this.setPlayingStatic}
+        playingStatic={playingStatic}
+        logos={logoImages}
+        links={links}
+        height={height}
+        width={width}
+        goHome={goHome}
+        bkg={bkg}
+        color={color}
+      />
+    )
   }
 }
 
-function DesktopSplash(props) {
-  const { width, height } = props.dimensions;
+function DesktopHome(props) {
+  const { links, updateVideo, bkg, logos, color, playingStatic } = props;
+  const randomIndex = Math.floor(Math.random() * 7);
+  const wordmark = logos[randomIndex];
+  const [linkColor, setLinkColor] = useState('#000000');
+  const browserName = browserResult.name;
+
+  if (browserName === 'safari') {
+    document.body.style.backgroundColor = "#FAD141";
+  }
+
   return (
-    <div className='container'>
-      <img className='bkg' src='img/bkg.gif' alt='Background' />
-      <img className='header' src='img/eyes_closed.png' alt='Eyes Closed' />
-      <img
-        className='album-cover'
-        src='img/album_cover.jpg'
-        alt='Eyes Closed Album'
-      />
+    <div className='Home'>
+      <PageAnimation updateVideo={updateVideo} />
+      <Background video={bkg}/>
+      { playingStatic && (
+        <SiteMask />
+      )}
+      <img className='wordmark' src={wordmark} alt='Dial Up'/>
       <div className='links'>
-        <a href='https://open.spotify.com/album/0KqQ7GrUvoWIJvNLA8NDQb'>
-          {" "}
-          Spotify{" "}
-        </a>
-        <a href='https://music.apple.com/gb/album/eyes-closed/1487917622'>
-          {" "}
-          Apple Music{" "}
-        </a>
+        {links.map((link, i) => {
+          return (
+            <a key={i} href={link.path}> {link.text} </a>
+          )
+        })}
       </div>
-      <div onClick={props.goHome} className='enter'>
-        <button> ENTER SITE </button>
-      </div>
+
       <style jsx>{`
-        .container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
+        .Home {
           width: 100%;
           height: 100%;
-          padding: 25px;
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
         }
 
-        .bkg {
-          position: fixed;
-          top: 0;
-          left: 0;
-          min-height: 100%;
-          min-width: 1024px;
-          width: 100%;
-          height: auto;
-          z-index: -1;
+        .Home img, .links {
+          width: 60%;
+          max-width: 700px;
         }
 
-        .album-cover {
-          width: 500px;
-          border: 1px solid white;
-        }
-
-        .header {
-          width: 500px;
-          margin-bottom: 50px;
+        .Home .boFace {
+          position: absolute;
+          bottom: 50px;
+          right: 50px;
+          width: 155px;
+          height: 108px;
         }
 
         .links {
-          width: 500px;
           display: flex;
-          margin: 40px 0px;
+          flex-wrap: wrap;
           align-items: center;
-          justify-content: space-around;
+          justify-content: center;
+          margin-top: 30px;
         }
 
         .links a {
-          color: white;
-          font-weight: bold;
+          margin: 0px 5px;
+          text-decoration: none;
+          font-family: "ArialRoundedMTBold";
+          color: ${browserName === 'safari' ? 'white' : color};
+        }
+
+        .links a:hover {
           text-decoration: underline;
-          font-size: 24px;
-        }
-
-        .enter {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 120px;
-          height: 50px;
-          background: #c1c1c1;
-          color: #000;
-          white-space: nowrap;
-        }
-
-        .enter button {
-          background: white;
-          height: 50px;
-          width: 120px;
-          position: relative;
-          left: 3px;
-          top: -3px;
         }
       `}</style>
     </div>
-  );
+  )
 }
 
-function MobileSplash(props) {
-  return (
-    <div className='MobileSplash'>
-      <img className='header' src='img/eyes_closed.png' alt='Eyes Closed' />
-      <img className='album-cover' src='img/album_cover.jpg' alt='Eyes Closed Album' />
+function MobileHome(props) {
+  const { links, updateVideo, bkg, logos, color } = props;
+  const randomIndex = Math.floor(Math.random() * 7);
+  const wordmark = logos[randomIndex];
+  const boFace = bkg === null ? '/img/bo.png' : '/img/bo2.png';
+
+  return(
+    <div className="MobileHome">
+      <img onClick={updateVideo} className='boFace' src={boFace} alt='Bo Face' />
+      <img className='wordmark' src={wordmark} alt='Dial Up'/>
       <div className='links'>
-        <a href="https://open.spotify.com/album/0KqQ7GrUvoWIJvNLA8NDQb"> Spotify </a>
-        <a href="https://music.apple.com/gb/album/eyes-closed/1487917622"> Apple Music </a>
-      </div>
-      <div onClick={props.goHome} className='enter'>
-        <button> ENTER SITE </button>
+        {links.map((link, i) => {
+          return (
+            <a key={i} href={link.path}> {link.text} </a>
+          )
+        })}
       </div>
       <style jsx> {`
-        .MobileSplash {
+        .MobileHome {
           width: 100%;
           height: 100vh;
-          background: url('/img/bkg.gif');
-          background-repeat: no-repeat;
-          background-size: cover;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
           align-items: center;
           padding: 25px;
+          padding-top: 50px;
+          background: ${ bkg === null ? 'white' : color };
         }
 
-        .MobileSplash img {
-          width: 100%;
+        .Home img, .links {
+          width: 90%;
+          max-width: 700px;
         }
 
-        .header {
-          margin: 50px 0px;
+        .MobileHome .boFace {
+          position: absolute;
+          bottom: 50px;
+          right: 50px;
+          width: 155px;
+          height: 108px;
         }
 
         .links {
-          width: 100%;
           display: flex;
-          margin-bottom: 25px;
+          flex-wrap: wrap;
           align-items: center;
-          justify-content: space-around;
+          justify-content: center;
+          flex-direction: column;
+          margin-top: 30px;
         }
 
         .links a {
-          color: white;
-          font-weight: bold;
-          text-decoration: underline;
-          font-size: 24px;
+          margin: 7.5px 0px;
+          font-size: 20px;
+          text-decoration: none;
+          font-family: "ArialRoundedMTBold";
+          color: ${bkg === null || color === '#FFFFFF' ? 'black' : 'white'};
         }
 
-        .album-cover {
-          margin-bottom: 25px;
-          border: 1px solid white;
-        }
-
-        .enter {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 120px;
-          height: 50px;
-          background: #c1c1c1;
-          color: #000;
-          white-space: nowrap;
-        }
-
-        .enter button {
-          background: white;
-          height: 50px;
-          width: 120px;
-          position: relative;
-          left: 3px;
-          top: -3px;
+        .wordmark {
+          width: 90%;
         }
       `}</style>
     </div>
