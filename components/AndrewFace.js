@@ -8,6 +8,8 @@ class AndrewFaceAnimation {
     this.x = x;
     this.y = y;
     this.img = p5.createImg("/img/andrew.png");
+    this.img.style("z-index", -100);
+    this.img.size(40, 45);
   }
 
   move() {
@@ -17,9 +19,7 @@ class AndrewFaceAnimation {
     var newPositionX = this.x + xOffset;
     var newPositionY = this.y + yOffset;
 
-    this.img.size(40, 45);
     this.img.position(newPositionX, newPositionY);
-    this.img.style("z-index", -100);
   }
 }
 
