@@ -1,10 +1,10 @@
-import browser from 'browser-detect';
+import { detect } from 'detect-browser';
 import dynamic from 'next/dynamic';
 const BoFace = dynamic(() => import('../components/BoFace'), { ssr: false });
 const AndrewFace = dynamic(() => import('../components/AndrewFace'), { ssr: false });
 
-const browserResult = browser();
+const browser = detect();
 
-const PageAnimation = (props) => browserResult.name === "safari" ? <AndrewFace /> : <BoFace {...props} />;
+const PageAnimation = (props) => browser.name === "safari" ? <AndrewFace /> : <BoFace {...props} />;
 
 export default PageAnimation;
