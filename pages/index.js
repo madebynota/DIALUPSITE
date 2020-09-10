@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import browser from 'browser-detect';
+import { detect } from 'detect-browser';
 import Background from '../components/Background';
 import SiteMask from '../components/SiteMask';
 import PageAnimation from '../components/PageAnimation';
 
-const browserResult = browser();
+const browser = detect();
 
 export default class Home extends React.Component {
   state = {
@@ -197,7 +197,7 @@ function DesktopHome(props) {
   const randomIndex = Math.floor(Math.random() * 7);
   const wordmark = logos[randomIndex];
   const [linkColor, setLinkColor] = useState('#000000');
-  const browserName = browserResult.name;
+  const browserName = browser.name;
 
   if (browserName === 'safari') {
     document.body.style.backgroundColor = "#FAD141";
@@ -270,11 +270,10 @@ function MobileHome(props) {
   const { links, updateVideo, bkg, logos, color } = props;
   const randomIndex = Math.floor(Math.random() * 7);
   const wordmark = logos[randomIndex];
-  const boFace = bkg === null ? '/img/bo.png' : '/img/bo2.png';
 
   return(
     <div className="MobileHome">
-      <img onClick={updateVideo} className='boFace' src={boFace} alt='Bo Face' />
+      <PageAnimation updateVideo={updateVideo} />
       <img className='wordmark' src={wordmark} alt='Dial Up'/>
       <div className='links'>
         {links.map((link, i) => {
@@ -289,7 +288,7 @@ function MobileHome(props) {
           height: 100vh;
           display: flex;
           flex-direction: column;
-          justify-content: flex-start;
+          justify-content: center;
           align-items: center;
           padding: 25px;
           padding-top: 50px;
