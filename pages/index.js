@@ -98,6 +98,18 @@ export default class Home extends React.Component {
           "color": "#18faee"
       }
     ];
+
+    const musicLinks = [
+      {
+        text: "APPLE MUSIC",
+        path: "https://itunes.apple.com/us/artist/dial-up/1251004642"
+      },
+      {
+        text: "SPOTIFY",
+        path: "https://open.spotify.com/artist/0AamY2JGf1XDgB2B0ac3FX"
+      }
+    ]
+
     const links = [
         {
             text: "MUSIC",
@@ -170,6 +182,7 @@ export default class Home extends React.Component {
         setPlayingStatic={this.setPlayingStatic}
         playingStatic={playingStatic}
         logos={logoImages}
+        musicLinks={musicLinks}
         links={links}
         goHome={goHome}
         bkg={bkg}
@@ -181,6 +194,7 @@ export default class Home extends React.Component {
         setPlayingStatic={this.setPlayingStatic}
         playingStatic={playingStatic}
         logos={logoImages}
+        musicLinks={musicLinks}
         links={links}
         height={height}
         width={width}
@@ -193,12 +207,13 @@ export default class Home extends React.Component {
 }
 
 function DesktopHome(props) {
-  const { links, updateVideo, bkg, logos, color, playingStatic } = props;
+  const { links, updateVideo, bkg, logos, color, playingStatic, musicLinks } = props;
   const randomIndex = Math.floor(Math.random() * 7);
   const wordmark = logos[randomIndex];
   const [linkColor, setLinkColor] = useState('#000000');
+  const [showMusicLinks, setShowMusicLinks] = useState(false);
   const browserName = browser.name;
-
+  const handleMusicClick = () => setShowMusicLinks(!showMusicLinks);
   if (browserName === 'safari') {
     document.body.style.backgroundColor = "#FAD141";
   }
@@ -212,7 +227,20 @@ function DesktopHome(props) {
       )}
       <img className='wordmark' src={wordmark} alt='Dial Up'/>
       <div className='links'>
-        {links.map((link, i) => {
+        {showMusicLinks && (
+          <div className='musicLinks'>
+            <img className='back' src='/img/back.svg' onClick={handleMusicClick} />
+            {musicLinks.map((link, i) => (
+              <a key={i} href={link.path}> {link.text} </a>
+            ))}
+          </div>
+        )}
+        {!showMusicLinks && links.map((link, i) => {
+          if (link.text === "MUSIC") {
+            return (
+              <p key={i} onClick={handleMusicClick}> {link.text} </p>
+            )
+          }
           return (
             <a key={i} href={link.path}> {link.text} </a>
           )
@@ -243,6 +271,18 @@ function DesktopHome(props) {
           height: 108px;
         }
 
+        .Home .musicLinks {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .musicLinks img {
+          height: 20px;
+          width: 20px;
+          margin-right: 12px;
+        }
+
         .links {
           display: flex;
           flex-wrap: wrap;
@@ -252,14 +292,14 @@ function DesktopHome(props) {
           z-index: 10;
         }
 
-        .links a {
+        .links a, .links p {
           margin: 0px 5px;
           text-decoration: none;
           font-family: "ArialRoundedMTBold";
           color: ${browserName === 'safari' ? 'white' : color};
         }
 
-        .links a:hover {
+        .links a:hover, .links p:hover {
           text-decoration: underline;
         }
       `}</style>
@@ -268,7 +308,9 @@ function DesktopHome(props) {
 }
 
 function MobileHome(props) {
-  const { links, updateVideo, bkg, logos, color } = props;
+  const { links, updateVideo, bkg, logos, color, musicLinks } = props;
+  const [showMusicLinks, setShowMusicLinks] = useState(false);
+  const handleMusicClick = () => setShowMusicLinks(!showMusicLinks);
   const randomIndex = Math.floor(Math.random() * 7);
   const wordmark = logos[randomIndex];
 
@@ -277,7 +319,20 @@ function MobileHome(props) {
       <PageAnimation updateVideo={updateVideo} />
       <img className='wordmark' src={wordmark} alt='Dial Up'/>
       <div className='links'>
-        {links.map((link, i) => {
+        {showMusicLinks && (
+          <div className='musicLinks'>
+            <p onClick={handleMusicClick}> BACK </p>
+            {musicLinks.map((link, i) => (
+              <a key={i} href={link.path}> {link.text} </a>
+            ))}
+          </div>
+        )}
+        {!showMusicLinks && links.map((link, i) => {
+          if (link.text === "MUSIC") {
+            return (
+              <p key={i} onClick={handleMusicClick}> {link.text} </p>
+            )
+          }
           return (
             <a key={i} href={link.path}> {link.text} </a>
           )
@@ -309,6 +364,30 @@ function MobileHome(props) {
           height: 108px;
         }
 
+        .MobileHome .musicLinks {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .musicLinks img {
+          height: 20px;
+          width: 20px;
+          margin-right: 16px;
+        }
+
+        .MobileHome .back-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 16px;
+        }
+
+        .MobileHome .back-container img {
+          margin-right: 8px;
+        }
+
         .links {
           display: flex;
           flex-wrap: wrap;
@@ -319,12 +398,16 @@ function MobileHome(props) {
           z-index: 10;
         }
 
-        .links a {
+        .links a, .links p {
           margin: 7.5px 0px;
           font-size: 20px;
           text-decoration: none;
           font-family: "ArialRoundedMTBold";
           color: ${bkg === null || color === '#FFFFFF' ? 'black' : 'white'};
+        }
+
+        .musicLinks p {
+          margin-bottom: 24px;
         }
 
         .wordmark {
