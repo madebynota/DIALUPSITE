@@ -249,6 +249,7 @@ function DesktopHome(props) {
           align-items: center;
           justify-content: center;
           margin-top: 30px;
+          z-index: 10;
         }
 
         .links a {
@@ -315,6 +316,7 @@ function MobileHome(props) {
           justify-content: center;
           flex-direction: column;
           margin-top: 30px;
+          z-index: 10;
         }
 
         .links a {
