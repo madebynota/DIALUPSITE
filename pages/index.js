@@ -17,6 +17,7 @@ export default class Home extends React.Component {
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
+    console.log("testing");
   }
 
   componentWillUnmount() {
