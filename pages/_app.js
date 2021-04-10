@@ -141,6 +141,21 @@ function MyApp({ Component, pageProps }) {
         }
 
         @font-face {
+          font-family: 'RockSalt';
+          src: url('/fonts/RockSalt.ttf') format("truetype");
+        }
+
+        @font-face {
+          font-family: 'RedRose';
+          src: url('/fonts/RedRose.ttf') format("truetype");
+        }
+
+        @font-face {
+          font-family: 'Roboto';
+          src: url('/fonts/Roboto-Regular.ttf') format("truetype");
+        }
+
+        @font-face {
           font-family: 'ArialRoundedMTBold';
           src: url('/fonts/ArialRoundedMTBold.ttf') format("truetype");
         }
