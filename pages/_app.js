@@ -97,7 +97,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="og:description" content="Dial Up"/>
         <meta property="og:url" content="http://dialupstuff.com"/>
         <meta property="og:type" content="website"/>
-        <meta property="og:image" content="http://dialupstuff.com/img/favicon/embedImage.png"/>
+        <meta property="og:image" content="http://dialupstuff.com/img/open-graph.png"/>
         <meta property="og:image:width" content="600"/>
         <meta property="og:image:height" content="600"/>
 
