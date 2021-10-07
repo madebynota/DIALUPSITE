@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import cx from 'classnames';
 
 export default function Splash(props) {
 
@@ -6,21 +7,17 @@ export default function Splash(props) {
     <div className="Splash">
       <div className="bkg"></div>
       <div className="darken"></div>
-      <h1 className="Splash--title">What Else?</h1>
       <img onClick={() => window.location.href = '/home'} className="Splash--bo-face" src='/img/bo.png' />
       <div className="Splash--body">
-        <img className="what-else" src='/img/what-else.png' />
+        <img className={cx("spin-cycle-desktop", "spin-cycle")} src='/img/spin-cycle.png' />
         <div className="Splash--body-links">
-          <a href="https://music.apple.com/us/album/what-else/1561449065">Apple Music</a>
-          <a href="https://open.spotify.com/album/4I82YQMPZOoBVzJ55nKOmE?si=OJ1aVRf6Qxmj27HFKD-FJg">Spotify</a>
-          <a href="https://dialupstuff.bandcamp.com/album/what-else">Bandcamp</a>
         </div>
       </div>
       <style jsx>{`
         .Splash {
           width: 100%;
           height: 100%;
-          background: url("/img/what-else.png");
+          background: url("/img/spin-cycle.png");
           background-size: 177%;
           background-position: center;
           min-height: 100vh;
@@ -29,6 +26,15 @@ export default function Splash(props) {
           display: flex;
           justify-content: center;
           align-items: center;
+        }
+
+        @keyframes spin {
+          from {transform:rotate(0deg);}
+          to {transform:rotate(360deg);}
+        }
+
+        .spin-cycle-desktop {
+          animation: spin 150s infinite linear;
         }
 
         .Splash--body {
@@ -67,7 +73,7 @@ export default function Splash(props) {
           z-index: 2;
         }
 
-        .Splash .what-else, .Splash--body-links {
+        .Splash .spin-cycle, .Splash--body-links {
           width: 500px;
         }
 
@@ -86,7 +92,7 @@ export default function Splash(props) {
         }
 
         @media screen and (max-width: 480px) {
-          .Splash .what-else, .Splash--body-links {
+          .Splash .spin-cycle, .Splash--body-links {
             width: 300px;
           }
 
@@ -100,8 +106,14 @@ export default function Splash(props) {
             flex-direction: column;
           }
 
+          .spin-cycle {
+            position: relative;
+            top: -50px;
+          }
+
           .Splash--bo-face {
             width: 150px;
+            bottom: 120px;
           }
         }
       `}</style>
