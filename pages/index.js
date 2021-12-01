@@ -2,22 +2,57 @@ import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 
 export default function Splash(props) {
+  const [value, setValue] = useState('')
+  const [btnText, setBtnText] = useState('Submit');
+  const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState(false)
+  const submit = async () => {
+    setBtnText('Submitting...');
+    const now = new Date();
+    if (value.length > 5) {
+      try {
+        fetch("https://api.apispreadsheets.com/data/20925/", {
+          method: "POST",
+          headers: {"accessKey":"3bd3edf62069d5f941fb604167b79cec", "secretKey":"bb81436ebae61133beed6c6026833e5d"},
+          body: JSON.stringify({"data": { "Email": value, "Time": now.toString() }}),
+        }).then(res =>{
+          if (res.status === 201){
+            setSubmitted(true)
+            setValue('');
+            setBtnText('Submit');
+          }
+          else {
+            setError(true);
+            setBtnText('Try again');
+          }
+        })
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      setError(true);
+    }
+  }
 
+  const formText = submitted ? "RSVP submitted. See you 12/10!" : error ? "Please try again with a different email address." : "RSVP with your email below";
   return (
     <div className="Splash">
       <div className="bkg"></div>
       <div className="darken"></div>
       <img onClick={() => window.location.href = '/home'} className="Splash--bo-face" src='/img/bo.png' />
       <div className="Splash--body">
-        <img className={cx("spin-cycle-desktop", "spin-cycle")} src='/img/spin-cycle.png' />
+        <img className={cx("flyer-desktop", "flyer")} src='/img/flyer.png' />
         <div className="Splash--body-links">
+          <h5 className="form--header">{formText}</h5>
+          <input className="form--input" onChange={(e) => setValue(e.target.value)}type="text" value={value} placeholder="Email" />
+          <button onClick={submit} className="form--submit">{btnText}</button>
         </div>
       </div>
       <style jsx>{`
         .Splash {
           width: 100%;
           height: 100%;
-          background: url("/img/spin-cycle.png");
+          background: url("/img/flyer.png");
           background-size: 177%;
           background-position: center;
           min-height: 100vh;
@@ -31,10 +66,6 @@ export default function Splash(props) {
         @keyframes spin {
           from {transform:rotate(0deg);}
           to {transform:rotate(360deg);}
-        }
-
-        .spin-cycle-desktop {
-          animation: spin 150s infinite linear;
         }
 
         .Splash--body {
@@ -73,13 +104,13 @@ export default function Splash(props) {
           z-index: 2;
         }
 
-        .Splash .spin-cycle, .Splash--body-links {
+        .Splash .flyer, .Splash--body-links {
           width: 500px;
         }
 
         .Splash--body-links {
           display: flex;
-          justify-content: space-between;
+          flex-direction: column;
           align-items: center;
           margin-top: 24px;
         }
@@ -91,8 +122,33 @@ export default function Splash(props) {
           text-decoration: underline;
         }
 
+        .form--header {
+          margin-bottom: 16px;
+        }
+
+        .form--input {
+          background: transparent;
+          border: 1px solid white;
+          color: white;
+          margin-bottom: 16px;
+          outline: none;
+          padding-left: 4px;
+        }
+
+        .form--submit {
+          background: transparent;
+          padding: 4px 8px;
+          border: 1px solid white;
+          color: white;
+        }
+
+        .form--submit:hover {
+          background: white;
+          color: black;
+        }
+
         @media screen and (max-width: 480px) {
-          .Splash .spin-cycle, .Splash--body-links {
+          .Splash .flyer, .Splash--body-links {
             width: 300px;
           }
 
@@ -106,14 +162,14 @@ export default function Splash(props) {
             flex-direction: column;
           }
 
-          .spin-cycle {
+          .flyer {
             position: relative;
             top: -50px;
           }
 
           .Splash--bo-face {
             width: 150px;
-            bottom: 120px;
+            bottom: 30px;
           }
         }
       `}</style>
