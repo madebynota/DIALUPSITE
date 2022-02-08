@@ -1,58 +1,81 @@
-import React, { useState, useEffect } from 'react';
-import cx from 'classnames';
+import React, { useState, useEffect } from "react";
+import cx from "classnames";
 
 export default function Splash(props) {
-  const [value, setValue] = useState('')
-  const [btnText, setBtnText] = useState('Submit');
-  const [submitted, setSubmitted] = useState(false)
-  const [error, setError] = useState(false)
+  const [value, setValue] = useState("");
+  const [btnText, setBtnText] = useState("Submit");
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
   const submit = async () => {
-    setBtnText('Submitting...');
+    setBtnText("Submitting...");
     const now = new Date();
     if (value.length > 5) {
       try {
         fetch("https://api.apispreadsheets.com/data/20925/", {
           method: "POST",
-          headers: {"accessKey":"3bd3edf62069d5f941fb604167b79cec", "secretKey":"bb81436ebae61133beed6c6026833e5d"},
-          body: JSON.stringify({"data": { "Email": value, "Time": now.toString() }}),
-        }).then(res =>{
-          if (res.status === 201){
-            setSubmitted(true)
-            setValue('');
-            setBtnText('Submit');
-          }
-          else {
+          headers: {
+            accessKey: "3bd3edf62069d5f941fb604167b79cec",
+            secretKey: "bb81436ebae61133beed6c6026833e5d",
+          },
+          body: JSON.stringify({
+            data: { Email: value, Time: now.toString() },
+          }),
+        }).then((res) => {
+          if (res.status === 201) {
+            setSubmitted(true);
+            setValue("");
+            setBtnText("Submit");
+          } else {
             setError(true);
-            setBtnText('Try again');
+            setBtnText("Try again");
           }
-        })
+        });
       } catch (e) {
         console.log(e);
       }
     } else {
       setError(true);
     }
-  }
+  };
 
-  const formText = submitted ? "RSVP submitted. See you 12/10!" : error ? "Please try again with a different email address." : "RSVP with your email below";
+  const formText = submitted
+    ? "RSVP submitted. See you 12/10!"
+    : error
+    ? "Please try again with a different email address."
+    : "RSVP with your email below";
   return (
     <div className="Splash">
       <div className="bkg"></div>
       <div className="darken"></div>
-      <img onClick={() => window.location.href = '/home'} className="Splash--bo-face" src='/img/bo.png' />
+      <img
+        onClick={() => (window.location.href = "/home")}
+        className="Splash--bo-face"
+        src="/img/bo.png"
+      />
       <div className="Splash--body">
-        <img className={cx("flyer-desktop", "flyer")} src='/img/flyer.png' />
+        <img
+          className={cx("flyer-desktop", "flyer")}
+          src="/img/one_last_kiss.jpg"
+        />
         <div className="Splash--body-links">
           <h5 className="form--header">{formText}</h5>
-          <input className="form--input" onChange={(e) => setValue(e.target.value)}type="text" value={value} placeholder="Email" />
-          <button onClick={submit} className="form--submit">{btnText}</button>
+          <input
+            className="form--input"
+            onChange={(e) => setValue(e.target.value)}
+            type="text"
+            value={value}
+            placeholder="Email"
+          />
+          <button onClick={submit} className="form--submit">
+            {btnText}
+          </button>
         </div>
       </div>
       <style jsx>{`
         .Splash {
           width: 100%;
           height: 100%;
-          background: url("/img/flyer.png");
+          background: url("/img/one_last_kiss.jpg");
           background-size: 177%;
           background-position: center;
           min-height: 100vh;
@@ -64,8 +87,12 @@ export default function Splash(props) {
         }
 
         @keyframes spin {
-          from {transform:rotate(0deg);}
-          to {transform:rotate(360deg);}
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
         }
 
         .Splash--body {
@@ -95,7 +122,7 @@ export default function Splash(props) {
         }
 
         .darken {
-          background: rgba(0, 0, 0, .7);
+          background: rgba(0, 0, 0, 0.7);
           width: 100%;
           height: 100vh;
           position: fixed;
@@ -104,7 +131,8 @@ export default function Splash(props) {
           z-index: 2;
         }
 
-        .Splash .flyer, .Splash--body-links {
+        .Splash .flyer,
+        .Splash--body-links {
           width: 500px;
         }
 
@@ -148,7 +176,8 @@ export default function Splash(props) {
         }
 
         @media screen and (max-width: 480px) {
-          .Splash .flyer, .Splash--body-links {
+          .Splash .flyer,
+          .Splash--body-links {
             width: 300px;
           }
 
@@ -174,5 +203,5 @@ export default function Splash(props) {
         }
       `}</style>
     </div>
-  )
+  );
 }
